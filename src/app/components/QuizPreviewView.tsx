@@ -2,35 +2,33 @@ import React, { useState, useEffect } from 'react';
 import type { WordEntry, QuizQuestion } from '../../types/word';
 import { db } from '../../storage/db';
 
-export const QuizPreviewView: React.FC = () => {
-  const [words, setWords] = useState<WordEntry[]>([]);
+interface Props {
+  initialWords?: WordEntry[];
+  bookTitle?: string;
+}
+
+export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) => {
+  const [words, setWords] = useState<WordEntry[]>(initialWords || []);
   const [currentQuiz, setCurrentQuiz] = useState<QuizQuestion | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
-
-  // 기본 단어 로드
-  useEffect(() => {
-    fetch('/data/toeic_words_v1.json')
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.words && data.words.length > 0) {
-          setWords(data.words);
-          generateQuestion(data.words, 0);
-        }
-      })
-      .catch((err) => console.warn('단어 로드 실패:', err));
-  }, []);
+  const [activeBookTitle, setActiveBookTitle] = useState<string>(bookTitle || '기본 TOEIC 4지선다');
 
   const generateQuestion = (wordList: WordEntry[], targetIdx: number) => {
-    if (wordList.length < 4) return;
+    if (wordList.length < 2) return;
     const target = wordList[targetIdx % wordList.length];
     const correctMeaning = target.meaning[0];
 
-    // 다른 단어들에서 오답 3개 무작위 선별
+    // 다른 단어들에서 오답 선별 (최대 3개)
     const otherWords = wordList.filter((w) => w.word !== target.word);
     const shuffledOthers = [...otherWords].sort(() => 0.5 - Math.random());
     const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaning[0]);
+
+    // 보기가 4개 미만인 경우 더미 보기 채우기
+    while (distractors.length < 3) {
+      distractors.push(`(추가 오답 ${distractors.length + 1})`);
+    }
 
     // 4지선다 셔플
     const options = [correctMeaning, ...distractors].sort(() => 0.5 - Math.random());
@@ -41,11 +39,44 @@ export const QuizPreviewView: React.FC = () => {
       word: target.word,
       options,
       correctIndex,
-      difficulty: target.difficulty,
+      difficulty: target.difficulty || 'medium',
     });
     setSelectedIndex(null);
     setIsAnswered(false);
   };
+
+  // 단어 로드
+  useEffect(() => {
+    if (initialWords && initialWords.length > 0) {
+      setWords(initialWords);
+      setActiveBookTitle(bookTitle || '추출 단어장');
+      generateQuestion(initialWords, 0);
+      return;
+    }
+
+    // IndexedDB에 저장된 단어가 있는지 우선 확인
+    db.words
+      .toArray()
+      .then((saved) => {
+        if (saved && saved.length >= 4) {
+          setWords(saved);
+          setActiveBookTitle(`내 문제집 (${saved.length}단어)`);
+          generateQuestion(saved, 0);
+        } else {
+          // 기본 JSON 번들 로드
+          fetch('/data/toeic_words_v1.json')
+            .then((r) => r.json())
+            .then((data) => {
+              if (data.words && data.words.length > 0) {
+                setWords(data.words);
+                setActiveBookTitle('기본 빈출 어휘 (15단어)');
+                generateQuestion(data.words, 0);
+              }
+            });
+        }
+      })
+      .catch((err) => console.warn('단어 로드 실패:', err));
+  }, [initialWords, bookTitle]);
 
   const handleSelectOption = async (idx: number) => {
     if (isAnswered || !currentQuiz) return;
@@ -90,7 +121,7 @@ export const QuizPreviewView: React.FC = () => {
   return (
     <div className="card quiz-card">
       <div className="quiz-header">
-        <span className="quiz-tag">TOEIC 기본 4지선다</span>
+        <span className="quiz-tag">📖 {activeBookTitle}</span>
         <span className="score-tag">
           정답: <strong style={{ color: '#4ade80' }}>{score.correct}</strong> | 오답: <strong style={{ color: '#f87171' }}>{score.wrong}</strong>
         </span>
@@ -98,7 +129,7 @@ export const QuizPreviewView: React.FC = () => {
 
       <div className="quiz-word-box">
         <h2 className="quiz-headword">{currentQuiz.word}</h2>
-        <span className="difficulty-badge">{currentQuiz.difficulty.toUpperCase()}</span>
+        <span className="difficulty-badge">{(currentQuiz.difficulty || 'MEDIUM').toUpperCase()}</span>
       </div>
 
       <div className="quiz-options-list">

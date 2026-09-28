@@ -4,12 +4,28 @@ import { QuizPreviewView } from './components/QuizPreviewView';
 import { FileImportPocView } from './components/FileImportPocView';
 import { PdfImportPocView } from './components/PdfImportPocView';
 import { StoragePocView } from './components/StoragePocView';
+import type { WordEntry } from '../types/word';
 import './App.css';
 
-type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf' | 'wordbook' | 'storage_poc';
+type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf' | 'storage_poc';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
+  const [customWords, setCustomWords] = useState<WordEntry[] | undefined>(undefined);
+  const [customTitle, setCustomTitle] = useState<string | undefined>(undefined);
+
+  const handleStartQuizWithWords = (words: Array<{ word: string; meaning: string[] }>, title?: string) => {
+    const entries: WordEntry[] = words.map((w) => ({
+      word: w.word,
+      meaning: w.meaning,
+      partOfSpeech: '단어',
+      difficulty: 'medium',
+      topic: 'toeic',
+    }));
+    setCustomWords(entries);
+    setCustomTitle(title || `추출 단어장 (${entries.length}단어)`);
+    setActiveTab('quiz');
+  };
 
   return (
     <div className="app-container">
@@ -78,13 +94,13 @@ export const App: React.FC = () => {
               <button className="menu-card" onClick={() => setActiveTab('photo')}>
                 <span className="menu-icon">📷</span>
                 <span className="menu-title">사진으로 문제 만들기</span>
-                <span className="menu-sub">단어책 촬영/사진에서 영단어·뜻 자동 추출</span>
+                <span className="menu-sub">2단 분할 + 온디바이스 OCR 분석</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('pdf')}>
                 <span className="menu-icon">📄</span>
                 <span className="menu-title">PDF로 문제 만들기</span>
-                <span className="menu-sub">PDF.js 기반 텍스트 추출 및 Canvas 파싱</span>
+                <span className="menu-sub">PDF.js 기반 텍스트 레이어 어휘 추출</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('storage_poc')}>
@@ -114,8 +130,8 @@ export const App: React.FC = () => {
                   <span className="status-value">PDF.js 브라우저 메모리 파서</span>
                 </div>
                 <div className="status-item">
-                  <span className="status-label">오프라인:</span>
-                  <span className="status-value">Service Worker 앱 셸 캐싱</span>
+                  <span className="status-label">사진 OCR:</span>
+                  <span className="status-value text-accent">2단 분할 + Tesseract WASM</span>
                 </div>
                 <div className="status-item">
                   <span className="status-label">개인정보:</span>
@@ -126,15 +142,32 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {activeTab === 'quiz' && <QuizPreviewView />}
-        {activeTab === 'photo' && <FileImportPocView />}
-        {activeTab === 'pdf' && <PdfImportPocView />}
+        {activeTab === 'quiz' && (
+          <QuizPreviewView initialWords={customWords} bookTitle={customTitle} />
+        )}
+
+        {activeTab === 'photo' && (
+          <FileImportPocView
+            onStartQuizWithWords={(words) =>
+              handleStartQuizWithWords(words, '사진 OCR 추출 문제집')
+            }
+          />
+        )}
+
+        {activeTab === 'pdf' && (
+          <PdfImportPocView
+            onStartQuizWithWords={(words) =>
+              handleStartQuizWithWords(words, 'PDF 추출 문제집')
+            }
+          />
+        )}
+
         {activeTab === 'storage_poc' && <StoragePocView />}
       </main>
 
       {/* 푸터 */}
       <footer className="app-footer">
-        <p>토익_스터디 PWA • GitHub → Cloudflare Workers Builds • 오프라인 로컬 우선</p>
+        <p>토익_스터디 PWA • 버전 {__APP_VERSION__} (Git: {__GIT_SHA__}) • 100% 로컬 브라우저 저장</p>
       </footer>
     </div>
   );

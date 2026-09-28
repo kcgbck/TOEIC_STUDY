@@ -25,3 +25,14 @@ dist-ssr
 
 # Cloudflare
 .wrangler
+
+# Agent State
+.agent-state
+
+# OCR Models
+*.traineddata
+
+# Local test samples (do not commit copyright-sensitive materials)
+docs/샘플.*
+docs/샘플.pdf
+docs/샘플.png

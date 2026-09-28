@@ -1,8 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { execSync } from 'child_process';
+
+let gitSha = process.env.VITE_GIT_SHA || process.env.CF_PAGES_COMMIT_SHA || '';
+if (!gitSha) {
+  try {
+    gitSha = execSync('git rev-parse --short HEAD').toString().trim();
+  } catch {
+    gitSha = 'dev';
+  }
+} else {
+  gitSha = gitSha.slice(0, 7);
+}
 
 export default defineConfig({
   plugins: [react()],
+  define: {
+    __GIT_SHA__: JSON.stringify(gitSha),
+    __APP_VERSION__: JSON.stringify('v0.2.0'),
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
   build: {
     target: 'es2022',
     outDir: 'dist',

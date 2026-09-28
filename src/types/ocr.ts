@@ -16,6 +16,6 @@ export type OcrProgressCallback = (progress: { status: string; progress: number 
 export interface OcrEngine {
   readonly name: string;
   init(onProgress?: OcrProgressCallback): Promise<void>;
-  recognize(input: ImageData | Blob): Promise<RecognizedTextBlock[]>;
+  recognize(input: ImageData | Blob | HTMLCanvasElement | string): Promise<RecognizedTextBlock[]>;
   terminate(): Promise<void>;
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "items": [
+      { "str": "101", "x": 60, "y": 700 },
+      { "str": "reserve", "x": 110, "y": 700 },
+      { "str": "(동)", "x": 330, "y": 700 },
+      { "str": "예약하다", "x": 350, "y": 700 }
+    ],
+    "expected": {
+      "num": 101,
+      "word": "reserve",
+      "partOfSpeech": "(동)",
+      "meaning": "(동) 예약하다"
+    }
+  },
+  {
+    "items": [
+      { "str": "102", "x": 60, "y": 660 },
+      { "str": "invoice", "x": 110, "y": 660 },
+      { "str": "(명)", "x": 330, "y": 660 },
+      { "str": "송장, 청구서", "x": 350, "y": 660 }
+    ],
+    "expected": {
+      "num": 102,
+      "word": "invoice",
+      "partOfSpeech": "(명)",
+      "meaning": "(명) 송장, 청구서"
+    }
+  },
+  {
+    "items": [
+      { "str": "103", "x": 60, "y": 620 },
+      { "str": "mandatory", "x": 110, "y": 620 },
+      { "str": "(형)", "x": 330, "y": 620 },
+      { "str": "의무적인, 필수의", "x": 350, "y": 620 }
+    ],
+    "expected": {
+      "num": 103,
+      "word": "mandatory",
+      "partOfSpeech": "(형)",
+      "meaning": "(형) 의무적인, 필수의"
+    }
+  }
+]
