@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "databaseVersion": 3,
+  "databaseVersion": 4,
   "totalCandidateCount": 2500,
   "releaseReadyCount": 1800,
   "cGradeCandidateCount": 700,

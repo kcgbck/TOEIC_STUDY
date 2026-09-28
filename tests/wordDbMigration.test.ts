@@ -34,13 +34,13 @@ describe('DB-03 데이터베이스 마이그레이션 및 학습 기록 연속�
 
     expect(simulatedProgressMap.size).toBe(100);
 
-    // 2. DB 업데이트: v3(1,800개) 로드
-    expect(v3Data.databaseVersion).toBe(3);
+    // 2. DB 업데이트: v4(1,800개) 로드
+    expect(v3Data.databaseVersion).toBe(4);
     expect(v3Data.words.length).toBe(1800);
 
     const v3Map = new Map(v3Data.words.map((w) => [w.id, w]));
 
-    // 3. 기존 학습 기록 100개가 v3 단어장에 정확히 일치하여 남아있는지 확인
+    // 3. 기존 학습 기록 100개가 v4 단어장에 정확히 일치하여 남아있는지 확인
     let matchedCount = 0;
     for (const [savedWordId, savedProgress] of simulatedProgressMap.entries()) {
       const v3Word = v3Map.get(savedWordId);
@@ -56,7 +56,7 @@ describe('DB-03 데이터베이스 마이그레이션 및 학습 기록 연속�
     expect(matchedCount).toBe(100);
   });
 
-  it('v3에 신규 추가된 1,300개 단어는 초기 미학습 상태로 정상 조회되어야 한다', () => {
+  it('v4에 신규 추가된 1,300개 단어는 초기 미학습 상태로 정상 조회되어야 한다', () => {
     const v2IdSet = new Set(v2Data.words.map((w) => w.id));
     const newWords = v3Data.words.filter((w) => !v2IdSet.has(w.id));
 
@@ -66,7 +66,7 @@ describe('DB-03 데이터베이스 마이그레이션 및 학습 기록 연속�
     for (const nw of newWords) {
       expect(nw.quizEligible).toBe(true);
       expect(nw.status).toBe('quiz_ready');
-      expect(nw.databaseVersion).toBe(3);
+      expect(nw.databaseVersion).toBe(4);
       expect(nw.confidenceGrade).not.toBe('C');
     }
   });

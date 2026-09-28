@@ -13,6 +13,8 @@
     "worddb:audit": "vite-node scripts/worddb/audit.ts",
     "worddb:benchmark": "npx tsx scripts/worddb/benchmarkQuiz.ts",
     "worddb:audit:qa01": "npx tsx scripts/worddb/auditQa01.ts",
+    "worddb:audit:qa02": "npx tsx scripts/worddb/auditQa02.ts",
+    "worddb:normalize": "npx tsx scripts/worddb/normalizeSemanticData.ts",
     "worddb:review:compare": "npx tsx scripts/worddb/compareReview.ts"
   },
   "dependencies": {

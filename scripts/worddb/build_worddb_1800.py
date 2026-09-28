@@ -88,7 +88,7 @@ def main():
     for path, subset in milestones:
         meta = {
             "schemaVersion": 1,
-            "databaseVersion": 3,
+            "databaseVersion": 4,
             "wordCount": len(subset),
             "generatedAt": now_kst,
             "words": subset
@@ -105,7 +105,7 @@ def main():
     candidate_pool = all_release_words + c700
     candidate_pool_meta = {
         "schemaVersion": 1,
-        "databaseVersion": 3,
+        "databaseVersion": 4,
         "totalCandidateCount": len(candidate_pool),
         "releaseReadyCount": len(all_release_words),
         "cGradeCandidateCount": len(c700),
@@ -119,7 +119,7 @@ def main():
     # 5. Output Official Release JSON: public/data/builtin_words_v1.json
     release_meta = {
         "schemaVersion": 1,
-        "databaseVersion": 3,
+        "databaseVersion": 4,
         "wordCount": len(all_release_words),
         "generatedAt": now_kst,
         "words": all_release_words

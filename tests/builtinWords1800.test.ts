@@ -11,9 +11,9 @@ describe('DB-03 공식 릴리스 1,800개 전수 무결성 (builtinWords1800.tes
   const releaseData: BuiltinWordsDatabase = JSON.parse(fs.readFileSync(releasePath, 'utf-8'));
   const words = releaseData.words;
 
-  it('데이터베이스 메타데이터가 databaseVersion=3, wordCount=1800이어야 한다', () => {
+  it('데이터베이스 메타데이터가 databaseVersion=4, wordCount=1800이어야 한다', () => {
     expect(releaseData.schemaVersion).toBe(1);
-    expect(releaseData.databaseVersion).toBe(3);
+    expect(releaseData.databaseVersion).toBe(4);
     expect(releaseData.wordCount).toBe(1800);
     expect(words.length).toBe(1800);
   });
