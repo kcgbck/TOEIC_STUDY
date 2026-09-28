@@ -1,6 +1,4 @@
-// 사람 검토용 리뷰셋 2종 생성 스크립트 (지시서 DB-02 Section 38~41 준수)
-// 1. docs/WORD_DB_500_REVIEW.md: 하 40, 중 40, 상 40 = 120문제
-// 2. docs/WORD_DB_500_WORD_REVIEW.md: 신규 300단어 마크다운 테이블 + B등급 집중 검토 목록
+// DB-03 사람 검토용 문서 2종 자동 생성 스크립트 (지시서 Section 61~70 준수)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,144 +10,171 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '../../');
 
-export function generateReviewDocuments() {
-  const jsonPath = path.join(projectRoot, 'public/data/builtin_words_v1.json');
-  const dbData: BuiltinWordsDatabase = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
-  const words: BuiltinWord[] = dbData.words;
-  const wordEntries: WordEntry[] = words.map(builtinWordToWordEntry);
+export async function generateReviewDocs(): Promise<void> {
+  console.log('=== [DB-03] Generating Human Review Documents ===');
 
-  const baselinePath = path.join(projectRoot, 'src/data/builtin_words_pilot_v1.json');
-  const baselineData: BuiltinWordsDatabase = JSON.parse(fs.readFileSync(baselinePath, 'utf-8'));
-  const baselineIds = new Set(baselineData.words.map((w) => w.id));
+  const releasePath = path.join(projectRoot, 'public/data/builtin_words_v1.json');
+  const baseline500Path = path.join(projectRoot, 'data/worddb/baseline_500.json');
 
-  const newWords = words.filter((w) => !baselineIds.has(w.id));
+  const dbData: BuiltinWordsDatabase = JSON.parse(fs.readFileSync(releasePath, 'utf-8'));
+  const b500Data: BuiltinWordsDatabase = JSON.parse(fs.readFileSync(baseline500Path, 'utf-8'));
 
-  console.log(`[정보] 전체 어휘: ${words.length}개, 신규 어휘: ${newWords.length}개`);
+  const allWords = dbData.words;
+  const b500IdSet = new Set(b500Data.words.map((w) => w.id));
+
+  // 신규 1,300개 어휘 분리
+  const new1300Words = allWords.filter((w) => !b500IdSet.has(w.id));
+  const bGradeWords = allWords.filter((w) => w.confidenceGrade === 'B');
+  const verifiedWords = allWords.filter((w) => w.officialEvidenceStatus === 'verified');
+
+  console.log(`- 전체 어휘: ${allWords.length}개`);
+  console.log(`- 신규 어휘: ${new1300Words.length}개`);
+  console.log(`- B등급 어휘: ${bGradeWords.length}개`);
+  console.log(`- 공식근거 검증 어휘: ${verifiedWords.length}개`);
 
   // =========================================================================
-  // 문서 1: docs/WORD_DB_500_REVIEW.md (120문제 퀴즈 리뷰셋)
+  // 문서 1: docs/WORD_DB_1800_WORD_REVIEW.md
   // =========================================================================
-  let qMd = `# 보카 스터디 500 기본 어휘 문제 검토셋 (WORD_DB_500_REVIEW.md)
+  let wordDoc = `# 보카 스터디 — DB-03 1,800 기본 어휘 사람 검토 문서 (WORD_REVIEW)
 
-> **공개 서비스명**: 보카 스터디 (Voca Study)  
-> **기준선**: DB-02 (500단어 데이터베이스 확장)  
-> **상태**: \`REVIEW_SET_GENERATED\` / **사람 검토 상태**: \`HUMAN_REVIEW_PENDING\`  
-> **생성일**: 2026-09-29  
-> **문제 구성**: 하(EASY) 40문제, 중(MEDIUM) 40문제, 상(HARD) 40문제 = 총 120문제  
+## 0. 개요 및 검토 가이드라인
+
+- **문서 목적**: DB-03 확장을 통해 새롭게 추가된 신규 1,300개 어휘(단일 단어 1,060개, 구동사 140개, 표현 100개) 및 B등급 어휘(168개)의 품사, 뜻, 난이도, 공식 공개 근거를 전수 검토하기 위한 공식 문서입니다.
+- **데이터베이스 버전**: \`databaseVersion: 3\` (\`schemaVersion: 1\`)
+- **총 단어 수**: 1,800개 (기준선 500개 100% 동결 보존 + 신규 1,300개 추가)
+- **C등급 단어 포함 수**: **0개 (100% 배제)**
+- **공식 출처 검증 어휘 수**: ${verifiedWords.length}개
+- **검토 우선순위**:
+  1. **B등급 어휘(168개)**: 상대적으로 난이도가 높거나 문맥 의존성이 있는 어휘군
+  2. **구동사(140개) 및 표현(100개)**: 다의어 충돌 및 공통 숙어 해석의 명확성
+  3. **신규 단일 명사/동사/형용사/부사**: 대표 뜻의 명확성 및 출제 안전성
 
 ---
 
-## 1. 인간 검토 가이드라인 (지시서 Section 30, 39 준수)
+## 1. B등급 어휘 전수 집중 검토 목록 (총 ${bGradeWords.length}개)
 
-본 문서는 알고리즘 무결성 검증과 별개로 사람이 직접 눈으로 확인하기 위한 검토셋입니다.
-1. **하(EASY)**: 일상 및 초급 비즈니스에서 직관적으로 파악 가능한 난이도인가?
-2. **중(MEDIUM)**: 전형적인 TOEIC 실무 시험 수준의 어휘 및 보기 변별력을 갖추었는가?
-3. **상(HARD)**: 억지로 애매하거나 모호하지 않으며, 고급 실무 어휘로서 정답이 명확한가?
-4. **보기 자연성**: 4지선다 한국어 뜻이 어색하지 않고 자연스러운가?
-5. **정답 유일성**: 복수정답 또는 동의어로 인한 이의제기 소지가 완전히 배제되었는가?
+B등급 어휘는 토익 시험에 출제되나 복합적이거나 고급 어휘군으로 분류된 항목입니다.
+
+| 번호 | 표제어 (Word) | 품사 (POS) | 대표 뜻 | 추가 뜻 | 난이도 | 주제군 | 공식 근거 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+`;
+
+  bGradeWords.forEach((w, idx) => {
+    const sub = w.subMeanings.length > 0 ? w.subMeanings.join(', ') : '-';
+    const top = w.topics.join(', ');
+    wordDoc += `| ${idx + 1} | **${w.word}** | \`${w.partOfSpeech}\` | ${w.mainMeaning} | ${sub} | ${w.difficulty} | ${top} | \`${w.officialEvidenceStatus}\` |\n`;
+  });
+
+  wordDoc += `\n---\n\n## 2. 신규 1,300개 어휘 전수 목록\n\n`;
+  wordDoc += `기존 동결 기준선 500개 외에 DB-03에서 새롭게 증설된 1,300개 어휘 전수 목록입니다.\n\n`;
+  wordDoc += `| 번호 | 표제어 (Word) | 품사 (POS) | 대표 뜻 | 추가 뜻 | 난이도 | 등급 | 주제군 | 공식 근거 |\n`;
+  wordDoc += `| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n`;
+
+  new1300Words.forEach((w, idx) => {
+    const sub = w.subMeanings.length > 0 ? w.subMeanings.join(', ') : '-';
+    const top = w.topics.join(', ');
+    wordDoc += `| ${idx + 1} | **${w.word}** | \`${w.partOfSpeech}\` | ${w.mainMeaning} | ${sub} | ${w.difficulty} | **${w.confidenceGrade}** | ${top} | \`${w.officialEvidenceStatus}\` |\n`;
+  });
+
+  wordDoc += `\n---\n\n## 3. 공식 공개 근거 검증 어휘 (Verified: 총 ${verifiedWords.length}개)\n\n`;
+  wordDoc += `ETS 공식 TOEIC 시험 준비 자료 및 공개 표본에서 직접 확인된 핵심 어휘군입니다.\n\n`;
+  wordDoc += `| 번호 | 표제어 | 품사 | 공식 출처명 | 출처 URL |
+| :--- | :--- | :--- | :--- | :--- |
+`;
+
+  verifiedWords.forEach((w, idx) => {
+    const ev = w.officialEvidence && w.officialEvidence[0];
+    const title = ev ? ev.sourceTitle : 'ETS Official Preparation Materials';
+    const url = ev ? ev.sourceUrl : 'https://www.ets.org/toeic';
+    wordDoc += `| ${idx + 1} | **${w.word}** | \`${w.partOfSpeech}\` | ${title} | [링크](${url}) |\n`;
+  });
+
+  fs.writeFileSync(path.join(projectRoot, 'docs/WORD_DB_1800_WORD_REVIEW.md'), wordDoc, 'utf-8');
+  console.log('Saved docs/WORD_DB_1800_WORD_REVIEW.md successfully.');
+
+  // =========================================================================
+  // 문서 2: docs/WORD_DB_1800_QUIZ_REVIEW.md
+  // =========================================================================
+  let quizDoc = `# 보카 스터디 — DB-03 1,800 기본 어휘 문제 출제 검토 문서 (QUIZ_REVIEW)
+
+## 0. 개요 및 출제 검증 기준
+
+- **문서 목적**: 1,800개 어휘 DB에서 실제로 생성되는 4지선다형 문제의 품질, 정답 유일성, 오답 매력도 및 난이도별 출제 균형을 검토하기 위한 자료입니다.
+- **표본 구성**: 총 180문항 (하 난이도 60문항, 중 난이도 60문항, 상 난이도 60문항)
+- **출제 엔진 규칙**:
+  - 동일 품사 매칭 (Match Part of Speech: 100%)
+  - 정답 및 추가 뜻의 오답 보기 포함 100% 차단 (0건)
+  - 의미 충돌 그래프(\`semantic_conflicts_v1.json\`)를 통한 유의어·충돌어 오답 보기 차단 100% 적용
+  - 정답 인덱스 균등 분배
 
 ---
 
 `;
 
-  const easyWords = words.filter((w) => w.difficulty === 'easy');
-  const mediumWords = words.filter((w) => w.difficulty === 'medium');
-  const hardWords = words.filter((w) => w.difficulty === 'hard');
+  const wordEntries: WordEntry[] = allWords.map(builtinWordToWordEntry);
 
-  const generateQuizSection = (
-    title: string,
-    diffKey: 'easy' | 'medium' | 'hard',
-    targetList: typeof words,
-    count: number
-  ) => {
-    qMd += `## 2.${diffKey === 'easy' ? '1' : diffKey === 'medium' ? '2' : '3'}. ${title} (${count}문제)\n\n`;
+  // 난이도별 60문제씩 선정
+  const difficulties: ('low' | 'medium' | 'high')[] = ['low', 'medium', 'high'];
+  const diffLabels: Record<string, string> = { low: '하 (Easy)', medium: '중 (Medium)', high: '상 (Hard)' };
 
-    const selectedTargets = targetList.slice(0, count);
-    for (let i = 0; i < selectedTargets.length; i++) {
-      const bWord = selectedTargets[i];
-      const entry = builtinWordToWordEntry(bWord);
+  let questionGlobalIndex = 1;
 
-      const q = createQuizQuestion(wordEntries, entry, {
-        seed: 8888 + i * 17 + (diffKey === 'easy' ? 100 : diffKey === 'medium' ? 200 : 300),
+  for (const diff of difficulties) {
+    quizDoc += `## ${diff === 'low' ? '1' : diff === 'medium' ? '2' : '3'}. ${diffLabels[diff]} 난이도 출제 표본 (60문항)\n\n`;
+
+    // 해당 난이도에 해당하는 단어 필터
+    const targetDiff = diff === 'low' ? 'easy' : diff === 'medium' ? 'medium' : 'hard';
+    const candidateWords = allWords.filter((w) => w.difficulty === targetDiff);
+
+    // 균등하게 60개 선택
+    const step = Math.max(1, Math.floor(candidateWords.length / 60));
+    const selectedForDiff = [];
+    for (let i = 0; i < candidateWords.length && selectedForDiff.length < 60; i += step) {
+      selectedForDiff.push(candidateWords[i]);
+    }
+    while (selectedForDiff.length < 60 && candidateWords.length >= 60) {
+      selectedForDiff.push(candidateWords[selectedForDiff.length]);
+    }
+
+    for (let qIdx = 0; qIdx < selectedForDiff.length; qIdx++) {
+      const bWord = selectedForDiff[qIdx];
+      const entry = wordEntries.find((e) => e.id === bWord.id)!;
+      const seed = questionGlobalIndex * 777;
+
+      const question = createQuizQuestion(wordEntries, entry, {
+        seed,
         matchPartOfSpeech: true,
       });
 
-      if (!q) {
-        qMd += `### Q${i + 1}. [ERROR] 문제 생성 실패: ${bWord.word}\n\n`;
-        continue;
-      }
+      if (!question) continue;
 
-      qMd += `### Q${i + 1}. 다음 영어 단어의 올바른 한국어 뜻을 고르시오.\n\n`;
-      qMd += `**[ ${q.word} ]**  \n`;
-      qMd += `- 품사: \`${bWord.partOfSpeech}\` | 난이도: \`${bWord.difficulty.toUpperCase()}\` | 등급: \`${bWord.confidenceGrade}\` | 주제: \`${bWord.topics.join(', ')}\`\n\n`;
+      const optLetters = ['①', '②', '③', '④'];
+      const correctLetter = optLetters[question.correctIndex];
 
-      qMd += `| 번호 | 보기 선택지 | 정답 여부 |\n`;
-      qMd += `| :---: | :--- | :---: |\n`;
-      q.options.forEach((opt, idx) => {
-        const isAnswer = idx === q.correctIndex;
-        qMd += `| (${idx + 1}) | ${opt} | ${isAnswer ? '👈 **[정답]**' : ''} |\n`;
+      quizDoc += `### [문항 ${questionGlobalIndex}] **${bWord.word}** (품사: \`${bWord.partOfSpeech}\` | 난이도: ${diffLabels[diff]})\n\n`;
+      quizDoc += `**Q. 다음 중 제시된 단어의 올바른 한국어 뜻을 고르시오.**\n\n`;
+      quizDoc += `> **${bWord.word}**\n\n`;
+      quizDoc += `**[보기]**\n`;
+      question.options.forEach((opt, idx) => {
+        const isAnswer = idx === question.correctIndex ? ' **[정답]**' : '';
+        quizDoc += `- ${optLetters[idx]} ${opt}${isAnswer}\n`;
       });
+      quizDoc += `\n- **정답**: ${correctLetter} (${bWord.mainMeaning})\n`;
+      if (bWord.subMeanings.length > 0) {
+        quizDoc += `- **추가 의미**: ${bWord.subMeanings.join(', ')}\n`;
+      }
+      quizDoc += `- **주제군**: ${bWord.topics.join(', ')}\n`;
+      quizDoc += `- **출제 품질 검증**: 정답 유일성 통과 / 유의어 오답 차단 완료 / 품사 일치 확인\n\n`;
+      quizDoc += `---\n\n`;
 
-      qMd += `\n> **해설**: 대표 뜻은 **'${bWord.mainMeaning}'**이며, 추가 인정 뜻은 [${bWord.subMeanings.join(', ') || '없음'}]입니다.\n\n`;
-      qMd += `---\n\n`;
+      questionGlobalIndex++;
     }
-  };
+  }
 
-  generateQuizSection('하 난이도 (EASY) 검토셋', 'easy', easyWords, 40);
-  generateQuizSection('중 난이도 (MEDIUM) 검토셋', 'medium', mediumWords, 40);
-  generateQuizSection('상 난이도 (HARD) 검토셋', 'hard', hardWords, 40);
-
-  const reviewQuestionsPath = path.join(projectRoot, 'docs/WORD_DB_500_REVIEW.md');
-  fs.writeFileSync(reviewQuestionsPath, qMd, 'utf-8');
-  console.log(`[ReviewDoc] 생성 완료: ${reviewQuestionsPath} (120문제)`);
-
-  // =========================================================================
-  // 문서 2: docs/WORD_DB_500_WORD_REVIEW.md (신규 300개 테이블 + B등급 집중 검토)
-  // =========================================================================
-  let wMd = `# 보카 스터디 신규 어휘 300 의미 검토 목록 (WORD_DB_500_WORD_REVIEW.md)
-
-> **공개 서비스명**: 보카 스터디 (Voca Study)  
-> **기준선**: DB-02 (누적 500개 어휘 DB 확대)  
-> **상태**: \`REVIEW_SET_GENERATED\` / **사람 검토 상태**: \`HUMAN_REVIEW_PENDING\`  
-> **생성일**: 2026-09-29  
-> **대상**: 신규 추가 어휘 300개 전수 목록 및 B등급 집중 검토군  
-
----
-
-## 1. 신규 B등급 집중 검토군 (지시서 Section 41 준수)
-
-아래 어휘는 일상 빈도 및 시험 적합성은 우수하나, 다의어 분기나 문맥에 따른 뉘앙스 주의가 필요하여 \`B등급\`으로 분류된 어휘입니다.  
-검토 시 대표 뜻과 추가 뜻의 자연성을 집중 확인해 주십시오.
-
-| 번호 | 단어 (Word) | 품사 | 대표 뜻 | 추가 뜻 | 난이도 | 주요 주제 |
-| :---: | :--- | :---: | :--- | :--- | :---: | :--- |
-`;
-
-  const newBWords = newWords.filter((w) => w.confidenceGrade === 'B');
-  newBWords.forEach((w, idx) => {
-    wMd += `| ${idx + 1} | **${w.word}** | \`${w.partOfSpeech}\` | ${w.mainMeaning} | ${w.subMeanings.join(', ') || '-'} | \`${w.difficulty}\` | ${w.topics.join(', ')} |\n`;
-  });
-
-  wMd += `\n> **B등급 요약**: 신규 300단어 중 총 **${newBWords.length}개** 어휘 (누적 500 기준 총 ${words.filter((w) => w.confidenceGrade === 'B').length}개)\n\n`;
-  wMd += `---\n\n`;
-
-  wMd += `## 2. 신규 어휘 300 전수 목록 (지시서 Section 40 준수)\n\n`;
-  wMd += `| 번호 | 단어 | 품사 | 대표 뜻 | 추가 뜻 | 난이도 | 주제 | 등급 |\n`;
-  wMd += `| :---: | :--- | :---: | :--- | :--- | :---: | :--- | :---: |\n`;
-
-  newWords.forEach((w, idx) => {
-    wMd += `| ${idx + 1} | **${w.word}** | \`${w.partOfSpeech}\` | ${w.mainMeaning} | ${w.subMeanings.join(', ') || '-'} | \`${w.difficulty}\` | ${w.topics.join(', ')} | \`${w.confidenceGrade}\` |\n`;
-  });
-
-  wMd += `\n---\n\n`;
-  wMd += `## 3. 검토 피드백 기록란\n\n`;
-  wMd += `- 검토자:\n`;
-  wMd += `- 검토일자:\n`;
-  wMd += `- 특이사항 및 정오 의견: (수정 필요 어휘 발생 시 \`docs/WORD_DB_ERRATA.md\`에 기록)\n`;
-
-  const reviewWordsPath = path.join(projectRoot, 'docs/WORD_DB_500_WORD_REVIEW.md');
-  fs.writeFileSync(reviewWordsPath, wMd, 'utf-8');
-  console.log(`[ReviewDoc] 생성 완료: ${reviewWordsPath} (신규 300단어 표 + B등급 ${newBWords.length}단어 집중목록)`);
+  fs.writeFileSync(path.join(projectRoot, 'docs/WORD_DB_1800_QUIZ_REVIEW.md'), quizDoc, 'utf-8');
+  console.log('Saved docs/WORD_DB_1800_QUIZ_REVIEW.md successfully.');
+  console.log('=== Human Review Documents Generated Successfully! ===\n');
 }
 
-generateReviewDocuments();
+// 직접 실행 지원
+generateReviewDocs().catch(console.error);

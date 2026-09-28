@@ -1,14 +1,16 @@
-// 동의어 및 의미 중복 판정 사전 모듈 (지시서 P0-C Section 23~25 및 DB-PILOT Section 20 준수)
-import synonymData from '../data/synonym_blocks_v1.json';
+// 의미 충돌 차단 관계 사전 모듈 (지시서 DB-03 Section 41~45 준수)
+import semanticData from '../data/semantic_conflicts_v1.json';
 
+export type MeaningRelation = 'strict_synonym' | 'quiz_conflict' | 'confusable';
 export type DistractorSafety = 'SAFE' | 'REVIEW' | 'BLOCK';
 
-/**
- * 의미 중복(동의어/유의어) BLOCK 사전
- * src/data/synonym_blocks_v1.json 데이터와 동기화
- */
-export const SYNONYM_BLOCK_PAIRS: Record<string, string[]> = synonymData.synonym_blocks;
+interface SemanticEntry {
+  strict_synonym: string[];
+  quiz_conflict: string[];
+  confusable?: string[];
+}
 
+const SEMANTIC_ENTRIES: Record<string, SemanticEntry> = semanticData.entries as Record<string, SemanticEntry>;
 
 /**
  * 한국어 뜻 문자열을 정규화 (공백, 쉼표, 조사 등 정제)
@@ -20,37 +22,88 @@ export function normalizeMeaning(meaning: string): string {
     .trim();
 }
 
-const synonymsCache = new Map<string, Set<string>>();
+const strictCache = new Map<string, Set<string>>();
+const conflictCache = new Map<string, Set<string>>();
+const allBlockedCache = new Map<string, Set<string>>();
 
 /**
- * 모든 동의어 집합을 양방향으로 추출 (성능을 위해 정규화 키 기준 메모이제이션)
+ * 사전적 완전 동의어 집합을 양방향 추출
  */
-export function getSynonyms(meaning: string): Set<string> {
+export function getStrictSynonyms(meaning: string): Set<string> {
   const norm = normalizeMeaning(meaning);
-  if (synonymsCache.has(norm)) {
-    return synonymsCache.get(norm)!;
+  if (strictCache.has(norm)) {
+    return strictCache.get(norm)!;
   }
   const result = new Set<string>();
 
-  for (const [key, synonyms] of Object.entries(SYNONYM_BLOCK_PAIRS)) {
+  for (const [key, entry] of Object.entries(SEMANTIC_ENTRIES)) {
     const normKey = normalizeMeaning(key);
     if (norm === normKey || norm.includes(normKey) || normKey.includes(norm)) {
       result.add(normKey);
-      synonyms.forEach((s) => result.add(normalizeMeaning(s)));
+      entry.strict_synonym.forEach((s) => result.add(normalizeMeaning(s)));
     }
   }
 
-  synonymsCache.set(norm, result);
+  strictCache.set(norm, result);
   return result;
 }
 
 /**
+ * 시험 퀴즈 의미 충돌 관계 집합을 양방향 추출
+ */
+export function getQuizConflicts(meaning: string): Set<string> {
+  const norm = normalizeMeaning(meaning);
+  if (conflictCache.has(norm)) {
+    return conflictCache.get(norm)!;
+  }
+  const result = new Set<string>();
+
+  for (const [key, entry] of Object.entries(SEMANTIC_ENTRIES)) {
+    const normKey = normalizeMeaning(key);
+    if (norm === normKey || norm.includes(normKey) || normKey.includes(norm)) {
+      result.add(normKey);
+      entry.quiz_conflict.forEach((s) => result.add(normalizeMeaning(s)));
+    }
+  }
+
+  conflictCache.set(norm, result);
+  return result;
+}
+
+/**
+ * 모든 차단 의미 집합 (strict_synonym + quiz_conflict) 추출
+ */
+export function getAllBlockedMeanings(meaning: string): Set<string> {
+  const norm = normalizeMeaning(meaning);
+  if (allBlockedCache.has(norm)) {
+    return allBlockedCache.get(norm)!;
+  }
+
+  const result = new Set<string>();
+  const strict = getStrictSynonyms(meaning);
+  const conflict = getQuizConflicts(meaning);
+
+  for (const s of strict) result.add(s);
+  for (const c of conflict) result.add(c);
+
+  allBlockedCache.set(norm, result);
+  return result;
+}
+
+/**
+ * 하위 호환성을 위한 기존 동의어 추출 함수 (strict_synonym + quiz_conflict 전체 반환)
+ */
+export function getSynonyms(meaning: string): Set<string> {
+  return getAllBlockedMeanings(meaning);
+}
+
+/**
  * 정답 의미 집합(대표 뜻 + 추가 뜻)과 오답 후보 의미의 안전 점수 평가
- * 지시서 24항 & 25항 준수:
+ * 지시서 DB-03 Section 44, 54 준수:
  * - BLOCK:
  *   1. 정답 대표 뜻과 동일/포함
  *   2. 정답의 추가 뜻(다의어)과 동일/포함
- *   3. 사전 정의된 명확한 동의어/유의어 관계
+ *   3. 사전 정의된 strict_synonym 또는 quiz_conflict 관계
  * - SAFE: 명확히 다른 의미
  */
 export function evaluateDistractorSafety(
@@ -70,20 +123,20 @@ export function evaluateDistractorSafety(
     if (normCandidate.length >= 2 && normTarget.includes(normCandidate)) return 'BLOCK';
     if (normTarget.length >= 2 && normCandidate.includes(normTarget)) return 'BLOCK';
 
-    // 2. 동의어 사전 매칭 -> BLOCK
-    const targetSynonyms = getSynonyms(target);
-    if (targetSynonyms.has(normCandidate)) {
+    // 2. 의미 충돌 사전 매칭 (strict_synonym + quiz_conflict) -> BLOCK
+    const targetBlocked = getAllBlockedMeanings(target);
+    if (targetBlocked.has(normCandidate)) {
       return 'BLOCK';
     }
 
-    const candidateSynonyms = getSynonyms(candidateMeaning);
-    if (candidateSynonyms.has(normTarget)) {
+    const candidateBlocked = getAllBlockedMeanings(candidateMeaning);
+    if (candidateBlocked.has(normTarget)) {
       return 'BLOCK';
     }
 
-    // 상호 동의어 교집합 검사
-    for (const syn of candidateSynonyms) {
-      if (targetSynonyms.has(syn)) {
+    // 상호 차단 교집합 검사
+    for (const syn of candidateBlocked) {
+      if (targetBlocked.has(syn)) {
         return 'BLOCK';
       }
     }

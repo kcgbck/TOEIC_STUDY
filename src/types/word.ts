@@ -64,11 +64,20 @@ export interface WordEvidence {
   verifiedAt: string;
 }
 
+export type OfficialEvidenceStatus = 'verified' | 'none' | 'unknown';
+
+export interface OfficialEvidenceItem {
+  sourceTitle: string;
+  sourceUrl: string;
+  accessedAt: string;
+  locator?: string;
+}
+
 export interface WordRelevanceScores {
   generalFrequency: 'high' | 'medium' | 'low';
   businessRelevance: 'high' | 'medium' | 'low';
   examDomainRelevance: 'high' | 'medium' | 'low';
-  officialPublicEvidence: boolean;
+  officialPublicEvidence?: boolean;
 }
 
 export interface BuiltinWord {
@@ -76,7 +85,7 @@ export interface BuiltinWord {
   word: string; // 표제어
   lemma: string; // 정규화 표제어
 
-  partOfSpeech: 'noun' | 'verb' | 'adjective' | 'adverb' | 'preposition' | 'conjunction';
+  partOfSpeech: 'noun' | 'verb' | 'adjective' | 'adverb' | 'preposition' | 'conjunction' | 'phrase' | 'other';
 
   mainMeaning: string;
   subMeanings: string[];
@@ -97,6 +106,9 @@ export interface BuiltinWord {
   evidence: WordEvidence[];
 
   relevance: WordRelevanceScores;
+
+  officialEvidenceStatus?: OfficialEvidenceStatus;
+  officialEvidence?: OfficialEvidenceItem[];
 
   databaseVersion: number;
 }

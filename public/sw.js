@@ -1,5 +1,5 @@
-// 보카 스터디 PWA Service Worker (v3.0.0 - DB-02 500 Words)
-const CACHE_NAME = 'voca-study-cache-v3';
+// 보카 스터디 PWA Service Worker (v4.0.0 - DB-03 1800 Words)
+const CACHE_NAME = 'voca-study-cache-v4';
 
 // 오프라인 실행을 위한 필수 앱 셸 에셋
 const PRECACHE_ASSETS = [

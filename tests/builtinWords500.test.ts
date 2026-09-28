@@ -7,7 +7,7 @@ import { builtinWordToWordEntry } from '../src/types/word';
 import { createQuizQuestion, validateQuestionUniqueness } from '../src/quiz/quizEngine';
 
 describe('DB-02 누적 500개 기본 어휘 데이터베이스 검증', () => {
-  const jsonPath = path.resolve(__dirname, '../public/data/builtin_words_v1.json');
+  const jsonPath = path.resolve(__dirname, '../data/worddb/baseline_500.json');
   expect(fs.existsSync(jsonPath)).toBe(true);
 
   const rawJson = fs.readFileSync(jsonPath, 'utf-8');

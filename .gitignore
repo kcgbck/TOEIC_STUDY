@@ -36,3 +36,6 @@ dist-ssr
 docs/샘플.*
 docs/샘플.pdf
 docs/샘플.png
+
+# Scratch scripts
+scratch/

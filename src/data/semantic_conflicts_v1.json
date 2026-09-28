@@ -1,0 +1,3129 @@
+{
+  "version": "3.0.0",
+  "description": "보카 스터디 의미 충돌 차단 관계 사전 (strict_synonym, quiz_conflict, confusable)",
+  "total_nodes": 398,
+  "total_strict_synonym_relations": 516,
+  "total_quiz_conflict_relations": 164,
+  "entries": {
+    "가늠하다": {
+      "strict_synonym": [
+        "산정하다",
+        "평가하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "가동하다": {
+      "strict_synonym": [
+        "운영하다",
+        "작동하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "가치있는": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "귀중한"
+      ],
+      "confusable": []
+    },
+    "간청하다": {
+      "strict_synonym": [
+        "요청하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "간편한": {
+      "strict_synonym": [
+        "수월한",
+        "편리한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "감독하다": {
+      "strict_synonym": [
+        "통솔하다"
+      ],
+      "quiz_conflict": [
+        "관리하다"
+      ],
+      "confusable": []
+    },
+    "감사하다": {
+      "strict_synonym": [
+        "고마워하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "감소시키다": {
+      "strict_synonym": [
+        "낮추다",
+        "줄이다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "감정": {
+      "strict_synonym": [
+        "사정"
+      ],
+      "quiz_conflict": [
+        "평가"
+      ],
+      "confusable": []
+    },
+    "값비싼": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "귀중한"
+      ],
+      "confusable": []
+    },
+    "강제적인": {
+      "strict_synonym": [
+        "의무적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "강조하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "부각하다",
+        "역설하다"
+      ],
+      "confusable": []
+    },
+    "개선하다": {
+      "strict_synonym": [
+        "증진하다"
+      ],
+      "quiz_conflict": [
+        "향상시키다"
+      ],
+      "confusable": []
+    },
+    "객관적인": {
+      "strict_synonym": [
+        "공정한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "건의하다": {
+      "strict_synonym": [
+        "제안하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "검사": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "점검"
+      ],
+      "confusable": []
+    },
+    "검토하다": {
+      "strict_synonym": [
+        "살펴보다"
+      ],
+      "quiz_conflict": [
+        "조사하다"
+      ],
+      "confusable": []
+    },
+    "격려하다": {
+      "strict_synonym": [
+        "권장하다"
+      ],
+      "quiz_conflict": [
+        "북돋우다",
+        "장려하다"
+      ],
+      "confusable": []
+    },
+    "견고한": {
+      "strict_synonym": [
+        "튼튼한"
+      ],
+      "quiz_conflict": [
+        "내구성 있는"
+      ],
+      "confusable": []
+    },
+    "결과": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "귀결",
+        "영향"
+      ],
+      "confusable": []
+    },
+    "결부하다": {
+      "strict_synonym": [
+        "관련시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "결심하다": {
+      "strict_synonym": [
+        "결정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "결정적인": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "중대한"
+      ],
+      "confusable": []
+    },
+    "결정하다": {
+      "strict_synonym": [
+        "결심하다",
+        "확정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "결핍": {
+      "strict_synonym": [
+        "모자람",
+        "부족"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "결합": {
+      "strict_synonym": [
+        "합병"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "결합하다": {
+      "strict_synonym": [
+        "통합하다",
+        "합병하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "경비": {
+      "strict_synonym": [
+        "비용",
+        "지출"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "경제적인": {
+      "strict_synonym": [
+        "알뜰한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "계산서": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "송장",
+        "청구서"
+      ],
+      "confusable": []
+    },
+    "계약": {
+      "strict_synonym": [
+        "협정"
+      ],
+      "quiz_conflict": [
+        "합의"
+      ],
+      "confusable": []
+    },
+    "고마워하다": {
+      "strict_synonym": [
+        "감사하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "고발": {
+      "strict_synonym": [
+        "불만"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "고용": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "채용",
+        "취업"
+      ],
+      "confusable": []
+    },
+    "고치다": {
+      "strict_synonym": [
+        "보수하다",
+        "수리하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공개하다": {
+      "strict_synonym": [
+        "드러내다",
+        "밝히다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공고": {
+      "strict_synonym": [
+        "공표",
+        "발표"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공고하다": {
+      "strict_synonym": [
+        "발표하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공급하다": {
+      "strict_synonym": [
+        "제공하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공식적으로": {
+      "strict_synonym": [
+        "정식으로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공정한": {
+      "strict_synonym": [
+        "객관적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공지하다": {
+      "strict_synonym": [
+        "알리다",
+        "통보하다",
+        "통지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공표": {
+      "strict_synonym": [
+        "공고",
+        "발표"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공표하다": {
+      "strict_synonym": [
+        "발표하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "공헌하다": {
+      "strict_synonym": [
+        "기여하다",
+        "이바지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "관련시키다": {
+      "strict_synonym": [
+        "결부하다",
+        "연결하다",
+        "연관시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "관리하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "감독하다",
+        "운영하다"
+      ],
+      "confusable": []
+    },
+    "광범위한": {
+      "strict_synonym": [
+        "종합적인",
+        "폭넓은"
+      ],
+      "quiz_conflict": [
+        "포괄적인"
+      ],
+      "confusable": []
+    },
+    "교섭": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "협상"
+      ],
+      "confusable": []
+    },
+    "교체하다": {
+      "strict_synonym": [
+        "대체하다",
+        "바꾸다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "구매하다": {
+      "strict_synonym": [
+        "구입하다",
+        "사다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "구별하다": {
+      "strict_synonym": [
+        "식별하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "구성 요소": {
+      "strict_synonym": [
+        "부품"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "구입하다": {
+      "strict_synonym": [
+        "구매하다",
+        "사다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "구체적인": {
+      "strict_synonym": [
+        "자세한"
+      ],
+      "quiz_conflict": [
+        "상세한"
+      ],
+      "confusable": []
+    },
+    "구하다": {
+      "strict_synonym": [
+        "요청하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "권고하다": {
+      "strict_synonym": [
+        "권하다",
+        "추천하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "권장하다": {
+      "strict_synonym": [
+        "격려하다"
+      ],
+      "quiz_conflict": [
+        "장려하다"
+      ],
+      "confusable": []
+    },
+    "권하다": {
+      "strict_synonym": [
+        "권고하다",
+        "추천하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "귀결": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "결과"
+      ],
+      "confusable": []
+    },
+    "귀중한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "가치있는",
+        "값비싼"
+      ],
+      "confusable": []
+    },
+    "규정": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "조건"
+      ],
+      "confusable": []
+    },
+    "근면한": {
+      "strict_synonym": [
+        "부지런한",
+        "성실한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "급속히": {
+      "strict_synonym": [
+        "빠르게",
+        "신속하게"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "기대하다": {
+      "strict_synonym": [
+        "예상하다",
+        "예측하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "기여하다": {
+      "strict_synonym": [
+        "공헌하다",
+        "이바지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "긴급한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "다급한",
+        "시급한"
+      ],
+      "confusable": []
+    },
+    "끈질긴": {
+      "strict_synonym": [
+        "지속적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "끊임없이": {
+      "strict_synonym": [
+        "지속적으로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "끝나다": {
+      "strict_synonym": [
+        "만료되다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "끝내다": {
+      "strict_synonym": [
+        "종결시키다",
+        "종료하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "나누어주다": {
+      "strict_synonym": [
+        "배포하다",
+        "분배하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "낮추다": {
+      "strict_synonym": [
+        "감소시키다",
+        "줄이다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "내구성 있는": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "견고한",
+        "튼튼한"
+      ],
+      "confusable": []
+    },
+    "내다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "제출하다"
+      ],
+      "confusable": []
+    },
+    "내다보다": {
+      "strict_synonym": [
+        "예상하다",
+        "예측하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "넓히다": {
+      "strict_synonym": [
+        "확대하다",
+        "확장하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "넘기다": {
+      "strict_synonym": [
+        "위임하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "넘어서다": {
+      "strict_synonym": [
+        "상회하다",
+        "초과하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "높이다": {
+      "strict_synonym": [
+        "향상시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "눈에 띄는": {
+      "strict_synonym": [
+        "주목할 만한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "능률": {
+      "strict_synonym": [
+        "효율성"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "능률적으로": {
+      "strict_synonym": [
+        "효율적으로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "다급한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "긴급한"
+      ],
+      "confusable": []
+    },
+    "다루다": {
+      "strict_synonym": [
+        "해결하다"
+      ],
+      "quiz_conflict": [
+        "처리하다"
+      ],
+      "confusable": []
+    },
+    "다수의": {
+      "strict_synonym": [
+        "무수한",
+        "수많은"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "달성하다": {
+      "strict_synonym": [
+        "성취하다",
+        "완수하다",
+        "이루다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "당초에": {
+      "strict_synonym": [
+        "처음에"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "대부분": {
+      "strict_synonym": [
+        "주로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "대안": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "선택지",
+        "차선책"
+      ],
+      "confusable": []
+    },
+    "대체하다": {
+      "strict_synonym": [
+        "교체하다",
+        "바꾸다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "도움이 되는": {
+      "strict_synonym": [
+        "이로운"
+      ],
+      "quiz_conflict": [
+        "유익한"
+      ],
+      "confusable": []
+    },
+    "도입하다": {
+      "strict_synonym": [
+        "선보이다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "동의하다": {
+      "strict_synonym": [
+        "받아들이다",
+        "수락하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "동일한": {
+      "strict_synonym": [
+        "똑같은",
+        "일치하는"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "되찾다": {
+      "strict_synonym": [
+        "회복하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "드러내다": {
+      "strict_synonym": [
+        "공개하다",
+        "밝히다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "따르다": {
+      "strict_synonym": [
+        "지키다"
+      ],
+      "quiz_conflict": [
+        "준수하다"
+      ],
+      "confusable": []
+    },
+    "똑같은": {
+      "strict_synonym": [
+        "동일한",
+        "일치하는"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "뚜렷한": {
+      "strict_synonym": [
+        "명백한",
+        "분명한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "뛰어난": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "우수한",
+        "탁월한"
+      ],
+      "confusable": []
+    },
+    "마련하다": {
+      "strict_synonym": [
+        "준비하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "마무리하다": {
+      "strict_synonym": [
+        "매듭짓다",
+        "완결하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "만들다": {
+      "strict_synonym": [
+        "생산하다",
+        "제조하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "만들어내다": {
+      "strict_synonym": [
+        "발생시키다",
+        "창출하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "만료되다": {
+      "strict_synonym": [
+        "끝나다",
+        "종료되다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "만회하다": {
+      "strict_synonym": [
+        "회복하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "맡기다": {
+      "strict_synonym": [
+        "위임하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "매듭짓다": {
+      "strict_synonym": [
+        "마무리하다",
+        "완결하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "면밀히": {
+      "strict_synonym": [
+        "밀접하게",
+        "철저히"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "면직하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "해고하다"
+      ],
+      "confusable": []
+    },
+    "명백한": {
+      "strict_synonym": [
+        "뚜렷한",
+        "분명한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "모자람": {
+      "strict_synonym": [
+        "결핍",
+        "부족"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "목적": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "목표"
+      ],
+      "confusable": []
+    },
+    "목표": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "목적"
+      ],
+      "confusable": []
+    },
+    "무수한": {
+      "strict_synonym": [
+        "다수의"
+      ],
+      "quiz_conflict": [
+        "수많은"
+      ],
+      "confusable": []
+    },
+    "미루다": {
+      "strict_synonym": [
+        "연기하다",
+        "유예하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "믿을 만한": {
+      "strict_synonym": [
+        "믿음직한"
+      ],
+      "quiz_conflict": [
+        "신뢰할 수 있는"
+      ],
+      "confusable": []
+    },
+    "믿음직한": {
+      "strict_synonym": [
+        "믿을 만한"
+      ],
+      "quiz_conflict": [
+        "신뢰할 수 있는"
+      ],
+      "confusable": []
+    },
+    "밀접하게": {
+      "strict_synonym": [
+        "면밀히"
+      ],
+      "quiz_conflict": [
+        "철저히"
+      ],
+      "confusable": []
+    },
+    "바꾸다": {
+      "strict_synonym": [
+        "교체하다",
+        "대체하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "반드시 필요한": {
+      "strict_synonym": [
+        "필수적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "받아들이다": {
+      "strict_synonym": [
+        "동의하다",
+        "수락하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "발생시키다": {
+      "strict_synonym": [
+        "만들어내다",
+        "창출하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "발송하다": {
+      "strict_synonym": [
+        "배송하다",
+        "부치다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "발표": {
+      "strict_synonym": [
+        "공고",
+        "공표"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "발표하다": {
+      "strict_synonym": [
+        "공고하다",
+        "공표하다",
+        "알리다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "밝히다": {
+      "strict_synonym": [
+        "공개하다",
+        "드러내다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "배분하다": {
+      "strict_synonym": [
+        "책정하다",
+        "할당하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "배상하다": {
+      "strict_synonym": [
+        "변상하다"
+      ],
+      "quiz_conflict": [
+        "보상하다"
+      ],
+      "confusable": []
+    },
+    "배송하다": {
+      "strict_synonym": [
+        "발송하다",
+        "부치다",
+        "선적하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "배열하다": {
+      "strict_synonym": [
+        "준비하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "배우다": {
+      "strict_synonym": [
+        "습득하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "배포하다": {
+      "strict_synonym": [
+        "나누어주다",
+        "분배하다",
+        "유통하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "버리다": {
+      "strict_synonym": [
+        "처분하다",
+        "폐기하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "변상하다": {
+      "strict_synonym": [
+        "배상하다"
+      ],
+      "quiz_conflict": [
+        "보상하다"
+      ],
+      "confusable": []
+    },
+    "변함없는": {
+      "strict_synonym": [
+        "한결같은"
+      ],
+      "quiz_conflict": [
+        "일관된"
+      ],
+      "confusable": []
+    },
+    "보상하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "배상하다",
+        "변상하다"
+      ],
+      "confusable": []
+    },
+    "보수하다": {
+      "strict_synonym": [
+        "고치다",
+        "수리하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "보여주다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "시연하다"
+      ],
+      "confusable": []
+    },
+    "보존하다": {
+      "strict_synonym": [
+        "유지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "보증하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "지지하다"
+      ],
+      "confusable": []
+    },
+    "부각하다": {
+      "strict_synonym": [
+        "역설하다"
+      ],
+      "quiz_conflict": [
+        "강조하다"
+      ],
+      "confusable": []
+    },
+    "부분품": {
+      "strict_synonym": [
+        "부품"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "부족": {
+      "strict_synonym": [
+        "결핍",
+        "모자람"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "부지런한": {
+      "strict_synonym": [
+        "근면한",
+        "성실한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "부채": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "채무"
+      ],
+      "confusable": []
+    },
+    "부치다": {
+      "strict_synonym": [
+        "발송하다",
+        "배송하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "부품": {
+      "strict_synonym": [
+        "구성 요소",
+        "부분품"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "북돋우다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "격려하다"
+      ],
+      "confusable": []
+    },
+    "분명한": {
+      "strict_synonym": [
+        "뚜렷한",
+        "명백한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "분명히": {
+      "strict_synonym": [
+        "틀림없이",
+        "확실히"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "분배하다": {
+      "strict_synonym": [
+        "나누어주다",
+        "배포하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "불만": {
+      "strict_synonym": [
+        "고발",
+        "불평",
+        "항의"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "불변의": {
+      "strict_synonym": [
+        "영구적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "불평": {
+      "strict_synonym": [
+        "불만"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "비용": {
+      "strict_synonym": [
+        "경비",
+        "지출"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "빈번하게": {
+      "strict_synonym": [
+        "자주"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "빈번한": {
+      "strict_synonym": [
+        "잦은"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "빠르게": {
+      "strict_synonym": [
+        "급속히",
+        "신속하게"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "빠른": {
+      "strict_synonym": [
+        "신속한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "사다": {
+      "strict_synonym": [
+        "구매하다",
+        "구입하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "사용하다": {
+      "strict_synonym": [
+        "이용하다",
+        "활용하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "사인": {
+      "strict_synonym": [
+        "서명"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "사정": {
+      "strict_synonym": [
+        "감정"
+      ],
+      "quiz_conflict": [
+        "평가"
+      ],
+      "confusable": []
+    },
+    "사정하다": {
+      "strict_synonym": [
+        "평가하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "산정하다": {
+      "strict_synonym": [
+        "가늠하다",
+        "평가하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "살펴보다": {
+      "strict_synonym": [
+        "검토하다"
+      ],
+      "quiz_conflict": [
+        "조사하다"
+      ],
+      "confusable": []
+    },
+    "상기시키다": {
+      "strict_synonym": [
+        "일깨우다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "상설의": {
+      "strict_synonym": [
+        "영구적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "상세한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "구체적인",
+        "자세한"
+      ],
+      "confusable": []
+    },
+    "상태": {
+      "strict_synonym": [
+        "상황"
+      ],
+      "quiz_conflict": [
+        "조건"
+      ],
+      "confusable": []
+    },
+    "상황": {
+      "strict_synonym": [
+        "상태"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "상회하다": {
+      "strict_synonym": [
+        "넘어서다",
+        "초과하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "생산하다": {
+      "strict_synonym": [
+        "만들다",
+        "제조하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "서명": {
+      "strict_synonym": [
+        "사인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "서서히": {
+      "strict_synonym": [
+        "점차적으로",
+        "차츰"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "선발": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "채용"
+      ],
+      "confusable": []
+    },
+    "선보이다": {
+      "strict_synonym": [
+        "도입하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "선적하다": {
+      "strict_synonym": [
+        "배송하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "선택지": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "대안"
+      ],
+      "confusable": []
+    },
+    "성실한": {
+      "strict_synonym": [
+        "근면한",
+        "부지런한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "성취하다": {
+      "strict_synonym": [
+        "달성하다"
+      ],
+      "quiz_conflict": [
+        "완수하다",
+        "이루다"
+      ],
+      "confusable": []
+    },
+    "세심한": {
+      "strict_synonym": [
+        "주의 깊은"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "세입": {
+      "strict_synonym": [
+        "수익"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "소득": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "수익",
+        "임금"
+      ],
+      "confusable": []
+    },
+    "송장": {
+      "strict_synonym": [
+        "청구서"
+      ],
+      "quiz_conflict": [
+        "계산서"
+      ],
+      "confusable": []
+    },
+    "쇄신": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "혁신"
+      ],
+      "confusable": []
+    },
+    "수락하다": {
+      "strict_synonym": [
+        "동의하다",
+        "받아들이다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "수리하다": {
+      "strict_synonym": [
+        "고치다",
+        "보수하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "수많은": {
+      "strict_synonym": [
+        "다수의"
+      ],
+      "quiz_conflict": [
+        "무수한"
+      ],
+      "confusable": []
+    },
+    "수월한": {
+      "strict_synonym": [
+        "간편한",
+        "편리한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "수익": {
+      "strict_synonym": [
+        "세입",
+        "이익"
+      ],
+      "quiz_conflict": [
+        "소득"
+      ],
+      "confusable": []
+    },
+    "습득하다": {
+      "strict_synonym": [
+        "배우다",
+        "얻다",
+        "취득하다",
+        "획득하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "승인": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "인가",
+        "허가"
+      ],
+      "confusable": []
+    },
+    "승인하다": {
+      "strict_synonym": [
+        "인가하다",
+        "허가하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "시급한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "긴급한"
+      ],
+      "confusable": []
+    },
+    "시연하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "보여주다",
+        "입증하다"
+      ],
+      "confusable": []
+    },
+    "식별하다": {
+      "strict_synonym": [
+        "구별하다",
+        "알아보다",
+        "확인하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "신뢰할 수 있는": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "믿을 만한",
+        "믿음직한"
+      ],
+      "confusable": []
+    },
+    "신속하게": {
+      "strict_synonym": [
+        "급속히",
+        "빠르게"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "신속한": {
+      "strict_synonym": [
+        "빠른"
+      ],
+      "quiz_conflict": [
+        "즉각적인"
+      ],
+      "confusable": []
+    },
+    "신청자": {
+      "strict_synonym": [
+        "지원자"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "실시하다": {
+      "strict_synonym": [
+        "실행하다",
+        "이행하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "실행하다": {
+      "strict_synonym": [
+        "실시하다",
+        "이행하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "알뜰한": {
+      "strict_synonym": [
+        "경제적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "알리다": {
+      "strict_synonym": [
+        "공지하다",
+        "발표하다",
+        "통보하다",
+        "통지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "알맞게": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "적절하게"
+      ],
+      "confusable": []
+    },
+    "알맞은": {
+      "strict_synonym": [
+        "적절한",
+        "적합한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "알아보다": {
+      "strict_synonym": [
+        "식별하다",
+        "조사하다",
+        "확인하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "얻다": {
+      "strict_synonym": [
+        "습득하다",
+        "취득하다",
+        "획득하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "엄격히": {
+      "strict_synonym": [
+        "엄하게"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "엄하게": {
+      "strict_synonym": [
+        "엄격히"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "역설하다": {
+      "strict_synonym": [
+        "부각하다"
+      ],
+      "quiz_conflict": [
+        "강조하다"
+      ],
+      "confusable": []
+    },
+    "연결하다": {
+      "strict_synonym": [
+        "관련시키다",
+        "연관시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "연관시키다": {
+      "strict_synonym": [
+        "관련시키다",
+        "연결하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "연구하다": {
+      "strict_synonym": [
+        "조사하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "연기하다": {
+      "strict_synonym": [
+        "미루다",
+        "유예하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "열렬한": {
+      "strict_synonym": [
+        "열심인",
+        "열정적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "열심인": {
+      "strict_synonym": [
+        "열렬한",
+        "열정적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "열정적인": {
+      "strict_synonym": [
+        "열렬한",
+        "열심인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "영구적인": {
+      "strict_synonym": [
+        "불변의",
+        "상설의"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "영향": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "결과"
+      ],
+      "confusable": []
+    },
+    "예산": {
+      "strict_synonym": [
+        "예정액",
+        "운용비"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "예상하다": {
+      "strict_synonym": [
+        "기대하다",
+        "내다보다",
+        "예측하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "예약하다": {
+      "strict_synonym": [
+        "잡아두다",
+        "확정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "예전에": {
+      "strict_synonym": [
+        "이전에"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "예정액": {
+      "strict_synonym": [
+        "예산"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "예측하다": {
+      "strict_synonym": [
+        "기대하다",
+        "내다보다",
+        "예상하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "완결하다": {
+      "strict_synonym": [
+        "마무리하다",
+        "매듭짓다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "완수하다": {
+      "strict_synonym": [
+        "달성하다",
+        "이루다"
+      ],
+      "quiz_conflict": [
+        "성취하다"
+      ],
+      "confusable": []
+    },
+    "요건": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "조건"
+      ],
+      "confusable": []
+    },
+    "요구하다": {
+      "strict_synonym": [
+        "필요로하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "요청하다": {
+      "strict_synonym": [
+        "간청하다",
+        "구하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "우수한": {
+      "strict_synonym": [
+        "탁월한"
+      ],
+      "quiz_conflict": [
+        "뛰어난"
+      ],
+      "confusable": []
+    },
+    "운영하다": {
+      "strict_synonym": [
+        "가동하다"
+      ],
+      "quiz_conflict": [
+        "관리하다"
+      ],
+      "confusable": []
+    },
+    "운용비": {
+      "strict_synonym": [
+        "예산"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "위임하다": {
+      "strict_synonym": [
+        "넘기다",
+        "맡기다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "유연한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "융통성 있는"
+      ],
+      "confusable": []
+    },
+    "유예하다": {
+      "strict_synonym": [
+        "미루다",
+        "연기하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "유익한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "도움이 되는",
+        "이로운"
+      ],
+      "confusable": []
+    },
+    "유지하다": {
+      "strict_synonym": [
+        "보존하다",
+        "지속하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "유쾌한": {
+      "strict_synonym": [
+        "즐거운"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "유통하다": {
+      "strict_synonym": [
+        "배포하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "융통성 있는": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "유연한"
+      ],
+      "confusable": []
+    },
+    "의무": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "책임"
+      ],
+      "confusable": []
+    },
+    "의무적인": {
+      "strict_synonym": [
+        "강제적인",
+        "필수적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "이로운": {
+      "strict_synonym": [
+        "도움이 되는"
+      ],
+      "quiz_conflict": [
+        "유익한"
+      ],
+      "confusable": []
+    },
+    "이루다": {
+      "strict_synonym": [
+        "달성하다",
+        "완수하다"
+      ],
+      "quiz_conflict": [
+        "성취하다"
+      ],
+      "confusable": []
+    },
+    "이바지하다": {
+      "strict_synonym": [
+        "공헌하다",
+        "기여하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "이용하다": {
+      "strict_synonym": [
+        "사용하다",
+        "활용하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "이익": {
+      "strict_synonym": [
+        "수익"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "이전에": {
+      "strict_synonym": [
+        "예전에"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "이행하다": {
+      "strict_synonym": [
+        "실시하다",
+        "실행하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "익숙한": {
+      "strict_synonym": [
+        "친숙한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "인가": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "승인",
+        "허가"
+      ],
+      "confusable": []
+    },
+    "인가하다": {
+      "strict_synonym": [
+        "승인하다",
+        "허가하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "일관된": {
+      "strict_synonym": [
+        "한결같은"
+      ],
+      "quiz_conflict": [
+        "변함없는"
+      ],
+      "confusable": []
+    },
+    "일깨우다": {
+      "strict_synonym": [
+        "상기시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "일시적인": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "임시의"
+      ],
+      "confusable": []
+    },
+    "일치하는": {
+      "strict_synonym": [
+        "동일한",
+        "똑같은"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "임금": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "소득"
+      ],
+      "confusable": []
+    },
+    "임명하다": {
+      "strict_synonym": [
+        "지명하다",
+        "지정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "임시의": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "일시적인"
+      ],
+      "confusable": []
+    },
+    "입증하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "시연하다",
+        "증명하다"
+      ],
+      "confusable": []
+    },
+    "입후보자": {
+      "strict_synonym": [
+        "후보자"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "자격이있는": {
+      "strict_synonym": [
+        "적격인",
+        "해당하는"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "자산": {
+      "strict_synonym": [
+        "재산"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "자세한": {
+      "strict_synonym": [
+        "구체적인"
+      ],
+      "quiz_conflict": [
+        "상세한"
+      ],
+      "confusable": []
+    },
+    "자주": {
+      "strict_synonym": [
+        "빈번하게"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "작동하다": {
+      "strict_synonym": [
+        "가동하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "잡아두다": {
+      "strict_synonym": [
+        "예약하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "장려하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "격려하다",
+        "권장하다"
+      ],
+      "confusable": []
+    },
+    "잦은": {
+      "strict_synonym": [
+        "빈번한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "재산": {
+      "strict_synonym": [
+        "자산"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "적격인": {
+      "strict_synonym": [
+        "자격이있는",
+        "해당하는"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "적절하게": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "알맞게"
+      ],
+      "confusable": []
+    },
+    "적절한": {
+      "strict_synonym": [
+        "알맞은",
+        "적합한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "적합한": {
+      "strict_synonym": [
+        "알맞은",
+        "적절한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "절충": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "협상"
+      ],
+      "confusable": []
+    },
+    "절충하다": {
+      "strict_synonym": [
+        "타협하다"
+      ],
+      "quiz_conflict": [
+        "협상하다"
+      ],
+      "confusable": []
+    },
+    "점검": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "검사"
+      ],
+      "confusable": []
+    },
+    "점검하다": {
+      "strict_synonym": [
+        "확인하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "점차적으로": {
+      "strict_synonym": [
+        "서서히",
+        "차츰"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "정밀한": {
+      "strict_synonym": [
+        "정확한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "정식으로": {
+      "strict_synonym": [
+        "공식적으로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "정확한": {
+      "strict_synonym": [
+        "정밀한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "제공하다": {
+      "strict_synonym": [
+        "공급하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "제시하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "제출하다"
+      ],
+      "confusable": []
+    },
+    "제안하다": {
+      "strict_synonym": [
+        "건의하다",
+        "제의하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "제의하다": {
+      "strict_synonym": [
+        "제안하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "제조하다": {
+      "strict_synonym": [
+        "만들다",
+        "생산하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "제출하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "내다",
+        "제시하다"
+      ],
+      "confusable": []
+    },
+    "제휴하다": {
+      "strict_synonym": [
+        "협력하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "조건": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "규정",
+        "상태",
+        "요건"
+      ],
+      "confusable": []
+    },
+    "조사하다": {
+      "strict_synonym": [
+        "알아보다",
+        "연구하다"
+      ],
+      "quiz_conflict": [
+        "검토하다",
+        "살펴보다"
+      ],
+      "confusable": []
+    },
+    "조율하다": {
+      "strict_synonym": [
+        "통합조정하다"
+      ],
+      "quiz_conflict": [
+        "조정하다"
+      ],
+      "confusable": []
+    },
+    "조절하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "조정하다"
+      ],
+      "confusable": []
+    },
+    "조정하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "조율하다",
+        "조절하다"
+      ],
+      "confusable": []
+    },
+    "종결시키다": {
+      "strict_synonym": [
+        "끝내다",
+        "종료하다",
+        "해지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "종료되다": {
+      "strict_synonym": [
+        "만료되다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "종료하다": {
+      "strict_synonym": [
+        "끝내다",
+        "종결시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "종합적인": {
+      "strict_synonym": [
+        "광범위한",
+        "포괄적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "주로": {
+      "strict_synonym": [
+        "대부분"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "주목할 만한": {
+      "strict_synonym": [
+        "눈에 띄는",
+        "현저한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "주의 깊은": {
+      "strict_synonym": [
+        "세심한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "준비하다": {
+      "strict_synonym": [
+        "마련하다",
+        "배열하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "준수하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "따르다",
+        "지키다"
+      ],
+      "confusable": []
+    },
+    "줄이다": {
+      "strict_synonym": [
+        "감소시키다",
+        "낮추다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "중대한": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "결정적인"
+      ],
+      "confusable": []
+    },
+    "즉각적인": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "신속한"
+      ],
+      "confusable": []
+    },
+    "즐거운": {
+      "strict_synonym": [
+        "유쾌한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "증명하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "입증하다"
+      ],
+      "confusable": []
+    },
+    "증진하다": {
+      "strict_synonym": [
+        "개선하다"
+      ],
+      "quiz_conflict": [
+        "향상시키다"
+      ],
+      "confusable": []
+    },
+    "지금은": {
+      "strict_synonym": [
+        "현재"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지명하다": {
+      "strict_synonym": [
+        "임명하다",
+        "지정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지속적으로": {
+      "strict_synonym": [
+        "끊임없이"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지속적인": {
+      "strict_synonym": [
+        "끈질긴"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지속하다": {
+      "strict_synonym": [
+        "유지하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지원자": {
+      "strict_synonym": [
+        "신청자",
+        "후보자"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지정하다": {
+      "strict_synonym": [
+        "임명하다",
+        "지명하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지지하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "보증하다",
+        "추천하다"
+      ],
+      "confusable": []
+    },
+    "지출": {
+      "strict_synonym": [
+        "경비",
+        "비용"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "지키다": {
+      "strict_synonym": [
+        "따르다"
+      ],
+      "quiz_conflict": [
+        "준수하다"
+      ],
+      "confusable": []
+    },
+    "차선책": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "대안"
+      ],
+      "confusable": []
+    },
+    "차츰": {
+      "strict_synonym": [
+        "서서히",
+        "점차적으로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "참가하다": {
+      "strict_synonym": [
+        "참석하다",
+        "참여하다",
+        "출석하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "참석": {
+      "strict_synonym": [
+        "출석"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "참석하다": {
+      "strict_synonym": [
+        "참가하다",
+        "출석하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "참여하다": {
+      "strict_synonym": [
+        "참가하다",
+        "출석하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "창출하다": {
+      "strict_synonym": [
+        "만들어내다",
+        "발생시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "채무": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "부채"
+      ],
+      "confusable": []
+    },
+    "채용": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "고용",
+        "선발"
+      ],
+      "confusable": []
+    },
+    "책임": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "의무"
+      ],
+      "confusable": []
+    },
+    "책정하다": {
+      "strict_synonym": [
+        "배분하다",
+        "할당하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "처리하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "다루다",
+        "해결하다"
+      ],
+      "confusable": []
+    },
+    "처분하다": {
+      "strict_synonym": [
+        "버리다",
+        "폐기하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "처음에": {
+      "strict_synonym": [
+        "당초에",
+        "초기에"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "철저히": {
+      "strict_synonym": [
+        "면밀히"
+      ],
+      "quiz_conflict": [
+        "밀접하게"
+      ],
+      "confusable": []
+    },
+    "청구서": {
+      "strict_synonym": [
+        "송장"
+      ],
+      "quiz_conflict": [
+        "계산서"
+      ],
+      "confusable": []
+    },
+    "초과하다": {
+      "strict_synonym": [
+        "넘어서다",
+        "상회하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "초기에": {
+      "strict_synonym": [
+        "처음에"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "추천하다": {
+      "strict_synonym": [
+        "권고하다",
+        "권하다"
+      ],
+      "quiz_conflict": [
+        "지지하다"
+      ],
+      "confusable": []
+    },
+    "출석": {
+      "strict_synonym": [
+        "참석"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "출석하다": {
+      "strict_synonym": [
+        "참가하다",
+        "참석하다",
+        "참여하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "취득하다": {
+      "strict_synonym": [
+        "습득하다",
+        "얻다",
+        "획득하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "취업": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "고용"
+      ],
+      "confusable": []
+    },
+    "친숙한": {
+      "strict_synonym": [
+        "익숙한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "타협하다": {
+      "strict_synonym": [
+        "절충하다"
+      ],
+      "quiz_conflict": [
+        "협상하다"
+      ],
+      "confusable": []
+    },
+    "탁월한": {
+      "strict_synonym": [
+        "우수한"
+      ],
+      "quiz_conflict": [
+        "뛰어난"
+      ],
+      "confusable": []
+    },
+    "통보하다": {
+      "strict_synonym": [
+        "공지하다",
+        "알리다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "통솔하다": {
+      "strict_synonym": [
+        "감독하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "통지하다": {
+      "strict_synonym": [
+        "공지하다",
+        "알리다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "통합조정하다": {
+      "strict_synonym": [
+        "조율하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "통합하다": {
+      "strict_synonym": [
+        "결합하다",
+        "합병하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "튼튼한": {
+      "strict_synonym": [
+        "견고한"
+      ],
+      "quiz_conflict": [
+        "내구성 있는"
+      ],
+      "confusable": []
+    },
+    "틀림없이": {
+      "strict_synonym": [
+        "분명히",
+        "확실히"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "편리한": {
+      "strict_synonym": [
+        "간편한",
+        "수월한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "평가": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "감정",
+        "사정"
+      ],
+      "confusable": []
+    },
+    "평가하다": {
+      "strict_synonym": [
+        "가늠하다",
+        "사정하다",
+        "산정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "폐기하다": {
+      "strict_synonym": [
+        "버리다",
+        "처분하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "포괄적인": {
+      "strict_synonym": [
+        "종합적인"
+      ],
+      "quiz_conflict": [
+        "광범위한"
+      ],
+      "confusable": []
+    },
+    "폭넓은": {
+      "strict_synonym": [
+        "광범위한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "필수적인": {
+      "strict_synonym": [
+        "반드시 필요한",
+        "의무적인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "필요로하다": {
+      "strict_synonym": [
+        "요구하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "한결같은": {
+      "strict_synonym": [
+        "변함없는",
+        "일관된"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "할당하다": {
+      "strict_synonym": [
+        "배분하다",
+        "책정하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "합병": {
+      "strict_synonym": [
+        "결합"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "합병하다": {
+      "strict_synonym": [
+        "결합하다",
+        "통합하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "합의": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "계약",
+        "협정"
+      ],
+      "confusable": []
+    },
+    "항의": {
+      "strict_synonym": [
+        "불만"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "해결하다": {
+      "strict_synonym": [
+        "다루다"
+      ],
+      "quiz_conflict": [
+        "처리하다"
+      ],
+      "confusable": []
+    },
+    "해고하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "면직하다"
+      ],
+      "confusable": []
+    },
+    "해당하는": {
+      "strict_synonym": [
+        "자격이있는",
+        "적격인"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "해지하다": {
+      "strict_synonym": [
+        "종결시키다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "향상시키다": {
+      "strict_synonym": [
+        "높이다"
+      ],
+      "quiz_conflict": [
+        "개선하다",
+        "증진하다"
+      ],
+      "confusable": []
+    },
+    "허가": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "승인",
+        "인가"
+      ],
+      "confusable": []
+    },
+    "허가하다": {
+      "strict_synonym": [
+        "승인하다",
+        "인가하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "혁신": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "쇄신"
+      ],
+      "confusable": []
+    },
+    "현재": {
+      "strict_synonym": [
+        "지금은"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "현저한": {
+      "strict_synonym": [
+        "주목할 만한"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "협동하다": {
+      "strict_synonym": [
+        "협력하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "협력하다": {
+      "strict_synonym": [
+        "제휴하다",
+        "협동하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "협상": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "교섭",
+        "절충"
+      ],
+      "confusable": []
+    },
+    "협상하다": {
+      "strict_synonym": [],
+      "quiz_conflict": [
+        "절충하다",
+        "타협하다"
+      ],
+      "confusable": []
+    },
+    "협정": {
+      "strict_synonym": [
+        "계약"
+      ],
+      "quiz_conflict": [
+        "합의"
+      ],
+      "confusable": []
+    },
+    "확대하다": {
+      "strict_synonym": [
+        "넓히다",
+        "확장하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "확실히": {
+      "strict_synonym": [
+        "분명히",
+        "틀림없이"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "확인하다": {
+      "strict_synonym": [
+        "식별하다",
+        "알아보다",
+        "점검하다",
+        "확증하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "확장하다": {
+      "strict_synonym": [
+        "넓히다",
+        "확대하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "확정하다": {
+      "strict_synonym": [
+        "결정하다",
+        "예약하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "확증하다": {
+      "strict_synonym": [
+        "확인하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "활용하다": {
+      "strict_synonym": [
+        "사용하다",
+        "이용하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "회복하다": {
+      "strict_synonym": [
+        "되찾다",
+        "만회하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "획득하다": {
+      "strict_synonym": [
+        "습득하다",
+        "얻다",
+        "취득하다"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "효율성": {
+      "strict_synonym": [
+        "능률"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "효율적으로": {
+      "strict_synonym": [
+        "능률적으로"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    },
+    "후보자": {
+      "strict_synonym": [
+        "입후보자",
+        "지원자"
+      ],
+      "quiz_conflict": [],
+      "confusable": []
+    }
+  }
+}
