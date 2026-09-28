@@ -1,6 +1,6 @@
 > 현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디
 
-# 보카 스터디 현재 상태 (DB-03 1,800 누적 통합 확장 기준선 고정)
+# 보카 스터디 현재 상태 (QA-01 1,800어 최종 품질검수 및 검토 패키지 완성)
 
 ## 아키텍처
 PWA (Progressive Web App, 설치형 웹앱)
@@ -28,48 +28,30 @@ React 18 + TypeScript 5 + Vite 6
 - 사진 OCR: 2면 펼침면 감지(detectSpreadLayout) 및 2단 분할 + 2배 확대 전처리 + 온디바이스 Tesseract.js WASM 어댑터 (docs/샘플.png 표본 기준 목표 표제어 검출 확인)
 - 개인정보 보호: 사진, PDF, 학습 기록 등 사용자 문서의 서버 전송 0건 (USER_DOCUMENT_UPLOADS = 0)
 
-## 현재 상태 판정 (DB-03 검증 완료)
+## 현재 상태 판정 (QA-01 검토 패키지 완성)
 - `NAME-01 = PASS` (공개 서비스명 '보카 스터디' / URL 'voca-study.heyruler0011.workers.dev' 전환 완료)
 - `PDF_IMPORT_BASELINE = PASS` (docs/샘플.pdf 100/100 무손실 유지)
 - `PHOTO_OCR_EXTRACTION = PASS` (기하학적 열 격리, 경계 침범 차단, 3단계 신뢰도, 8종 합성 fixture 통과)
 - `QUIZ_SEMANTIC_UNIQUENESS = PASS` (Hard Gate 통과, BLOCK 동의어 및 추가 뜻 오답 0건)
 - `BASELINE_500_FREEZE = PASS` (기존 500개 검증 어휘 100% 동결 보존, modified=0, removed=0)
-- `DB_03_1800_PASS = PASS` (누적 1,800개 검증 어휘 탑재, C등급 출시 0건, 15개 주제군 및 5대 품사 균형 배분, 54,000회 스트레스 테스트 결함 0건)
-- `HUMAN_REVIEW_STATUS = HUMAN_REVIEW_PENDING` (사람 검토용 180문제 세트 및 신규 1,300단어 검토표 생성 완료, 인간 검토자 확인 대기)
-- `CURRENT_STAGE = DB_03_1800_PASS`
+- `DB_03_1800_TECH_PASS = PASS` (누적 1,800개 검증 어휘 탑재, C등급 출시 0건, 54,000회 스트레스 테스트 결함 0건)
+- `HUMAN_REVIEW_STATUS = HUMAN_REVIEW_PENDING` (실제 사람 검토 전까지 승인 금지)
+- `1800_RELEASE_READY = NO` (인간 검토자의 최종 서명 전까지 출시 동결 유지)
+- `CURRENT_STAGE = QA_01_REVIEW_PACKAGE_READY`
 
-## 완료된 핵심 DB-03 작업
-1. **기존 500개 단어 동결 및 Diff 감사**:
-   - `data/worddb/baseline_500.json` 기준선 100% 보존 (removed=0, modified=0)
-   - `tests/wordDbDiff.test.ts` 통과
-2. **신규 1,300개 어휘 보강 (누적 1,800개)**:
-   - 명사 420개 (누적 581개)
-   - 동사 430개: 단일 동사 290개 + 구동사 140개 (누적 581개)
-   - 형용사 260개 (누적 384개)
-   - 부사 90개 (누적 154개)
-   - 비즈니스 표현 100개
-   - 신규 후보 풀 2,500개 구축 (채택 1,800개, C등급 700개 분리 보관, C등급 릴리스 포함 0건)
-3. **의미 충돌 차단 그래프 개편 (`semantic_conflicts_v1.json`)**:
-   - `strict_synonym` (완전 동의어) 및 `quiz_conflict` (상호 출제 충돌) 관계 분리
-   - 그래프 대칭성 100% 및 중복 엣지 0건 보장 (`tests/semanticConflictGraph.test.ts` 통과)
-4. **공식 근거 정직한 분리 (`officialEvidenceStatus`)**:
-   - ETS 공식 자료 추적 가능 어휘: `verified` 406개
-   - 일반 비즈니스 어휘: `unknown` 1,394개
-   - 허위 근거 생성 0건 강제 (`tests/evidenceTraceability.test.ts` 통과)
-5. **54,000회 스트레스 테스트 결함 0건 통과**:
-   - 1,800단어 × 3개 난이도 × 10개 Seed = 54,000회 시험 (정답 누락 0, 보기 중복 0, BLOCK 충돌 0, 추가 뜻 누출 0, 실패 0)
-   - 정답 인덱스 균등 분포 달성
-6. **인간 검토 문서 2종 생성**:
-   - `docs/WORD_DB_1800_QUIZ_REVIEW.md` (하 60, 중 60, 상 60 = 총 180문제)
-   - `docs/WORD_DB_1800_WORD_REVIEW.md` (신규 1,300단어 전수 테이블 + B등급 168단어 집중 검토군)
-
-## 검증 내역
-- `npm run typecheck`: 통과 (오류 0건)
-- `npm run test`: 14개 테스트 파일, 62개 테스트 전체 통과
-- `scripts/worddb/audit.ts`: 1,800단어 54,000회 스트레스 테스트 결함 0건 통과
-- `npm run build`: 프로덕션 정적 번들 정상 빌드 완료
-- `USER_DOCUMENT_UPLOADS`: 0건 (완전 브라우저 로컬 온디바이스 처리)
-
-## 다음 단계
-- 1,800개 기본 어휘 공식 릴리스 기준선 동결 유지
-- 2,000+ 확장은 사용자 명시 승인 시에만 별도 계획 수립하여 진행 (임의 확장 금지)
+## 완료된 핵심 QA-01 작업
+1. **통합 검토 큐 구축 및 중복 제거 (`docs/WORD_DB_1800_REVIEW_QUEUE.md`)**:
+   - B등급 168개, 구동사 140개, 표현 100개, 복합 다의어 448개, 의미충돌 관계 350개, A등급 고정 시드(`QA1800-202609`) 층화 표본 180개 통합
+   - 중복 제거 후 **실질 우선순위 검토 대상 고유 어휘 1,007개** 산출 (일반 A등급 보존 어휘 793개와 엄격 분리)
+2. **자동 의미 심층 감사 보고서 (`reports/worddb-1800-semantic-audit.md`)**:
+   - 품사-뜻 불일치 의심 81건, 한국어 띄어쓰기/맞춤법 의심 12건 목록화 및 인간 검토 가이드 마련
+   - 대표 뜻 중복군 120개 군 퀴즈 충돌 안전성 재확인 (54,000회 결함 0건)
+   - 공식 근거 406개 4대 필수 필드(URL, 제목, 일시, locator) 및 ETS 공식 도메인 무결성 100% 확인
+3. **순수 문제 생성 벤치마크 분리 측정**:
+   - 1문제 Cold 296ms, Warm 3.19ms / 100문제 Warm 2.57ms/문제 / 1,000문제 Warm 3.32ms/문제
+   - 감사 전체 시간과 엔진 순수 문제 생성 시간 엄격 분리 기록
+4. **인터랙티브 검토 뷰어 (`docs/WORD_DB_1800_REVIEW.html`) 및 비교 도구 (`scripts/worddb/compareReview.ts`)**:
+   - 브라우저 단일 HTML로 단어/품사/난이도/그룹/검토상태 필터링 및 JSON Export 지원
+   - 향후 인간 검토 결과(정상/수정필요/제외) 비교 CLI 도구 구축
+5. **로드맵 및 2,000+ 확장 동결**:
+   - 1,800개 DB 동결 유지, 사람 승인 전 2,000+ 확장 절대 보류 (사용자 명시 지시 필요)

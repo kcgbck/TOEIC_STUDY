@@ -3,69 +3,40 @@
 # PROJECT_STATUS.md
 
 ## Current Stage
-- `CURRENT_STAGE = DB_03_1800_PASS`
+- `CURRENT_STAGE = QA_01_REVIEW_PACKAGE_READY`
+- 자동 기술 검증: **PASS**
+- 사람 검토 상태: **HUMAN_REVIEW_PENDING** (실제 사람 승인 전까지 PASS 절대 금지)
+- 1,800 Release Ready: **NO** (인간 검토자의 최종 서명 전까지 출시 동결 유지)
+- 2,000+ 확장: **보류** (현재 1,800개 동결, 사용자 명시 지시 필요)
 - 잔여 기술 P0: **없음**
-- 사람 검토 상태: `HUMAN_REVIEW_PENDING` (`docs/WORD_DB_1800_QUIZ_REVIEW.md` 180문제, `docs/WORD_DB_1800_WORD_REVIEW.md` 1,300단어 표 생성 완료, 인간 검토자 확인 대기)
-- 이전 완료: `NAME-01 = PASS`, `P0-C = PASS`, `DB-PILOT-200 = PASS`, `DB-02 = PASS`
+- 이전 완료: `NAME-01 = PASS`, `P0-C = PASS`, `DB-PILOT-200 = PASS`, `DB-02 = PASS`, `DB-03 = TECH_PASS`
 
 ## 배포 상태 (Live Deployment)
 - **GitHub 원격 저장소**: [https://github.com/kcgbck/voca-study](https://github.com/kcgbck/voca-study)
 - **Cloudflare Workers 실서비스 URL**: [https://voca-study.heyruler0011.workers.dev](https://voca-study.heyruler0011.workers.dev)
 - **캐시 버전**: `voca-study-cache-v4`
 
+## QA-01 1,800어 최종 품질검수 및 검토 패키지 완성 항목
+1. **통합 검토 큐 구축 및 중복 제거 (`docs/WORD_DB_1800_REVIEW_QUEUE.md`)**:
+   - B등급 168개, 구동사 140개, 표현 100개, 복합 다의어 448개, 의미충돌 관계 350개, A등급 고정 시드(`QA1800-202609`) 층화 표본 180개 통합
+   - 중복 제거 후 **실질 우선순위 검토 대상 고유 어휘 1,007개** 산출 (일반 A등급 보존 어휘 793개와 분리)
+2. **자동 의미 심층 감사 보고서 (`reports/worddb-1800-semantic-audit.md`)**:
+   - 품사-뜻 불일치 의심 81건, 한국어 띄어쓰기/맞춤법 의심 12건 목록화
+   - 대표 뜻 중복군 120개 군 퀴즈 충돌 안전성 재확인 (54,000회 결함 0건)
+   - 공식 근거 406개 4대 필수 필드(URL, 제목, 일시, locator) 및 ETS 공식 도메인 무결성 100% 확인
+3. **순수 문제 생성 벤치마크 분리 측정**:
+   - 1문제 Cold 296ms, Warm 3.19ms / 100문제 Warm 2.57ms/문제 / 1,000문제 Warm 3.32ms/문제
+   - 감사 전체 시간과 엔진 순수 문제 생성 시간 엄격 분리 기록
+4. **인터랙티브 검토 뷰어 (`docs/WORD_DB_1800_REVIEW.html`) 및 비교 도구 (`scripts/worddb/compareReview.ts`)**:
+   - 브라우저 단일 HTML로 단어/품사/난이도/그룹/검토상태 필터링 및 JSON Export 지원
+   - 향후 인간 검토 결과(정상/수정필요/제외) 비교 CLI 도구 구축
+5. **로드맵 및 2,000+ 확장 동결**:
+   - 1,800개 DB 동결 유지, 사람 승인 전 2,000+ 확장 절대 보류 (사용자 명시 지시 필요)
+
 ## DB-03 누적 1,800개 기본 어휘 DB 통합 확장 완료 항목
-1. **기존 500개 기준선 동결 보존 (BASELINE_500)**:
-   - `data/worddb/baseline_500.json` 기준선 대비 `added=1300, modified=0, removed=0` 100% 무손실 유지
-   - `tests/wordDbDiff.test.ts` 통과
-2. **신규 1,300개 어휘 증설 및 균형 배분 (누적 1,800개)**:
-   - 명사: 420개 추가 (누적 581개)
-   - 동사: 430개 추가 (단일 동사 290개 + 구동사 140개, 누적 581개)
-   - 형용사: 260개 추가 (누적 384개)
-   - 부사: 90개 추가 (누적 154개)
-   - 비즈니스 표현: 100개 추가 (누적 100개)
-   - C등급 출시 0건 (A등급 1,632개 / B등급 168개, C등급 700개는 후보 풀에만 분리 보관)
-   - 15개 필수 비즈니스/수험 주제군 골고루 배정
-3. **의미 충돌 차단 그래프 개편 (`semantic_conflicts_v1.json`)**:
-   - 단순 동의어를 넘어 `strict_synonym`과 `quiz_conflict`로 세분화
-   - 총 398개 키 그래프 구축, 대칭성 100% 보증 (`tests/semanticConflictGraph.test.ts` 통과)
-4. **공식 근거 추적성 확립 (`officialEvidenceStatus`)**:
-   - ETS 공식 자료 추적 어휘 `verified` 406개 지정 (구체적 URL, 자료명, 확인일자 첨부)
-   - 일반 비즈니스 어휘 `unknown` 1,394개 정직한 분리 (허위 근거 생성 0건 강제)
-   - `tests/evidenceTraceability.test.ts` 통과
-5. **전수 54,000회 문제 생성 스트레스 테스트 결함 0건 통과**:
-   - 1,800단어 × 3난이도 × 10seed = 54,000회 반복 시험 결함 0건
-   - 정답 누락 0, 보기 중복 0, BLOCK 충돌 0, 추가 뜻 누출 0, 생성 실패 0
-   - 정답 인덱스 편향 없이 균등 분포 유지 (15% ~ 35%)
-6. **마일스톤 스냅샷 및 후보 풀 체계**:
-   - 중간 감사 스냅샷: `db_750.json`, `db_1000.json`, `db_1250.json`, `db_1500.json`
-   - 통합 후보 풀: `candidate_pool.json` (총 2,500개 = 릴리스 1,800개 + C등급 후보 700개)
-7. **사람 검토용 리뷰 문서 2종 생성**:
-   - `docs/WORD_DB_1800_QUIZ_REVIEW.md` (하 60, 중 60, 상 60 = 총 180문제)
-   - `docs/WORD_DB_1800_WORD_REVIEW.md` (신규 1,300단어 표 및 B등급 168단어 집중 검토군)
-8. **Service Worker 캐시 버전 갱신**:
-   - `voca-study-cache-v4`로 캐시 버스팅 및 1,800단어 정적 데이터 프리캐시 보장
-
-## DB-02 누적 500개 기본 어휘 DB 확대 완료 항목
-- 기존 200개 어휘 동결 보존 (PILOT_BASELINE_200)
-- 신규 300개 어휘 탑재 및 15,000회 스트레스 테스트 통과
-
-## DB-PILOT-200 기본 어휘 데이터베이스 구축 완료 항목
-- 기본 어휘 정적 데이터 중립 명칭 전환 (`builtin_words_v1.json`)
-- 200개 어휘 6,000회 스트레스 테스트 통과
-
-## PWA-02 실서비스 기준선 고정 완료 항목
-- PDF 파서 실측 검증 (docs/샘플.pdf 표본 100/100 단어)
-- 사진 OCR 전처리 실측 및 detectSpreadLayout 안전장치 분리
-- 개인정보 보호: 사용자 문서 서버 전송 0건 (USER_DOCUMENT_UPLOADS = 0)
-
-## 검증 내역
-- `npm run typecheck`: 통과 (오류 0건)
-- `npm run test`: 14개 테스트 파일, 62개 테스트 통과
-- `scripts/worddb/audit.ts`: 1,800단어 54,000회 스트레스 테스트 결함 0건 통과
-- `npm run build`: 프로덕션 정적 번들 정상 빌드 완료
-- `USER_DOCUMENT_UPLOADS`: 0건 (완전 로컬 브라우저 처리)
-
-## 잔여 과제 및 향후 계획
-- 잔여 기술 P0: **없음**
-- 사람 검토 상태: `HUMAN_REVIEW_PENDING`
-- 2,000+ 확장은 사용자 명시 승인 시에만 별도 계획 수립하여 진행 (임의 확장 금지)
+- 기존 500개 기준선 100% 동결 보존 (modified=0, removed=0)
+- 신규 1,300개 어휘 증설 (누적 1,800개: 명사 581, 동사 581, 형용사 384, 부사 154, 표현 100)
+- C등급 출시 0건 (A등급 1,632개 / B등급 168개)
+- 의미 충돌 차단 그래프 개편 (`semantic_conflicts_v1.json`, 398개 노드, 대칭성 100%)
+- 공식 근거 정직한 분리 (verified 406개, unknown 1,394개)
+- 54,000회 문제 생성 스트레스 테스트 결함 0건 통과

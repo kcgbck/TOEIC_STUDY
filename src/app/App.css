@@ -801,3 +801,36 @@ body {
   margin-top: auto;
 }
 
+/* 모바일 반응형 및 긴 표현/구동사 가독성 보장 (지시서 45, 46항) */
+.quiz-headword {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.25;
+}
+
+.quiz-option-btn {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  min-height: 48px;
+  height: auto;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .quiz-headword {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .quiz-card {
+    padding: 16px 12px;
+  }
+  .quiz-word-box {
+    padding: 16px 0 20px;
+  }
+  .quiz-option-btn {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}
+
