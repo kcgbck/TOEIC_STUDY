@@ -1,14 +1,13 @@
 {
-  "name": "토익_스터디",
-  "short_name": "토익_스터디",
+  "name": "보카 스터디",
+  "short_name": "보카스터디",
   "id": "/",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0a0e17",
   "theme_color": "#4f46e5",
-  "description": "사진 및 PDF로 직접 단어장을 만들어 학습하는 오프라인 지원 토익 4지선다 퀴즈 PWA",
+  "description": "사진 및 PDF로 직접 단어장을 만들어 학습하는 오프라인 지원 영어단어 4지선다 퀴즈 PWA (TOEIC® 시험 대비)",
   "icons": [
     {
       "src": "/icons/icon-192.png",

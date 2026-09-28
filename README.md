@@ -1,6 +1,6 @@
-# 토익_스터디
+# 보카 스터디
 
-> 별도의 APK/IPA 설치 파일 없이 URL에 접속하여 앱을 사용하고, Chrome/Safari에서 휴대폰 홈 화면에 설치해 일반 앱처럼 실행하는 TOEIC 학습 설치형 웹앱 (PWA).
+> TOEIC® 시험 대비를 포함한 개인 영어단어 학습 PWA. 별도의 APK/IPA 설치 파일 없이 URL에 접속하여 앱을 사용하고, Chrome/Safari에서 휴대폰 홈 화면에 설치해 일반 앱처럼 실행하는 설치형 웹앱 (PWA).
 
 ---
 
@@ -88,3 +88,10 @@ https://<project>.workers.dev
 - [docs/CURRENT.md](docs/CURRENT.md): 프로젝트 실시간 개발 현황
 - [docs/토익_스터디_앱_전체_알고리즘_보드.html](docs/토익_스터디_앱_전체_알고리즘_보드.html): 대화형 시각형 알고리즘 보드 (13개 탭, 76개 노드)
 - [docs/토익_스터디_앱_전체_알고리즘_보드.md](docs/토익_스터디_앱_전체_알고리즘_보드.md): 알고리즘 보드 명세서 마크다운
+
+---
+
+## 상표권 고지
+
+- TOEIC® is a registered trademark of ETS. This application is not endorsed or approved by ETS.
+- 본 애플리케이션은 ETS의 공식 제품이 아니며, ETS와 어떠한 제휴 또는 보증 관계도 없습니다.

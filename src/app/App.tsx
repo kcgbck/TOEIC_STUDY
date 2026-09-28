@@ -33,8 +33,8 @@ export const App: React.FC = () => {
       <header className="app-header">
         <div className="header-brand" onClick={() => setActiveTab('home')}>
           <span className="brand-icon">📖</span>
-          <h1 className="brand-title">토익_스터디</h1>
-          <span className="brand-badge">PWA v2</span>
+          <h1 className="brand-title">보카 스터디</h1>
+          <span className="brand-badge">Voca Study</span>
         </div>
         <nav className="header-nav">
           <button
@@ -65,7 +65,7 @@ export const App: React.FC = () => {
             className={`nav-btn ${activeTab === 'storage_poc' ? 'active' : ''}`}
             onClick={() => setActiveTab('storage_poc')}
           >
-            저장소 POC
+            저장소 관리
           </button>
         </nav>
       </header>
@@ -78,35 +78,35 @@ export const App: React.FC = () => {
         {activeTab === 'home' && (
           <div className="home-dashboard">
             <div className="welcome-hero">
-              <h2>휴대폰에서 바로 설치하고 학습하는 토익 어휘 PWA</h2>
+              <h2>휴대폰에서 바로 설치하고 학습하는 영어단어 PWA</h2>
               <p className="hero-desc">
-                별도 스토어 다운로드 없이 브라우저에서 실행되며, 종이책 사진과 PDF에서 단어·뜻을 추출하여 4지선다 문제로 학습합니다.
+                별도 스토어 다운로드 없이 브라우저에서 실행되며, 종이책 사진과 PDF에서 단어·뜻을 추출하여 4지선다 문제로 학습합니다. (TOEIC® 시험 대비 지원)
               </p>
             </div>
 
             <div className="action-menu-grid">
               <button className="menu-card primary" onClick={() => setActiveTab('quiz')}>
                 <span className="menu-icon">📝</span>
-                <span className="menu-title">기본 문제풀기</span>
-                <span className="menu-sub">검증된 TOEIC 빈출 어휘 4지선다 풀이</span>
+                <span className="menu-title">TOEIC® 대비 기본 단어</span>
+                <span className="menu-sub">검증된 빈출 어휘 4지선다 문제풀이</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('photo')}>
                 <span className="menu-icon">📷</span>
-                <span className="menu-title">사진으로 문제 만들기</span>
-                <span className="menu-sub">2단 분할 + 온디바이스 OCR 분석</span>
+                <span className="menu-title">내 사진 문제집</span>
+                <span className="menu-sub">사진 촬영/업로드 + 온디바이스 OCR 분석</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('pdf')}>
                 <span className="menu-icon">📄</span>
-                <span className="menu-title">PDF로 문제 만들기</span>
+                <span className="menu-title">내 PDF 문제집</span>
                 <span className="menu-sub">PDF.js 기반 텍스트 레이어 어휘 추출</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('storage_poc')}>
                 <span className="menu-icon">💾</span>
                 <span className="menu-title">로컬 저장소 (IndexedDB)</span>
-                <span className="menu-sub">오프라인 무계정 데이터 영속화 POC</span>
+                <span className="menu-sub">오프라인 무계정 데이터 영속화 & 백업/복원</span>
               </button>
             </div>
 
@@ -165,10 +165,15 @@ export const App: React.FC = () => {
         {activeTab === 'storage_poc' && <StoragePocView />}
       </main>
 
-      {/* 푸터 */}
+      {/* 푸터 및 상표 고지문 (지시서 3항) */}
       <footer className="app-footer">
-        <p>토익_스터디 PWA • 버전 {__APP_VERSION__} (Git: {__GIT_SHA__}) • 100% 로컬 브라우저 저장</p>
+        <p>보카 스터디 (Voca Study) PWA • 버전 {__APP_VERSION__} (Git: {__GIT_SHA__}) • 100% 로컬 브라우저 저장</p>
+        <div className="trademark-notice" style={{ fontSize: '11px', color: '#94a3b8', marginTop: '8px', lineHeight: '1.4' }}>
+          <p>TOEIC® is a registered trademark of ETS. This product is not endorsed or approved by ETS.</p>
+          <p>TOEIC®은 ETS의 등록상표이며, 본 서비스는 ETS가 승인하거나 보증한 서비스가 아닙니다.</p>
+        </div>
       </footer>
     </div>
   );
 };
+

@@ -1,3 +1,5 @@
+> 현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디
+
 # 토익_스터디 현재 상태 (PWA-02 기준선 고정)
 
 ## 아키텍처
@@ -7,8 +9,8 @@ PWA (Progressive Web App, 설치형 웹앱)
 React 18 + TypeScript 5 + Vite 6
 
 ## 배포
-- GitHub main: https://github.com/kcgbck/TOEIC_STUDY
-- Cloudflare Workers 실서비스: https://toeic-study.heyruler0011.workers.dev
+- GitHub main: https://github.com/kcgbck/voca-study
+- Cloudflare Workers 실서비스: https://voca-study.heyruler0011.workers.dev
 - 배포 모델: Cloudflare Workers + Static Assets
 
 ## 저장소 및 안전성

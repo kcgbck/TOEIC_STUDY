@@ -1,3 +1,5 @@
+> 현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디
+
 # 토익_스터디 - Coding Partner 현재 상태 (P0-C 검증 완료)
 
 ## 현재 판정
@@ -7,8 +9,8 @@
 - `CURRENT_STAGE = P0_PHOTO_AND_QUIZ_QUALITY_PASS`
 
 ## 배포 현황
-- GitHub 저장소: https://github.com/kcgbck/TOEIC_STUDY
-- Cloudflare 실서비스 URL: https://toeic-study.heyruler0011.workers.dev
+- GitHub 저장소: https://github.com/kcgbck/voca-study
+- Cloudflare 실서비스 URL: https://voca-study.heyruler0011.workers.dev
 - 배포 모델: Cloudflare Workers + Static Assets
 
 ## P0-C 완료 작업

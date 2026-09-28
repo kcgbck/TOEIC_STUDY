@@ -16,7 +16,7 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
-  const [activeBookTitle, setActiveBookTitle] = useState<string>(bookTitle || '기본 TOEIC 4지선다');
+  const [activeBookTitle, setActiveBookTitle] = useState<string>(bookTitle || 'TOEIC® 대비 기본 4지선다');
 
   const generateNextQuestion = (wordList: WordEntry[], targetIdx: number) => {
     if (!wordList || wordList.length < 4) {
@@ -124,11 +124,12 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
   if (!currentQuiz) {
     return (
       <div className="card poc-card">
-        <h3>기본 TOEIC 4지선다 퀴즈</h3>
+        <h3>기본 4지선다 퀴즈</h3>
         <p>단어 데이터를 불러오는 중이거나 안전한 4지선다 보기를 생성 중입니다...</p>
       </div>
     );
   }
+
 
   const progressDisplay = `${(currentIndex % totalQuestions) + 1} / ${totalQuestions}`;
 

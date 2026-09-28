@@ -1,11 +1,13 @@
+> 현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디
+
 # PROJECT_STATUS.md
 
 ## Current HEAD
 - `4ea8b99512f9cca2ac998b79a226176063c7902c` (branch: `main`)
 
 ## 배포 상태 (Live Deployment)
-- **GitHub 원격 저장소**: [https://github.com/kcgbck/TOEIC_STUDY](https://github.com/kcgbck/TOEIC_STUDY)
-- **Cloudflare Workers 실서비스 URL**: [https://toeic-study.heyruler0011.workers.dev](https://toeic-study.heyruler0011.workers.dev)
+- **GitHub 원격 저장소**: [https://github.com/kcgbck/voca-study](https://github.com/kcgbck/voca-study)
+- **Cloudflare Workers 실서비스 URL**: [https://voca-study.heyruler0011.workers.dev](https://voca-study.heyruler0011.workers.dev)
 
 ## PWA-02 실서비스 기준선 고정 완료 항목
 1. **공개 에셋 안전화 및 저작권 분리**:
