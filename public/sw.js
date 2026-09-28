@@ -1,5 +1,5 @@
-// 토익_스터디 PWA Service Worker (v1.0.0)
-const CACHE_NAME = 'toeic-study-cache-v1';
+// 보카 스터디 PWA Service Worker (v2.0.0 - DB-PILOT-200)
+const CACHE_NAME = 'voca-study-cache-v2';
 
 // 오프라인 실행을 위한 필수 앱 셸 에셋
 const PRECACHE_ASSETS = [
@@ -9,7 +9,7 @@ const PRECACHE_ASSETS = [
   '/icons/icon-192.png',
   '/icons/icon-512.png',
   '/icons/icon.svg',
-  '/data/toeic_words_v1.json'
+  '/data/builtin_words_v1.json'
 ];
 
 // 설치 단계: 필수 에셋 프리캐시

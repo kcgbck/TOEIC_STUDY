@@ -27,11 +27,13 @@ React 18 + TypeScript 5 + Vite 6
 - 사진 OCR: 2면 펼침면 감지(detectSpreadLayout) 및 2단 분할 + 2배 확대 전처리 + 온디바이스 Tesseract.js WASM 어댑터 (docs/샘플.png 표본 기준 목표 표제어 검출 확인)
 - 개인정보 보호: 사진, PDF, 학습 기록 등 사용자 문서의 서버 전송 0건 (USER_DOCUMENT_UPLOADS = 0)
 
-## 현재 상태 판정 (P0-C 검증 완료)
+## 현재 상태 판정 (DB-PILOT-200 검증 완료)
+- `NAME-01 = PASS` (공개 서비스명 '보카 스터디' / URL 'voca-study.heyruler0011.workers.dev' 전환 완료)
 - `PDF_IMPORT_BASELINE = PASS` (docs/샘플.pdf 100/100 무손실 유지)
 - `PHOTO_OCR_EXTRACTION = PASS` (기하학적 열 격리, 경계 침범 차단, 3단계 신뢰도, 8종 합성 fixture 통과)
-- `QUIZ_SEMANTIC_UNIQUENESS = PASS` (Hard Gate 통과, BLOCK 동의어 및 추가 뜻 오답 0건, 1,000회 시험 PASS)
-- `CURRENT_STAGE = P0_PHOTO_AND_QUIZ_QUALITY_PASS`
+- `QUIZ_SEMANTIC_UNIQUENESS = PASS` (Hard Gate 통과, BLOCK 동의어 및 추가 뜻 오답 0건, 6,000회 시험 PASS)
+- `BUILTIN_VOCABULARY_PILOT = PASS` (200개 검증 어휘 탑재, C등급 0건, 15개 주제군 및 4대 품사 균형, audit 통과)
+- `CURRENT_STAGE = DB_PILOT_200_PASS`
 
 ## 완료된 핵심 P0 작업
 1. **P0-A (사진 OCR 품질 및 안전화)**:

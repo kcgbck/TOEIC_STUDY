@@ -13,17 +13,30 @@ export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
   const [customWords, setCustomWords] = useState<WordEntry[] | undefined>(undefined);
   const [customTitle, setCustomTitle] = useState<string | undefined>(undefined);
+  const [customSourceType, setCustomSourceType] = useState<'builtin' | 'photo' | 'pdf'>('builtin');
 
-  const handleStartQuizWithWords = (words: Array<{ word: string; meaning: string[] }>, title?: string) => {
+  const handleStartQuizWithWords = (
+    words: Array<{ word: string; meaning: string[] }>,
+    title?: string,
+    sourceType: 'photo' | 'pdf' = 'photo'
+  ) => {
     const entries: WordEntry[] = words.map((w) => ({
       word: w.word,
       meaning: w.meaning,
       partOfSpeech: '단어',
       difficulty: 'medium',
-      topic: 'toeic',
+      topic: 'custom',
     }));
     setCustomWords(entries);
     setCustomTitle(title || `추출 단어장 (${entries.length}단어)`);
+    setCustomSourceType(sourceType);
+    setActiveTab('quiz');
+  };
+
+  const handleOpenBuiltinQuiz = () => {
+    setCustomWords(undefined);
+    setCustomTitle(undefined);
+    setCustomSourceType('builtin');
     setActiveTab('quiz');
   };
 
@@ -45,7 +58,7 @@ export const App: React.FC = () => {
           </button>
           <button
             className={`nav-btn ${activeTab === 'quiz' ? 'active' : ''}`}
-            onClick={() => setActiveTab('quiz')}
+            onClick={handleOpenBuiltinQuiz}
           >
             기본 문제
           </button>
@@ -85,10 +98,10 @@ export const App: React.FC = () => {
             </div>
 
             <div className="action-menu-grid">
-              <button className="menu-card primary" onClick={() => setActiveTab('quiz')}>
+              <button className="menu-card primary" onClick={handleOpenBuiltinQuiz}>
                 <span className="menu-icon">📝</span>
                 <span className="menu-title">TOEIC® 대비 기본 단어</span>
-                <span className="menu-sub">검증된 빈출 어휘 4지선다 문제풀이</span>
+                <span className="menu-sub">검증된 빈출 어휘 4지선다 문제풀이 (200단어)</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('photo')}>
@@ -143,13 +156,17 @@ export const App: React.FC = () => {
         )}
 
         {activeTab === 'quiz' && (
-          <QuizPreviewView initialWords={customWords} bookTitle={customTitle} />
+          <QuizPreviewView
+            initialWords={customWords}
+            bookTitle={customTitle}
+            sourceType={customSourceType}
+          />
         )}
 
         {activeTab === 'photo' && (
           <FileImportPocView
             onStartQuizWithWords={(words) =>
-              handleStartQuizWithWords(words, '사진 OCR 추출 문제집')
+              handleStartQuizWithWords(words, '사진 OCR 추출 문제집', 'photo')
             }
           />
         )}
@@ -157,7 +174,7 @@ export const App: React.FC = () => {
         {activeTab === 'pdf' && (
           <PdfImportPocView
             onStartQuizWithWords={(words) =>
-              handleStartQuizWithWords(words, 'PDF 추출 문제집')
+              handleStartQuizWithWords(words, 'PDF 추출 문제집', 'pdf')
             }
           />
         )}

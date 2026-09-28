@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "lint": "tsc --noEmit",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "worddb:audit": "vite-node scripts/worddb/audit.ts"
   },
   "dependencies": {
     "dexie": "^4.0.11",

@@ -2,12 +2,29 @@
 
 # PROJECT_STATUS.md
 
-## Current HEAD
-- `4ea8b99512f9cca2ac998b79a226176063c7902c` (branch: `main`)
+## Current Stage
+- `CURRENT_STAGE = DB_PILOT_200_PASS`
+- 이전 완료: `NAME-01 = PASS`, `P0-C = PASS`
 
 ## 배포 상태 (Live Deployment)
 - **GitHub 원격 저장소**: [https://github.com/kcgbck/voca-study](https://github.com/kcgbck/voca-study)
 - **Cloudflare Workers 실서비스 URL**: [https://voca-study.heyruler0011.workers.dev](https://voca-study.heyruler0011.workers.dev)
+
+## DB-PILOT-200 기본 어휘 데이터베이스 구축 완료 항목
+1. **기본 어휘 정적 데이터 중립 명칭 전환**:
+   - `public/data/toeic_words_v1.json` 제거 → `public/data/builtin_words_v1.json` (200단어)
+   - `src/data/builtin_words_pilot_v1.json` (200단어) 동기화
+   - Service Worker 캐시 버전 `voca-study-cache-v2` 갱신 및 프리캐시 목록 교체
+2. **동의어 차단 사전 데이터화**:
+   - `src/data/synonym_blocks_v1.json` 분리 및 `synonymDictionary.ts` 연동
+3. **200개 어휘 DB 품질 및 6,000회 스트레스 테스트 통과**:
+   - 후보 293개 중 엄격 검증된 출제 적격 200개 선정 (C등급 0건, A/B등급 100%)
+   - 15개 필수 주제군 및 4대 품사(명사/동사/형용사/부사) 균형 배분
+   - `npm run worddb:audit` 통과: 200단어 x 3난이도 x 10seed = 6,000회 문제 생성 결함 0건
+   - 사람이 확인할 리뷰셋 생성: `docs/WORD_DB_PILOT_REVIEW.md` (하 30, 중 30, 상 30, 총 90선)
+4. **기본 문제풀이 UI 확장**:
+   - 난이도(하/중/상/전체) 및 문항 수(10/20/30/50/전체) 선택 컨트롤 탑재
+   - builtin, photo, pdf 출처 명확 분리 유지
 
 ## PWA-02 실서비스 기준선 고정 완료 항목
 1. **공개 에셋 안전화 및 저작권 분리**:

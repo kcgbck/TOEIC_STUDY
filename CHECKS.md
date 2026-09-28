@@ -23,11 +23,28 @@
 - [x] 추출된 단어로 사용자 문제집 저장 및 4지선다 퀴즈 연동
 - [x] StorageHealth 상태 진단 및 JSON 데이터 백업/복원 기능 구현
 
-## Current Baseline & P0 Gate Status (P0-C 검증 완료)
+## Current Baseline & Gate Status (DB-PILOT-200 검증 완료)
+- `NAME-01 = PASS` (공개 서비스명: 보카 스터디 / Voca Study)
 - `PDF_IMPORT_BASELINE = PASS`
 - `PHOTO_OCR_EXTRACTION = PASS`
 - `QUIZ_SEMANTIC_UNIQUENESS = PASS`
-- `CURRENT_STAGE = P0_PHOTO_AND_QUIZ_QUALITY_PASS`
+- `BUILTIN_VOCABULARY_PILOT = PASS`
+- `CURRENT_STAGE = DB_PILOT_200_PASS`
+
+## DB-PILOT-200 Done Means (검증 완료)
+- [x] 출제 가능 어휘: 200개 이상 (`quizEligible=true`, `status='quiz_ready'`)
+- [x] C등급 단어 출시 포함 0건 (A/B등급 100%)
+- [x] 빈 표제어, 빈 뜻, 품사 누락, 주제 누락 0건
+- [x] 중복 ID 0건, 중복 word/POS 0건
+- [x] 15개 필수 주제군 및 4대 품사(명/동/형/부) 균형 배분
+- [x] `npm run worddb:audit` 통과 (200단어 x 3난이도 x 10seed = 6,000회 생성 결함 0건)
+- [x] 정답 누락 0, 보기 중복 0, BLOCK 동의어 0, 추가 뜻 오답 0
+- [x] 인간 검토용 90선 리뷰셋 생성 (`docs/WORD_DB_PILOT_REVIEW.md`)
+- [x] 데이터 출처 및 라이선스 감사 문서 작성 (`docs/WORD_DATA_SOURCES.md`)
+- [x] 기본 정적 데이터 경로 전환: `/data/builtin_words_v1.json` (기존 `toeic_words_v1.json` 제거)
+- [x] Service Worker 캐시 버전 `voca-study-cache-v2` 갱신
+- [x] 기본 문제풀이 UI 난이도/문항수 선택 컨트롤 탑재
+- [x] PDF 100/100 및 사진 무손실 회귀 0건 유지 (Vitest 8개 스위트, 32개 테스트 전체 PASS)
 
 ## P0 Done Means (P0-C 관문 완료)
 - [x] 사진 OCR: 다른 열 뜻 연결 금지 (좌우 독립)

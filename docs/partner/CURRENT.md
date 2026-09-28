@@ -1,12 +1,14 @@
 > 현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디
 
-# 토익_스터디 - Coding Partner 현재 상태 (P0-C 검증 완료)
+# 보카 스터디 - Coding Partner 현재 상태 (DB-PILOT-200 검증 완료)
 
 ## 현재 판정
+- `NAME-01 = PASS` (보카 스터디 브랜딩 전환 완료)
 - `PDF_IMPORT_BASELINE = PASS` (100/100 단어 무손실 유지)
 - `PHOTO_OCR_EXTRACTION = PASS` (P0-A 사진 OCR 품질 및 안전화 완료)
 - `QUIZ_SEMANTIC_UNIQUENESS = PASS` (P0-B 4지선다 출제 품질 및 정답 유일성 완료)
-- `CURRENT_STAGE = P0_PHOTO_AND_QUIZ_QUALITY_PASS`
+- `BUILTIN_VOCABULARY_PILOT = PASS` (200개 기본 어휘 DB 및 6,000회 스트레스 테스트 결함 0건)
+- `CURRENT_STAGE = DB_PILOT_200_PASS`
 
 ## 배포 현황
 - GitHub 저장소: https://github.com/kcgbck/voca-study
