@@ -1,0 +1,157 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-09-28",
+  "total_count": 15,
+  "words": [
+    {
+      "id": "W-0001",
+      "word": "acquire",
+      "meaning": ["획득하다", "습득하다"],
+      "partOfSpeech": "verb",
+      "difficulty": "medium",
+      "topic": "business",
+      "confusables": ["require", "inquire"],
+      "verified": true
+    },
+    {
+      "id": "W-0002",
+      "word": "applicant",
+      "meaning": ["지원자", "신청자"],
+      "partOfSpeech": "noun",
+      "difficulty": "low",
+      "topic": "employment",
+      "confusables": ["application", "appliance"],
+      "verified": true
+    },
+    {
+      "id": "W-0003",
+      "word": "confirm",
+      "meaning": ["확인하다", "확정하다"],
+      "partOfSpeech": "verb",
+      "difficulty": "low",
+      "topic": "general",
+      "confusables": ["conform"],
+      "verified": true
+    },
+    {
+      "id": "W-0004",
+      "word": "shipment",
+      "meaning": ["배송", "선적", "탁송품"],
+      "partOfSpeech": "noun",
+      "difficulty": "medium",
+      "topic": "logistics",
+      "confusables": ["shipping"],
+      "verified": true
+    },
+    {
+      "id": "W-0005",
+      "word": "postpone",
+      "meaning": ["연기하다", "미루다"],
+      "partOfSpeech": "verb",
+      "difficulty": "medium",
+      "topic": "schedule",
+      "confusables": ["propose"],
+      "verified": true
+    },
+    {
+      "id": "W-0006",
+      "word": "submit",
+      "meaning": ["제출하다", "굴복하다"],
+      "partOfSpeech": "verb",
+      "difficulty": "low",
+      "topic": "office",
+      "confusables": ["admit", "permit"],
+      "verified": true
+    },
+    {
+      "id": "W-0007",
+      "word": "approximately",
+      "meaning": ["대략", "거의"],
+      "partOfSpeech": "adverb",
+      "difficulty": "medium",
+      "topic": "finance",
+      "confusables": ["appropriately"],
+      "verified": true
+    },
+    {
+      "id": "W-0008",
+      "word": "purchase",
+      "meaning": ["구매하다", "구입"],
+      "partOfSpeech": "verb",
+      "difficulty": "low",
+      "topic": "shopping",
+      "confusables": ["pursue"],
+      "verified": true
+    },
+    {
+      "id": "W-0009",
+      "word": "revenue",
+      "meaning": ["수익", "세입"],
+      "partOfSpeech": "noun",
+      "difficulty": "high",
+      "topic": "finance",
+      "confusables": ["avenue"],
+      "verified": true
+    },
+    {
+      "id": "W-0010",
+      "word": "reimburse",
+      "meaning": ["상환하다", "배상하다"],
+      "partOfSpeech": "verb",
+      "difficulty": "high",
+      "topic": "finance",
+      "confusables": ["disburse"],
+      "verified": true
+    },
+    {
+      "id": "W-0011",
+      "word": "mandatory",
+      "meaning": ["의무적인", "강제적인"],
+      "partOfSpeech": "adjective",
+      "difficulty": "medium",
+      "topic": "policy",
+      "confusables": ["statutory"],
+      "verified": true
+    },
+    {
+      "id": "W-0012",
+      "word": "convenient",
+      "meaning": ["편리한", "가까운"],
+      "partOfSpeech": "adjective",
+      "difficulty": "low",
+      "topic": "general",
+      "confusables": ["conventional"],
+      "verified": true
+    },
+    {
+      "id": "W-0013",
+      "word": "negotiate",
+      "meaning": ["협상하다", "절충하다"],
+      "partOfSpeech": "verb",
+      "difficulty": "medium",
+      "topic": "business",
+      "confusables": ["navigate"],
+      "verified": true
+    },
+    {
+      "id": "W-0014",
+      "word": "procedure",
+      "meaning": ["절차", "순서"],
+      "partOfSpeech": "noun",
+      "difficulty": "medium",
+      "topic": "office",
+      "confusables": ["proceeding"],
+      "verified": true
+    },
+    {
+      "id": "W-0015",
+      "word": "eligible",
+      "meaning": ["자격이 있는", "적격의"],
+      "partOfSpeech": "adjective",
+      "difficulty": "high",
+      "topic": "employment",
+      "confusables": ["illegible"],
+      "verified": true
+    }
+  ]
+}

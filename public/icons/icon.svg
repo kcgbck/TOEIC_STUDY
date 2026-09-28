@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  <!-- 책 심볼 -->
+  <path d="M128 140 C170 120, 220 125, 256 150 C292 125, 342 120, 384 140 L384 370 C342 350, 292 355, 256 380 C220 355, 170 350, 128 370 Z" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="256" y1="150" x2="256" y2="380" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+  <!-- 학습 체크 마크 -->
+  <circle cx="360" cy="180" r="48" fill="#10b981"/>
+  <path d="M342 180 L354 192 L378 168" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- TOEIC 텍스트 -->
+  <text x="256" y="440" font-family="-apple-system, sans-serif" font-size="44" font-weight="900" fill="url(#accent)" text-anchor="middle" letter-spacing="4">TOEIC STUDY</text>
+</svg>
