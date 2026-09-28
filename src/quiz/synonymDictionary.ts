@@ -20,11 +20,16 @@ export function normalizeMeaning(meaning: string): string {
     .trim();
 }
 
+const synonymsCache = new Map<string, Set<string>>();
+
 /**
- * 모든 동의어 집합을 양방향으로 추출
+ * 모든 동의어 집합을 양방향으로 추출 (성능을 위해 정규화 키 기준 메모이제이션)
  */
 export function getSynonyms(meaning: string): Set<string> {
   const norm = normalizeMeaning(meaning);
+  if (synonymsCache.has(norm)) {
+    return synonymsCache.get(norm)!;
+  }
   const result = new Set<string>();
 
   for (const [key, synonyms] of Object.entries(SYNONYM_BLOCK_PAIRS)) {
@@ -35,6 +40,7 @@ export function getSynonyms(meaning: string): Set<string> {
     }
   }
 
+  synonymsCache.set(norm, result);
   return result;
 }
 

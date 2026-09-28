@@ -1,4 +1,4 @@
-// 기본 어휘 데이터베이스 전수 감사 및 문제 생성 스트레스 테스트 스크립트 (지시서 DB-PILOT-200 Section 25~28 준수)
+// 기본 어휘 데이터베이스 전수 감사 및 15,000회 문제 생성 스트레스 테스트 스크립트 (지시서 DB-02 Section 26~32, 57 준수)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,7 +12,7 @@ const projectRoot = path.resolve(__dirname, '../../');
 
 export async function runAudit(): Promise<boolean> {
   console.log('====================================================');
-  console.log('   보카 스터디 어휘 데이터베이스 전수 감사 (DB-PILOT-200)');
+  console.log('   보카 스터디 어휘 데이터베이스 500 전수 감사 (DB-02)');
   console.log('====================================================\n');
 
   const releasePath = path.join(projectRoot, 'public/data/builtin_words_v1.json');
@@ -26,94 +26,127 @@ export async function runAudit(): Promise<boolean> {
   const words: BuiltinWord[] = dbData.words;
 
   console.log(`[정보] 로드된 단어 수: ${words.length}개`);
-  console.log(`[정보] 메타데이터: schemaVersion=${dbData.schemaVersion}, databaseVersion=${dbData.databaseVersion}, date=${dbData.generatedAt}\n`);
+  console.log(
+    `[정보] 메타데이터: schemaVersion=${dbData.schemaVersion}, databaseVersion=${dbData.databaseVersion}, date=${dbData.generatedAt}\n`
+  );
 
   let errorCount = 0;
 
   // 1. 단어 수 및 출제 가능 검사
-  if (words.length < 200) {
-    console.error(`[오류] 총 단어 수가 200개 미만입니다 (${words.length}/200)`);
+  if (words.length !== 500) {
+    console.error(`[오류] 총 단어 수가 500개가 아닙니다 (${words.length}/500)`);
     errorCount++;
   }
 
   const eligibleCount = words.filter((w) => w.quizEligible && w.status === 'quiz_ready').length;
-  if (eligibleCount < 200) {
-    console.error(`[오류] 출제 가능(quiz_ready) 단어 수가 200개 미만입니다 (${eligibleCount}/200)`);
+  if (eligibleCount !== 500) {
+    console.error(`[오류] 출제 가능(quiz_ready) 단어 수가 500개가 아닙니다 (${eligibleCount}/500)`);
     errorCount++;
   }
 
   // 2. 무결성 검사 (빈 필드, C등급, 중복 등)
   const seenIds = new Set<string>();
   const seenWordPos = new Set<string>();
+  let emptyWordCount = 0;
+  let emptyMeaningCount = 0;
+  let missingPosCount = 0;
+  let missingTopicCount = 0;
+  let invalidDiffCount = 0;
+  let cGradeCount = 0;
+  let duplicateIdCount = 0;
+  let duplicateWordPosCount = 0;
 
   for (const w of words) {
-    // 빈 필드
     if (!w.word || w.word.trim().length === 0) {
-      console.error(`[오류] 빈 표제어가 존재합니다 (ID: ${w.id})`);
+      emptyWordCount++;
       errorCount++;
     }
     if (!w.mainMeaning || w.mainMeaning.trim().length === 0) {
-      console.error(`[오류] 빈 대표 뜻이 존재합니다: ${w.word}`);
+      emptyMeaningCount++;
       errorCount++;
     }
     if (!w.partOfSpeech) {
-      console.error(`[오류] 품사 누락: ${w.word}`);
+      missingPosCount++;
       errorCount++;
     }
-
-    // 중복 ID
+    if (!w.topics || w.topics.length === 0) {
+      missingTopicCount++;
+      errorCount++;
+    }
+    if (!['easy', 'medium', 'hard'].includes(w.difficulty)) {
+      invalidDiffCount++;
+      errorCount++;
+    }
+    if (w.confidenceGrade === 'C') {
+      cGradeCount++;
+      errorCount++;
+    }
     if (seenIds.has(w.id)) {
-      console.error(`[오류] 중복 ID 발생: ${w.id}`);
+      duplicateIdCount++;
       errorCount++;
     }
     seenIds.add(w.id);
 
-    // 중복 word/POS
     const wordPosKey = `${w.word.toLowerCase()}:${w.partOfSpeech}`;
     if (seenWordPos.has(wordPosKey)) {
-      console.error(`[오류] 중복 표제어/품사 조합 발생: ${wordPosKey}`);
+      duplicateWordPosCount++;
       errorCount++;
     }
     seenWordPos.add(wordPosKey);
+  }
 
-    // 유효하지 않은 난이도
-    if (!['easy', 'medium', 'hard'].includes(w.difficulty)) {
-      console.error(`[오류] 유효하지 않은 난이도: ${w.word} (${w.difficulty})`);
-      errorCount++;
-    }
+  // 3. 기존 200개 회귀 및 Diff 검사 (지시서 31, 32항)
+  const baselinePath = path.join(projectRoot, 'src/data/builtin_words_pilot_v1.json');
+  let baselineMissingCount = 0;
+  let baselineModifiedCount = 0;
 
-    // 주제 누락
-    if (!w.topics || w.topics.length === 0) {
-      console.error(`[오류] 주제(topic) 누락: ${w.word}`);
-      errorCount++;
-    }
+  if (fs.existsSync(baselinePath)) {
+    const baselineData: BuiltinWordsDatabase = JSON.parse(fs.readFileSync(baselinePath, 'utf-8'));
+    const baselineWords = baselineData.words;
 
-    // C등급 출시 포함 금지 (지시서 19, 28항)
-    if (w.confidenceGrade === 'C') {
-      console.error(`[오류] C등급 단어가 출제 데이터에 포함되었습니다: ${w.word}`);
-      errorCount++;
-    }
-
-    // quizEligible false 출시 포함 금지
-    if (!w.quizEligible) {
-      console.error(`[오류] quizEligible=false 단어가 포함되었습니다: ${w.word}`);
-      errorCount++;
+    for (const bWord of baselineWords) {
+      const target = words.find((w) => w.id === bWord.id);
+      if (!target) {
+        baselineMissingCount++;
+        errorCount++;
+      } else {
+        const unchanged =
+          target.word === bWord.word &&
+          target.partOfSpeech === bWord.partOfSpeech &&
+          target.mainMeaning === bWord.mainMeaning &&
+          JSON.stringify(target.subMeanings) === JSON.stringify(bWord.subMeanings);
+        if (!unchanged) {
+          baselineModifiedCount++;
+          errorCount++;
+        }
+      }
     }
   }
 
-  console.log(`[검증 1] 정적 무결성 검사 완료 (결함: ${errorCount}건)`);
+  console.log(`[검증 1] 정적 무결성 및 회귀 검사 완료 (결함: ${errorCount}건)`);
   if (errorCount > 0) {
+    console.error(`- 빈 표제어: ${emptyWordCount}`);
+    console.error(`- 빈 대표 뜻: ${emptyMeaningCount}`);
+    console.error(`- 품사 누락: ${missingPosCount}`);
+    console.error(`- 주제 누락: ${missingTopicCount}`);
+    console.error(`- 잘못된 난이도: ${invalidDiffCount}`);
+    console.error(`- C등급 출시: ${cGradeCount}`);
+    console.error(`- 중복 ID: ${duplicateIdCount}`);
+    console.error(`- 중복 word:pos: ${duplicateWordPosCount}`);
+    console.error(`- 기존 200 누락: ${baselineMissingCount}`);
+    console.error(`- 기존 200 무기록 변경: ${baselineModifiedCount}`);
     return false;
   }
 
-  // 3. 문제풀이 풀(WordEntry[]) 생성
+  // 4. 전수 500개 단어 대상 15,000회 문제 생성 스트레스 테스트 (지시서 27, 28항)
+  // 500단어 x 3개 난이도 x 10개 Seed = 총 15,000회 생성 시험
   const wordEntries: WordEntry[] = words.map(builtinWordToWordEntry);
+  console.log('\n[검증 2] 500개 전수 단어 x 3개 난이도 x 10개 Seed = 15,000회 문제 생성 스트레스 테스트 시작...');
 
-  // 4. 전수 200개 단어 대상 문제 생성 시뮬레이션 (지시서 26~28항)
-  // 200단어 x 3개 난이도 x 10개 Seed = 총 6,000회 생성 시험
-  console.log('\n[검증 2] 200개 전수 단어 x 3개 난이도 x 10개 Seed 문제 생성 스트레스 테스트 시작...');
+  const startTime = Date.now();
   let totalTests = 0;
   let quizErrorCount = 0;
+  let missingAnswerCount = 0;
   let duplicateDistractorCount = 0;
   let blockDistractorCount = 0;
   let subMeaningLeakCount = 0;
@@ -149,9 +182,10 @@ export async function runAudit(): Promise<boolean> {
 
         if (!validation.isValid) {
           quizErrorCount++;
+          if (validation.reason?.includes('정답')) missingAnswerCount++;
           if (validation.reason?.includes('중복')) duplicateDistractorCount++;
           if (validation.reason?.includes('BLOCK')) blockDistractorCount++;
-          console.error(`[유효성 실패] ${targetWord.word} - ${validation.reason}`);
+          console.error(`[유효성 실패] ${targetWord.word} (난이도: ${diff}, seed: ${seed}) - ${validation.reason}`);
         }
 
         // 추가 뜻이 오답 보기에 들어갔는지 2중 확인
@@ -168,18 +202,54 @@ export async function runAudit(): Promise<boolean> {
     }
   }
 
+  const elapsedMs = Date.now() - startTime;
+  console.log(`[검증 2 완료] 15,000회 스트레스 테스트 수행 시간: ${elapsedMs}ms`);
+
+  // 통계 집계
+  const gradeACount = words.filter((w) => w.confidenceGrade === 'A').length;
+  const gradeBCount = words.filter((w) => w.confidenceGrade === 'B').length;
+  const gradeCCount = words.filter((w) => w.confidenceGrade === 'C').length;
+
+  const diffEasy = words.filter((w) => w.difficulty === 'easy').length;
+  const diffMedium = words.filter((w) => w.difficulty === 'medium').length;
+  const diffHard = words.filter((w) => w.difficulty === 'hard').length;
+
+  const posCounts: Record<string, number> = {};
+  for (const w of words) {
+    posCounts[w.partOfSpeech] = (posCounts[w.partOfSpeech] || 0) + 1;
+  }
+
+  const topicCounts: Record<string, number> = {};
+  for (const w of words) {
+    for (const t of w.topics) {
+      topicCounts[t] = (topicCounts[t] || 0) + 1;
+    }
+  }
+
+  // 지시서 57항 필수 출력 양식
   console.log(`\n====================================================`);
-  console.log(`                감사 결과 요약`);
+  console.log(`         DB-02 어휘 데이터베이스 감사 요약 보고서`);
   console.log(`====================================================`);
-  console.log(`- 총 단어 수: ${words.length}`);
-  console.log(`- 출제 가능 단어 수: ${eligibleCount}`);
-  console.log(`- 신뢰 등급 분포: A=${words.filter((w) => w.confidenceGrade === 'A').length}, B=${words.filter((w) => w.confidenceGrade === 'B').length}, C=${words.filter((w) => w.confidenceGrade === 'C').length}`);
-  console.log(`- 총 문제 생성 시험 횟수: ${totalTests}회`);
-  console.log(`- 문제 생성 실패 건수: ${generationFailCount}건`);
-  console.log(`- 보기 중복 건수: ${duplicateDistractorCount}건`);
-  console.log(`- BLOCK 동의어 누출 건수: ${blockDistractorCount}건`);
-  console.log(`- 추가 뜻 오답 누출 건수: ${subMeaningLeakCount}건`);
-  console.log(`- 전체 결함 건수: ${quizErrorCount + errorCount}건`);
+  console.log(`총 단어: ${words.length}`);
+  console.log(`A/B/C: A=${gradeACount}, B=${gradeBCount}, C=${gradeCCount}`);
+  console.log(`난이도: 하=${diffEasy}, 중=${diffMedium}, 상=${diffHard}`);
+  console.log(`품사: 명사=${posCounts['noun'] || 0}, 동사=${posCounts['verb'] || 0}, 형용사=${posCounts['adjective'] || 0}, 부사=${posCounts['adverb'] || 0}`);
+  console.log(`주제 (15개 분포):`);
+  for (const [top, cnt] of Object.entries(topicCounts)) {
+    console.log(`  - ${top}: ${cnt}개`);
+  }
+  console.log(`출제 가능: ${eligibleCount}`);
+  console.log(`중복 (ID / word:pos): ${duplicateIdCount} / ${duplicateWordPosCount}`);
+  console.log(`빈 뜻: ${emptyMeaningCount}`);
+  console.log(`blocked 충돌: ${blockDistractorCount}`);
+  console.log(`문제 생성 횟수: ${totalTests}회`);
+  console.log(`문제 생성 실패: ${generationFailCount}건`);
+  console.log(`정답 누락: ${missingAnswerCount}건`);
+  console.log(`보기 중복: ${duplicateDistractorCount}건`);
+  console.log(`추가 뜻 오답: ${subMeaningLeakCount}건`);
+  console.log(`기존 200 누락: ${baselineMissingCount}건`);
+  console.log(`기존 200 변경: ${baselineModifiedCount}건`);
+  console.log(`전체 결함 건수: ${quizErrorCount + errorCount}건`);
   console.log(`====================================================\n`);
 
   if (quizErrorCount > 0 || errorCount > 0) {
@@ -187,7 +257,7 @@ export async function runAudit(): Promise<boolean> {
     return false;
   }
 
-  console.log(`✅ [AUDIT PASSED] 200개 어휘 DB 및 6,000회 문제 생성 스트레스 테스트 결함 0건 통과!`);
+  console.log(`✅ [AUDIT PASSED] 500개 어휘 DB 및 15,000회 문제 생성 스트레스 테스트 결함 0건 통과!`);
   return true;
 }
 
@@ -195,5 +265,7 @@ export async function runAudit(): Promise<boolean> {
 runAudit().then((passed) => {
   if (!passed) {
     process.exit(1);
+  } else {
+    process.exit(0);
   }
 });

@@ -39,11 +39,12 @@ WordNet Release 3.0 This software and database is being provided to you, the LIC
 
 ### wordfreq
 
+- **작성자 / 귀속 (Attribution)**: Robyn Speer
 - **용도**: 일반 영어 코퍼스 기반 단어 사용 빈도 보조 점수 산정 (너무 희귀하거나 지엽적인 단어 제외, 후보 우선순위 산정 보조 신호)
-- **코드 라이선스**: Apache-2.0
-- **포함 데이터 라이선스**: CC BY-SA 4.0 및 개별 코퍼스 출처 조건 존재
-- **사용 방식**: 개발 및 빌드 파이프라인 단계에서 후보 단어군 우선순위 필터링 보조 신호로만 활용
-- **원시 데이터 앱 포함**: 하지 않음 (wordfreq의 원시 빈도 리스트나 Zipf frequency 데이터 파일을 앱 런타임에 직접 포함하거나 복제 배포하지 않음)
+- **코드 라이선스**: Apache License 2.0 (Copyright (c) Robyn Speer)
+- **포함 데이터 라이선스**: Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0) 및 개별 원천별 attribution 조건 존재
+- **본 프로젝트 사용 방식**: 개발 파이프라인 단계에서 후보 단어 우선순위 필터링 보조 신호로만 활용
+- **원시 wordfreq 데이터**: 앱 배포 파일에 포함하지 않음 (Zipf frequency 등 원시 코퍼스 데이터를 번들 또는 런타임에 일체 포함/배포하지 않음)
 
 ---
 

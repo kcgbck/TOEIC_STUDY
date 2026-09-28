@@ -3,12 +3,32 @@
 # PROJECT_STATUS.md
 
 ## Current Stage
-- `CURRENT_STAGE = DB_PILOT_200_PASS`
-- 이전 완료: `NAME-01 = PASS`, `P0-C = PASS`
+- `CURRENT_STAGE = DB_02_500_PASS`
+- 사람 검토 상태: `HUMAN_REVIEW_PENDING` (WORD_DB_500_REVIEW.md 120문제, WORD_DB_500_WORD_REVIEW.md 300단어 표 생성 완료)
+- 이전 완료: `NAME-01 = PASS`, `P0-C = PASS`, `DB-PILOT-200 = PASS`
 
 ## 배포 상태 (Live Deployment)
 - **GitHub 원격 저장소**: [https://github.com/kcgbck/voca-study](https://github.com/kcgbck/voca-study)
 - **Cloudflare Workers 실서비스 URL**: [https://voca-study.heyruler0011.workers.dev](https://voca-study.heyruler0011.workers.dev)
+
+## DB-02 누적 500개 기본 어휘 DB 확대 완료 항목
+1. **기존 200개 어휘 동결 보존 (PILOT_BASELINE_200)**:
+   - `src/data/builtin_words_pilot_v1.json` 기준선 대비 `added=300, modified=0, removed=0` 무손실 유지
+   - `docs/WORD_DB_ERRATA.md` 정오표 체계 확립 (무기록 수정 0건)
+2. **신규 300개 어휘 탑재 및 품사/주제 균형 보강**:
+   - 총 500단어 구성: 명사 161, 동사 151, 형용사 124, 부사 64
+   - 15개 필수 주제군 골고루 배정
+   - C등급 출시 0건, A등급 454개 / B등급 46개 구성
+3. **동의어 차단 사전 확장 및 최적화**:
+   - `src/data/synonym_blocks_v1.json` 256개 키로 확장
+   - 정규화 키 메모이제이션으로 문제 생성 속도 대폭 개선
+4. **전수 15,000회 문제 생성 스트레스 테스트 결함 0건 통과**:
+   - 500단어 x 3난이도 x 10seed = 15,000회 반복 시험 결함 0건 (정답 누락 0, 보기 중복 0, BLOCK 동의어 0, 추가 뜻 누출 0, 생성 실패 0)
+5. **사람 검토용 리뷰 문서 2종 생성**:
+   - `docs/WORD_DB_500_REVIEW.md` (하 40, 중 40, 상 40 = 총 120문제)
+   - `docs/WORD_DB_500_WORD_REVIEW.md` (신규 300단어 표 및 B등급 35단어 집중 검토군)
+6. **Service Worker 캐시 버전 갱신**:
+   - `voca-study-cache-v3`로 캐시 버스팅 및 500단어 정적 데이터 프리캐시 보장
 
 ## DB-PILOT-200 기본 어휘 데이터베이스 구축 완료 항목
 1. **기본 어휘 정적 데이터 중립 명칭 전환**:
@@ -21,10 +41,13 @@
    - 후보 293개 중 엄격 검증된 출제 적격 200개 선정 (C등급 0건, A/B등급 100%)
    - 15개 필수 주제군 및 4대 품사(명사/동사/형용사/부사) 균형 배분
    - `npm run worddb:audit` 통과: 200단어 x 3난이도 x 10seed = 6,000회 문제 생성 결함 0건
-   - 사람이 확인할 리뷰셋 생성: `docs/WORD_DB_PILOT_REVIEW.md` (하 30, 중 30, 상 30, 총 90선)
+   - 사람 검토용 90문제 세트 생성 완료: `docs/WORD_DB_PILOT_REVIEW.md` (사람 검토 여부: 미확인 / 대기 - `HUMAN_REVIEW_PENDING`)
 4. **기본 문제풀이 UI 확장**:
    - 난이도(하/중/상/전체) 및 문항 수(10/20/30/50/전체) 선택 컨트롤 탑재
    - builtin, photo, pdf 출처 명확 분리 유지
+5. **데이터 출처 및 라이선스 고지**:
+   - WordNet 3.0 License: 표제어/품사/동의어 관계 최소 검증용
+   - wordfreq (코드: Apache License 2.0 / Robyn Speer, 포함 데이터: CC BY-SA 4.0 및 개별 원천 조건): 개발 파이프라인 후보 순위 산정 보조 신호로만 활용 (원시 데이터 앱 미포함)
 
 ## PWA-02 실서비스 기준선 고정 완료 항목
 1. **공개 에셋 안전화 및 저작권 분리**:

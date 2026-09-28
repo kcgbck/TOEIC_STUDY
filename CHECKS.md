@@ -23,13 +23,31 @@
 - [x] 추출된 단어로 사용자 문제집 저장 및 4지선다 퀴즈 연동
 - [x] StorageHealth 상태 진단 및 JSON 데이터 백업/복원 기능 구현
 
-## Current Baseline & Gate Status (DB-PILOT-200 검증 완료)
+## Current Baseline & Gate Status (DB-02 검증 완료)
 - `NAME-01 = PASS` (공개 서비스명: 보카 스터디 / Voca Study)
 - `PDF_IMPORT_BASELINE = PASS`
 - `PHOTO_OCR_EXTRACTION = PASS`
 - `QUIZ_SEMANTIC_UNIQUENESS = PASS`
 - `BUILTIN_VOCABULARY_PILOT = PASS`
-- `CURRENT_STAGE = DB_PILOT_200_PASS`
+- `DB_02_500_PASS = PASS`
+- `HUMAN_REVIEW_STATUS = HUMAN_REVIEW_PENDING` (사람 검토용 120문제 세트 및 신규 300단어 검토표 생성 완료, 인간 검토자 확인 대기)
+- `CURRENT_STAGE = DB_02_500_PASS`
+
+## DB-02 Done Means (누적 500개 어휘 DB 검증 완료)
+- [x] 출제 가능 어휘: 정확히 500개 (`quizEligible=true`, `status='quiz_ready'`)
+- [x] C등급 단어 출시 포함 0건 (A/B등급 100%: A=454개, B=46개)
+- [x] 기존 200개 단어 동결 보존 (Diff 감사: added=300, modified=0, removed=0, errata 기록 외 무단 수정 0건)
+- [x] 빈 표제어, 빈 뜻, 품사 누락, 주제 누락 0건
+- [x] 중복 ID 0건, 중복 word/POS 0건
+- [x] 15개 필수 주제군 및 4대 품사(명사 161, 동사 151, 형용사 124, 부사 64) 균형 배분
+- [x] `npm run worddb:audit` 통과: 500단어 x 3난이도 x 10seed = 15,000회 문제 생성 결함 0건
+- [x] 정답 누락 0, 보기 중복 0, BLOCK 동의어 0, 추가 뜻 오답 0, 생성 실패 0
+- [x] 사람 검토용 120문제 리뷰셋 생성 (`docs/WORD_DB_500_REVIEW.md`, 사람 검토 여부: 미확인 / 대기 - `HUMAN_REVIEW_PENDING`)
+- [x] 사람 검토용 신규 300단어 의미 검토표 생성 (`docs/WORD_DB_500_WORD_REVIEW.md`, B등급 35단어 집중 검토군 포함)
+- [x] 동의어 차단 사전 256개 키 확장 (`src/data/synonym_blocks_v1.json`) 및 메모이제이션 최적화
+- [x] Service Worker 캐시 버전 `voca-study-cache-v3` 갱신
+- [x] 3개 신규 테스트 스위트 추가 (`builtinWords500.test.ts`, `wordDbDiff.test.ts`, `wordDbMigration.test.ts`)
+- [x] PDF 100/100 및 사진 무손실 회귀 0건 유지 (Vitest 11개 스위트, 46개 테스트 전체 PASS)
 
 ## DB-PILOT-200 Done Means (검증 완료)
 - [x] 출제 가능 어휘: 200개 이상 (`quizEligible=true`, `status='quiz_ready'`)
@@ -39,8 +57,8 @@
 - [x] 15개 필수 주제군 및 4대 품사(명/동/형/부) 균형 배분
 - [x] `npm run worddb:audit` 통과 (200단어 x 3난이도 x 10seed = 6,000회 생성 결함 0건)
 - [x] 정답 누락 0, 보기 중복 0, BLOCK 동의어 0, 추가 뜻 오답 0
-- [x] 인간 검토용 90선 리뷰셋 생성 (`docs/WORD_DB_PILOT_REVIEW.md`)
-- [x] 데이터 출처 및 라이선스 감사 문서 작성 (`docs/WORD_DATA_SOURCES.md`)
+- [x] 사람 검토용 90선 리뷰셋 생성 (`docs/WORD_DB_PILOT_REVIEW.md`, 사람 검토 여부: 미확인 / 대기 - `HUMAN_REVIEW_PENDING`)
+- [x] 데이터 출처 및 라이선스 감사 문서 작성 (`docs/WORD_DATA_SOURCES.md`, WordNet 3.0 및 wordfreq: Apache-2.0 / CC BY-SA 4.0 / Robyn Speer attribution)
 - [x] 기본 정적 데이터 경로 전환: `/data/builtin_words_v1.json` (기존 `toeic_words_v1.json` 제거)
 - [x] Service Worker 캐시 버전 `voca-study-cache-v2` 갱신
 - [x] 기본 문제풀이 UI 난이도/문항수 선택 컨트롤 탑재

@@ -1,0 +1,15326 @@
+// 신규 300개 검증 완료 어휘 및 115개 후보 풀 (지시서 DB-02 Section 4~18 준수)
+// 총 신규 후보 풀: 415개 (출제 가능 quiz_ready: 300개, 보류/제외: 115개)
+import type { BuiltinWord } from '../../src/types/word';
+
+export const NEW_READY_300: BuiltinWord[] = [
+  {
+    "id": "builtin:accept:verb",
+    "word": "accept",
+    "lemma": "accept",
+    "partOfSpeech": "verb",
+    "mainMeaning": "수락하다",
+    "subMeanings": [
+      "받아들이다",
+      "동의하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "except"
+    ],
+    "blockedMeanings": [
+      "수락",
+      "동의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: accept.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:acknowledge:verb",
+    "word": "acknowledge",
+    "lemma": "acknowledge",
+    "partOfSpeech": "verb",
+    "mainMeaning": "인정하다",
+    "subMeanings": [
+      "확인하다",
+      "수령을 통지하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "knowledge"
+    ],
+    "blockedMeanings": [
+      "알아주다",
+      "시인하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: acknowledge.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:address:verb",
+    "word": "address",
+    "lemma": "address",
+    "partOfSpeech": "verb",
+    "mainMeaning": "다루다",
+    "subMeanings": [
+      "고심하다",
+      "연설하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "dress"
+    ],
+    "blockedMeanings": [
+      "처리하다",
+      "언급하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: address.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:adjust:verb",
+    "word": "adjust",
+    "lemma": "adjust",
+    "partOfSpeech": "verb",
+    "mainMeaning": "조정하다",
+    "subMeanings": [
+      "조절하다",
+      "적응하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "일반",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "just"
+    ],
+    "blockedMeanings": [
+      "맞추다",
+      "변경하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: adjust.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:admire:verb",
+    "word": "admire",
+    "lemma": "admire",
+    "partOfSpeech": "verb",
+    "mainMeaning": "칭찬하다",
+    "subMeanings": [
+      "감탄하다",
+      "존경하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "admit"
+    ],
+    "blockedMeanings": [
+      "찬양하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: admire.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:allocate:verb",
+    "word": "allocate",
+    "lemma": "allocate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "배분하다",
+    "subMeanings": [
+      "할당하다",
+      "책정하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "locate"
+    ],
+    "blockedMeanings": [
+      "나누어주다",
+      "지정하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: allocate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:announce:verb",
+    "word": "announce",
+    "lemma": "announce",
+    "partOfSpeech": "verb",
+    "mainMeaning": "발표하다",
+    "subMeanings": [
+      "알리다",
+      "공고하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "pronounce"
+    ],
+    "blockedMeanings": [
+      "공표하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: announce.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:anticipate:verb",
+    "word": "anticipate",
+    "lemma": "anticipate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "예상하다",
+    "subMeanings": [
+      "기대하다",
+      "고대하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "participate"
+    ],
+    "blockedMeanings": [
+      "예측하다",
+      "내다보다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: anticipate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:appreciate:verb",
+    "word": "appreciate",
+    "lemma": "appreciate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "감사하다",
+    "subMeanings": [
+      "고마워하다",
+      "진가를 인정하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "depreciate"
+    ],
+    "blockedMeanings": [
+      "고맙게여기다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: appreciate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:approve:verb",
+    "word": "approve",
+    "lemma": "approve",
+    "partOfSpeech": "verb",
+    "mainMeaning": "승인하다",
+    "subMeanings": [
+      "허가하다",
+      "찬성하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "prove"
+    ],
+    "blockedMeanings": [
+      "인가하다",
+      "결재하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: approve.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:arrange:verb",
+    "word": "arrange",
+    "lemma": "arrange",
+    "partOfSpeech": "verb",
+    "mainMeaning": "준비하다",
+    "subMeanings": [
+      "정리하다",
+      "배열하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "range"
+    ],
+    "blockedMeanings": [
+      "마련하다",
+      "계획하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: arrange.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:assess:verb",
+    "word": "assess",
+    "lemma": "assess",
+    "partOfSpeech": "verb",
+    "mainMeaning": "평가하다",
+    "subMeanings": [
+      "산정하다",
+      "가늠하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "asset",
+      "access"
+    ],
+    "blockedMeanings": [
+      "사정하다",
+      "측정하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: assess.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:assign:verb",
+    "word": "assign",
+    "lemma": "assign",
+    "partOfSpeech": "verb",
+    "mainMeaning": "배정하다",
+    "subMeanings": [
+      "맡기다",
+      "할당하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sign",
+      "design"
+    ],
+    "blockedMeanings": [
+      "부여하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: assign.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:authorize:verb",
+    "word": "authorize",
+    "lemma": "authorize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "인가하다",
+    "subMeanings": [
+      "권한을 주다",
+      "승인하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "authority"
+    ],
+    "blockedMeanings": [
+      "허락하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: authorize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:collaborate:verb",
+    "word": "collaborate",
+    "lemma": "collaborate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "협력하다",
+    "subMeanings": [
+      "공동작업하다",
+      "협동하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "elaborate"
+    ],
+    "blockedMeanings": [
+      "제휴하다",
+      "함께일하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: collaborate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:compensate:verb",
+    "word": "compensate",
+    "lemma": "compensate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "보상하다",
+    "subMeanings": [
+      "배상하다",
+      "보충하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "compete"
+    ],
+    "blockedMeanings": [
+      "변상하다",
+      "갚아주다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: compensate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:compile:verb",
+    "word": "compile",
+    "lemma": "compile",
+    "partOfSpeech": "verb",
+    "mainMeaning": "수집하다",
+    "subMeanings": [
+      "편집하다",
+      "자료를 모으다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "comply"
+    ],
+    "blockedMeanings": [
+      "종합하다",
+      "취합하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: compile.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:comply:verb",
+    "word": "comply",
+    "lemma": "comply",
+    "partOfSpeech": "verb",
+    "mainMeaning": "준수하다",
+    "subMeanings": [
+      "따르다",
+      "응하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "compile",
+      "apply"
+    ],
+    "blockedMeanings": [
+      "지키다",
+      "순응하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: comply.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:compose:verb",
+    "word": "compose",
+    "lemma": "compose",
+    "partOfSpeech": "verb",
+    "mainMeaning": "구성하다",
+    "subMeanings": [
+      "작성하다",
+      "작곡하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "compromise"
+    ],
+    "blockedMeanings": [
+      "이루다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: compose.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:conclude:verb",
+    "word": "conclude",
+    "lemma": "conclude",
+    "partOfSpeech": "verb",
+    "mainMeaning": "결론짓다",
+    "subMeanings": [
+      "끝내다",
+      "체결하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "include",
+      "exclude"
+    ],
+    "blockedMeanings": [
+      "매듭짓다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: conclude.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:conduct:verb",
+    "word": "conduct",
+    "lemma": "conduct",
+    "partOfSpeech": "verb",
+    "mainMeaning": "수행하다",
+    "subMeanings": [
+      "실시하다",
+      "지휘하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "deduct",
+      "product"
+    ],
+    "blockedMeanings": [
+      "행하다",
+      "진행하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: conduct.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:conserve:verb",
+    "word": "conserve",
+    "lemma": "conserve",
+    "partOfSpeech": "verb",
+    "mainMeaning": "보존하다",
+    "subMeanings": [
+      "절약하다",
+      "아끼다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "시설/건물",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "preserve",
+      "reserve"
+    ],
+    "blockedMeanings": [
+      "간수하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: conserve.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:consolidate:verb",
+    "word": "consolidate",
+    "lemma": "consolidate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "통합하다",
+    "subMeanings": [
+      "강화하다",
+      "합병하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "solid"
+    ],
+    "blockedMeanings": [
+      "결합하다",
+      "하나로합치다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: consolidate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:contribute:verb",
+    "word": "contribute",
+    "lemma": "contribute",
+    "partOfSpeech": "verb",
+    "mainMeaning": "기여하다",
+    "subMeanings": [
+      "공헌하다",
+      "기고하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "distribute",
+      "attribute"
+    ],
+    "blockedMeanings": [
+      "이바지하다",
+      "도움이되다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: contribute.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:coordinate:verb",
+    "word": "coordinate",
+    "lemma": "coordinate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "조율하다",
+    "subMeanings": [
+      "조정하다",
+      "협력시키다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "coordinate"
+    ],
+    "blockedMeanings": [
+      "통합조정하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: coordinate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:customize:verb",
+    "word": "customize",
+    "lemma": "customize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "맞춤제작하다",
+    "subMeanings": [
+      "주문생산하다",
+      "개별화하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "구매/주문",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "customer"
+    ],
+    "blockedMeanings": [
+      "특화하다",
+      "개조하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: customize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:decline:verb",
+    "word": "decline",
+    "lemma": "decline",
+    "partOfSpeech": "verb",
+    "mainMeaning": "거절하다",
+    "subMeanings": [
+      "감소하다",
+      "하락하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "incline"
+    ],
+    "blockedMeanings": [
+      "마다하다",
+      "사양하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: decline.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:demonstrate:verb",
+    "word": "demonstrate",
+    "lemma": "demonstrate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "시연하다",
+    "subMeanings": [
+      "입증하다",
+      "설명하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "monster"
+    ],
+    "blockedMeanings": [
+      "보여주다",
+      "증명하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: demonstrate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:designate:verb",
+    "word": "designate",
+    "lemma": "designate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "지정하다",
+    "subMeanings": [
+      "지명하다",
+      "가리키다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "시설/건물",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "design"
+    ],
+    "blockedMeanings": [
+      "임명하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: designate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:discard:verb",
+    "word": "discard",
+    "lemma": "discard",
+    "partOfSpeech": "verb",
+    "mainMeaning": "폐기하다",
+    "subMeanings": [
+      "버리다",
+      "처분하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "시설/건물",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "card",
+      "discharge"
+    ],
+    "blockedMeanings": [
+      "내다버리다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: discard.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:disclose:verb",
+    "word": "disclose",
+    "lemma": "disclose",
+    "partOfSpeech": "verb",
+    "mainMeaning": "공개하다",
+    "subMeanings": [
+      "밝히다",
+      "누설하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "close"
+    ],
+    "blockedMeanings": [
+      "드러내다",
+      "폭로하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: disclose.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:discourage:verb",
+    "word": "discourage",
+    "lemma": "discourage",
+    "partOfSpeech": "verb",
+    "mainMeaning": "단념시키다",
+    "subMeanings": [
+      "만류하다",
+      "낙담시키다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "encourage"
+    ],
+    "blockedMeanings": [
+      "막다",
+      "좌절시키다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: discourage.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:dismiss:verb",
+    "word": "dismiss",
+    "lemma": "dismiss",
+    "partOfSpeech": "verb",
+    "mainMeaning": "해고하다",
+    "subMeanings": [
+      "기각하다",
+      "해산시키다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "miss"
+    ],
+    "blockedMeanings": [
+      "면직하다",
+      "묵살하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: dismiss.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:distribute:verb",
+    "word": "distribute",
+    "lemma": "distribute",
+    "partOfSpeech": "verb",
+    "mainMeaning": "배포하다",
+    "subMeanings": [
+      "유통하다",
+      "나누어주다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "배송/물류",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "contribute"
+    ],
+    "blockedMeanings": [
+      "분배하다",
+      "지급하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: distribute.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:duplicate:verb",
+    "word": "duplicate",
+    "lemma": "duplicate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "복제하다",
+    "subMeanings": [
+      "복사하다",
+      "되풀이하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "replicate"
+    ],
+    "blockedMeanings": [
+      "이중으로하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: duplicate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:emphasize:verb",
+    "word": "emphasize",
+    "lemma": "emphasize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "강조하다",
+    "subMeanings": [
+      "중시하다",
+      "역설하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "empathy"
+    ],
+    "blockedMeanings": [
+      "부각하다",
+      "힘주어말하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: emphasize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:encourage:verb",
+    "word": "encourage",
+    "lemma": "encourage",
+    "partOfSpeech": "verb",
+    "mainMeaning": "격려하다",
+    "subMeanings": [
+      "장려하다",
+      "권장하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "courage"
+    ],
+    "blockedMeanings": [
+      "북돋우다",
+      "촉진하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: encourage.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:endorse:verb",
+    "word": "endorse",
+    "lemma": "endorse",
+    "partOfSpeech": "verb",
+    "mainMeaning": "지지하다",
+    "subMeanings": [
+      "보증하다",
+      "배서하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "판매/마케팅",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "dorse"
+    ],
+    "blockedMeanings": [
+      "추천하다",
+      "승인하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: endorse.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:enhance:verb",
+    "word": "enhance",
+    "lemma": "enhance",
+    "partOfSpeech": "verb",
+    "mainMeaning": "향상시키다",
+    "subMeanings": [
+      "높이다",
+      "강화하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "기술/장비",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "chance"
+    ],
+    "blockedMeanings": [
+      "개선하다",
+      "증진하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: enhance.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:evaluate:verb",
+    "word": "evaluate",
+    "lemma": "evaluate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "평가하다",
+    "subMeanings": [
+      "감정하다",
+      "성적을 매기다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "value"
+    ],
+    "blockedMeanings": [
+      "가치를매기다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: evaluate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:examine:verb",
+    "word": "examine",
+    "lemma": "examine",
+    "partOfSpeech": "verb",
+    "mainMeaning": "조사하다",
+    "subMeanings": [
+      "검토하다",
+      "진찰하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "exam"
+    ],
+    "blockedMeanings": [
+      "살펴보다",
+      "점검하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: examine.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:exceed:verb",
+    "word": "exceed",
+    "lemma": "exceed",
+    "partOfSpeech": "verb",
+    "mainMeaning": "초과하다",
+    "subMeanings": [
+      "넘어서다",
+      "능가하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "succeed",
+      "access"
+    ],
+    "blockedMeanings": [
+      "넘다",
+      "상회하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: exceed.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:execute:verb",
+    "word": "execute",
+    "lemma": "execute",
+    "partOfSpeech": "verb",
+    "mainMeaning": "실행하다",
+    "subMeanings": [
+      "처형하다",
+      "집행하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "executive"
+    ],
+    "blockedMeanings": [
+      "이행하다",
+      "수행하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: execute.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:expire:verb",
+    "word": "expire",
+    "lemma": "expire",
+    "partOfSpeech": "verb",
+    "mainMeaning": "만료되다",
+    "subMeanings": [
+      "끝나다",
+      "숨을 거두다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "구매/주문",
+      "여행/교통"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "inspire"
+    ],
+    "blockedMeanings": [
+      "기간이끝나다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: expire.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:facilitate:verb",
+    "word": "facilitate",
+    "lemma": "facilitate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "촉진하다",
+    "subMeanings": [
+      "용이하게하다",
+      "돕다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "facility"
+    ],
+    "blockedMeanings": [
+      "수월하게하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: facilitate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:finalize:verb",
+    "word": "finalize",
+    "lemma": "finalize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "마무리하다",
+    "subMeanings": [
+      "완결하다",
+      "매듭짓다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "final"
+    ],
+    "blockedMeanings": [
+      "확정하다",
+      "끝맺다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: finalize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:generate:verb",
+    "word": "generate",
+    "lemma": "generate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "창출하다",
+    "subMeanings": [
+      "발생시키다",
+      "생산하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "generation"
+    ],
+    "blockedMeanings": [
+      "만들어내다",
+      "일으키다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: generate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:handle:verb",
+    "word": "handle",
+    "lemma": "handle",
+    "partOfSpeech": "verb",
+    "mainMeaning": "처리하다",
+    "subMeanings": [
+      "다루다",
+      "손으로만지다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "hand"
+    ],
+    "blockedMeanings": [
+      "해결하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: handle.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:highlight:verb",
+    "word": "highlight",
+    "lemma": "highlight",
+    "partOfSpeech": "verb",
+    "mainMeaning": "강조하다",
+    "subMeanings": [
+      "눈에띄게하다",
+      "형광펜을칠하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "high",
+      "light"
+    ],
+    "blockedMeanings": [
+      "두드러지게하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: highlight.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:illustrate:verb",
+    "word": "illustrate",
+    "lemma": "illustrate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "설명하다",
+    "subMeanings": [
+      "예시하다",
+      "삽화를넣다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "교육/행사",
+      "회의/일정"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "illusion"
+    ],
+    "blockedMeanings": [
+      "해설하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: illustrate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:inaugurate:verb",
+    "word": "inaugurate",
+    "lemma": "inaugurate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "취임시키다",
+    "subMeanings": [
+      "개관하다",
+      "시작하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "교육/행사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "augur"
+    ],
+    "blockedMeanings": [
+      "개통하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: inaugurate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:incorporate:verb",
+    "word": "incorporate",
+    "lemma": "incorporate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "포함하다",
+    "subMeanings": [
+      "통합하다",
+      "법인화하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "corporation"
+    ],
+    "blockedMeanings": [
+      "합병하다",
+      "받아들이다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: incorporate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:indicate:verb",
+    "word": "indicate",
+    "lemma": "indicate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "나타내다",
+    "subMeanings": [
+      "가리키다",
+      "표시하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "기술/장비",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "indicator"
+    ],
+    "blockedMeanings": [
+      "보여주다",
+      "암시하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: indicate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:influence:verb",
+    "word": "influence",
+    "lemma": "influence",
+    "partOfSpeech": "verb",
+    "mainMeaning": "영향을 미치다",
+    "subMeanings": [
+      "좌우하다",
+      "감화하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "flu"
+    ],
+    "blockedMeanings": [
+      "작용하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: influence.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:initiate:verb",
+    "word": "initiate",
+    "lemma": "initiate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "시작하다",
+    "subMeanings": [
+      "착수하다",
+      "개시하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "initial"
+    ],
+    "blockedMeanings": [
+      "창안하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: initiate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:introduce:verb",
+    "word": "introduce",
+    "lemma": "introduce",
+    "partOfSpeech": "verb",
+    "mainMeaning": "도입하다",
+    "subMeanings": [
+      "소개하다",
+      "선보이다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "production"
+    ],
+    "blockedMeanings": [
+      "안내하다",
+      "출시하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: introduce.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:investigate:verb",
+    "word": "investigate",
+    "lemma": "investigate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "조사하다",
+    "subMeanings": [
+      "수사하다",
+      "살피다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "invest"
+    ],
+    "blockedMeanings": [
+      "규명하다",
+      "연구하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: investigate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:launch:verb",
+    "word": "launch",
+    "lemma": "launch",
+    "partOfSpeech": "verb",
+    "mainMeaning": "출시하다",
+    "subMeanings": [
+      "시작하다",
+      "발사하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "lunch"
+    ],
+    "blockedMeanings": [
+      "개시하다",
+      "선보이다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: launch.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:maintain:verb",
+    "word": "maintain",
+    "lemma": "maintain",
+    "partOfSpeech": "verb",
+    "mainMeaning": "유지하다",
+    "subMeanings": [
+      "관리하다",
+      "주장하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "시설/건물",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "main"
+    ],
+    "blockedMeanings": [
+      "지속하다",
+      "보존하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: maintain.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:manage:verb",
+    "word": "manage",
+    "lemma": "manage",
+    "partOfSpeech": "verb",
+    "mainMeaning": "관리하다",
+    "subMeanings": [
+      "경영하다",
+      "용케해내다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "manager"
+    ],
+    "blockedMeanings": [
+      "운영하다",
+      "다루다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: manage.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:modify:verb",
+    "word": "modify",
+    "lemma": "modify",
+    "partOfSpeech": "verb",
+    "mainMeaning": "수정하다",
+    "subMeanings": [
+      "바꾸다",
+      "수식하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "기술/장비",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "mode"
+    ],
+    "blockedMeanings": [
+      "변경하다",
+      "고치다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: modify.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:monitor:verb",
+    "word": "monitor",
+    "lemma": "monitor",
+    "partOfSpeech": "verb",
+    "mainMeaning": "감시하다",
+    "subMeanings": [
+      "점검하다",
+      "관찰하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "생산/제조",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "monitor"
+    ],
+    "blockedMeanings": [
+      "추적하다",
+      "모니터하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: monitor.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:motivate:verb",
+    "word": "motivate",
+    "lemma": "motivate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "동기를 부여하다",
+    "subMeanings": [
+      "자극하다",
+      "격려하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "motive"
+    ],
+    "blockedMeanings": [
+      "의욕을고취하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: motivate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:obtain:verb",
+    "word": "obtain",
+    "lemma": "obtain",
+    "partOfSpeech": "verb",
+    "mainMeaning": "획득하다",
+    "subMeanings": [
+      "얻다",
+      "취득하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "구매/주문",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "attain"
+    ],
+    "blockedMeanings": [
+      "구하다",
+      "확보하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: obtain.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:operate:verb",
+    "word": "operate",
+    "lemma": "operate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "운영하다",
+    "subMeanings": [
+      "작동하다",
+      "수술하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "기술/장비",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "operation"
+    ],
+    "blockedMeanings": [
+      "가동하다",
+      "운행하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: operate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:organize:verb",
+    "word": "organize",
+    "lemma": "organize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "정리하다",
+    "subMeanings": [
+      "조직하다",
+      "준비하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "organ"
+    ],
+    "blockedMeanings": [
+      "체계화하다",
+      "기획하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: organize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:outline:verb",
+    "word": "outline",
+    "lemma": "outline",
+    "partOfSpeech": "verb",
+    "mainMeaning": "개요를 서술하다",
+    "subMeanings": [
+      "약술하다",
+      "윤곽을그리다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "line"
+    ],
+    "blockedMeanings": [
+      "요약하다",
+      "설명하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: outline.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:overlook:verb",
+    "word": "overlook",
+    "lemma": "overlook",
+    "partOfSpeech": "verb",
+    "mainMeaning": "간과하다",
+    "subMeanings": [
+      "내려다보다",
+      "눈감아주다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "시설/건물"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "look"
+    ],
+    "blockedMeanings": [
+      "못보고넘어가다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: overlook.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:participate:verb",
+    "word": "participate",
+    "lemma": "participate",
+    "partOfSpeech": "verb",
+    "mainMeaning": "참가하다",
+    "subMeanings": [
+      "참여하다",
+      "함께하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "교육/행사",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "part"
+    ],
+    "blockedMeanings": [
+      "출석하다",
+      "가담하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: participate.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:perform:verb",
+    "word": "perform",
+    "lemma": "perform",
+    "partOfSpeech": "verb",
+    "mainMeaning": "수행하다",
+    "subMeanings": [
+      "공연하다",
+      "작동하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "form"
+    ],
+    "blockedMeanings": [
+      "실행하다",
+      "연주하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: perform.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:persist:verb",
+    "word": "persist",
+    "lemma": "persist",
+    "partOfSpeech": "verb",
+    "mainMeaning": "지속하다",
+    "subMeanings": [
+      "고집하다",
+      "잔존하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "insist",
+      "resist"
+    ],
+    "blockedMeanings": [
+      "끈질기게계속하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: persist.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:predict:verb",
+    "word": "predict",
+    "lemma": "predict",
+    "partOfSpeech": "verb",
+    "mainMeaning": "예측하다",
+    "subMeanings": [
+      "예견하다",
+      "전망하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "dictate"
+    ],
+    "blockedMeanings": [
+      "예상하다",
+      "내다보다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: predict.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:preserve:verb",
+    "word": "preserve",
+    "lemma": "preserve",
+    "partOfSpeech": "verb",
+    "mainMeaning": "보존하다",
+    "subMeanings": [
+      "보호하다",
+      "유지하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "시설/건물",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "reserve"
+    ],
+    "blockedMeanings": [
+      "지키다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: preserve.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:prioritize:verb",
+    "word": "prioritize",
+    "lemma": "prioritize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "우선순위를 매기다",
+    "subMeanings": [
+      "우선하다",
+      "중요시하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "priority"
+    ],
+    "blockedMeanings": [
+      "먼저처리하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: prioritize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:proceed:verb",
+    "word": "proceed",
+    "lemma": "proceed",
+    "partOfSpeech": "verb",
+    "mainMeaning": "진행하다",
+    "subMeanings": [
+      "나아가다",
+      "계속하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "precede"
+    ],
+    "blockedMeanings": [
+      "계속되다",
+      "추진하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: proceed.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:process:verb",
+    "word": "process",
+    "lemma": "process",
+    "partOfSpeech": "verb",
+    "mainMeaning": "가공하다",
+    "subMeanings": [
+      "처리하다",
+      "수속하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "proceed"
+    ],
+    "blockedMeanings": [
+      "다루다",
+      "정리하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: process.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:prohibit:verb",
+    "word": "prohibit",
+    "lemma": "prohibit",
+    "partOfSpeech": "verb",
+    "mainMeaning": "금지하다",
+    "subMeanings": [
+      "방해하다",
+      "못하게하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "inhibit"
+    ],
+    "blockedMeanings": [
+      "막다",
+      "제한하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: prohibit.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:propose:verb",
+    "word": "propose",
+    "lemma": "propose",
+    "partOfSpeech": "verb",
+    "mainMeaning": "제안하다",
+    "subMeanings": [
+      "제의하다",
+      "청혼하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "purpose"
+    ],
+    "blockedMeanings": [
+      "건의하다",
+      "발의하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: propose.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:provide:verb",
+    "word": "provide",
+    "lemma": "provide",
+    "partOfSpeech": "verb",
+    "mainMeaning": "제공하다",
+    "subMeanings": [
+      "공급하다",
+      "규정하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "provider"
+    ],
+    "blockedMeanings": [
+      "주다",
+      "마련하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: provide.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:publish:verb",
+    "word": "publish",
+    "lemma": "publish",
+    "partOfSpeech": "verb",
+    "mainMeaning": "출판하다",
+    "subMeanings": [
+      "게재하다",
+      "발표하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "public"
+    ],
+    "blockedMeanings": [
+      "발행하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: publish.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:recommend:verb",
+    "word": "recommend",
+    "lemma": "recommend",
+    "partOfSpeech": "verb",
+    "mainMeaning": "추천하다",
+    "subMeanings": [
+      "권고하다",
+      "권하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "commend"
+    ],
+    "blockedMeanings": [
+      "제안하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: recommend.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:recover:verb",
+    "word": "recover",
+    "lemma": "recover",
+    "partOfSpeech": "verb",
+    "mainMeaning": "회복하다",
+    "subMeanings": [
+      "되찾다",
+      "만회하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "cover"
+    ],
+    "blockedMeanings": [
+      "원상복구하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: recover.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:reduce:verb",
+    "word": "reduce",
+    "lemma": "reduce",
+    "partOfSpeech": "verb",
+    "mainMeaning": "줄이다",
+    "subMeanings": [
+      "감소시키다",
+      "낮추다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "produce"
+    ],
+    "blockedMeanings": [
+      "축소하다",
+      "인하하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: reduce.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:register:verb",
+    "word": "register",
+    "lemma": "register",
+    "partOfSpeech": "verb",
+    "mainMeaning": "등록하다",
+    "subMeanings": [
+      "기록하다",
+      "신청하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "교육/행사",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "regular"
+    ],
+    "blockedMeanings": [
+      "접수하다",
+      "명부에올리다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: register.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:release:verb",
+    "word": "release",
+    "lemma": "release",
+    "partOfSpeech": "verb",
+    "mainMeaning": "공개하다",
+    "subMeanings": [
+      "출시하다",
+      "해제하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "lease"
+    ],
+    "blockedMeanings": [
+      "발표하다",
+      "놓아주다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: release.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:remind:verb",
+    "word": "remind",
+    "lemma": "remind",
+    "partOfSpeech": "verb",
+    "mainMeaning": "상기시키다",
+    "subMeanings": [
+      "일깨우다",
+      "알려주다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "mind"
+    ],
+    "blockedMeanings": [
+      "다시알리다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: remind.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:renew:verb",
+    "word": "renew",
+    "lemma": "renew",
+    "partOfSpeech": "verb",
+    "mainMeaning": "갱신하다",
+    "subMeanings": [
+      "재개하다",
+      "연장하다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "구매/주문",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "new"
+    ],
+    "blockedMeanings": [
+      "새롭게하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: renew.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:replace:verb",
+    "word": "replace",
+    "lemma": "replace",
+    "partOfSpeech": "verb",
+    "mainMeaning": "교체하다",
+    "subMeanings": [
+      "대체하다",
+      "대신하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "place"
+    ],
+    "blockedMeanings": [
+      "바꾸다",
+      "후임이되다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: replace.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:require:verb",
+    "word": "require",
+    "lemma": "require",
+    "partOfSpeech": "verb",
+    "mainMeaning": "요구하다",
+    "subMeanings": [
+      "필요로하다",
+      "명하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "acquire",
+      "inquire"
+    ],
+    "blockedMeanings": [
+      "필요로하다",
+      "규정하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: require.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:retain:verb",
+    "word": "retain",
+    "lemma": "retain",
+    "partOfSpeech": "verb",
+    "mainMeaning": "유지하다",
+    "subMeanings": [
+      "보유하다",
+      "기억하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "obtain",
+      "contain"
+    ],
+    "blockedMeanings": [
+      "간직하다",
+      "계속고용하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: retain.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:review:verb",
+    "word": "review",
+    "lemma": "review",
+    "partOfSpeech": "verb",
+    "mainMeaning": "검토하다",
+    "subMeanings": [
+      "복습하다",
+      "비평하다"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "view"
+    ],
+    "blockedMeanings": [
+      "살펴보다",
+      "재조사하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: review.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:revise:verb",
+    "word": "revise",
+    "lemma": "revise",
+    "partOfSpeech": "verb",
+    "mainMeaning": "개정하다",
+    "subMeanings": [
+      "수정하다",
+      "고치다"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "vision"
+    ],
+    "blockedMeanings": [
+      "변경하다",
+      "바로잡다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: revise.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:solicit:verb",
+    "word": "solicit",
+    "lemma": "solicit",
+    "partOfSpeech": "verb",
+    "mainMeaning": "요청하다",
+    "subMeanings": [
+      "간청하다",
+      "구하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "solitary"
+    ],
+    "blockedMeanings": [
+      "청하다",
+      "호소하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: solicit.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:specify:verb",
+    "word": "specify",
+    "lemma": "specify",
+    "partOfSpeech": "verb",
+    "mainMeaning": "명시하다",
+    "subMeanings": [
+      "자세히말하다",
+      "구체화하다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "구매/주문",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "specific"
+    ],
+    "blockedMeanings": [
+      "일일이지정하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: specify.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:utilize:verb",
+    "word": "utilize",
+    "lemma": "utilize",
+    "partOfSpeech": "verb",
+    "mainMeaning": "활용하다",
+    "subMeanings": [
+      "이용하다",
+      "쓰다"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "기술/장비",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "utility"
+    ],
+    "blockedMeanings": [
+      "사용하다"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: utilize.v.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:accurate:adjective",
+    "word": "accurate",
+    "lemma": "accurate",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "정확한",
+    "subMeanings": [
+      "정밀한",
+      "오류가 없는"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "일반",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "accurate"
+    ],
+    "blockedMeanings": [
+      "올바른"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: accurate.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:adequate:adjective",
+    "word": "adequate",
+    "lemma": "adequate",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "적절한",
+    "subMeanings": [
+      "충분한",
+      "알맞은"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "equal"
+    ],
+    "blockedMeanings": [
+      "알맞은",
+      "합당한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: adequate.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:apparent:adjective",
+    "word": "apparent",
+    "lemma": "apparent",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "명백한",
+    "subMeanings": [
+      "분명한",
+      "외견상의"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "appear"
+    ],
+    "blockedMeanings": [
+      "뚜렷한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: apparent.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:applicable:adjective",
+    "word": "applicable",
+    "lemma": "applicable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "적용 가능한",
+    "subMeanings": [
+      "해당되는",
+      "타당한"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "구매/주문",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "apply"
+    ],
+    "blockedMeanings": [
+      "응용할수있는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: applicable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:appreciative:adjective",
+    "word": "appreciative",
+    "lemma": "appreciative",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "감사하는",
+    "subMeanings": [
+      "고마워하는",
+      "진가를 아는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "appreciate"
+    ],
+    "blockedMeanings": [
+      "은혜를아는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: appreciative.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:appropriate:adjective",
+    "word": "appropriate",
+    "lemma": "appropriate",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "적합한",
+    "subMeanings": [
+      "알맞은",
+      "타당한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "property"
+    ],
+    "blockedMeanings": [
+      "어울리는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: appropriate.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:attentive:adjective",
+    "word": "attentive",
+    "lemma": "attentive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "주의 깊은",
+    "subMeanings": [
+      "세심한",
+      "경청하는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "attend"
+    ],
+    "blockedMeanings": [
+      "배려심있는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: attentive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:beneficial:adjective",
+    "word": "beneficial",
+    "lemma": "beneficial",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "유익한",
+    "subMeanings": [
+      "이로운",
+      "도움이 되는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "일반",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "benefit"
+    ],
+    "blockedMeanings": [
+      "이익이되는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: beneficial.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:brief:adjective",
+    "word": "brief",
+    "lemma": "brief",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "간결한",
+    "subMeanings": [
+      "잠깐의",
+      "짧은"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "briefing"
+    ],
+    "blockedMeanings": [
+      "단순한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: brief.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:broad:adjective",
+    "word": "broad",
+    "lemma": "broad",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "광범위한",
+    "subMeanings": [
+      "넓은",
+      "일반적인"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "board"
+    ],
+    "blockedMeanings": [
+      "폭넓은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: broad.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:cautious:adjective",
+    "word": "cautious",
+    "lemma": "cautious",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "신중한",
+    "subMeanings": [
+      "조심스러운",
+      "주의하는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "caution"
+    ],
+    "blockedMeanings": [
+      "경계하는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: cautious.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:comprehensive:adjective",
+    "word": "comprehensive",
+    "lemma": "comprehensive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "포괄적인",
+    "subMeanings": [
+      "종합적인",
+      "이해력이 넓은"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "comprehend"
+    ],
+    "blockedMeanings": [
+      "광범한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: comprehensive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:considerable:adjective",
+    "word": "considerable",
+    "lemma": "considerable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "상당한",
+    "subMeanings": [
+      "적지 않은",
+      "중요한"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "consider"
+    ],
+    "blockedMeanings": [
+      "많은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: considerable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:consistent:adjective",
+    "word": "consistent",
+    "lemma": "consistent",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "일관된",
+    "subMeanings": [
+      "한결같은",
+      "모순이 없는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "insist"
+    ],
+    "blockedMeanings": [
+      "변함없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: consistent.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:constructive:adjective",
+    "word": "constructive",
+    "lemma": "constructive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "건설적인",
+    "subMeanings": [
+      "발전적인",
+      "도움이 되는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "construct"
+    ],
+    "blockedMeanings": [
+      "유익한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: constructive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:critical:adjective",
+    "word": "critical",
+    "lemma": "critical",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "중대한",
+    "subMeanings": [
+      "비판적인",
+      "결정적인"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "일반",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "critic"
+    ],
+    "blockedMeanings": [
+      "치명적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: critical.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:decisive:adjective",
+    "word": "decisive",
+    "lemma": "decisive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "결정적인",
+    "subMeanings": [
+      "단호한",
+      "결단력 있는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "decide"
+    ],
+    "blockedMeanings": [
+      "명확한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: decisive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:dedicated:adjective",
+    "word": "dedicated",
+    "lemma": "dedicated",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "헌신적인",
+    "subMeanings": [
+      "전념하는",
+      "전용의"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "dedicate"
+    ],
+    "blockedMeanings": [
+      "몰두하는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: dedicated.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:dependable:adjective",
+    "word": "dependable",
+    "lemma": "dependable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "신뢰할 수 있는",
+    "subMeanings": [
+      "믿음직한",
+      "확실한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "기술/장비",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "depend"
+    ],
+    "blockedMeanings": [
+      "믿음직한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: dependable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:desirable:adjective",
+    "word": "desirable",
+    "lemma": "desirable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "바람직한",
+    "subMeanings": [
+      "호감가는",
+      "가치있는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "desire"
+    ],
+    "blockedMeanings": [
+      "이상적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: desirable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:detailed:adjective",
+    "word": "detailed",
+    "lemma": "detailed",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "상세한",
+    "subMeanings": [
+      "자세한",
+      "세부적인"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "detail"
+    ],
+    "blockedMeanings": [
+      "구체적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: detailed.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:distinct:adjective",
+    "word": "distinct",
+    "lemma": "distinct",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "뚜렷한",
+    "subMeanings": [
+      "별개의",
+      "확연한"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "distinguish"
+    ],
+    "blockedMeanings": [
+      "독특한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: distinct.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:dramatic:adjective",
+    "word": "dramatic",
+    "lemma": "dramatic",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "극적인",
+    "subMeanings": [
+      "급격한",
+      "감동적인"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "drama"
+    ],
+    "blockedMeanings": [
+      "눈부신"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: dramatic.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:durable:adjective",
+    "word": "durable",
+    "lemma": "durable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "내구성 있는",
+    "subMeanings": [
+      "튼튼한",
+      "오래가는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "duration"
+    ],
+    "blockedMeanings": [
+      "견고한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: durable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:eager:adjective",
+    "word": "eager",
+    "lemma": "eager",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "열의를 보이는",
+    "subMeanings": [
+      "열망하는",
+      "간절한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "eagle"
+    ],
+    "blockedMeanings": [
+      "의욕적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: eager.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:economical:adjective",
+    "word": "economical",
+    "lemma": "economical",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "경제적인",
+    "subMeanings": [
+      "절약하는",
+      "알뜰한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "구매/주문",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "economy"
+    ],
+    "blockedMeanings": [
+      "비용효율적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: economical.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:enthusiastic:adjective",
+    "word": "enthusiastic",
+    "lemma": "enthusiastic",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "열정적인",
+    "subMeanings": [
+      "열심인",
+      "열렬한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "enthusiasm"
+    ],
+    "blockedMeanings": [
+      "열렬한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: enthusiastic.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:exceptional:adjective",
+    "word": "exceptional",
+    "lemma": "exceptional",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "뛰어난",
+    "subMeanings": [
+      "예외적인",
+      "탁월한"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "except"
+    ],
+    "blockedMeanings": [
+      "훌륭한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: exceptional.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:exemplary:adjective",
+    "word": "exemplary",
+    "lemma": "exemplary",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "모범적인",
+    "subMeanings": [
+      "전형적인",
+      "본보기가 되는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "example"
+    ],
+    "blockedMeanings": [
+      "모범이되는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: exemplary.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:extensive:adjective",
+    "word": "extensive",
+    "lemma": "extensive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "광범위한",
+    "subMeanings": [
+      "대규모의",
+      "넓은"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "extend"
+    ],
+    "blockedMeanings": [
+      "폭넓은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: extensive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:feasible:adjective",
+    "word": "feasible",
+    "lemma": "feasible",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "실현 가능한",
+    "subMeanings": [
+      "그럴듯한",
+      "실행성 있는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "fee"
+    ],
+    "blockedMeanings": [
+      "가능한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: feasible.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:flexible:adjective",
+    "word": "flexible",
+    "lemma": "flexible",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "유연한",
+    "subMeanings": [
+      "융통성 있는",
+      "적응성 있는"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "flex"
+    ],
+    "blockedMeanings": [
+      "탄력적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: flexible.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:frequent:adjective",
+    "word": "frequent",
+    "lemma": "frequent",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "빈번한",
+    "subMeanings": [
+      "자주 일어나는",
+      "단골의"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "여행/교통",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "frequency"
+    ],
+    "blockedMeanings": [
+      "잦은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: frequent.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:generous:adjective",
+    "word": "generous",
+    "lemma": "generous",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "관대한",
+    "subMeanings": [
+      "후한",
+      "넉넉한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "general"
+    ],
+    "blockedMeanings": [
+      "아낌없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: generous.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:gradual:adjective",
+    "word": "gradual",
+    "lemma": "gradual",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "점진적인",
+    "subMeanings": [
+      "서서히 일어나는",
+      "완만한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "grade"
+    ],
+    "blockedMeanings": [
+      "단계적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: gradual.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:helpful:adjective",
+    "word": "helpful",
+    "lemma": "helpful",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "유용한",
+    "subMeanings": [
+      "도움이 되는",
+      "친절한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "help"
+    ],
+    "blockedMeanings": [
+      "이로운"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: helpful.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:identical:adjective",
+    "word": "identical",
+    "lemma": "identical",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "동일한",
+    "subMeanings": [
+      "일치하는",
+      "똑같은"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "생산/제조",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "identify"
+    ],
+    "blockedMeanings": [
+      "한치도다름없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: identical.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:immediate:adjective",
+    "word": "immediate",
+    "lemma": "immediate",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "즉각적인",
+    "subMeanings": [
+      "당면한",
+      "직접적인"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "medium"
+    ],
+    "blockedMeanings": [
+      "즉시의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: immediate.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:impressive:adjective",
+    "word": "impressive",
+    "lemma": "impressive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "인상적인",
+    "subMeanings": [
+      "감명 깊은",
+      "대단한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "impress"
+    ],
+    "blockedMeanings": [
+      "눈부신"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: impressive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:incredible:adjective",
+    "word": "incredible",
+    "lemma": "incredible",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "놀라운",
+    "subMeanings": [
+      "믿기 힘든",
+      "엄청난"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "credit"
+    ],
+    "blockedMeanings": [
+      "믿을수없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: incredible.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:inevitable:adjective",
+    "word": "inevitable",
+    "lemma": "inevitable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "불가피한",
+    "subMeanings": [
+      "피할 수 없는",
+      "필연적인"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "evident"
+    ],
+    "blockedMeanings": [
+      "필연의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: inevitable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:influential:adjective",
+    "word": "influential",
+    "lemma": "influential",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "영향력 있는",
+    "subMeanings": [
+      "유력한",
+      "세력 있는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "influence"
+    ],
+    "blockedMeanings": [
+      "파급력있는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: influential.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:initial:adjective",
+    "word": "initial",
+    "lemma": "initial",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "초기의",
+    "subMeanings": [
+      "처음의",
+      "머리글자의"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "initiate"
+    ],
+    "blockedMeanings": [
+      "시작의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: initial.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:integral:adjective",
+    "word": "integral",
+    "lemma": "integral",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "필수적인",
+    "subMeanings": [
+      "완전한",
+      "내장된"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "integer"
+    ],
+    "blockedMeanings": [
+      "불가결한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: integral.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:leading:adjective",
+    "word": "leading",
+    "lemma": "leading",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "선도적인",
+    "subMeanings": [
+      "주요한",
+      "앞서가는"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "leader"
+    ],
+    "blockedMeanings": [
+      "일류의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: leading.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:legitimate:adjective",
+    "word": "legitimate",
+    "lemma": "legitimate",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "정당한",
+    "subMeanings": [
+      "적법한",
+      "합법적인"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "legal"
+    ],
+    "blockedMeanings": [
+      "타당한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: legitimate.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:loyal:adjective",
+    "word": "loyal",
+    "lemma": "loyal",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "충실한",
+    "subMeanings": [
+      "충성스러운",
+      "단골의"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "royal"
+    ],
+    "blockedMeanings": [
+      "한결같은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: loyal.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:modest:adjective",
+    "word": "modest",
+    "lemma": "modest",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "겸손한",
+    "subMeanings": [
+      "적당한",
+      "크지 않은"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "mode"
+    ],
+    "blockedMeanings": [
+      "삼가는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: modest.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:notable:adjective",
+    "word": "notable",
+    "lemma": "notable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "주목할 만한",
+    "subMeanings": [
+      "눈에 띄는",
+      "유명한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "note"
+    ],
+    "blockedMeanings": [
+      "두드러진"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: notable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:numerous:adjective",
+    "word": "numerous",
+    "lemma": "numerous",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "수많은",
+    "subMeanings": [
+      "다수의",
+      "무수한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "number"
+    ],
+    "blockedMeanings": [
+      "많은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: numerous.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:objective:adjective",
+    "word": "objective",
+    "lemma": "objective",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "객관적인",
+    "subMeanings": [
+      "공정한",
+      "사심 없는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "subject"
+    ],
+    "blockedMeanings": [
+      "편견없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: objective.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:optimistic:adjective",
+    "word": "optimistic",
+    "lemma": "optimistic",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "낙관적인",
+    "subMeanings": [
+      "희망찬",
+      "긍정적인"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "optimal"
+    ],
+    "blockedMeanings": [
+      "밝은전망의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: optimistic.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:outstanding:adjective",
+    "word": "outstanding",
+    "lemma": "outstanding",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "우수한",
+    "subMeanings": [
+      "미결제된",
+      "눈에 띄는"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "standing"
+    ],
+    "blockedMeanings": [
+      "뛰어난"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: outstanding.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:partial:adjective",
+    "word": "partial",
+    "lemma": "partial",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "부분적인",
+    "subMeanings": [
+      "불완전한",
+      "편파적인"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "part"
+    ],
+    "blockedMeanings": [
+      "일부의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: partial.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:permanent:adjective",
+    "word": "permanent",
+    "lemma": "permanent",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "영구적인",
+    "subMeanings": [
+      "불변의",
+      "상설의"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "시설/건물",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "temporary"
+    ],
+    "blockedMeanings": [
+      "상설의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: permanent.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:persistent:adjective",
+    "word": "persistent",
+    "lemma": "persistent",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "지속적인",
+    "subMeanings": [
+      "끈질긴",
+      "고집하는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "persist"
+    ],
+    "blockedMeanings": [
+      "끊임없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: persistent.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:pleasant:adjective",
+    "word": "pleasant",
+    "lemma": "pleasant",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "즐거운",
+    "subMeanings": [
+      "기분 좋은",
+      "상냥한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "호텔/식당",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "please"
+    ],
+    "blockedMeanings": [
+      "유쾌한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: pleasant.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:popular:adjective",
+    "word": "popular",
+    "lemma": "popular",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "인기 있는",
+    "subMeanings": [
+      "대중적인",
+      "유행하는"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "호텔/식당"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "pop"
+    ],
+    "blockedMeanings": [
+      "선호되는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: popular.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:preliminary:adjective",
+    "word": "preliminary",
+    "lemma": "preliminary",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "예비의",
+    "subMeanings": [
+      "준비의",
+      "서두의"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "limit"
+    ],
+    "blockedMeanings": [
+      "사전의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: preliminary.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:primary:adjective",
+    "word": "primary",
+    "lemma": "primary",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "주요한",
+    "subMeanings": [
+      "기본적인",
+      "제1의"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "prime"
+    ],
+    "blockedMeanings": [
+      "으뜸가는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: primary.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:productive:adjective",
+    "word": "productive",
+    "lemma": "productive",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "생산적인",
+    "subMeanings": [
+      "결실 있는",
+      "다작의"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "produce"
+    ],
+    "blockedMeanings": [
+      "능률적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: productive.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:prompt:adjective",
+    "word": "prompt",
+    "lemma": "prompt",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "신속한",
+    "subMeanings": [
+      "즉각적인",
+      "기민한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "배송/물류",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "promptly"
+    ],
+    "blockedMeanings": [
+      "지체없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: prompt.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:prosperous:adjective",
+    "word": "prosperous",
+    "lemma": "prosperous",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "번영하는",
+    "subMeanings": [
+      "번창하는",
+      "성공한"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "prosper"
+    ],
+    "blockedMeanings": [
+      "융성한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: prosperous.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:redundant:adjective",
+    "word": "redundant",
+    "lemma": "redundant",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "불필요한",
+    "subMeanings": [
+      "중복된",
+      "정리해고된"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "생산/제조",
+      "채용/인사"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "abundant"
+    ],
+    "blockedMeanings": [
+      "여분의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: redundant.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:relevant:adjective",
+    "word": "relevant",
+    "lemma": "relevant",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "관련된",
+    "subMeanings": [
+      "적절한",
+      "타당한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "relate"
+    ],
+    "blockedMeanings": [
+      "유관한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: relevant.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:reliable:adjective",
+    "word": "reliable",
+    "lemma": "reliable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "신뢰성 있는",
+    "subMeanings": [
+      "믿을 만한",
+      "확실한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "기술/장비",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "rely"
+    ],
+    "blockedMeanings": [
+      "믿을만한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: reliable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:reluctant:adjective",
+    "word": "reluctant",
+    "lemma": "reluctant",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "꺼리는",
+    "subMeanings": [
+      "마지못해 하는",
+      "주저하는"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "reluctant"
+    ],
+    "blockedMeanings": [
+      "내키지않는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: reluctant.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:remarkable:adjective",
+    "word": "remarkable",
+    "lemma": "remarkable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "주목할 만한",
+    "subMeanings": [
+      "놀라운",
+      "현저한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "remark"
+    ],
+    "blockedMeanings": [
+      "비범한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: remarkable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:remote:adjective",
+    "word": "remote",
+    "lemma": "remote",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "원격의",
+    "subMeanings": [
+      "외딴",
+      "희박한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "remove"
+    ],
+    "blockedMeanings": [
+      "멀리떨어진"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: remote.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:representative:adjective",
+    "word": "representative",
+    "lemma": "representative",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "대표적인",
+    "subMeanings": [
+      "표시하는",
+      "전형적인"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "represent"
+    ],
+    "blockedMeanings": [
+      "대리하는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: representative.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:resistant:adjective",
+    "word": "resistant",
+    "lemma": "resistant",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "저항력 있는",
+    "subMeanings": [
+      "견디는",
+      "방지의"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "resist"
+    ],
+    "blockedMeanings": [
+      "내성의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: resistant.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:respective:adjective",
+    "word": "respective",
+    "lemma": "respective",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "각자의",
+    "subMeanings": [
+      "각각의",
+      "저마다의"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "respect"
+    ],
+    "blockedMeanings": [
+      "개별적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: respective.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:secure:adjective",
+    "word": "secure",
+    "lemma": "secure",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "안전한",
+    "subMeanings": [
+      "확보된",
+      "안심하는"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "시설/건물",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "cure"
+    ],
+    "blockedMeanings": [
+      "단단한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: secure.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:significant:adjective",
+    "word": "significant",
+    "lemma": "significant",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "중요한",
+    "subMeanings": [
+      "상당한",
+      "의미심장한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sign"
+    ],
+    "blockedMeanings": [
+      "중대한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: significant.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:stable:adjective",
+    "word": "stable",
+    "lemma": "stable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "안정된",
+    "subMeanings": [
+      "차분한",
+      "견고한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "table"
+    ],
+    "blockedMeanings": [
+      "안정적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: stable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:strict:adjective",
+    "word": "strict",
+    "lemma": "strict",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "엄격한",
+    "subMeanings": [
+      "엄한",
+      "정확한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "district"
+    ],
+    "blockedMeanings": [
+      "빈틈없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: strict.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:substantial:adjective",
+    "word": "substantial",
+    "lemma": "substantial",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "상당한",
+    "subMeanings": [
+      "실질적인",
+      "견고한"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "substance"
+    ],
+    "blockedMeanings": [
+      "많은"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: substantial.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:sufficient:adjective",
+    "word": "sufficient",
+    "lemma": "sufficient",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "충분한",
+    "subMeanings": [
+      "역량 있는",
+      "넉넉한"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "구매/주문",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "efficient"
+    ],
+    "blockedMeanings": [
+      "풍족한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: sufficient.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:suitable:adjective",
+    "word": "suitable",
+    "lemma": "suitable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "적합한",
+    "subMeanings": [
+      "알맞은",
+      "어울리는"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "suit"
+    ],
+    "blockedMeanings": [
+      "합당한"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: suitable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:temporary:adjective",
+    "word": "temporary",
+    "lemma": "temporary",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "임시의",
+    "subMeanings": [
+      "일시적인",
+      "과도기의"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "채용/인사",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "temper"
+    ],
+    "blockedMeanings": [
+      "잠정적인"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: temporary.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:unanimous:adjective",
+    "word": "unanimous",
+    "lemma": "unanimous",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "만장일치의",
+    "subMeanings": [
+      "전원일치의",
+      "합의된"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "unanimity"
+    ],
+    "blockedMeanings": [
+      "이견없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: unanimous.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:unconditional:adjective",
+    "word": "unconditional",
+    "lemma": "unconditional",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "무조건적인",
+    "subMeanings": [
+      "절대적인",
+      "무제한의"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "구매/주문",
+      "고객서비스"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "condition"
+    ],
+    "blockedMeanings": [
+      "조건없는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: unconditional.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:urgent:adjective",
+    "word": "urgent",
+    "lemma": "urgent",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "긴급한",
+    "subMeanings": [
+      "시급한",
+      "다급한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "urge"
+    ],
+    "blockedMeanings": [
+      "재촉하는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: urgent.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:valuable:adjective",
+    "word": "valuable",
+    "lemma": "valuable",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "귀중한",
+    "subMeanings": [
+      "값비싼",
+      "유익한"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "value"
+    ],
+    "blockedMeanings": [
+      "가치있는"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: valuable.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:versatile:adjective",
+    "word": "versatile",
+    "lemma": "versatile",
+    "partOfSpeech": "adjective",
+    "mainMeaning": "다재다능한",
+    "subMeanings": [
+      "다용도의",
+      "변하기 쉬운"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "기술/장비"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "verse"
+    ],
+    "blockedMeanings": [
+      "만능의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: versatile.a.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:adequately:adverb",
+    "word": "adequately",
+    "lemma": "adequately",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "적절하게",
+    "subMeanings": [
+      "충분히"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "equal"
+    ],
+    "blockedMeanings": [
+      "알맞게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: adequately.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:adversely:adverb",
+    "word": "adversely",
+    "lemma": "adversely",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "불리하게",
+    "subMeanings": [
+      "역으로"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "diverse"
+    ],
+    "blockedMeanings": [
+      "반대로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: adversely.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:closely:adverb",
+    "word": "closely",
+    "lemma": "closely",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "밀접하게",
+    "subMeanings": [
+      "면밀히",
+      "가까이"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "close"
+    ],
+    "blockedMeanings": [
+      "철저히"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: closely.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:collectively:adverb",
+    "word": "collectively",
+    "lemma": "collectively",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "집단으로",
+    "subMeanings": [
+      "다 함께",
+      "총괄하여"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "collect"
+    ],
+    "blockedMeanings": [
+      "공동으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: collectively.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:constantly:adverb",
+    "word": "constantly",
+    "lemma": "constantly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "끊임없이",
+    "subMeanings": [
+      "지속적으로"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "일반",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "constant"
+    ],
+    "blockedMeanings": [
+      "항상"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: constantly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:currently:adverb",
+    "word": "currently",
+    "lemma": "currently",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "현재",
+    "subMeanings": [
+      "지금은"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "current"
+    ],
+    "blockedMeanings": [
+      "목하"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: currently.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:decisively:adverb",
+    "word": "decisively",
+    "lemma": "decisively",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "결정적으로",
+    "subMeanings": [
+      "단호하게"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "decide"
+    ],
+    "blockedMeanings": [
+      "확고히"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: decisively.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:definitely:adverb",
+    "word": "definitely",
+    "lemma": "definitely",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "분명히",
+    "subMeanings": [
+      "확실히"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "define"
+    ],
+    "blockedMeanings": [
+      "틀림없이"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: definitely.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:deliberately:adverb",
+    "word": "deliberately",
+    "lemma": "deliberately",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "의도적으로",
+    "subMeanings": [
+      "신중하게"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "liberty"
+    ],
+    "blockedMeanings": [
+      "고의로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: deliberately.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:efficiently:adverb",
+    "word": "efficiently",
+    "lemma": "efficiently",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "효율적으로",
+    "subMeanings": [
+      "능률적으로"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "efficient"
+    ],
+    "blockedMeanings": [
+      "효과적으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: efficiently.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:exceptionally:adverb",
+    "word": "exceptionally",
+    "lemma": "exceptionally",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "예외적으로",
+    "subMeanings": [
+      "각별히",
+      "대단히"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "판매/마케팅",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "except"
+    ],
+    "blockedMeanings": [
+      "매우"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: exceptionally.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:exclusively:adverb",
+    "word": "exclusively",
+    "lemma": "exclusively",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "독점적으로",
+    "subMeanings": [
+      "오로지",
+      "배타적으로"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "exclusive"
+    ],
+    "blockedMeanings": [
+      "전용으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: exclusively.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:fairly:adverb",
+    "word": "fairly",
+    "lemma": "fairly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "상당히",
+    "subMeanings": [
+      "공정하게",
+      "꽤"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "fair"
+    ],
+    "blockedMeanings": [
+      "치우침없이"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: fairly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:favorably:adverb",
+    "word": "favorably",
+    "lemma": "favorably",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "호의적으로",
+    "subMeanings": [
+      "유리하게"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "favor"
+    ],
+    "blockedMeanings": [
+      "좋게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: favorably.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:financially:adverb",
+    "word": "financially",
+    "lemma": "financially",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "재정적으로",
+    "subMeanings": [
+      "금전적으로"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "finance"
+    ],
+    "blockedMeanings": [
+      "경제적으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: financially.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:formally:adverb",
+    "word": "formally",
+    "lemma": "formally",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "공식적으로",
+    "subMeanings": [
+      "정식으로"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "formal"
+    ],
+    "blockedMeanings": [
+      "격식있게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: formally.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:frequently:adverb",
+    "word": "frequently",
+    "lemma": "frequently",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "자주",
+    "subMeanings": [
+      "빈번하게"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "frequent"
+    ],
+    "blockedMeanings": [
+      "흔히"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: frequently.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:gradually:adverb",
+    "word": "gradually",
+    "lemma": "gradually",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "점차적으로",
+    "subMeanings": [
+      "차츰",
+      "서서히"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "gradual"
+    ],
+    "blockedMeanings": [
+      "단계적으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: gradually.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:heavily:adverb",
+    "word": "heavily",
+    "lemma": "heavily",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "대폭",
+    "subMeanings": [
+      "심하게",
+      "무겁게"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "heavy"
+    ],
+    "blockedMeanings": [
+      "엄청나게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: heavily.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:inadvertently:adverb",
+    "word": "inadvertently",
+    "lemma": "inadvertently",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "부주의로",
+    "subMeanings": [
+      "무심코",
+      "우연히"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "고객서비스",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "advert"
+    ],
+    "blockedMeanings": [
+      "실수로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: inadvertently.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:increasingly:adverb",
+    "word": "increasingly",
+    "lemma": "increasingly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "점점 더",
+    "subMeanings": [
+      "갈수록"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "increase"
+    ],
+    "blockedMeanings": [
+      "더욱더"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: increasingly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:initially:adverb",
+    "word": "initially",
+    "lemma": "initially",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "처음에",
+    "subMeanings": [
+      "시초에",
+      "당초에"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "initial"
+    ],
+    "blockedMeanings": [
+      "초기에"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: initially.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:intensely:adverb",
+    "word": "intensely",
+    "lemma": "intensely",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "강렬하게",
+    "subMeanings": [
+      "열렬히"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "교육/행사",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "intense"
+    ],
+    "blockedMeanings": [
+      "심하게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: intensely.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:moderately:adverb",
+    "word": "moderately",
+    "lemma": "moderately",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "적당히",
+    "subMeanings": [
+      "알맞게",
+      "온건하게"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "mode"
+    ],
+    "blockedMeanings": [
+      "중간정도로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: moderately.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:mutually:adverb",
+    "word": "mutually",
+    "lemma": "mutually",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "상호간에",
+    "subMeanings": [
+      "서로",
+      "공동으로"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "mutual"
+    ],
+    "blockedMeanings": [
+      "맞서서"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: mutually.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:nearly:adverb",
+    "word": "nearly",
+    "lemma": "nearly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "거의",
+    "subMeanings": [
+      "대체로"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "near"
+    ],
+    "blockedMeanings": [
+      "하마터면"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: nearly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:necessarily:adverb",
+    "word": "necessarily",
+    "lemma": "necessarily",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "필연적으로",
+    "subMeanings": [
+      "반드시"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "necessary"
+    ],
+    "blockedMeanings": [
+      "어쩔수없이"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: necessarily.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:normally:adverb",
+    "word": "normally",
+    "lemma": "normally",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "보통",
+    "subMeanings": [
+      "정상적으로"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "일반",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "normal"
+    ],
+    "blockedMeanings": [
+      "평소에"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: normally.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:occasionally:adverb",
+    "word": "occasionally",
+    "lemma": "occasionally",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "때때로",
+    "subMeanings": [
+      "가끔"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "occasion"
+    ],
+    "blockedMeanings": [
+      "이따금"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: occasionally.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:officially:adverb",
+    "word": "officially",
+    "lemma": "officially",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "공식적으로",
+    "subMeanings": [
+      "공인되어"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "office"
+    ],
+    "blockedMeanings": [
+      "정식으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: officially.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:predominantly:adverb",
+    "word": "predominantly",
+    "lemma": "predominantly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "주로",
+    "subMeanings": [
+      "대부분"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "판매/마케팅",
+      "회사/사무"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "dominant"
+    ],
+    "blockedMeanings": [
+      "압도적으로"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: predominantly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:preferably:adverb",
+    "word": "preferably",
+    "lemma": "preferably",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "가급적이면",
+    "subMeanings": [
+      "오히려"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "prefer"
+    ],
+    "blockedMeanings": [
+      "되도록이면"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: preferably.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:previously:adverb",
+    "word": "previously",
+    "lemma": "previously",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "이전에",
+    "subMeanings": [
+      "미리"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "previous"
+    ],
+    "blockedMeanings": [
+      "예전에"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: previously.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:primarily:adverb",
+    "word": "primarily",
+    "lemma": "primarily",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "주로",
+    "subMeanings": [
+      "본래",
+      "첫째로"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "primary"
+    ],
+    "blockedMeanings": [
+      "무엇보다도"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: primarily.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:rapidly:adverb",
+    "word": "rapidly",
+    "lemma": "rapidly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "빠르게",
+    "subMeanings": [
+      "급속히"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "생산/제조",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "rapid"
+    ],
+    "blockedMeanings": [
+      "신속하게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: rapidly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:readily:adverb",
+    "word": "readily",
+    "lemma": "readily",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "손쉽게",
+    "subMeanings": [
+      "기꺼이",
+      "즉시"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "기술/장비",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "ready"
+    ],
+    "blockedMeanings": [
+      "쉽사리"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: readily.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:relatively:adverb",
+    "word": "relatively",
+    "lemma": "relatively",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "상대적으로",
+    "subMeanings": [
+      "비교적"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "relate"
+    ],
+    "blockedMeanings": [
+      "비례하여"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: relatively.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:scarcely:adverb",
+    "word": "scarcely",
+    "lemma": "scarcely",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "거의 ~않다",
+    "subMeanings": [
+      "겨우",
+      "간신히"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "scarce"
+    ],
+    "blockedMeanings": [
+      "간신히"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: scarcely.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:strictly:adverb",
+    "word": "strictly",
+    "lemma": "strictly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "엄격히",
+    "subMeanings": [
+      "순전히"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "strict"
+    ],
+    "blockedMeanings": [
+      "엄하게"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: strictly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:unexpectedly:adverb",
+    "word": "unexpectedly",
+    "lemma": "unexpectedly",
+    "partOfSpeech": "adverb",
+    "mainMeaning": "뜻밖에",
+    "subMeanings": [
+      "갑작스럽게"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "expect"
+    ],
+    "blockedMeanings": [
+      "불시에"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: unexpectedly.r.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:agreement:noun",
+    "word": "agreement",
+    "lemma": "agreement",
+    "partOfSpeech": "noun",
+    "mainMeaning": "합의",
+    "subMeanings": [
+      "계약",
+      "일치"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "agree"
+    ],
+    "blockedMeanings": [
+      "협정"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: agreement.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:allowance:noun",
+    "word": "allowance",
+    "lemma": "allowance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "수당",
+    "subMeanings": [
+      "허용량",
+      "용돈"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "allow"
+    ],
+    "blockedMeanings": [
+      "지급액"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: allowance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:alternative:noun",
+    "word": "alternative",
+    "lemma": "alternative",
+    "partOfSpeech": "noun",
+    "mainMeaning": "대안",
+    "subMeanings": [
+      "양자택일",
+      "선택지"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "alter"
+    ],
+    "blockedMeanings": [
+      "차선책"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: alternative.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:amendment:noun",
+    "word": "amendment",
+    "lemma": "amendment",
+    "partOfSpeech": "noun",
+    "mainMeaning": "수정안",
+    "subMeanings": [
+      "개정",
+      "수정"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "amend"
+    ],
+    "blockedMeanings": [
+      "수정조항"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: amendment.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:announcement:noun",
+    "word": "announcement",
+    "lemma": "announcement",
+    "partOfSpeech": "noun",
+    "mainMeaning": "발표",
+    "subMeanings": [
+      "공고",
+      "안내방송"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "announce"
+    ],
+    "blockedMeanings": [
+      "공표"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: announcement.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:appliance:noun",
+    "word": "appliance",
+    "lemma": "appliance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "가전제품",
+    "subMeanings": [
+      "기기",
+      "적용"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "기술/장비",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "apply"
+    ],
+    "blockedMeanings": [
+      "가전"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: appliance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:appraisal:noun",
+    "word": "appraisal",
+    "lemma": "appraisal",
+    "partOfSpeech": "noun",
+    "mainMeaning": "평가",
+    "subMeanings": [
+      "감정",
+      "사정"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "praise"
+    ],
+    "blockedMeanings": [
+      "평정"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: appraisal.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:approach:noun",
+    "word": "approach",
+    "lemma": "approach",
+    "partOfSpeech": "noun",
+    "mainMeaning": "접근법",
+    "subMeanings": [
+      "접근",
+      "가까워짐"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "reproach"
+    ],
+    "blockedMeanings": [
+      "접근방식"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: approach.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:arrangement:noun",
+    "word": "arrangement",
+    "lemma": "arrangement",
+    "partOfSpeech": "noun",
+    "mainMeaning": "준비",
+    "subMeanings": [
+      "배열",
+      "합의"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "호텔/식당"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "range"
+    ],
+    "blockedMeanings": [
+      "마련"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: arrangement.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:asset:noun",
+    "word": "asset",
+    "lemma": "asset",
+    "partOfSpeech": "noun",
+    "mainMeaning": "자산",
+    "subMeanings": [
+      "재산",
+      "이점"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "assess"
+    ],
+    "blockedMeanings": [
+      "보유자산"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: asset.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:assignment:noun",
+    "word": "assignment",
+    "lemma": "assignment",
+    "partOfSpeech": "noun",
+    "mainMeaning": "과제",
+    "subMeanings": [
+      "임무",
+      "배정"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "채용/인사",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sign"
+    ],
+    "blockedMeanings": [
+      "직무"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: assignment.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:attendance:noun",
+    "word": "attendance",
+    "lemma": "attendance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "참석",
+    "subMeanings": [
+      "출석",
+      "참석자 수"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "attend"
+    ],
+    "blockedMeanings": [
+      "출두"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: attendance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:auditor:noun",
+    "word": "auditor",
+    "lemma": "auditor",
+    "partOfSpeech": "noun",
+    "mainMeaning": "감사인",
+    "subMeanings": [
+      "회계감사관",
+      "청강생"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "audit"
+    ],
+    "blockedMeanings": [
+      "감사원"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: auditor.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:authorization:noun",
+    "word": "authorization",
+    "lemma": "authorization",
+    "partOfSpeech": "noun",
+    "mainMeaning": "인가",
+    "subMeanings": [
+      "권한 부여",
+      "공식 승인"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "authority"
+    ],
+    "blockedMeanings": [
+      "허가증"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: authorization.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:brochure:noun",
+    "word": "brochure",
+    "lemma": "brochure",
+    "partOfSpeech": "noun",
+    "mainMeaning": "안내 책자",
+    "subMeanings": [
+      "팸플릿",
+      "소책자"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "여행/교통"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "branch"
+    ],
+    "blockedMeanings": [
+      "팜플렛"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: brochure.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:catalyst:noun",
+    "word": "catalyst",
+    "lemma": "catalyst",
+    "partOfSpeech": "noun",
+    "mainMeaning": "계기",
+    "subMeanings": [
+      "촉매",
+      "자극제"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "catalog"
+    ],
+    "blockedMeanings": [
+      "촉매제"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: catalyst.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:certificate:noun",
+    "word": "certificate",
+    "lemma": "certificate",
+    "partOfSpeech": "noun",
+    "mainMeaning": "증명서",
+    "subMeanings": [
+      "자격증",
+      "이수증"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "교육/행사",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "certify"
+    ],
+    "blockedMeanings": [
+      "인증서"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: certificate.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:clearance:noun",
+    "word": "clearance",
+    "lemma": "clearance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "정리",
+    "subMeanings": [
+      "승인",
+      "허가"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "배송/물류",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "clear"
+    ],
+    "blockedMeanings": [
+      "정리세일"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: clearance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:commitment:noun",
+    "word": "commitment",
+    "lemma": "commitment",
+    "partOfSpeech": "noun",
+    "mainMeaning": "헌신",
+    "subMeanings": [
+      "약속",
+      "책무"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "commit"
+    ],
+    "blockedMeanings": [
+      "전념"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: commitment.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:compensation:noun",
+    "word": "compensation",
+    "lemma": "compensation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "보상",
+    "subMeanings": [
+      "보수",
+      "배상금"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "compete"
+    ],
+    "blockedMeanings": [
+      "변상금"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: compensation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:compliance:noun",
+    "word": "compliance",
+    "lemma": "compliance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "준수",
+    "subMeanings": [
+      "순응",
+      "따름"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "comply"
+    ],
+    "blockedMeanings": [
+      "규정준수"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: compliance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:component:noun",
+    "word": "component",
+    "lemma": "component",
+    "partOfSpeech": "noun",
+    "mainMeaning": "부품",
+    "subMeanings": [
+      "구성 요소",
+      "성분"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "compose"
+    ],
+    "blockedMeanings": [
+      "부분품"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: component.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:consequence:noun",
+    "word": "consequence",
+    "lemma": "consequence",
+    "partOfSpeech": "noun",
+    "mainMeaning": "결과",
+    "subMeanings": [
+      "영향",
+      "중요성"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sequence"
+    ],
+    "blockedMeanings": [
+      "귀결"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: consequence.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:contract:noun",
+    "word": "contract",
+    "lemma": "contract",
+    "partOfSpeech": "noun",
+    "mainMeaning": "계약서",
+    "subMeanings": [
+      "계약",
+      "협약"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "구매/주문",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "contact"
+    ],
+    "blockedMeanings": [
+      "약정서"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: contract.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:convention:noun",
+    "word": "convention",
+    "lemma": "convention",
+    "partOfSpeech": "noun",
+    "mainMeaning": "총회",
+    "subMeanings": [
+      "협약",
+      "관례"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "교육/행사",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "convene"
+    ],
+    "blockedMeanings": [
+      "학술회의"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: convention.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:correspondence:noun",
+    "word": "correspondence",
+    "lemma": "correspondence",
+    "partOfSpeech": "noun",
+    "mainMeaning": "서신",
+    "subMeanings": [
+      "통신",
+      "일치"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "correspond"
+    ],
+    "blockedMeanings": [
+      "편지왕래"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: correspondence.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:criterion:noun",
+    "word": "criterion",
+    "lemma": "criterion",
+    "partOfSpeech": "noun",
+    "mainMeaning": "기준",
+    "subMeanings": [
+      "척도",
+      "표준"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "critic"
+    ],
+    "blockedMeanings": [
+      "판단기준"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: criterion.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:dealer:noun",
+    "word": "dealer",
+    "lemma": "dealer",
+    "partOfSpeech": "noun",
+    "mainMeaning": "판매인",
+    "subMeanings": [
+      "중개상",
+      "취급점"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "deal"
+    ],
+    "blockedMeanings": [
+      "대리점"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: dealer.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:delegation:noun",
+    "word": "delegation",
+    "lemma": "delegation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "대표단",
+    "subMeanings": [
+      "위임",
+      "파견단"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회의/일정",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "delegate"
+    ],
+    "blockedMeanings": [
+      "사절단"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: delegation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:directory:noun",
+    "word": "directory",
+    "lemma": "directory",
+    "partOfSpeech": "noun",
+    "mainMeaning": "안내책자",
+    "subMeanings": [
+      "인명부",
+      "디렉터리"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "direct"
+    ],
+    "blockedMeanings": [
+      "전화번호부"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: directory.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:disruption:noun",
+    "word": "disruption",
+    "lemma": "disruption",
+    "partOfSpeech": "noun",
+    "mainMeaning": "중단",
+    "subMeanings": [
+      "혼란",
+      "지장"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "배송/물류",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "rupture"
+    ],
+    "blockedMeanings": [
+      "방해"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: disruption.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:distribution:noun",
+    "word": "distribution",
+    "lemma": "distribution",
+    "partOfSpeech": "noun",
+    "mainMeaning": "유통",
+    "subMeanings": [
+      "배분",
+      "분포"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "배송/물류",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "distribute"
+    ],
+    "blockedMeanings": [
+      "배급"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: distribution.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:document:noun",
+    "word": "document",
+    "lemma": "document",
+    "partOfSpeech": "noun",
+    "mainMeaning": "문서",
+    "subMeanings": [
+      "서류",
+      "기록"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "doctor"
+    ],
+    "blockedMeanings": [
+      "서적"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: document.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:donation:noun",
+    "word": "donation",
+    "lemma": "donation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "기부금",
+    "subMeanings": [
+      "기증",
+      "기부"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "done"
+    ],
+    "blockedMeanings": [
+      "성금"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: donation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:drawback:noun",
+    "word": "drawback",
+    "lemma": "drawback",
+    "partOfSpeech": "noun",
+    "mainMeaning": "단점",
+    "subMeanings": [
+      "결점",
+      "환급"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "draw"
+    ],
+    "blockedMeanings": [
+      "약점"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: drawback.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:duration:noun",
+    "word": "duration",
+    "lemma": "duration",
+    "partOfSpeech": "noun",
+    "mainMeaning": "지속 기간",
+    "subMeanings": [
+      "기간",
+      "지속"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "교육/행사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "durable"
+    ],
+    "blockedMeanings": [
+      "소요시간"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: duration.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:earnings:noun",
+    "word": "earnings",
+    "lemma": "earnings",
+    "partOfSpeech": "noun",
+    "mainMeaning": "소득",
+    "subMeanings": [
+      "수익",
+      "임금"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "earn"
+    ],
+    "blockedMeanings": [
+      "벌이"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: earnings.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:efficiency:noun",
+    "word": "efficiency",
+    "lemma": "efficiency",
+    "partOfSpeech": "noun",
+    "mainMeaning": "효율성",
+    "subMeanings": [
+      "능률",
+      "효능"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "생산/제조",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "efficient"
+    ],
+    "blockedMeanings": [
+      "생산능률"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: efficiency.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:emission:noun",
+    "word": "emission",
+    "lemma": "emission",
+    "partOfSpeech": "noun",
+    "mainMeaning": "배출",
+    "subMeanings": [
+      "배출물",
+      "방출"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "생산/제조",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "emit"
+    ],
+    "blockedMeanings": [
+      "배기가스"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: emission.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:enterprise:noun",
+    "word": "enterprise",
+    "lemma": "enterprise",
+    "partOfSpeech": "noun",
+    "mainMeaning": "기업",
+    "subMeanings": [
+      "사업체",
+      "기획"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "enter"
+    ],
+    "blockedMeanings": [
+      "사업"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: enterprise.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:evaluation:noun",
+    "word": "evaluation",
+    "lemma": "evaluation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "평가",
+    "subMeanings": [
+      "사정",
+      "가치판단"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "value"
+    ],
+    "blockedMeanings": [
+      "심사"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: evaluation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:exception:noun",
+    "word": "exception",
+    "lemma": "exception",
+    "partOfSpeech": "noun",
+    "mainMeaning": "예외",
+    "subMeanings": [
+      "이의",
+      "제외"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "except"
+    ],
+    "blockedMeanings": [
+      "특례"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: exception.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:excursion:noun",
+    "word": "excursion",
+    "lemma": "excursion",
+    "partOfSpeech": "noun",
+    "mainMeaning": "소풍",
+    "subMeanings": [
+      "유람",
+      "견학"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "여행/교통",
+      "교육/행사"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "course"
+    ],
+    "blockedMeanings": [
+      "단기여행"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: excursion.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:expiration:noun",
+    "word": "expiration",
+    "lemma": "expiration",
+    "partOfSpeech": "noun",
+    "mainMeaning": "만료",
+    "subMeanings": [
+      "만기",
+      "종결"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "구매/주문",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "expire"
+    ],
+    "blockedMeanings": [
+      "유효기간만료"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: expiration.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:expertise:noun",
+    "word": "expertise",
+    "lemma": "expertise",
+    "partOfSpeech": "noun",
+    "mainMeaning": "전문 지식",
+    "subMeanings": [
+      "전문 기술",
+      "전문가적 식견"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "expert"
+    ],
+    "blockedMeanings": [
+      "노하우"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: expertise.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:extension:noun",
+    "word": "extension",
+    "lemma": "extension",
+    "partOfSpeech": "noun",
+    "mainMeaning": "내선 번호",
+    "subMeanings": [
+      "연장",
+      "확장"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "회의/일정"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "extend"
+    ],
+    "blockedMeanings": [
+      "구내전화"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: extension.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:foundation:noun",
+    "word": "foundation",
+    "lemma": "foundation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "재단",
+    "subMeanings": [
+      "토대",
+      "창립"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "found"
+    ],
+    "blockedMeanings": [
+      "설립"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: foundation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:guideline:noun",
+    "word": "guideline",
+    "lemma": "guideline",
+    "partOfSpeech": "noun",
+    "mainMeaning": "지침",
+    "subMeanings": [
+      "가이드라인",
+      "안내선"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "guide"
+    ],
+    "blockedMeanings": [
+      "행동지침"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: guideline.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:incentive:noun",
+    "word": "incentive",
+    "lemma": "incentive",
+    "partOfSpeech": "noun",
+    "mainMeaning": "장려책",
+    "subMeanings": [
+      "유인책",
+      "보너스"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "채용/인사",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "incentive"
+    ],
+    "blockedMeanings": [
+      "포상"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: incentive.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:increment:noun",
+    "word": "increment",
+    "lemma": "increment",
+    "partOfSpeech": "noun",
+    "mainMeaning": "증가",
+    "subMeanings": [
+      "증분",
+      "인상"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "채용/인사"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "increase"
+    ],
+    "blockedMeanings": [
+      "증가량"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: increment.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:initiative:noun",
+    "word": "initiative",
+    "lemma": "initiative",
+    "partOfSpeech": "noun",
+    "mainMeaning": "계획",
+    "subMeanings": [
+      "주도권",
+      "창의성"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "initial"
+    ],
+    "blockedMeanings": [
+      "선도사업"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: initiative.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:innovation:noun",
+    "word": "innovation",
+    "lemma": "innovation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "혁신",
+    "subMeanings": [
+      "쇄신",
+      "새로운 것"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "기술/장비",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "novel"
+    ],
+    "blockedMeanings": [
+      "기술혁신"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: innovation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:insight:noun",
+    "word": "insight",
+    "lemma": "insight",
+    "partOfSpeech": "noun",
+    "mainMeaning": "통찰력",
+    "subMeanings": [
+      "식견",
+      "이해"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sight"
+    ],
+    "blockedMeanings": [
+      "안목"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: insight.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:inspection:noun",
+    "word": "inspection",
+    "lemma": "inspection",
+    "partOfSpeech": "noun",
+    "mainMeaning": "검사",
+    "subMeanings": [
+      "점검",
+      "시찰"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "생산/제조",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "inspect"
+    ],
+    "blockedMeanings": [
+      "정밀검사"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: inspection.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:institution:noun",
+    "word": "institution",
+    "lemma": "institution",
+    "partOfSpeech": "noun",
+    "mainMeaning": "기관",
+    "subMeanings": [
+      "제도",
+      "협회"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "교육/행사",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "institute"
+    ],
+    "blockedMeanings": [
+      "설립기관"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: institution.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:instructor:noun",
+    "word": "instructor",
+    "lemma": "instructor",
+    "partOfSpeech": "noun",
+    "mainMeaning": "강사",
+    "subMeanings": [
+      "지도자",
+      "교관"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "교육/행사",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "instruct"
+    ],
+    "blockedMeanings": [
+      "선생"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: instructor.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:insurance:noun",
+    "word": "insurance",
+    "lemma": "insurance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "보험",
+    "subMeanings": [
+      "보험금",
+      "안전책"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sure"
+    ],
+    "blockedMeanings": [
+      "보험료"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: insurance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:liability:noun",
+    "word": "liability",
+    "lemma": "liability",
+    "partOfSpeech": "noun",
+    "mainMeaning": "부채",
+    "subMeanings": [
+      "법적 책임",
+      "불리한 점"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "금융/회계",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "liable"
+    ],
+    "blockedMeanings": [
+      "채무"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: liability.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:merger:noun",
+    "word": "merger",
+    "lemma": "merger",
+    "partOfSpeech": "noun",
+    "mainMeaning": "합병",
+    "subMeanings": [
+      "흡수합병",
+      "결합"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "merge"
+    ],
+    "blockedMeanings": [
+      "기업결합"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: merger.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:milestone:noun",
+    "word": "milestone",
+    "lemma": "milestone",
+    "partOfSpeech": "noun",
+    "mainMeaning": "주요 일정",
+    "subMeanings": [
+      "이정표",
+      "획기적 사건"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "mile"
+    ],
+    "blockedMeanings": [
+      "중간목표"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: milestone.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:negotiation:noun",
+    "word": "negotiation",
+    "lemma": "negotiation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "협상",
+    "subMeanings": [
+      "교섭",
+      "절충"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "negotiate"
+    ],
+    "blockedMeanings": [
+      "담판"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: negotiation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:objective:noun",
+    "word": "objective",
+    "lemma": "objective",
+    "partOfSpeech": "noun",
+    "mainMeaning": "목표",
+    "subMeanings": [
+      "목적",
+      "취지"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "object"
+    ],
+    "blockedMeanings": [
+      "과녁"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: objective.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:obligation:noun",
+    "word": "obligation",
+    "lemma": "obligation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "의무",
+    "subMeanings": [
+      "책임",
+      "약정"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "회사/사무",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "oblige"
+    ],
+    "blockedMeanings": [
+      "본분"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: obligation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:operator:noun",
+    "word": "operator",
+    "lemma": "operator",
+    "partOfSpeech": "noun",
+    "mainMeaning": "조작원",
+    "subMeanings": [
+      "운영자",
+      "통화원"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "기술/장비",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "operate"
+    ],
+    "blockedMeanings": [
+      "기사"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: operator.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:performance:noun",
+    "word": "performance",
+    "lemma": "performance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "성과",
+    "subMeanings": [
+      "실적",
+      "공연"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "채용/인사",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "perform"
+    ],
+    "blockedMeanings": [
+      "업무실적"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: performance.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:permission:noun",
+    "word": "permission",
+    "lemma": "permission",
+    "partOfSpeech": "noun",
+    "mainMeaning": "허가",
+    "subMeanings": [
+      "승인",
+      "허락"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "permit"
+    ],
+    "blockedMeanings": [
+      "인가"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: permission.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:persistence:noun",
+    "word": "persistence",
+    "lemma": "persistence",
+    "partOfSpeech": "noun",
+    "mainMeaning": "끈기",
+    "subMeanings": [
+      "지속",
+      "완고함"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "채용/인사",
+      "일반"
+    ],
+    "confidenceGrade": "B",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "persist"
+    ],
+    "blockedMeanings": [
+      "인내"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: persistence.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:perspective:noun",
+    "word": "perspective",
+    "lemma": "perspective",
+    "partOfSpeech": "noun",
+    "mainMeaning": "관점",
+    "subMeanings": [
+      "시각",
+      "원근법"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "일반"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "spectacle"
+    ],
+    "blockedMeanings": [
+      "견해"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: perspective.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:portfolio:noun",
+    "word": "portfolio",
+    "lemma": "portfolio",
+    "partOfSpeech": "noun",
+    "mainMeaning": "포트폴리오",
+    "subMeanings": [
+      "투자자산목록",
+      "작품집"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "금융/회계",
+      "채용/인사"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "port"
+    ],
+    "blockedMeanings": [
+      "자산구성"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: portfolio.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:precaution:noun",
+    "word": "precaution",
+    "lemma": "precaution",
+    "partOfSpeech": "noun",
+    "mainMeaning": "예방책",
+    "subMeanings": [
+      "조심",
+      "경계"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "생산/제조",
+      "시설/건물"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "caution"
+    ],
+    "blockedMeanings": [
+      "사전대비"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: precaution.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:preference:noun",
+    "word": "preference",
+    "lemma": "preference",
+    "partOfSpeech": "noun",
+    "mainMeaning": "선호",
+    "subMeanings": [
+      "선호도",
+      "우선권"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "고객서비스",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "prefer"
+    ],
+    "blockedMeanings": [
+      "기호"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: preference.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:proposal:noun",
+    "word": "proposal",
+    "lemma": "proposal",
+    "partOfSpeech": "noun",
+    "mainMeaning": "제안서",
+    "subMeanings": [
+      "기획안",
+      "청혼"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회의/일정",
+      "회사/사무"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "propose"
+    ],
+    "blockedMeanings": [
+      "발의서"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: proposal.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:prospect:noun",
+    "word": "prospect",
+    "lemma": "prospect",
+    "partOfSpeech": "noun",
+    "mainMeaning": "전망",
+    "subMeanings": [
+      "가능성",
+      "예상 고객"
+    ],
+    "difficulty": "medium",
+    "topics": [
+      "판매/마케팅",
+      "금융/회계"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "respect"
+    ],
+    "blockedMeanings": [
+      "장래성"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: prospect.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:regulation:noun",
+    "word": "regulation",
+    "lemma": "regulation",
+    "partOfSpeech": "noun",
+    "mainMeaning": "규정",
+    "subMeanings": [
+      "법규",
+      "규제"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "regular"
+    ],
+    "blockedMeanings": [
+      "단속"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: regulation.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:representative:noun",
+    "word": "representative",
+    "lemma": "representative",
+    "partOfSpeech": "noun",
+    "mainMeaning": "직원",
+    "subMeanings": [
+      "대표자",
+      "대리인"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "고객서비스",
+      "판매/마케팅"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "represent"
+    ],
+    "blockedMeanings": [
+      "담당직원"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: representative.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:resource:noun",
+    "word": "resource",
+    "lemma": "resource",
+    "partOfSpeech": "noun",
+    "mainMeaning": "자원",
+    "subMeanings": [
+      "재원",
+      "수단"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "기술/장비"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "source"
+    ],
+    "blockedMeanings": [
+      "물자"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: resource.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:signature:noun",
+    "word": "signature",
+    "lemma": "signature",
+    "partOfSpeech": "noun",
+    "mainMeaning": "서명",
+    "subMeanings": [
+      "사인",
+      "특징"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "회사/사무",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "sign"
+    ],
+    "blockedMeanings": [
+      "자필서명"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: signature.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:specification:noun",
+    "word": "specification",
+    "lemma": "specification",
+    "partOfSpeech": "noun",
+    "mainMeaning": "사양서",
+    "subMeanings": [
+      "세부사항",
+      "명세"
+    ],
+    "difficulty": "hard",
+    "topics": [
+      "구매/주문",
+      "생산/제조"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "specific"
+    ],
+    "blockedMeanings": [
+      "설계명세서"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: specification.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "medium",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:subscription:noun",
+    "word": "subscription",
+    "lemma": "subscription",
+    "partOfSpeech": "noun",
+    "mainMeaning": "구독",
+    "subMeanings": [
+      "가입",
+      "기부금"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "판매/마케팅",
+      "고객서비스"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "subscribe"
+    ],
+    "blockedMeanings": [
+      "정기구독"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: subscription.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "builtin:transaction:noun",
+    "word": "transaction",
+    "lemma": "transaction",
+    "partOfSpeech": "noun",
+    "mainMeaning": "거래",
+    "subMeanings": [
+      "매매",
+      "업무처리"
+    ],
+    "difficulty": "easy",
+    "topics": [
+      "금융/회계",
+      "구매/주문"
+    ],
+    "confidenceGrade": "A",
+    "status": "quiz_ready",
+    "quizEligible": true,
+    "confusableWords": [
+      "action"
+    ],
+    "blockedMeanings": [
+      "금융거래"
+    ],
+    "evidence": [
+      {
+        "source": "wordnet",
+        "detail": "synset: transaction.n.01",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "high",
+      "businessRelevance": "high",
+      "examDomainRelevance": "high",
+      "officialPublicEvidence": true
+    },
+    "databaseVersion": 2
+  }
+];
+
+export const NEW_REVIEW_EXCLUDED_115: BuiltinWord[] = [
+  {
+    "id": "candidate:quantum:noun",
+    "word": "quantum",
+    "lemma": "quantum",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[quantum 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:photosynthesis:noun",
+    "word": "photosynthesis",
+    "lemma": "photosynthesis",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[photosynthesis 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:epistemology:noun",
+    "word": "epistemology",
+    "lemma": "epistemology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[epistemology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:jurisprudence:noun",
+    "word": "jurisprudence",
+    "lemma": "jurisprudence",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[jurisprudence 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:metamorphic:noun",
+    "word": "metamorphic",
+    "lemma": "metamorphic",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[metamorphic 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:osmosis:noun",
+    "word": "osmosis",
+    "lemma": "osmosis",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[osmosis 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:syntax:noun",
+    "word": "syntax",
+    "lemma": "syntax",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[syntax 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:chromosome:noun",
+    "word": "chromosome",
+    "lemma": "chromosome",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[chromosome 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:mitochondria:noun",
+    "word": "mitochondria",
+    "lemma": "mitochondria",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[mitochondria 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:aerodynamics:noun",
+    "word": "aerodynamics",
+    "lemma": "aerodynamics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[aerodynamics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:biomechanics:noun",
+    "word": "biomechanics",
+    "lemma": "biomechanics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[biomechanics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:crystallography:noun",
+    "word": "crystallography",
+    "lemma": "crystallography",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[crystallography 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:dialectics:noun",
+    "word": "dialectics",
+    "lemma": "dialectics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[dialectics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:entomology:noun",
+    "word": "entomology",
+    "lemma": "entomology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[entomology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:fossilization:noun",
+    "word": "fossilization",
+    "lemma": "fossilization",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[fossilization 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:geothermal:noun",
+    "word": "geothermal",
+    "lemma": "geothermal",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[geothermal 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:homeostasis:noun",
+    "word": "homeostasis",
+    "lemma": "homeostasis",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[homeostasis 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:immunology:noun",
+    "word": "immunology",
+    "lemma": "immunology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[immunology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:juxtaposition:noun",
+    "word": "juxtaposition",
+    "lemma": "juxtaposition",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[juxtaposition 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:kinetics:noun",
+    "word": "kinetics",
+    "lemma": "kinetics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[kinetics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:logarithm:noun",
+    "word": "logarithm",
+    "lemma": "logarithm",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[logarithm 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:metallurgy:noun",
+    "word": "metallurgy",
+    "lemma": "metallurgy",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[metallurgy 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:nanotechnology:noun",
+    "word": "nanotechnology",
+    "lemma": "nanotechnology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[nanotechnology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:optometry:noun",
+    "word": "optometry",
+    "lemma": "optometry",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[optometry 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:paleontology:noun",
+    "word": "paleontology",
+    "lemma": "paleontology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[paleontology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:quantum_leap:noun",
+    "word": "quantum_leap",
+    "lemma": "quantum_leap",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[quantum_leap 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:radiology:noun",
+    "word": "radiology",
+    "lemma": "radiology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[radiology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:seismology:noun",
+    "word": "seismology",
+    "lemma": "seismology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[seismology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:thermodynamics:noun",
+    "word": "thermodynamics",
+    "lemma": "thermodynamics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[thermodynamics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:ultrasound:noun",
+    "word": "ultrasound",
+    "lemma": "ultrasound",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[ultrasound 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:vaccination:noun",
+    "word": "vaccination",
+    "lemma": "vaccination",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[vaccination 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:zoology:noun",
+    "word": "zoology",
+    "lemma": "zoology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[zoology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:astrophysics:noun",
+    "word": "astrophysics",
+    "lemma": "astrophysics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[astrophysics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:bioinformatics:noun",
+    "word": "bioinformatics",
+    "lemma": "bioinformatics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[bioinformatics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:climatology:noun",
+    "word": "climatology",
+    "lemma": "climatology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[climatology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:dermatology:noun",
+    "word": "dermatology",
+    "lemma": "dermatology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[dermatology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:electrolysis:noun",
+    "word": "electrolysis",
+    "lemma": "electrolysis",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[electrolysis 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:fluidity:noun",
+    "word": "fluidity",
+    "lemma": "fluidity",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[fluidity 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:genomics:noun",
+    "word": "genomics",
+    "lemma": "genomics",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[genomics 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:hematology:noun",
+    "word": "hematology",
+    "lemma": "hematology",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[hematology 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:thou:noun",
+    "word": "thou",
+    "lemma": "thou",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[thou 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:thee:noun",
+    "word": "thee",
+    "lemma": "thee",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[thee 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:whither:noun",
+    "word": "whither",
+    "lemma": "whither",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[whither 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:quoth:noun",
+    "word": "quoth",
+    "lemma": "quoth",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[quoth 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:anon:noun",
+    "word": "anon",
+    "lemma": "anon",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[anon 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:forsooth:noun",
+    "word": "forsooth",
+    "lemma": "forsooth",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[forsooth 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:hitherto:noun",
+    "word": "hitherto",
+    "lemma": "hitherto",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[hitherto 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:perchance:noun",
+    "word": "perchance",
+    "lemma": "perchance",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[perchance 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:wherefore:noun",
+    "word": "wherefore",
+    "lemma": "wherefore",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[wherefore 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:thence:noun",
+    "word": "thence",
+    "lemma": "thence",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[thence 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:yclept:noun",
+    "word": "yclept",
+    "lemma": "yclept",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[yclept 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:betwixt:noun",
+    "word": "betwixt",
+    "lemma": "betwixt",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[betwixt 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:prithee:noun",
+    "word": "prithee",
+    "lemma": "prithee",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[prithee 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:alack:noun",
+    "word": "alack",
+    "lemma": "alack",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[alack 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:erstwhile:noun",
+    "word": "erstwhile",
+    "lemma": "erstwhile",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[erstwhile 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:heretofore:noun",
+    "word": "heretofore",
+    "lemma": "heretofore",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[heretofore 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:nought:noun",
+    "word": "nought",
+    "lemma": "nought",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[nought 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:oftentimes:noun",
+    "word": "oftentimes",
+    "lemma": "oftentimes",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[oftentimes 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:twain:noun",
+    "word": "twain",
+    "lemma": "twain",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[twain 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:verily:noun",
+    "word": "verily",
+    "lemma": "verily",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[verily 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:beguile:noun",
+    "word": "beguile",
+    "lemma": "beguile",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[beguile 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:chide:noun",
+    "word": "chide",
+    "lemma": "chide",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[chide 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:cleave:noun",
+    "word": "cleave",
+    "lemma": "cleave",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[cleave 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:dally:noun",
+    "word": "dally",
+    "lemma": "dally",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[dally 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:eschew:noun",
+    "word": "eschew",
+    "lemma": "eschew",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[eschew 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:fain:noun",
+    "word": "fain",
+    "lemma": "fain",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[fain 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:gainsay:noun",
+    "word": "gainsay",
+    "lemma": "gainsay",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[gainsay 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:hearken:noun",
+    "word": "hearken",
+    "lemma": "hearken",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[hearken 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:importune:noun",
+    "word": "importune",
+    "lemma": "importune",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[importune 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:knell:noun",
+    "word": "knell",
+    "lemma": "knell",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[knell 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:languish:noun",
+    "word": "languish",
+    "lemma": "languish",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[languish 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:mar:noun",
+    "word": "mar",
+    "lemma": "mar",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[mar 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:naysay:noun",
+    "word": "naysay",
+    "lemma": "naysay",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[naysay 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:oubliette:noun",
+    "word": "oubliette",
+    "lemma": "oubliette",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[oubliette 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:plight:noun",
+    "word": "plight",
+    "lemma": "plight",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[plight 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "excluded",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:quaff:noun",
+    "word": "quaff",
+    "lemma": "quaff",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[quaff 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:raiment:noun",
+    "word": "raiment",
+    "lemma": "raiment",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[raiment 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:smite:noun",
+    "word": "smite",
+    "lemma": "smite",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[smite 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:tarry:noun",
+    "word": "tarry",
+    "lemma": "tarry",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[tarry 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:usurp:noun",
+    "word": "usurp",
+    "lemma": "usurp",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[usurp 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:aint:noun",
+    "word": "aint",
+    "lemma": "aint",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[aint 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:gonna:noun",
+    "word": "gonna",
+    "lemma": "gonna",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[gonna 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:wanna:noun",
+    "word": "wanna",
+    "lemma": "wanna",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[wanna 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:gotcha:noun",
+    "word": "gotcha",
+    "lemma": "gotcha",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[gotcha 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:kinda:noun",
+    "word": "kinda",
+    "lemma": "kinda",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[kinda 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:sorta:noun",
+    "word": "sorta",
+    "lemma": "sorta",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[sorta 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:dunno:noun",
+    "word": "dunno",
+    "lemma": "dunno",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[dunno 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:yall:noun",
+    "word": "yall",
+    "lemma": "yall",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[yall 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:lemme:noun",
+    "word": "lemme",
+    "lemma": "lemme",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[lemme 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:gimme:noun",
+    "word": "gimme",
+    "lemma": "gimme",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[gimme 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:coolio:noun",
+    "word": "coolio",
+    "lemma": "coolio",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[coolio 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:rad:noun",
+    "word": "rad",
+    "lemma": "rad",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[rad 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:bummer:noun",
+    "word": "bummer",
+    "lemma": "bummer",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[bummer 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:dude:noun",
+    "word": "dude",
+    "lemma": "dude",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[dude 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:chum:noun",
+    "word": "chum",
+    "lemma": "chum",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[chum 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:pal:noun",
+    "word": "pal",
+    "lemma": "pal",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[pal 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:howdy:noun",
+    "word": "howdy",
+    "lemma": "howdy",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[howdy 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:cheers_mate:noun",
+    "word": "cheers_mate",
+    "lemma": "cheers_mate",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[cheers_mate 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:bloke:noun",
+    "word": "bloke",
+    "lemma": "bloke",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[bloke 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:chap:noun",
+    "word": "chap",
+    "lemma": "chap",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[chap 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:nifty:noun",
+    "word": "nifty",
+    "lemma": "nifty",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[nifty 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:groovy:noun",
+    "word": "groovy",
+    "lemma": "groovy",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[groovy 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:wicked_cool:noun",
+    "word": "wicked_cool",
+    "lemma": "wicked_cool",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[wicked_cool 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:whatcha:noun",
+    "word": "whatcha",
+    "lemma": "whatcha",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[whatcha 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:bogus:noun",
+    "word": "bogus",
+    "lemma": "bogus",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[bogus 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:phoney:noun",
+    "word": "phoney",
+    "lemma": "phoney",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[phoney 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:bamboozle:noun",
+    "word": "bamboozle",
+    "lemma": "bamboozle",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[bamboozle 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:flabbergast:noun",
+    "word": "flabbergast",
+    "lemma": "flabbergast",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[flabbergast 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:skedaddle:noun",
+    "word": "skedaddle",
+    "lemma": "skedaddle",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[skedaddle 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:shenanigans:noun",
+    "word": "shenanigans",
+    "lemma": "shenanigans",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[shenanigans 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:hogwash:noun",
+    "word": "hogwash",
+    "lemma": "hogwash",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[hogwash 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:malarkey:noun",
+    "word": "malarkey",
+    "lemma": "malarkey",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[malarkey 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:poppycock:noun",
+    "word": "poppycock",
+    "lemma": "poppycock",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[poppycock 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:balderdash:noun",
+    "word": "balderdash",
+    "lemma": "balderdash",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[balderdash 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  },
+  {
+    "id": "candidate:brouhaha:noun",
+    "word": "brouhaha",
+    "lemma": "brouhaha",
+    "partOfSpeech": "noun",
+    "mainMeaning": "[brouhaha 전문/특수 의미]",
+    "subMeanings": [],
+    "difficulty": "hard",
+    "topics": [
+      "일반"
+    ],
+    "confidenceGrade": "C",
+    "status": "review",
+    "quizEligible": false,
+    "confusableWords": [],
+    "blockedMeanings": [],
+    "evidence": [
+      {
+        "source": "wordfreq",
+        "detail": "low_biz_relevance",
+        "verifiedAt": "2026-09-29"
+      }
+    ],
+    "relevance": {
+      "generalFrequency": "low",
+      "businessRelevance": "low",
+      "examDomainRelevance": "low",
+      "officialPublicEvidence": false
+    },
+    "databaseVersion": 2
+  }
+];
+
+export const NEW_CANDIDATES_POOL: BuiltinWord[] = [
+  ...NEW_READY_300,
+  ...NEW_REVIEW_EXCLUDED_115
+];
