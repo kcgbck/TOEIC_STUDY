@@ -33,13 +33,45 @@ export class TesseractOcrEngine implements OcrEngine {
       await this.init();
     }
 
-    const ret = await this.worker!.recognize(input as any);
+    const ret = await this.worker!.recognize(input as any, {}, { blocks: true });
     const blocks: RecognizedTextBlock[] = [];
     const pageData = ret.data as any;
 
-    if (pageData && Array.isArray(pageData.lines)) {
+    if (pageData && Array.isArray(pageData.blocks)) {
+      for (const b of pageData.blocks) {
+        if (!b.paragraphs || !Array.isArray(b.paragraphs)) continue;
+        for (const p of b.paragraphs) {
+          if (!p.lines || !Array.isArray(p.lines)) continue;
+          for (const line of p.lines) {
+            const text = line.text?.trim() || '';
+            if (!text) continue;
+            const bbox = line.bbox || { x0: 0, y0: 0, x1: 0, y1: 0 };
+            const x = bbox.x0;
+            const y = bbox.y0;
+            const width = bbox.x1 - bbox.x0;
+            const height = bbox.y1 - bbox.y0;
+            const confidence = typeof line.confidence === 'number' ? line.confidence / 100 : 0.8;
+
+            const isEnglish = /^[a-zA-Z\s\-',.()]+$/.test(text);
+            const isKorean = /[가-힣]/.test(text);
+
+            blocks.push({
+              text,
+              x,
+              y,
+              width,
+              height,
+              confidence,
+              isEnglish,
+              isKorean,
+            });
+          }
+        }
+      }
+    } else if (pageData && Array.isArray(pageData.lines)) {
+      // 구버전 하위 호환
       for (const line of pageData.lines) {
-        const text = line.text.trim();
+        const text = line.text?.trim() || '';
         if (!text) continue;
         const bbox = line.bbox || { x0: 0, y0: 0, x1: 0, y1: 0 };
         const x = bbox.x0;
@@ -65,6 +97,7 @@ export class TesseractOcrEngine implements OcrEngine {
     }
 
     return blocks;
+
   }
 
   async terminate(): Promise<void> {

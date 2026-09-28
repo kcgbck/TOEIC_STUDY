@@ -8,6 +8,8 @@ interface Props {
   onStartQuizWithWords?: (words: Array<{ word: string; meaning: string[] }>) => void;
 }
 
+type FilterMode = 'all' | 'suspect' | 'needs_check';
+
 export const FileImportPocView: React.FC<Props> = ({ onStartQuizWithWords }) => {
   const [imageSrc, setImageSrc] = useState<string>('');
   const [fileName, setFileName] = useState<string>('');
@@ -18,6 +20,7 @@ export const FileImportPocView: React.FC<Props> = ({ onStartQuizWithWords }) => 
   const [extractedWords, setExtractedWords] = useState<ExtractedOcrWord[]>([]);
   const [savedBookTitle, setSavedBookTitle] = useState<string>('');
   const [errorMsg, setErrorMsg] = useState<string>('');
+  const [filterMode, setFilterMode] = useState<FilterMode>('all');
 
   const hiddenImgRef = useRef<HTMLImageElement | null>(null);
 
@@ -110,36 +113,87 @@ export const FileImportPocView: React.FC<Props> = ({ onStartQuizWithWords }) => 
     setExtractedWords((prev) => prev.filter((w) => w.id !== id));
   };
 
-  const handleMeaningChange = (id: string, newMeaning: string) => {
+  const handleWordFieldChange = (id: string, field: keyof ExtractedOcrWord, value: any) => {
     setExtractedWords((prev) =>
-      prev.map((w) => (w.id === id ? { ...w, meaning: newMeaning } : w))
+      prev.map((w) => {
+        if (w.id === id) {
+          return { ...w, [field]: value, isUserConfirmed: true };
+        }
+        return w;
+      })
     );
   };
 
-  // IndexedDB 문제집 저장
+  const handleToggleExclude = (id: string) => {
+    setExtractedWords((prev) =>
+      prev.map((w) => {
+        if (w.id === id) {
+          const nextExcluded = !w.isExcluded;
+          return { ...w, isExcluded: nextExcluded, isUserConfirmed: true };
+        }
+        return w;
+      })
+    );
+  };
+
+  const handleApplyRecommendation = (id: string, recommended: string) => {
+    setExtractedWords((prev) =>
+      prev.map((w) => {
+        if (w.id === id) {
+          return { ...w, word: recommended, isUserConfirmed: true, wordConfidence: 'high' };
+        }
+        return w;
+      })
+    );
+  };
+
+  // 필터링된 단어 목록 (지시서 14항)
+  const filteredWords = extractedWords.filter((w) => {
+    if (filterMode === 'suspect') {
+      return w.pairConfidence === 'low' || w.isExcluded;
+    }
+    if (filterMode === 'needs_check') {
+      return w.pairConfidence === 'medium';
+    }
+    return true;
+  });
+
+  // IndexedDB 문제집 저장 (지시서 15항 핵심 관문)
   const handleSaveToWordBook = async () => {
-    if (extractedWords.length === 0) return;
+    // 관문: word != empty && meaning != empty && isExcluded != true && (pairConfidence != low || isUserConfirmed)
+    const eligibleWords = extractedWords.filter(
+      (w) =>
+        w.word.trim().length > 0 &&
+        w.meaning.trim().length > 0 &&
+        !w.isExcluded &&
+        (w.pairConfidence !== 'low' || w.isUserConfirmed)
+    );
+
+    if (eligibleWords.length === 0) {
+      setErrorMsg('저장 가능한 검증 완료 단어가 없습니다. 제외 항목을 해제하거나 직접 수정 후 저장해 주세요.');
+      return;
+    }
 
     try {
-      const bookTitle = `${fileName.replace(/\.[a-z]+$/i, '')} 문제집 (${extractedWords.length}단어)`;
+      const bookTitle = `${fileName.replace(/\.[a-z]+$/i, '')} 문제집 (${eligibleWords.length}단어)`;
       const now = new Date().toISOString();
 
       const bookId = await db.wordBooks.add({
         title: bookTitle,
         sourceType: 'IMAGE',
         sourceFileName: fileName,
-        wordCount: extractedWords.length,
+        wordCount: eligibleWords.length,
         createdAt: now,
       });
 
-      const wordEntries = extractedWords.map((w) => ({
+      const wordEntries = eligibleWords.map((w) => ({
         word: w.word,
-        meaning: [w.meaning],
+        meaning: [w.meaning, ...(w.additionalMeanings || [])],
         partOfSpeech: w.partOfSpeech || '단어',
         difficulty: 'medium' as const,
         topic: 'toeic',
         sourceBookId: String(bookId),
-        confidence: 'HIGH' as const,
+        confidence: (w.pairConfidence.toUpperCase() as any) || 'HIGH',
         createdAt: now,
       }));
 
@@ -211,10 +265,37 @@ export const FileImportPocView: React.FC<Props> = ({ onStartQuizWithWords }) => 
 
       {extractedWords.length > 0 && (
         <div className="extracted-section">
-          <div className="extracted-header">
-            <h4>추출된 단어 목록 ({extractedWords.length}개)</h4>
+          <div className="extracted-header" style={{ flexWrap: 'wrap', gap: '10px' }}>
+            <div>
+              <h4>추출된 단어 검토 및 확정 ({extractedWords.length}개)</h4>
+              <p style={{ fontSize: '12px', color: '#94a3b8', margin: '4px 0 0 0' }}>
+                안전 관문: 낮은 신뢰도 항목은 자동 제외 처리되며, 사용자 직접 검토/수정 시에만 문제집에 저장됩니다.
+              </p>
+            </div>
             <button className="btn btn-accent" onClick={handleSaveToWordBook}>
-              💾 이 단어들로 문제집 저장하기
+              💾 승인된 단어로 문제집 저장 ({extractedWords.filter((w) => !w.isExcluded).length}개)
+            </button>
+          </div>
+
+          {/* 지시서 14항 필터 버튼 그룹 */}
+          <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
+            <button
+              className={`btn btn-sm ${filterMode === 'all' ? 'btn-primary' : 'btn-secondary'}`}
+              onClick={() => setFilterMode('all')}
+            >
+              전체 ({extractedWords.length})
+            </button>
+            <button
+              className={`btn btn-sm ${filterMode === 'suspect' ? 'btn-danger' : 'btn-secondary'}`}
+              onClick={() => setFilterMode('suspect')}
+            >
+              오류 의심 / 제외 ({extractedWords.filter((w) => w.pairConfidence === 'low' || w.isExcluded).length})
+            </button>
+            <button
+              className={`btn btn-sm ${filterMode === 'needs_check' ? 'btn-warning' : 'btn-secondary'}`}
+              onClick={() => setFilterMode('needs_check')}
+            >
+              확인 필요 ({extractedWords.filter((w) => w.pairConfidence === 'medium').length})
             </button>
           </div>
 
@@ -222,42 +303,94 @@ export const FileImportPocView: React.FC<Props> = ({ onStartQuizWithWords }) => 
             <table className="words-table">
               <thead>
                 <tr>
-                  <th style={{ width: '60px' }}>번호</th>
-                  <th style={{ width: '140px' }}>표제어</th>
+                  <th style={{ width: '50px' }}>포함</th>
+                  <th style={{ width: '130px' }}>표제어</th>
                   <th style={{ width: '80px' }}>품사</th>
-                  <th>한국어 뜻 (직접 수정 가능)</th>
-                  <th style={{ width: '60px' }}>관리</th>
+                  <th>대표 뜻</th>
+                  <th style={{ width: '100px' }}>추가 뜻</th>
+                  <th style={{ width: '90px' }}>신뢰도</th>
+                  <th style={{ width: '50px' }}>삭제</th>
                 </tr>
               </thead>
               <tbody>
-                {extractedWords.map((w, idx) => (
-                  <tr key={w.id}>
-                    <td className="text-center">{idx + 1}</td>
-                    <td className="word-cell">
-                      <strong>{w.word}</strong>
-                    </td>
-                    <td>
-                      <span className="pos-tag">{w.partOfSpeech || '-'}</span>
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        className="meaning-edit-input"
-                        value={w.meaning}
-                        onChange={(e) => handleMeaningChange(w.id, e.target.value)}
-                      />
-                    </td>
-                    <td className="text-center">
-                      <button
-                        className="btn-text-danger"
-                        onClick={() => handleDeleteWord(w.id)}
-                        title="단어 제거"
-                      >
-                        ✕
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                {filteredWords.map((w) => {
+                  const confBadgeClass =
+                    w.pairConfidence === 'high'
+                      ? 'badge-success'
+                      : w.pairConfidence === 'medium'
+                      ? 'badge-warning'
+                      : 'badge-danger';
+
+                  return (
+                    <tr key={w.id} style={{ opacity: w.isExcluded ? 0.6 : 1.0 }}>
+                      <td className="text-center">
+                        <input
+                          type="checkbox"
+                          checked={!w.isExcluded}
+                          onChange={() => handleToggleExclude(w.id)}
+                          title={w.isExcluded ? '문제집에 포함' : '문제집에서 제외'}
+                        />
+                      </td>
+                      <td className="word-cell">
+                        <input
+                          type="text"
+                          className="word-edit-input"
+                          style={{ width: '100%', fontWeight: 'bold' }}
+                          value={w.word}
+                          onChange={(e) => handleWordFieldChange(w.id, 'word', e.target.value)}
+                        />
+                        {w.recommendedWord && w.recommendedWord !== w.word && (
+                          <div style={{ fontSize: '11px', marginTop: '2px' }}>
+                            <span style={{ color: '#38bdf8' }}>추천: {w.recommendedWord}</span>
+                            <button
+                              type="button"
+                              style={{ marginLeft: '4px', fontSize: '10px', padding: '1px 4px', cursor: 'pointer' }}
+                              onClick={() => handleApplyRecommendation(w.id, w.recommendedWord!)}
+                            >
+                              적용
+                            </button>
+                          </div>
+                        )}
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          style={{ width: '100%', fontSize: '12px' }}
+                          value={w.partOfSpeech || ''}
+                          placeholder="품사"
+                          onChange={(e) => handleWordFieldChange(w.id, 'partOfSpeech', e.target.value)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          className="meaning-edit-input"
+                          value={w.meaning}
+                          onChange={(e) => handleWordFieldChange(w.id, 'meaning', e.target.value)}
+                        />
+                      </td>
+                      <td>
+                        <span style={{ fontSize: '12px', color: '#94a3b8' }}>
+                          {w.additionalMeanings?.length ? w.additionalMeanings.join(', ') : '-'}
+                        </span>
+                      </td>
+                      <td className="text-center">
+                        <span className={`badge ${confBadgeClass}`} style={{ fontSize: '11px' }}>
+                          {w.pairConfidence.toUpperCase()}
+                        </span>
+                      </td>
+                      <td className="text-center">
+                        <button
+                          className="btn-text-danger"
+                          onClick={() => handleDeleteWord(w.id)}
+                          title="단어 제거"
+                        >
+                          ✕
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { WordEntry, QuizQuestion } from '../../types/word';
 import { db } from '../../storage/db';
+import { createQuizQuestion } from '../../quiz/quizEngine';
 
 interface Props {
   initialWords?: WordEntry[];
@@ -10,39 +11,42 @@ interface Props {
 export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) => {
   const [words, setWords] = useState<WordEntry[]>(initialWords || []);
   const [currentQuiz, setCurrentQuiz] = useState<QuizQuestion | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [totalQuestions, setTotalQuestions] = useState<number>(20);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
   const [activeBookTitle, setActiveBookTitle] = useState<string>(bookTitle || '기본 TOEIC 4지선다');
 
-  const generateQuestion = (wordList: WordEntry[], targetIdx: number) => {
-    if (wordList.length < 2) return;
-    const target = wordList[targetIdx % wordList.length];
-    const correctMeaning = target.meaning[0];
-
-    // 다른 단어들에서 오답 선별 (최대 3개)
-    const otherWords = wordList.filter((w) => w.word !== target.word);
-    const shuffledOthers = [...otherWords].sort(() => 0.5 - Math.random());
-    const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaning[0]);
-
-    // 보기가 4개 미만인 경우 더미 보기 채우기
-    while (distractors.length < 3) {
-      distractors.push(`(추가 오답 ${distractors.length + 1})`);
+  const generateNextQuestion = (wordList: WordEntry[], targetIdx: number) => {
+    if (!wordList || wordList.length < 4) {
+      setCurrentQuiz(null);
+      return;
     }
 
-    // 4지선다 셔플
-    const options = [correctMeaning, ...distractors].sort(() => 0.5 - Math.random());
-    const correctIndex = options.indexOf(correctMeaning);
-
-    setCurrentQuiz({
-      wordId: target.id || target.word,
-      word: target.word,
-      options,
-      correctIndex,
-      difficulty: target.difficulty || 'medium',
+    const target = wordList[targetIdx % wordList.length];
+    // quizEngine의 createQuizQuestion을 사용하여 정답 유일성 Hard Gate 통과 문제 생성
+    const question = createQuizQuestion(wordList, target, {
+      seed: Date.now() + targetIdx,
     });
-    setSelectedIndex(null);
-    setIsAnswered(false);
+
+    if (question) {
+      setCurrentQuiz(question);
+      setSelectedIndex(null);
+      setIsAnswered(false);
+    } else {
+      // 오답 부족 또는 안전성 이슈로 해당 문제 생성 실패 시 다음 단어 시도
+      const fallbackIdx = (targetIdx + 1) % wordList.length;
+      const fallbackTarget = wordList[fallbackIdx];
+      const fallbackQuestion = createQuizQuestion(wordList, fallbackTarget, {
+        seed: Date.now() + fallbackIdx,
+      });
+      if (fallbackQuestion) {
+        setCurrentQuiz(fallbackQuestion);
+        setSelectedIndex(null);
+        setIsAnswered(false);
+      }
+    }
   };
 
   // 단어 로드
@@ -50,7 +54,9 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
     if (initialWords && initialWords.length > 0) {
       setWords(initialWords);
       setActiveBookTitle(bookTitle || '추출 단어장');
-      generateQuestion(initialWords, 0);
+      setTotalQuestions(Math.min(20, initialWords.length));
+      setCurrentIndex(0);
+      generateNextQuestion(initialWords, 0);
       return;
     }
 
@@ -61,7 +67,9 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
         if (saved && saved.length >= 4) {
           setWords(saved);
           setActiveBookTitle(`내 문제집 (${saved.length}단어)`);
-          generateQuestion(saved, 0);
+          setTotalQuestions(Math.min(20, saved.length));
+          setCurrentIndex(0);
+          generateNextQuestion(saved, 0);
         } else {
           // 기본 JSON 번들 로드
           fetch('/data/toeic_words_v1.json')
@@ -70,9 +78,12 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
               if (data.words && data.words.length > 0) {
                 setWords(data.words);
                 setActiveBookTitle('기본 빈출 어휘 (15단어)');
-                generateQuestion(data.words, 0);
+                setTotalQuestions(Math.min(20, data.words.length));
+                setCurrentIndex(0);
+                generateNextQuestion(data.words, 0);
               }
-            });
+            })
+            .catch((err) => console.warn('기본 단어 로드 실패:', err));
         }
       })
       .catch((err) => console.warn('단어 로드 실패:', err));
@@ -104,24 +115,30 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
   };
 
   const handleNext = () => {
-    if (!words.length) return;
-    const nextIdx = Math.floor(Math.random() * words.length);
-    generateQuestion(words, nextIdx);
+    if (!words.length || !isAnswered) return;
+    const nextIdx = currentIndex + 1;
+    setCurrentIndex(nextIdx);
+    generateNextQuestion(words, nextIdx);
   };
 
   if (!currentQuiz) {
     return (
       <div className="card poc-card">
         <h3>기본 TOEIC 4지선다 퀴즈</h3>
-        <p>단어 데이터를 불러오는 중입니다...</p>
+        <p>단어 데이터를 불러오는 중이거나 안전한 4지선다 보기를 생성 중입니다...</p>
       </div>
     );
   }
+
+  const progressDisplay = `${(currentIndex % totalQuestions) + 1} / ${totalQuestions}`;
 
   return (
     <div className="card quiz-card">
       <div className="quiz-header">
         <span className="quiz-tag">📖 {activeBookTitle}</span>
+        <span className="quiz-progress-badge" style={{ fontWeight: 'bold', color: '#38bdf8' }}>
+          진행 {progressDisplay}
+        </span>
         <span className="score-tag">
           정답: <strong style={{ color: '#4ade80' }}>{score.correct}</strong> | 오답: <strong style={{ color: '#f87171' }}>{score.wrong}</strong>
         </span>
@@ -157,15 +174,28 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle }) =>
       </div>
 
       {isAnswered && (
-        <div className="quiz-footer">
-          <p className="quiz-result-msg">
-            {selectedIndex === currentQuiz.correctIndex ? '✓ 정답입니다!' : '✕ 아쉽네요. 오답노트에 등록되었습니다.'}
-          </p>
-          <button className="btn btn-primary" onClick={handleNext}>
-            다음 문제 ▸
-          </button>
+        <div className="quiz-feedback-box">
+          {selectedIndex === currentQuiz.correctIndex ? (
+            <p className="feedback-text correct">⭕ 정답입니다!</p>
+          ) : (
+            <p className="feedback-text wrong">
+              ❌ 오답입니다. 정답은 <strong>{currentQuiz.options[currentQuiz.correctIndex]}</strong> 입니다.
+            </p>
+          )}
         </div>
       )}
+
+      {/* 지시서 30항: 사용자가 답을 누르기 전 다음 비활성, 답 선택 후 다음 활성 */}
+      <div className="quiz-footer">
+        <button
+          className="btn btn-primary"
+          style={{ width: '100%', padding: '12px', fontSize: '15px', fontWeight: 'bold' }}
+          onClick={handleNext}
+          disabled={!isAnswered}
+        >
+          다음 문제 →
+        </button>
+      </div>
     </div>
   );
 };

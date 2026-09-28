@@ -1,4 +1,4 @@
-// 브라우저 OCR 엔진 추상 인터페이스 정의 (지시서 42항 준수)
+export type ConfidenceLevel = 'high' | 'medium' | 'low';
 
 export interface RecognizedTextBlock {
   text: string;
@@ -9,6 +9,25 @@ export interface RecognizedTextBlock {
   confidence: number; // 0.0 ~ 1.0 (또는 0 ~ 100)
   isKorean?: boolean;
   isEnglish?: boolean;
+  side?: 'LEFT' | 'RIGHT' | 'SINGLE';
+}
+
+export interface ExtractedOcrWord {
+  id: string;
+  word: string;
+  recommendedWord?: string; // 추천 후보 (자동 교정 금지, 지시서 8항)
+  partOfSpeech?: string;
+  meaning: string;
+  additionalMeanings?: string[];
+  exampleSentence?: string;
+  exampleTranslation?: string;
+  side?: 'LEFT' | 'RIGHT' | 'SINGLE';
+  wordConfidence: ConfidenceLevel;
+  meaningConfidence: ConfidenceLevel;
+  pairConfidence: ConfidenceLevel;
+  rawConfidence: number;
+  isUserConfirmed?: boolean;
+  isExcluded?: boolean;
 }
 
 export type OcrProgressCallback = (progress: { status: string; progress: number }) => void;
@@ -19,3 +38,4 @@ export interface OcrEngine {
   recognize(input: ImageData | Blob | HTMLCanvasElement | string): Promise<RecognizedTextBlock[]>;
   terminate(): Promise<void>;
 }
+

@@ -38,10 +38,20 @@
 
 ## 검증 내역
 - `npm run typecheck`: 통과 (오류 0건)
-- `npm run test`: 4개 테스트 스위트 통과
+- `npm run test`: 7개 테스트 스위트, 25개 테스트 통과
 - `npm run build`: 프로덕션 정적 번들 정상 빌드 완료
 - `USER_DOCUMENT_UPLOADS`: 0건 (완전 로컬 브라우저 처리)
 
+## 현재 상태 판정 (P0-C 검증 완료)
+- `PDF_IMPORT_BASELINE = PASS` (100/100 단어 무손실 회귀 유지)
+- `PHOTO_OCR_EXTRACTION = PASS` (기하학적 열 격리, 경계 침범 차단, 3단계 신뢰도, 8종 합성 fixture 통과)
+- `QUIZ_SEMANTIC_UNIQUENESS = PASS` (Hard Gate 통과, BLOCK 동의어 0건, 1,000회 시험 PASS)
+- `CURRENT_STAGE = P0_PHOTO_AND_QUIZ_QUALITY_PASS`
+
+## 잔여 P0 과제
+- 없음 (P0-A 및 P0-B 해결 완료)
+
 ## Next Candidate Task (다음 작업 후보)
-1. 4지선다 출제 엔진 동의어 필터링(Hard Gate) 사전 연동
-2. 자체 검증 기본 어휘 데이터셋 확대 (2,000+ 단어)
+- 자체 검증 기본 어휘 데이터셋 확대 (TOEIC 2,000+ 단어 DB 구축)
+
+

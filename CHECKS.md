@@ -21,6 +21,26 @@
 - [x] 추출된 단어로 사용자 문제집 저장 및 4지선다 퀴즈 연동
 - [x] StorageHealth 상태 진단 및 JSON 데이터 백업/복원 기능 구현
 
+## Current Baseline & P0 Gate Status (P0-C 검증 완료)
+- `PDF_IMPORT_BASELINE = PASS`
+- `PHOTO_OCR_EXTRACTION = PASS`
+- `QUIZ_SEMANTIC_UNIQUENESS = PASS`
+- `CURRENT_STAGE = P0_PHOTO_AND_QUIZ_QUALITY_PASS`
+
+## P0 Done Means (P0-C 관문 완료)
+- [x] 사진 OCR: 다른 열 뜻 연결 금지 (좌우 독립)
+- [x] 사진 OCR: 다음 단어 뜻 침범 금지 (경계 보장)
+- [x] 사진 OCR: 낮은 신뢰도 단어 자동 문제집 저장 0건
+- [x] 사진 OCR: 8종 합성 fixture 통과
+- [x] 퀴즈 출제: validateQuestionUniqueness() Hard Gate 통과
+- [x] 퀴즈 출제: 정답 1개 보장, 중복 보기 0건
+- [x] 퀴즈 출제: BLOCK 동의어 오답 배제 100%
+- [x] 퀴즈 출제: 정답 추가 뜻(다의어) 오답 배제 100%
+- [x] 퀴즈 출제: 1,000회 반복 생성 시험 및 PDF 100단어 출제 시험 통과
+- [x] PDF 회귀: docs/샘플.pdf 100/100 무손실 유지
+- [x] 검증: npm run typecheck, npm run test, npm run build 통과
+
+
 ## Verify Commands
 ```powershell
 npm run typecheck
@@ -38,3 +58,4 @@ npm run build
 ## Known Risks & Policies
 - **사진 인식률 편차**: 저해상도 모바일 사진 촬영본의 경우 온디바이스 Tesseract 인식률 편차가 발생할 수 있으므로, 2단 분할 및 2배 확대 전처리를 적용함.
 - **Safari 저장소 정책**: 일반 Safari 사이트는 ITP의 저장소 정책 영향을 받을 수 있으나, iPhone 홈 화면에 standalone 웹앱으로 설치된 1차 도메인은 WebKit의 ITP 7일 스크립트 저장소 삭제 정책에서 명시적인 예외로 취급됨. 다만 저장공간 압박 또는 사용자 데이터 삭제에 대비하여 별도의 JSON 백업/복원 기능을 제공함.
+
