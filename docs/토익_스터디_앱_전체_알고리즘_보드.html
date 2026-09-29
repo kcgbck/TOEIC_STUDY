@@ -630,7 +630,7 @@
 
 <div class="container">
   <div style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3b82f6; border-radius: 8px; padding: 10px 16px; margin-bottom: 16px; color: #93c5fd; font-size: 13px; font-weight: 600;">
-    현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디 [DB-03 검증 완료: 누적 1,800개 기본 어휘 탑재 및 54,000회 스트레스 테스트 결함 0건 통과]
+    현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디 [TOEIC 1,800단어 + 해사영어 451단어(Phase 1~3 완비) 탑재 및 다중 단어장 엔진 가동]
   </div>
   <!-- 헤더 -->
   <header>
@@ -644,7 +644,7 @@
     <div class="header-stats">
       <div class="stat-badge">
         <span>총 알고리즘 노드:</span>
-        <span class="stat-value" id="stat-total-nodes">76개</span>
+        <span class="stat-value" id="stat-total-nodes">80개</span>
       </div>
       <div class="stat-badge">
         <span>설계 탭 수:</span>
@@ -652,7 +652,7 @@
       </div>
       <div class="stat-badge stat-p0">
         <span>P0 핵심 노드:</span>
-        <span class="stat-value" id="stat-p0-nodes">15개</span>
+        <span class="stat-value" id="stat-p0-nodes">16개</span>
       </div>
       <div class="stat-badge">
         <span>성공 확인 관문:</span>
@@ -690,6 +690,14 @@
         <span>의미 정규화:</span>
         <span class="stat-value">PASS (QA-02 완료, 큐 198개)</span>
       </div>
+      <div class="stat-badge stat-qa">
+        <span>해사영어(451단어):</span>
+        <span class="stat-value">PASS (1~3단계 완비)</span>
+      </div>
+      <div class="stat-badge stat-qa">
+        <span>다중 단어장 전환:</span>
+        <span class="stat-value">PASS (P0-C 완료)</span>
+      </div>
       <div class="stat-badge" style="background: rgba(245, 158, 11, 0.2); border-color: #f59e0b;">
         <span style="color: #fbbf24;">한국어 의미 사람 검토:</span>
         <span class="stat-value" style="color: #fbbf24;">검토 대기 (PENDING)</span>
@@ -712,8 +720,8 @@
         <div class="arch-card-desc">로컬 환경 무결성 확인 및 메인 메뉴 진입로 제공</div>
       </div>
       <div class="arch-card" onclick="switchTab('tab-2')">
-        <div class="arch-card-title">2-A. 기본 TOEIC 학습</div>
-        <div class="arch-card-desc">기본 탑재 2,000단어 마스터 DB 즉시 출제</div>
+        <div class="arch-card-title">2-A. 기본 TOEIC & 해사영어 학습</div>
+        <div class="arch-card-desc">TOEIC 1,800어 + 해사영어 451어 마스터 DB 및 원터치 전환 출제</div>
       </div>
       <div class="arch-card" onclick="switchTab('tab-3')">
         <div class="arch-card-title">2-B. 사진 / PDF 학습</div>
@@ -824,9 +832,9 @@
   {
     "id": "tab-2",
     "num": 2,
-    "name": "기본 TOEIC 단어",
-    "desc": "2,000개 이상 기본 탑재 단어 데이터 구조 및 검증 파이프라인",
-    "p0_count": 1
+    "name": "기본 TOEIC & 해사영어",
+    "desc": "기본 탑재 TOEIC 1,800단어 및 해사영어 451단어 데이터 구조 및 다중 단어장 파이프라인",
+    "p0_count": 2
   },
   {
     "id": "tab-3",
@@ -1078,7 +1086,7 @@
   {
     "id": "NODE-07",
     "tab_id": "tab-2",
-    "tab_name": "기본 TOEIC 단어",
+    "tab_name": "기본 TOEIC & 해사영어",
     "category": "데이터",
     "title": "2,000단어 마스터 스키마 구조",
     "badge": "설계 단계",
@@ -1106,7 +1114,7 @@
   {
     "id": "NODE-08",
     "tab_id": "tab-2",
-    "tab_name": "기본 TOEIC 단어",
+    "tab_name": "기본 TOEIC & 해사영어",
     "category": "처리",
     "title": "공식 출제 기준 기반 다중 교차 검증",
     "badge": "설계 단계",
@@ -1134,7 +1142,7 @@
   {
     "id": "NODE-09",
     "tab_id": "tab-2",
-    "tab_name": "기본 TOEIC 단어",
+    "tab_name": "기본 TOEIC & 해사영어",
     "category": "판단",
     "title": "단어 데이터 5단계 상태 전이 머신",
     "badge": "설계 단계",
@@ -1162,7 +1170,7 @@
   {
     "id": "NODE-10",
     "tab_id": "tab-2",
-    "tab_name": "기본 TOEIC 단어",
+    "tab_name": "기본 TOEIC & 해사영어",
     "category": "처리",
     "title": "비즈니스 주제 분류 및 표제어 정규화",
     "badge": "설계 단계",
@@ -1190,7 +1198,7 @@
   {
     "id": "NODE-11",
     "tab_id": "tab-2",
-    "tab_name": "기본 TOEIC 단어",
+    "tab_name": "기본 TOEIC & 해사영어",
     "category": "위험",
     "title": "미검증 외부 단어 투입 강제 차단 관문",
     "badge": "설계 단계",
@@ -1212,6 +1220,118 @@
       "관련_테스트": "미작성",
       "실행_근거": "단순 임의 수집 단어 직투입 금지 지침 준수",
       "확인_수준": "미확인 (설계 단계)",
+      "위험도": "P0 · 즉시 해결"
+    }
+  },
+  {
+    "id": "NODE-77",
+    "tab_id": "tab-2",
+    "tab_name": "기본 TOEIC & 해사영어",
+    "category": "데이터",
+    "title": "IMO SMCP 공식 표준 해사영어 파이프라인 (Phase 1)",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "IMO 총회 결의서 Res. A.918(22) Annex 1 표준 어휘집(Glossary) 174어(조난, 항해, 화물, 통신, 기관지령) 정규화 및 무결성 검증",
+    "details": {
+      "역할": "국제해사기구(IMO)가 제정한 표준해사통신영어(SMCP) 핵심 174단어를 앱 내 데이터베이스로 구축 및 탑재",
+      "기술_스킬": "JSON 스키마, 정규화 알고리즘",
+      "입력": "IMO Resolution A.918(22) 공식 표준 어휘 원천 데이터",
+      "처리_분기": "비상/조난, 항해, 화물, 통신, 기관 5대 영역 분류 → 한국어 대역 정규화 → 중복 0건 검증",
+      "출력": "public/data/maritime_smcp_v1.json 데이터베이스",
+      "실패_시_처리": "중복 단어 및 빈 의미 발견 시 빌드 즉각 중단",
+      "상태_읽기": "maritime_smcp_v1.json words 배열",
+      "상태_저장": "앱 번들 정적 에셋 및 IndexedDB",
+      "출처": "해사영어 Phase 1 개발 지시서 및 IMO Res. A.918(22)",
+      "파일": "scripts/worddb/generateMaritimeSmcp.ts",
+      "함수": "buildMaritimeSmcpDatabase()",
+      "관련_테스트": "tests/maritimeSmcp.test.ts",
+      "실행_근거": "해양수산 분야 국제 표준 규격 통신 어휘 확보",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-78",
+    "tab_id": "tab-2",
+    "tab_name": "기본 TOEIC & 해사영어",
+    "category": "데이터",
+    "title": "해기사 3·4급 국가자격시험 빈출 어휘 파이프라인 (Phase 2)",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "한국해양수산연수원(KIMFT) 해기사 3·4급(항해사/기관사) 필기시험 해사영어 표준 기출 171어(해경 제외) 추가 구축 (누적 345어)",
+    "details": {
+      "역할": "국가 공인 해기사 3급·4급 면허시험 해사영어 과목 최다 빈출 핵심 전문 어휘를 체계적으로 확장 구축",
+      "기술_스킬": "국가자격시험 기출 분석, 해사 전문용어 정규화",
+      "입력": "한국해양수산연수원 해기사 3·4급 항해/기관 필기시험 기출 어휘 자료",
+      "처리_분기": "항해학/선체조종 90어 + 디젤기관/보조기계/전기 81어 선별 → 해경 어휘 배제 → Phase 1 중복 교차 검증",
+      "출력": "누적 345어 통합 해사 어휘 데이터베이스 (databaseVersion: 2)",
+      "실패_시_처리": "중복 어휘 발견 시 빌드 차단",
+      "상태_읽기": "maritime_smcp_v1.json",
+      "상태_저장": "앱 정적 에셋 데이터베이스",
+      "출처": "해사영어 Phase 2 개발 지시서 및 KIMFT 출제 기준",
+      "파일": "scripts/worddb/generateMaritimePhase2.ts",
+      "함수": "buildMaritimePhase2Database()",
+      "관련_테스트": "tests/maritimeSmcp.test.ts",
+      "실행_근거": "상선 해기사 3·4급 자격 취득을 위한 실전형 학술 어휘 기반 확립",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-79",
+    "tab_id": "tab-2",
+    "tab_name": "기본 TOEIC & 해사영어",
+    "category": "데이터",
+    "title": "국제해사협약 및 상선 실무 어휘 파이프라인 (Phase 3)",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "COLREGs, SOLAS, MARPOL, STCW, ISM Code 및 선적·선박 실무 핵심 106어 추가 구축 (누적 총 451어 마스터 DB 완성)",
+    "details": {
+      "역할": "전 세계 상선 운항 및 항만 당국(PSC) 검사에서 필수로 요구되는 5대 국제해사협약 및 선박 실무 어휘 완비",
+      "기술_스킬": "국제협약 법령 분석, 상선 해무/공무 실무 용어 표준화",
+      "입력": "COLREGs 규칙문, SOLAS 설비 규정, MARPOL 부속서, STCW 및 상선 운송 실무 자료",
+      "처리_분기": "협약별 조항 어휘 추출 → 용어 표준화 → Phase 1·2 교차 중복 검증 → 누적 451어 확정",
+      "출력": "최종 451어 해사영어 마스터 DB (databaseVersion: 3)",
+      "실패_시_처리": "미검증 약어 또는 중복 발생 시 빌드 프로세스 거부",
+      "상태_읽기": "maritime_smcp_v1.json",
+      "상태_저장": "Cloudflare 에셋 및 PWA 캐시",
+      "출처": "해사영어 Phase 3 개발 지시서 및 IMO 국제협약문",
+      "파일": "scripts/worddb/generateMaritimePhase3.ts",
+      "함수": "buildMaritimePhase3Database()",
+      "관련_테스트": "tests/maritimeSmcp.test.ts",
+      "실행_근거": "해기사 실무 현장 및 국제 검사 표준 용어 전수 대응",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-80",
+    "tab_id": "tab-2",
+    "tab_name": "기본 TOEIC & 해사영어",
+    "category": "처리",
+    "title": "다중 단어장 스키마 안전 변환 및 원터치 전환 엔진",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "P0 · 즉시 해결",
+    "summary": "TOEIC(mainMeaning/subMeanings)과 해사영어(meaning배열) 간 데이터 스키마 차이를 안전하게 일원화 변환하고, 홈 및 퀴즈 탭 내에서 끊김 없이 즉시 단어장을 전환하는 엔진",
+    "details": {
+      "역할": "서로 다른 스키마 구조의 단어장 데이터(TOEIC vs 해사영어)를 단일 WordEntry 인터페이스로 안전 변환하여 런타임 예외를 방지하고 원터치 전환 보장",
+      "기술_스킬": "TypeScript 타입 가드, React 상태 분리 관리, Key 기반 뷰 동기화",
+      "입력": "currentBook 선택 상태 (builtin vs maritime), 단어장 원시 JSON",
+      "처리_분기": "meaning 배열 보유 여부 감지 → TOEIC 다의어 병합 또는 해사 직관 대역 분기 처리 → 퀴즈 인스턴스 즉시 리셋",
+      "출력": "런타임 오류 없는 표준화된 WordEntry 목록 및 즉시 출제 가능한 문제 세트",
+      "실패_시_처리": "스키마 누락 필드 발견 시 기본 안전값 자동 보정",
+      "상태_읽기": "currentBook, sourceType",
+      "상태_저장": "QuizPreviewView 로컬 상태 및 퀴즈 뷰어",
+      "출처": "해사영어 로드 오류 긴급 조치 및 UI 표준화",
+      "파일": "src/app/components/QuizPreviewView.tsx, src/app/App.tsx",
+      "함수": "toWordEntry(), handleSwitchBook()",
+      "관련_테스트": "tests/maritimeSmcp.test.ts, tests/questionUniqueness.test.ts",
+      "실행_근거": "스키마 불일치로 인한 앱 무한 로딩('단어 데이터 준비 중입니다...') 원천 차단",
+      "확인_수준": "코드로 확인",
       "위험도": "P0 · 즉시 해결"
     }
   },
