@@ -43,11 +43,11 @@ export const InstallBanner: React.FC = () => {
   };
 
   if (isStandalone) {
-    return (
-      <div className="install-banner standalone-badge">
-        <span>✓ PWA 앱 실행 중 (홈 화면 독립 모드)</span>
-      </div>
-    );
+    return null;
+  }
+
+  if (!deferredPrompt && !isIosSafari) {
+    return null;
   }
 
   return (
@@ -73,12 +73,6 @@ export const InstallBanner: React.FC = () => {
               </ol>
             </div>
           )}
-        </div>
-      )}
-
-      {!deferredPrompt && !isIosSafari && (
-        <div className="pwa-support-note">
-          <span>ℹ PWA 지원 브라우저 (Chrome, Edge 등)에서 원클릭 앱 설치가 가능합니다.</span>
         </div>
       )}
     </div>

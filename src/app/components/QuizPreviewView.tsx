@@ -7,22 +7,56 @@ import { createQuizQuestion } from '../../quiz/quizEngine';
 interface Props {
   initialWords?: WordEntry[];
   bookTitle?: string;
-  sourceType?: 'builtin' | 'photo' | 'pdf';
+  sourceType?: 'builtin' | 'maritime' | 'photo' | 'pdf';
+  instantGrading?: boolean;
+  shuffleOrder?: boolean;
 }
 
 type SelectedDifficulty = 'all' | 'easy' | 'medium' | 'hard';
 type QuestionCountOption = 10 | 20 | 30 | 50 | 'all';
+type BookCategory = 'builtin' | 'maritime';
 
-export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle, sourceType = 'builtin' }) => {
+// Fisher-Yates 배열 셔플 함수
+function shuffleArray(words: WordEntry[]): WordEntry[] {
+  const arr = [...words];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+export const QuizPreviewView: React.FC<Props> = ({
+  initialWords,
+  bookTitle,
+  sourceType = 'builtin',
+  instantGrading = false,
+  shuffleOrder = true,
+}) => {
+  const [currentBook, setCurrentBook] = useState<BookCategory>(() => {
+    return sourceType === 'maritime' ? 'maritime' : 'builtin';
+  });
   const [allLoadedWords, setAllLoadedWords] = useState<WordEntry[]>(initialWords || []);
   const [selectedDifficulty, setSelectedDifficulty] = useState<SelectedDifficulty>('all');
   const [selectedCount, setSelectedCount] = useState<QuestionCountOption>(20);
+  const [quizWords, setQuizWords] = useState<WordEntry[]>([]);
   const [currentQuiz, setCurrentQuiz] = useState<QuizQuestion | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
-  const [activeBookTitle, setActiveBookTitle] = useState<string>(bookTitle || '보카 스터디 기본 어휘');
+  const [activeBookTitle, setActiveBookTitle] = useState<string>(
+    bookTitle || (sourceType === 'maritime' ? 'IMO SMCP · 해기사 · 국제협약 해사영어' : '보카 스터디 기본 어휘')
+  );
+
+  // 외부 sourceType prop 변경 시 단어장 선택 동기화
+  useEffect(() => {
+    if (sourceType === 'maritime') {
+      setCurrentBook('maritime');
+    } else if (sourceType === 'builtin') {
+      setCurrentBook('builtin');
+    }
+  }, [sourceType]);
 
   // 난이도 필터링된 단어 목록
   const filteredWords = useMemo(() => {
@@ -72,56 +106,65 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle, sour
     }
   };
 
-  // 단어 로드
+  // 퀴즈 세션 초기화 (셔플 여부에 따라 단어 순서 재배치)
+  const initQuizSession = (baseWords?: WordEntry[]) => {
+    const source = baseWords || filteredWords;
+    if (source.length < 4) {
+      setQuizWords([]);
+      setCurrentQuiz(null);
+      return;
+    }
+    const finalWords = shuffleOrder ? shuffleArray(source) : [...source];
+    setQuizWords(finalWords);
+    setCurrentIndex(0);
+    setScore({ correct: 0, wrong: 0 });
+    generateNextQuestion(finalWords, 0);
+  };
+
+  // 단어 로드: initialWords가 없으면 currentBook에 따라 적절한 JSON fetch
   useEffect(() => {
     if (initialWords && initialWords.length > 0) {
       setAllLoadedWords(initialWords);
       setActiveBookTitle(bookTitle || (sourceType === 'photo' ? '내 사진 문제집' : sourceType === 'pdf' ? '내 PDF 문제집' : '추출 단어장'));
-      setCurrentIndex(0);
-      setScore({ correct: 0, wrong: 0 });
       return;
     }
 
-    // 기본 단어는 IndexedDB와 독립적으로 builtin_words_v1.json에서 직접 로드 (지시서 31, 33항)
-    fetch('/data/builtin_words_v1.json')
+    const targetUrl = currentBook === 'maritime' ? '/data/maritime_smcp_v1.json' : '/data/builtin_words_v1.json';
+    const defaultTitle = currentBook === 'maritime' ? 'IMO SMCP · 해기사 · 국제협약 해사영어' : '보카 스터디 기본 어휘';
+
+    fetch(targetUrl)
       .then((r) => r.json())
       .then((data: BuiltinWordsDatabase) => {
         if (data.words && data.words.length > 0) {
           const entries = data.words.map(builtinWordToWordEntry);
           setAllLoadedWords(entries);
-          setActiveBookTitle(`보카 스터디 기본 어휘 (${entries.length}단어)`);
-          setCurrentIndex(0);
-          setScore({ correct: 0, wrong: 0 });
+          setActiveBookTitle(`${defaultTitle} (${entries.length}단어)`);
         }
       })
       .catch((err) => {
-        console.warn('기본 단어 로드 실패, IndexedDB 확인:', err);
+        console.warn('단어 로드 실패, IndexedDB 확인:', err);
         db.words.toArray().then((saved) => {
           if (saved && saved.length >= 4) {
             setAllLoadedWords(saved);
             setActiveBookTitle(`내 문제집 (${saved.length}단어)`);
-            setCurrentIndex(0);
-            setScore({ correct: 0, wrong: 0 });
           }
         });
       });
-  }, [initialWords, bookTitle, sourceType]);
+  }, [initialWords, bookTitle, sourceType, currentBook]);
 
-  // 필터 변경 시 첫 문제 생성
+  // 필터, 문항수, 셔플 설정 변경 시 새 퀴즈 세션 생성
   useEffect(() => {
     if (filteredWords.length >= 4) {
-      setCurrentIndex(0);
-      setScore({ correct: 0, wrong: 0 });
-      generateNextQuestion(filteredWords, 0);
+      initQuizSession();
     } else {
+      setQuizWords([]);
       setCurrentQuiz(null);
     }
-  }, [filteredWords, selectedCount]);
+  }, [filteredWords, selectedCount, shuffleOrder]);
 
-
-  const handleSelectOption = async (idx: number) => {
-    if (isAnswered || !currentQuiz) return;
-    setSelectedIndex(idx);
+  // 실제 채점 처리
+  const processGrading = async (idx: number) => {
+    if (!currentQuiz || isAnswered) return;
     setIsAnswered(true);
 
     const isCorrect = idx === currentQuiz.correctIndex;
@@ -144,8 +187,26 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle, sour
     }
   };
 
+  // 보기 터치 시
+  const handleSelectOption = (idx: number) => {
+    if (isAnswered || !currentQuiz) return;
+    setSelectedIndex(idx);
+
+    // 즉시 채점 옵션이 켜져 있는 경우에만 즉시 판정
+    if (instantGrading) {
+      processGrading(idx);
+    }
+  };
+
+  // 정답 확인 버튼 클릭 (실수 방지 모드일 때)
+  const handleConfirmAnswer = () => {
+    if (selectedIndex === null || isAnswered || !currentQuiz) return;
+    processGrading(selectedIndex);
+  };
+
   const handleNext = () => {
-    if (!filteredWords.length || !isAnswered) return;
+    const wordListToUse = quizWords.length >= 4 ? quizWords : filteredWords;
+    if (!wordListToUse.length || !isAnswered) return;
     const nextIdx = currentIndex + 1;
     if (nextIdx >= totalQuestions) {
       // 퀴즈 완료 시
@@ -153,41 +214,75 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle, sour
       return;
     }
     setCurrentIndex(nextIdx);
-    generateNextQuestion(filteredWords, nextIdx);
+    generateNextQuestion(wordListToUse, nextIdx);
   };
 
   const isCompleted = totalQuestions > 0 && currentIndex >= totalQuestions;
 
   return (
     <div className="card quiz-card">
-      {/* 난이도 및 문제 수 설정 툴바 (지시서 31, 32항) */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', padding: '10px 14px', background: 'rgba(255,255,255,0.04)', borderRadius: '8px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#94a3b8' }}>난이도:</span>
-          {(['all', 'easy', 'medium', 'hard'] as const).map((d) => (
+      {/* 기본 어휘 / 해사영어 단어장 선택 탭 (커스텀 추출 단어장이 아닐 때 표시) */}
+      {!initialWords && (
+        <div className="book-selector-tabs">
+          <button
+            type="button"
+            className={`book-tab-btn ${currentBook === 'builtin' ? 'active' : ''}`}
+            onClick={() => setCurrentBook('builtin')}
+          >
+            📖 기본 어휘 (1,800어)
+          </button>
+          <button
+            type="button"
+            className={`book-tab-btn ${currentBook === 'maritime' ? 'active' : ''}`}
+            onClick={() => setCurrentBook('maritime')}
+          >
+            ⚓ 해사영어 (451어)
+          </button>
+        </div>
+      )}
+
+      {/* 난이도 및 문제 수 설정 툴바 (스마트폰 2줄 깨짐 완벽 방지 반응형) */}
+      <div className="quiz-controls-toolbar">
+        <div className="control-group">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span className="control-label">난이도</span>
             <button
-              key={d}
-              className={`btn btn-sm ${selectedDifficulty === d ? 'btn-primary' : 'btn-secondary'}`}
-              style={{ padding: '4px 10px', fontSize: '12px', borderRadius: '6px' }}
-              onClick={() => setSelectedDifficulty(d)}
+              type="button"
+              className="btn-text-shuffle"
+              onClick={() => initQuizSession()}
+              title="출제 순서를 무작위로 새로 섞습니다"
             >
-              {d === 'all' ? '전체' : d === 'easy' ? '하 (EASY)' : d === 'medium' ? '중 (MID)' : '상 (HARD)'}
+              🔀 순서 섞기
             </button>
-          ))}
+          </div>
+          <div className="control-btn-grid difficulty-grid">
+            {(['all', 'easy', 'medium', 'hard'] as const).map((d) => (
+              <button
+                key={d}
+                type="button"
+                className={`control-btn ${selectedDifficulty === d ? 'active' : ''}`}
+                onClick={() => setSelectedDifficulty(d)}
+              >
+                {d === 'all' ? '전체' : d === 'easy' ? '하 (EASY)' : d === 'medium' ? '중 (MID)' : '상 (HARD)'}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#94a3b8' }}>문항 수:</span>
-          {([10, 20, 30, 50, 'all'] as const).map((cnt) => (
-            <button
-              key={cnt}
-              className={`btn btn-sm ${selectedCount === cnt ? 'btn-primary' : 'btn-secondary'}`}
-              style={{ padding: '4px 8px', fontSize: '12px', borderRadius: '6px' }}
-              onClick={() => setSelectedCount(cnt)}
-            >
-              {cnt === 'all' ? '전체' : `${cnt}개`}
-            </button>
-          ))}
+        <div className="control-group">
+          <span className="control-label">문항 수</span>
+          <div className="control-btn-grid count-grid">
+            {([10, 20, 30, 50, 'all'] as const).map((cnt) => (
+              <button
+                key={cnt}
+                type="button"
+                className={`control-btn ${selectedCount === cnt ? 'active' : ''}`}
+                onClick={() => setSelectedCount(cnt)}
+              >
+                {cnt === 'all' ? '전체' : `${cnt}개`}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -200,13 +295,9 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle, sour
           <button
             className="btn btn-primary"
             style={{ padding: '10px 24px', fontSize: '15px', fontWeight: 'bold' }}
-            onClick={() => {
-              setCurrentIndex(0);
-              setScore({ correct: 0, wrong: 0 });
-              generateNextQuestion(filteredWords, 0);
-            }}
+            onClick={() => initQuizSession()}
           >
-            다시 풀기 🔄
+            다시 풀기 (새 순서로 섞기) 🔄
           </button>
         </div>
       ) : !currentQuiz ? (
@@ -216,68 +307,85 @@ export const QuizPreviewView: React.FC<Props> = ({ initialWords, bookTitle, sour
         </div>
       ) : (
         <>
-          <div className="quiz-header">
-            <span className="quiz-tag">📖 {activeBookTitle}</span>
-            <span className="quiz-progress-badge" style={{ fontWeight: 'bold', color: '#38bdf8' }}>
-              진행 {(currentIndex % totalQuestions) + 1} / {totalQuestions}
-            </span>
-            <span className="score-tag">
-              정답: <strong style={{ color: '#4ade80' }}>{score.correct}</strong> | 오답: <strong style={{ color: '#f87171' }}>{score.wrong}</strong>
-            </span>
+          {/* 어휘집 타이틀 1줄 + 진행 현황 1줄 분리 표기 */}
+          <div className="quiz-header-card">
+            <div className="quiz-header-title">
+              📖 {activeBookTitle}
+            </div>
+            <div className="quiz-header-status">
+              진행 {(currentIndex % totalQuestions) + 1}/{totalQuestions} | 정답: {score.correct}, 오답: {score.wrong}
+            </div>
           </div>
 
-      <div className="quiz-word-box">
-        <h2 className="quiz-headword">{currentQuiz.word}</h2>
-        <span className="difficulty-badge">{(currentQuiz.difficulty || 'MEDIUM').toUpperCase()}</span>
-      </div>
+          <div className="quiz-word-box">
+            <h2 className="quiz-headword">{currentQuiz.word}</h2>
+            <span className="difficulty-badge">{(currentQuiz.difficulty || 'MEDIUM').toUpperCase()}</span>
+          </div>
 
-      <div className="quiz-options-list">
-        {currentQuiz.options.map((option, idx) => {
-          let btnClass = 'quiz-option-btn';
-          if (isAnswered) {
-            if (idx === currentQuiz.correctIndex) {
-              btnClass += ' correct';
-            } else if (idx === selectedIndex) {
-              btnClass += ' wrong';
-            }
-          }
-          return (
-            <button
-              key={idx}
-              className={btnClass}
-              onClick={() => handleSelectOption(idx)}
-              disabled={isAnswered}
-            >
-              <span className="option-num">{idx + 1}.</span>
-              <span className="option-text">{option}</span>
-            </button>
-          );
-        })}
-      </div>
+          <div className="quiz-options-list">
+            {currentQuiz.options.map((option, idx) => {
+              let btnClass = 'quiz-option-btn';
+              if (isAnswered) {
+                if (idx === currentQuiz.correctIndex) {
+                  btnClass += ' correct';
+                } else if (idx === selectedIndex) {
+                  btnClass += ' wrong';
+                }
+              } else if (selectedIndex === idx) {
+                btnClass += ' selected';
+              }
 
-      {isAnswered && (
-        <div className="quiz-feedback-box">
-          {selectedIndex === currentQuiz.correctIndex ? (
-            <p className="feedback-text correct">⭕ 정답입니다!</p>
-          ) : (
-            <p className="feedback-text wrong">
-              ❌ 오답입니다. 정답은 <strong>{currentQuiz.options[currentQuiz.correctIndex]}</strong> 입니다.
-            </p>
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  className={btnClass}
+                  onClick={() => handleSelectOption(idx)}
+                  disabled={isAnswered}
+                >
+                  <span className="option-num">{idx + 1}.</span>
+                  <span className="option-text">{option}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {isAnswered && (
+            <div className="quiz-feedback-box">
+              {selectedIndex === currentQuiz.correctIndex ? (
+                <p className="feedback-text correct">⭕ 정답입니다!</p>
+              ) : (
+                <p className="feedback-text wrong">
+                  ❌ 오답입니다. 정답은 <strong>{currentQuiz.options[currentQuiz.correctIndex]}</strong> 입니다.
+                </p>
+              )}
+            </div>
           )}
-        </div>
-      )}
 
-      {/* 지시서 30항: 사용자가 답을 누르기 전 다음 비활성, 답 선택 후 다음 활성 */}
-      <div className="quiz-footer">
-        <button
-          className="btn btn-primary"
-          style={{ width: '100%', padding: '12px', fontSize: '15px', fontWeight: 'bold' }}
-          onClick={handleNext}
-          disabled={!isAnswered}
-        >
-          다음 문제 →
-        </button>
-      </div>
+          {/* 하단 버튼: 즉시 채점 모드가 아닐 때 답 선택 후 [정답 확인] -> 채점 후 [다음 문제] */}
+          <div className="quiz-footer">
+            {!isAnswered && !instantGrading ? (
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ width: '100%', padding: '13px', fontSize: '15px', fontWeight: 'bold' }}
+                onClick={handleConfirmAnswer}
+                disabled={selectedIndex === null}
+              >
+                {selectedIndex === null ? '보기를 선택해주세요' : '정답 확인 →'}
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ width: '100%', padding: '13px', fontSize: '15px', fontWeight: 'bold' }}
+                onClick={handleNext}
+                disabled={!isAnswered}
+              >
+                다음 문제 →
+              </button>
+            )}
+          </div>
         </>
       )}
     </div>

@@ -1,0 +1,5273 @@
+{
+  "databaseVersion": 3,
+  "name": "IMO SMCP & 해기사 3·4급 & 국제협약 해사영어",
+  "category": "maritime_full_master",
+  "phase": "PHASE_3_CONVENTIONS_AND_PRACTICE_EXPANSION",
+  "description": "IMO SMCP 174어 + 해기사 3·4급 빈출 171어 + 국제해사협약(COLREGs/SOLAS/MARPOL/STCW/ISM) 및 선박실무 106어 누적 총 451어 완전 구축",
+  "wordCount": 451,
+  "words": [
+    {
+      "id": 1,
+      "word": "abandon vessel",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "퇴선하다",
+        "선박을 버리고 탈출하다"
+      ],
+      "englishDefinition": "To evacuate crew and passengers from a vessel following a distress.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 2,
+      "word": "casualty",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "사상자",
+        "해난 사고"
+      ],
+      "englishDefinition": "A case of death, injury, or serious loss in an accident or shipping disaster.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 3,
+      "word": "capsize",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "전복하다",
+        "뒤집히다"
+      ],
+      "englishDefinition": "To turn over completely in the water.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 4,
+      "word": "crash-stop",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상 후진 정지",
+        "급정지"
+      ],
+      "englishDefinition": "An emergency reversal operation of the main engine(s) to avoid an imminent collision.",
+      "difficulty": "high",
+      "topic": "emergency"
+    },
+    {
+      "id": 5,
+      "word": "damage control team",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "침수 통제반",
+        "방수반"
+      ],
+      "englishDefinition": "A group of crew members specially trained for fighting flooding in the vessel.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 6,
+      "word": "derelict",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유기선",
+        "버려진 선박"
+      ],
+      "englishDefinition": "A vessel or cargo completely abandoned at sea without hope of recovery.",
+      "difficulty": "high",
+      "topic": "emergency"
+    },
+    {
+      "id": 7,
+      "word": "disabled",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "항행 불능의",
+        "조종 기능을 상실한"
+      ],
+      "englishDefinition": "A vessel impaired in such a manner as to be incapable of proceeding on its voyage.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 8,
+      "word": "distress traffic",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조난 통신"
+      ],
+      "englishDefinition": "Radio communication concerning an immediate threat of loss of life or vessel.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 9,
+      "word": "EPIRB",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상위치지시용 무선표지설비",
+        "위성 조난 신호 발신기"
+      ],
+      "englishDefinition": "Emergency Position Indicating Radio Beacon for satellite distress alerting.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 10,
+      "word": "escape route",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "탈출로",
+        "비상 대피로"
+      ],
+      "englishDefinition": "A clearly designated path to safety in case of an emergency onboard.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 11,
+      "word": "fire patrol",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "화재 순찰",
+        "소화 순찰"
+      ],
+      "englishDefinition": "A regular check of the vessel to detect and prevent fires.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 12,
+      "word": "flooding",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "침수",
+        "선내 해수 유입"
+      ],
+      "englishDefinition": "Major ingress of water into the vessel holds or compartments.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 13,
+      "word": "fumes",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유독 가스",
+        "유증기"
+      ],
+      "englishDefinition": "Harmful or toxic smoke, gas, or vapors emitted by chemicals or fire.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 14,
+      "word": "general emergency alarm",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "총비상경보"
+      ],
+      "englishDefinition": "A signal consisting of seven short blasts followed by one prolonged blast on the whistle and bells.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 15,
+      "word": "jettison",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "화물을 투하하다",
+        "바다에 내던지다"
+      ],
+      "englishDefinition": "To throw cargo or gear overboard to lighten the vessel and preserve stability.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 16,
+      "word": "lifeboat station",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "구명정 집결지",
+        "구명정 탑승 위치"
+      ],
+      "englishDefinition": "Assigned meeting point on deck for embarking lifeboats.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 17,
+      "word": "muster",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "소집하다",
+        "인원을 점검하다"
+      ],
+      "englishDefinition": "To assemble crew and passengers at designated stations for roll call.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 18,
+      "word": "OSC",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "현장지휘관",
+        "해상 수색구조 현장 지휘관"
+      ],
+      "englishDefinition": "On-Scene Coordinator designated to coordinate search and rescue operations.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 19,
+      "word": "refloat",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "이초하다",
+        "좌초선박을 다시 띄우다"
+      ],
+      "englishDefinition": "To pull or lift a stranded or aground vessel back into floating condition.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 20,
+      "word": "retreat signal",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "철수 신호"
+      ],
+      "englishDefinition": "Sound or radio signal directing emergency teams to withdraw immediately.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 21,
+      "word": "roll call",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "점호",
+        "인원 호명 확인"
+      ],
+      "englishDefinition": "Reading aloud a list of names to establish that all persons are present.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 22,
+      "word": "SAR",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "수색 및 구조",
+        "해상 수색 구조"
+      ],
+      "englishDefinition": "Search and Rescue operations to assist persons in distress at sea.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 23,
+      "word": "search pattern",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "수색 방식",
+        "수색 패턴"
+      ],
+      "englishDefinition": "A predetermined flight or navigational track used to systematically search an area.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 24,
+      "word": "search speed",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "수색 속력"
+      ],
+      "englishDefinition": "The recommended safe speed maintained by vessels during search operations.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 25,
+      "word": "spill",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "기름 유출",
+        "유류 누출"
+      ],
+      "englishDefinition": "Accidental discharge of oil or dangerous cargo into the sea.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 26,
+      "word": "spill control gear",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "오염 방제 장비"
+      ],
+      "englishDefinition": "Anti-pollution equipment like booms and absorbents used to contain spills.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 27,
+      "word": "stand by",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "대기하다",
+        "준비 태세를 갖추다"
+      ],
+      "englishDefinition": "To be ready to act or assist on short notice.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 28,
+      "word": "stand clear",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "이격하다",
+        "물러서다"
+      ],
+      "englishDefinition": "To keep away from dangerous machinery, ropes under tension, or hazardous cargo.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 29,
+      "word": "survivor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "생존자",
+        "구조자"
+      ],
+      "englishDefinition": "A person who has lived through a disaster or accident at sea.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 30,
+      "word": "wreck",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "침선",
+        "난파선"
+      ],
+      "englishDefinition": "A sunken or severely battered vessel resting on the seabed.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 31,
+      "word": "accommodation ladder",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "현제",
+        "현측 사다리"
+      ],
+      "englishDefinition": "A folding ladder attached to the vessel side for embarking and disembarking.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 32,
+      "word": "adrift",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "표류 중인",
+        "제어 없이 떠밀리는"
+      ],
+      "englishDefinition": "Floating at sea without propulsion, anchor, or control.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 33,
+      "word": "air draft",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "수면 상 고도",
+        "상부 고도"
+      ],
+      "englishDefinition": "The vertical distance from the waterline to the highest point of the vessel.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 34,
+      "word": "assembly station",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상 집결지",
+        "소집 구역"
+      ],
+      "englishDefinition": "Designated gathering point for passengers and crew during an alarm.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 35,
+      "word": "backing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "반시계 방향 풍향 변화"
+      ],
+      "englishDefinition": "Shifting of the wind in an anti-clockwise direction (e.g., North to West).",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 36,
+      "word": "beach",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "임의 좌주시키다",
+        "얕은 곳에 얹히다"
+      ],
+      "englishDefinition": "To run a damaged vessel onto a shallow beach to prevent sinking in deep water.",
+      "difficulty": "medium",
+      "topic": "emergency"
+    },
+    {
+      "id": 37,
+      "word": "berth",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선석",
+        "접안 부두"
+      ],
+      "englishDefinition": "A designated space alongside a pier or quay where a ship is moored.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 38,
+      "word": "blast",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "기적 신호",
+        "기적 소리"
+      ],
+      "englishDefinition": "A loud sound produced by the ship whistle.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 39,
+      "word": "blind sector",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "맹목 구간",
+        "레이더 음영 구역"
+      ],
+      "englishDefinition": "An angular sector shielded by masts or funnel where radar cannot detect targets.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 40,
+      "word": "boarding",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "승선",
+        "선박 탑승"
+      ],
+      "englishDefinition": "The act of coming onto or entering a vessel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 41,
+      "word": "cable",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "케이블",
+        "닻줄",
+        "1/10 해리"
+      ],
+      "englishDefinition": "Heavy anchor chain, mooring wire, or a nautical distance unit equal to 0.1 nautical mile.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 42,
+      "word": "cardinal points",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "사방위",
+        "동서남북 4대 방위"
+      ],
+      "englishDefinition": "The four principal compass directions: North, East, South, and West.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 43,
+      "word": "check",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "제어하다",
+        "점검하다"
+      ],
+      "englishDefinition": "To regulate or ease the paying out of a mooring line or wire under tension.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 44,
+      "word": "close-coupled towing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "밀착 예인"
+      ],
+      "englishDefinition": "Towing a vessel firmly nested into an icebreaker stern notch in polar ice.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 45,
+      "word": "convoy",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "호송 선단",
+        "선단 통항"
+      ],
+      "englishDefinition": "A group of merchant vessels sailing together under protection or icebreaker escort.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 46,
+      "word": "course",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "침로",
+        "지향 방위"
+      ],
+      "englishDefinition": "The intended direction in which a vessel is steered through the water.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 47,
+      "word": "CPA",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "최근접점"
+      ],
+      "englishDefinition": "Closest Point of Approach: minimum predicted distance between two passing vessels.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 48,
+      "word": "TCPA",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "최근접점 도달시간"
+      ],
+      "englishDefinition": "Time to Closest Point of Approach: time remaining until reaching the CPA.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 49,
+      "word": "datum",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조난 추정 위치",
+        "해도 기준면"
+      ],
+      "englishDefinition": "Most probable target position in SAR, or the zero reference level for chart depths.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 50,
+      "word": "destination",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "목적지",
+        "도착항"
+      ],
+      "englishDefinition": "The designated terminal port a ship is sailing toward.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 51,
+      "word": "disembark",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "하선하다",
+        "배에서 내리다"
+      ],
+      "englishDefinition": "To leave or step off from a vessel to the shore or another boat.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 52,
+      "word": "draft",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "흘수",
+        "선박 침하 깊이"
+      ],
+      "englishDefinition": "The vertical depth of water drawn by a floating vessel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 53,
+      "word": "drifting",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "표류",
+        "유압"
+      ],
+      "englishDefinition": "Movement of a vessel over ground caused entirely by currents and wind.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 54,
+      "word": "drop back",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "뒤로 처지다",
+        "후방 이격하다"
+      ],
+      "englishDefinition": "To slow down intentionally and fall behind the leading ship in a convoy.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 55,
+      "word": "embark",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "승선하다",
+        "배에 타다"
+      ],
+      "englishDefinition": "To go aboard a vessel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 56,
+      "word": "escort",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "호송선",
+        "에스코트"
+      ],
+      "englishDefinition": "A tug or pilot boat attending a vessel for safe navigation through tight waters.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 57,
+      "word": "ETA",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "입항 예정 시각"
+      ],
+      "englishDefinition": "Estimated Time of Arrival at a waypoint, pilot station, or port.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 58,
+      "word": "ETD",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "출항 예정 시각"
+      ],
+      "englishDefinition": "Estimated Time of Departure from a port or berth.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 59,
+      "word": "fairway",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "항로",
+        "통항 수로"
+      ],
+      "englishDefinition": "The navigable channel of a river, harbor, or coastal approach.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 60,
+      "word": "fathom",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "패덤",
+        "수심 단위 (약 1.83m)"
+      ],
+      "englishDefinition": "Traditional maritime depth measurement unit equal to 6 feet (1.8288 meters).",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 61,
+      "word": "foul",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "얽힌",
+        "장애가 있는"
+      ],
+      "englishDefinition": "Entangled or obstructed (e.g. foul anchor snagged on underwater cable).",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 62,
+      "word": "give-way vessel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "피항선"
+      ],
+      "englishDefinition": "The vessel required by steering rules to keep out of the way of another vessel.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 63,
+      "word": "GPS",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "위성항법장치"
+      ],
+      "englishDefinition": "Global Positioning System for accurate geographic positioning.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 64,
+      "word": "half cardinal points",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "팔방위",
+        "간방위"
+      ],
+      "englishDefinition": "The four intermediate compass points: North-East, South-East, South-West, North-West.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 65,
+      "word": "hampered vessel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조종 제한선"
+      ],
+      "englishDefinition": "A vessel restricted in her ability to maneuver as required by collision rules.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 66,
+      "word": "heading",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선수 방위",
+        "선두 방향"
+      ],
+      "englishDefinition": "The instantaneous compass direction in which the longitudinal axis of a vessel points.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 67,
+      "word": "hoist",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "달아올리다",
+        "인양하다"
+      ],
+      "englishDefinition": "To lift or pull up using a crane, derrick, or helicopter hoist sling.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 68,
+      "word": "icing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "착빙",
+        "선체 결빙"
+      ],
+      "englishDefinition": "Accumulation of ice on ship decks and superstructure from freezing sea spray.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 69,
+      "word": "inoperative",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "작동 불능의",
+        "고장 난"
+      ],
+      "englishDefinition": "Equipment or machinery currently out of order and not functioning.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 70,
+      "word": "knot",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "노트",
+        "해상 속력 단위"
+      ],
+      "englishDefinition": "Speed unit of one nautical mile (1,852 meters) per hour.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 71,
+      "word": "leeway",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "풍압차",
+        "압류"
+      ],
+      "englishDefinition": "The lateral drift of a vessel downwind from its steered course.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 72,
+      "word": "let go",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "놓아주다",
+        "투하하다"
+      ],
+      "englishDefinition": "To release or cast off mooring lines, or drop anchor.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 73,
+      "word": "list",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "횡경사",
+        "한쪽 기울임"
+      ],
+      "englishDefinition": "Permanent inclination of a ship to one side caused by cargo shift or flooding.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 74,
+      "word": "moor",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "계류하다",
+        "안벽에 매다"
+      ],
+      "englishDefinition": "To secure a vessel to a pier, buoy, or with anchors.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 75,
+      "word": "not under command",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "조종 불능의"
+      ],
+      "englishDefinition": "A vessel unable to maneuver due to exceptional breakdown or casualty.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 76,
+      "word": "obstruction",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "항해 장애물"
+      ],
+      "englishDefinition": "An object or shallow hazard blocking safe vessel navigation.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 77,
+      "word": "off station",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "정위치 이탈의"
+      ],
+      "englishDefinition": "A navigational aid (buoy or lightship) not in its charted proper position.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 78,
+      "word": "operational",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "정상 작동 중인"
+      ],
+      "englishDefinition": "Equipment or system working properly and ready for use.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 79,
+      "word": "proceed",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "항행하다",
+        "전진하다"
+      ],
+      "englishDefinition": "To continue moving forward on a specified course or speed.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 80,
+      "word": "rendezvous",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "회합",
+        "랑데부"
+      ],
+      "englishDefinition": "An agreed meeting place and time for two or more ships at sea.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 81,
+      "word": "restricted area",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "통항 제한 구역"
+      ],
+      "englishDefinition": "A marine area with specific entry and navigation restrictions.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 82,
+      "word": "safe speed",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "안전 속력"
+      ],
+      "englishDefinition": "Speed allowing proper action to avoid collision and be stopped within appropriate distance.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 83,
+      "word": "shackle",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "샤클",
+        "닻줄 1마디 (약 27.4m)"
+      ],
+      "englishDefinition": "U-shaped connector, or a length measurement of anchor cable equal to 15 fathoms.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 84,
+      "word": "speed of advance",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "진퇴 속력",
+        "전진 속도"
+      ],
+      "englishDefinition": "Expected speed made good along the planned navigational track.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 85,
+      "word": "standing orders",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선장 상설 명령록"
+      ],
+      "englishDefinition": "Master written continuous directives to bridge and engine officers.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 86,
+      "word": "stand-on vessel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유지선"
+      ],
+      "englishDefinition": "A vessel required by collision regulations to keep course and speed.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 87,
+      "word": "track",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "항적",
+        "실제 통항선"
+      ],
+      "englishDefinition": "The actual path followed over ground by a moving vessel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 88,
+      "word": "transit",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "통항하다",
+        "통과하다"
+      ],
+      "englishDefinition": "To pass through a canal, narrow channel, or designated fairway.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 89,
+      "word": "transit speed",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "통항 규정 속력"
+      ],
+      "englishDefinition": "The official required speed for navigating a specific canal or fairway.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 90,
+      "word": "underway",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "항행 중인",
+        "운항 중인"
+      ],
+      "englishDefinition": "A vessel neither anchored, moored to shore, nor aground.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 91,
+      "word": "unlit",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "소등된",
+        "불 꺼진"
+      ],
+      "englishDefinition": "A beacon or lighthouse that is dark when it should be showing light.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 92,
+      "word": "UTC",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "협정 세계시"
+      ],
+      "englishDefinition": "Coordinated Universal Time: standard astronomical time reference used in navigation.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 93,
+      "word": "variable",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "가변의",
+        "변덕스러운"
+      ],
+      "englishDefinition": "Winds or currents that frequently change direction without a steady pattern.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 94,
+      "word": "veering",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "시계 방향 풍향 변화"
+      ],
+      "englishDefinition": "Shifting of the wind in a clockwise direction (e.g., South to West).",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 95,
+      "word": "veer out",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "닻줄을 풀다",
+        "체인을 내보내다"
+      ],
+      "englishDefinition": "To pay out extra length of anchor chain or mooring cable.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 96,
+      "word": "vessel constrained by her draught",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "흘수제약선"
+      ],
+      "englishDefinition": "A power-driven vessel severely restricted in course due to shallow depth relative to draft.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 97,
+      "word": "visual sign",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "시각 신호"
+      ],
+      "englishDefinition": "Optical flag, daylight shape, or lamp signal seen by eye.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 98,
+      "word": "way point",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "변침점",
+        "경유점"
+      ],
+      "englishDefinition": "Geographical coordinate on a navigational plan where course changes.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 99,
+      "word": "windward",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "풍상측",
+        "바람받이 쪽"
+      ],
+      "englishDefinition": "The side of a vessel or direction facing into the oncoming wind.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 100,
+      "word": "coaming",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "코밍",
+        "해치 턱"
+      ],
+      "englishDefinition": "Vertical raised frame around cargo hatches to keep sea water out.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 101,
+      "word": "compatibility",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "적재 양립성",
+        "혼적 적합성"
+      ],
+      "englishDefinition": "Suitability of different cargoes to be loaded together safely in holds.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 102,
+      "word": "hatchrails",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해치 안전 난간"
+      ],
+      "englishDefinition": "Guardrails installed around open hatchways to prevent falls.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 103,
+      "word": "overflow",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "오버플로",
+        "넘침"
+      ],
+      "englishDefinition": "Spill caused by filling a fuel, ballast, or cargo tank beyond capacity.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 104,
+      "word": "polluter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "오염 유발선"
+      ],
+      "englishDefinition": "A ship responsible for an unlawful discharge of pollutants.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 105,
+      "word": "preventers",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "안전 로프",
+        "예방 삭"
+      ],
+      "englishDefinition": "Secondary ropes or stays rigged to prevent failure of heavy lift derrick gear.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 106,
+      "word": "safety load",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "안전 허용 하중"
+      ],
+      "englishDefinition": "Maximum permissible safe weight a hoist, wire, or crane may lift.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 107,
+      "word": "safe working pressure",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "안전 작동 압력"
+      ],
+      "englishDefinition": "The maximum permitted internal pressure designed for steam pipes or boilers.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 108,
+      "word": "segregation",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "격리 적재"
+      ],
+      "englishDefinition": "Separating incompatible hazardous goods by distance to prevent dangerous reactions.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 109,
+      "word": "shifting cargo",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "화물 쏠림",
+        "화물 이동"
+      ],
+      "englishDefinition": "Movement of cargo inside hold during heavy seas, endangering stability.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 110,
+      "word": "slings",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "슬링",
+        "인양 밧줄"
+      ],
+      "englishDefinition": "Loops of wire, fiber rope, or webbing used to hoist cargo crates.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 111,
+      "word": "spreader",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "스프레더",
+        "컨테이너 인양기"
+      ],
+      "englishDefinition": "Rectangular mechanical frame locking into corner castings to lift containers.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 112,
+      "word": "stripping",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "잔유 흡입",
+        "잔여물 배출"
+      ],
+      "englishDefinition": "Pumping out the final remaining liquid residue from cargo or ballast tanks.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 113,
+      "word": "tension winch",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자동 장력 윈치"
+      ],
+      "englishDefinition": "Mooring winch designed to automatically hold constant tension on dock lines.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 114,
+      "word": "TEU",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "20피트 환산 단위"
+      ],
+      "englishDefinition": "Standard container measurement based on a 20-foot long cargo box.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 115,
+      "word": "transshipment",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "환적",
+        "화물 전적"
+      ],
+      "englishDefinition": "Transferring goods from one vessel to another for onward transport.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 116,
+      "word": "union purchase",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "연합 권양 방식"
+      ],
+      "englishDefinition": "Traditional cargo loading method combining two stationary derricks.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 117,
+      "word": "volatile",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "휘발성의",
+        "인화성 유증기를 내는"
+      ],
+      "englishDefinition": "Liquids generating flammable vapor rapidly at room temperature.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 118,
+      "word": "oil clearance",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유류 방제 작업"
+      ],
+      "englishDefinition": "Skimming and containment operations to clean oil spills from the water.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 119,
+      "word": "rig move",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "시추선 이동"
+      ],
+      "englishDefinition": "Towing or moving an offshore drilling platform to a new oil field.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 120,
+      "word": "briefing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "사전 설명",
+        "브리핑"
+      ],
+      "englishDefinition": "Concise explanatory meeting giving vital instructions before operations.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 121,
+      "word": "GMDSS",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "세계 해상 조난 및 안전 제도"
+      ],
+      "englishDefinition": "Global maritime radio distress and communications network mandated worldwide.",
+      "difficulty": "medium",
+      "topic": "communication"
+    },
+    {
+      "id": 122,
+      "word": "MMSI",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해상이동업무식별번호"
+      ],
+      "englishDefinition": "Unique 9-digit radio identification number assigned to a ship or shore station.",
+      "difficulty": "medium",
+      "topic": "communication"
+    },
+    {
+      "id": 123,
+      "word": "off air",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "송신 중단된",
+        "방송 중지된"
+      ],
+      "englishDefinition": "A radio transmitting station that has temporarily ceased transmitting.",
+      "difficulty": "medium",
+      "topic": "communication"
+    },
+    {
+      "id": 124,
+      "word": "target",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "목표선",
+        "타겟"
+      ],
+      "englishDefinition": "Radar or AIS contact tracked by navigational watchkeeping officers.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 125,
+      "word": "VHF",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "초단파 무선전화"
+      ],
+      "englishDefinition": "Short-range marine radio working between 156 and 174 MHz.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 126,
+      "word": "VTS",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해상교통관제",
+        "해상교통관제센터"
+      ],
+      "englishDefinition": "Shore-side system monitoring and advising ship traffic in busy waterways.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 127,
+      "word": "INSTRUCTION",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "지시 (강제 명령)"
+      ],
+      "englishDefinition": "SMCP Message Marker indicating a mandatory regulatory order.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 128,
+      "word": "ADVICE",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "권고 (권장 조언)"
+      ],
+      "englishDefinition": "SMCP Message Marker indicating a strong safety recommendation.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 129,
+      "word": "WARNING",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "경고 (위험 알림)"
+      ],
+      "englishDefinition": "SMCP Message Marker warning of an imminent danger or hazard.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 130,
+      "word": "INFORMATION",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "정보 (상황 통보)"
+      ],
+      "englishDefinition": "SMCP Message Marker relaying factual navigational reports.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 131,
+      "word": "QUESTION",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "질문 (문의)"
+      ],
+      "englishDefinition": "SMCP Message Marker demanding specific information.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 132,
+      "word": "ANSWER",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "답변 (응답)"
+      ],
+      "englishDefinition": "SMCP Message Marker providing direct response to a question.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 133,
+      "word": "REQUEST",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "요청 (지원 요구)"
+      ],
+      "englishDefinition": "SMCP Message Marker requesting tugs, pilots, or emergency assistance.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 134,
+      "word": "INTENTION",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "의도 (계획 알림)"
+      ],
+      "englishDefinition": "SMCP Message Marker informing other vessels of planned maneuvers.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 135,
+      "word": "port side",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "좌현",
+        "선박 좌측"
+      ],
+      "englishDefinition": "The left side of a vessel when looking forward toward the bow.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 136,
+      "word": "starboard side",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "우현",
+        "선박 우측"
+      ],
+      "englishDefinition": "The right side of a vessel when looking forward toward the bow.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 137,
+      "word": "midships",
+      "partOfSpeech": "부사",
+      "meaning": [
+        "중앙에",
+        "타 중앙으로"
+      ],
+      "englishDefinition": "Helm order to bring the rudder to zero angle in line with keel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 138,
+      "word": "steady",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "그대로 유지하는",
+        "정상 침로"
+      ],
+      "englishDefinition": "Helm order to keep the vessel on the current compass heading.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 139,
+      "word": "hard-a-port",
+      "partOfSpeech": "부사",
+      "meaning": [
+        "좌현 전타로",
+        "키를 왼쪽 끝까지"
+      ],
+      "englishDefinition": "Rudder order directing the helmsman to apply maximum port rudder.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 140,
+      "word": "hard-a-starboard",
+      "partOfSpeech": "부사",
+      "meaning": [
+        "우현 전타로",
+        "키를 오른쪽 끝까지"
+      ],
+      "englishDefinition": "Rudder order directing the helmsman to apply maximum starboard rudder.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 141,
+      "word": "dead slow ahead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "극미속 전진"
+      ],
+      "englishDefinition": "Engine telegraph command to run engines at lowest forward RPM.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 142,
+      "word": "slow ahead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "미속 전진"
+      ],
+      "englishDefinition": "Engine order for slow forward propulsion speed.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 143,
+      "word": "half ahead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "반속 전진"
+      ],
+      "englishDefinition": "Engine order for medium cruising forward speed.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 144,
+      "word": "full ahead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전속 전진"
+      ],
+      "englishDefinition": "Engine order for maximum normal operational forward propulsion.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 145,
+      "word": "stop engine",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "기관 정지하다",
+        "엔진을 멈추다"
+      ],
+      "englishDefinition": "Engine telegraph command to shut down propulsion revolutions.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 146,
+      "word": "dead slow astern",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "극미속 후진"
+      ],
+      "englishDefinition": "Engine telegraph order to reverse engine at minimal astern RPM.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 147,
+      "word": "slow astern",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "미속 후진"
+      ],
+      "englishDefinition": "Engine order to run propulsion in reverse at low speed.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 148,
+      "word": "half astern",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "반속 후진"
+      ],
+      "englishDefinition": "Engine command for intermediate reverse speed.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 149,
+      "word": "full astern",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전속 후진"
+      ],
+      "englishDefinition": "Engine order for maximum reverse propulsion to stop ship quickly.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 150,
+      "word": "stand by engine",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "기관 준비하다",
+        "출항/입항 대기"
+      ],
+      "englishDefinition": "Command warning engine room to have propulsion ready for immediate maneuvering.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 151,
+      "word": "finished with engine",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "기관 사용 완료된"
+      ],
+      "englishDefinition": "Order sent from bridge indicating vessel is safely berthed and engine not needed.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 152,
+      "word": "bow thruster",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선수 스러스터",
+        "선수 횡추진기"
+      ],
+      "englishDefinition": "Propulsion device mounted in bow to push vessel laterally during berthing.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 153,
+      "word": "stern thruster",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선미 스러스터",
+        "선미 횡추진기"
+      ],
+      "englishDefinition": "Transverse propulsion unit in the stern to maneuver sideways.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 154,
+      "word": "rudder",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "타",
+        "방향타"
+      ],
+      "englishDefinition": "Underwater flat blade hinged at stern used to steer the vessel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 155,
+      "word": "propeller",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "프로펠러",
+        "스크루"
+      ],
+      "englishDefinition": "Rotating bladed screw driving the vessel through the water.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 156,
+      "word": "anchor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "닻",
+        "앵커"
+      ],
+      "englishDefinition": "Heavy forged steel device dropped to seabed to hold vessel stationary.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 157,
+      "word": "windlass",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "양묘기",
+        "닻 올리는 기계"
+      ],
+      "englishDefinition": "Winch machinery on forecastle deck used to haul up and drop anchors.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 158,
+      "word": "capstan",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "캡스턴",
+        "양삭기"
+      ],
+      "englishDefinition": "Vertical revolving drum used for hauling in heavy mooring lines.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 159,
+      "word": "bollard",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "볼라드",
+        "계선주"
+      ],
+      "englishDefinition": "Short sturdy post on deck or quay for securing mooring lines.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 160,
+      "word": "fairlead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "도삭기",
+        "페어리드"
+      ],
+      "englishDefinition": "Deck fitting guiding mooring lines smoothly without chaffing.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 161,
+      "word": "hawser",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "계류 밧줄",
+        "굵은 예인선"
+      ],
+      "englishDefinition": "Heavy synthetic or wire line used for towing or mooring large ships.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 162,
+      "word": "pilot",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "도선사",
+        "수로 안내원"
+      ],
+      "englishDefinition": "Licensed local mariner navigating vessels through harbor approaches.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 163,
+      "word": "pilot ladder",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "도선사 사다리"
+      ],
+      "englishDefinition": "Special certified rope ladder enabling pilot to climb safely aboard.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 164,
+      "word": "tug",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "예인선",
+        "터그보트"
+      ],
+      "englishDefinition": "Powerful small vessel maneuvering large ships in confined harbors.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 165,
+      "word": "heave up",
+      "partOfSpeech": "동사",
+      "meaning": [
+        "닻을 감아올리다"
+      ],
+      "englishDefinition": "To heave in the anchor cable until anchor is stowed in hawse pipe.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 166,
+      "word": "anchor aweigh",
+      "partOfSpeech": "형용사",
+      "meaning": [
+        "닻이 해저에서 떨어진",
+        "발묘 상태"
+      ],
+      "englishDefinition": "Condition when anchor has broken free from seabed and vessel is underway.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 167,
+      "word": "fender",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "방충재",
+        "펜더"
+      ],
+      "englishDefinition": "Shock-absorbing cushion hung on hull side to prevent impact damage with quay.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 168,
+      "word": "sounding",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "측심",
+        "수심 측정",
+        "탱크 계측"
+      ],
+      "englishDefinition": "Measuring water depth beneath keel or sounding liquid depth in tanks.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 169,
+      "word": "ullage",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "얼리지",
+        "탱크 상부 공백 깊이"
+      ],
+      "englishDefinition": "Distance from top reference point of a tank to the surface of liquid cargo.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 170,
+      "word": "draft survey",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "흘수 검정"
+      ],
+      "englishDefinition": "Calculation of cargo weight loaded by measuring changes in ship draft marks.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 171,
+      "word": "bilge",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "빌지",
+        "선저 오수"
+      ],
+      "englishDefinition": "Lowest internal space of the hull where water and oil drainage collect.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 172,
+      "word": "scupper",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배수구",
+        "스커퍼"
+      ],
+      "englishDefinition": "Open drain hole on weather deck edge allowing sea water to flow overboard.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 173,
+      "word": "freeboard",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "건현",
+        "수면상 선측 높이"
+      ],
+      "englishDefinition": "Vertical height between waterline and upper weather deck edge.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 174,
+      "word": "trim",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "트림",
+        "전후 흘수차"
+      ],
+      "englishDefinition": "Difference between the forward draft and the aft draft of a vessel.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 175,
+      "word": "azimuth",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "방위각",
+        "천체 방위각"
+      ],
+      "englishDefinition": "The horizontal angle or direction of a celestial object measured clockwise from the north.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 176,
+      "word": "zenith",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "천정",
+        "정점"
+      ],
+      "englishDefinition": "The point on the celestial sphere directly above an observer on the ship.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 177,
+      "word": "dead reckoning",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "추측 항법",
+        "추측 선위"
+      ],
+      "englishDefinition": "The process of calculating current position by using a previously determined position and advancing it based upon estimated speed and course.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 178,
+      "word": "bearing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "방위",
+        "방위선"
+      ],
+      "englishDefinition": "The horizontal direction of one terrestrial or celestial point from another, expressed as an angular distance.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 179,
+      "word": "variation",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자기 편차",
+        "편차"
+      ],
+      "englishDefinition": "The horizontal angle between the true meridian and the magnetic meridian at any place.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 180,
+      "word": "deviation",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자차",
+        "나침의 자차"
+      ],
+      "englishDefinition": "The deflection of the needle of a magnetic compass due to the magnetic properties of the ship itself.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 181,
+      "word": "gyrocompass",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전륜나침의",
+        "자이로컴퍼스"
+      ],
+      "englishDefinition": "A compass that finds true north by using an electrically driven gyroscope unaffected by magnetic fields.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 182,
+      "word": "magnetic compass",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자기나침의",
+        "마그네틱 컴퍼스"
+      ],
+      "englishDefinition": "A navigation instrument that indicates direction relative to the earth magnetic poles.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 183,
+      "word": "chart datum",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해도 기준면",
+        "수로 기준면"
+      ],
+      "englishDefinition": "The level of water to which soundings and drying heights on a nautical chart are referred.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 184,
+      "word": "great circle",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "대권",
+        "대권항로"
+      ],
+      "englishDefinition": "A circle on the surface of a sphere whose center and radius are those of the sphere, providing the shortest distance.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 185,
+      "word": "rhumb line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "점장항로",
+        "등각항로"
+      ],
+      "englishDefinition": "A line on the earth surface that crosses all meridians of longitude at the same angle.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 186,
+      "word": "position fix",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "실측 선위",
+        "선위 결정"
+      ],
+      "englishDefinition": "A reliable position determined by observing two or more intersecting lines of position.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 187,
+      "word": "range light",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "도등",
+        "선위유도등"
+      ],
+      "englishDefinition": "Two or more aligned navigation lights indicating the centerline of a safe navigable channel.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 188,
+      "word": "light beacon",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "등표",
+        "항로 표지"
+      ],
+      "englishDefinition": "An unstaffed fixed navigation mark fitted with a light to warn vessels of hazards.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 189,
+      "word": "lighthouse",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "등대"
+      ],
+      "englishDefinition": "A coastal tower with a powerful beam serving as a principal navigational aid for ships.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 190,
+      "word": "tidal stream",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조류",
+        "해조"
+      ],
+      "englishDefinition": "The alternating horizontal movement of water associated with the rise and fall of the tide.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 191,
+      "word": "spring tide",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "대조",
+        "사리"
+      ],
+      "englishDefinition": "A tide that occurs around the time of new or full moon when the tidal range is greatest.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 192,
+      "word": "neap tide",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "소조",
+        "조금"
+      ],
+      "englishDefinition": "A tide that occurs around the first and third quarters of the moon when the tidal range is lowest.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 193,
+      "word": "flood tide",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "창조",
+        "밀물"
+      ],
+      "englishDefinition": "The incoming tidal flow between low water and the following high water.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 194,
+      "word": "ebb tide",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "낙조",
+        "썰물"
+      ],
+      "englishDefinition": "The period between high tide and the succeeding low tide in which the water recedes.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 195,
+      "word": "slack water",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "정조",
+        "게류"
+      ],
+      "englishDefinition": "A short period in a body of tidal water when the water is completely unstressed, and there is no movement either way.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 196,
+      "word": "nautical chart",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해도",
+        "항해용 해도"
+      ],
+      "englishDefinition": "A specialized map depicting water depths, coastal features, navigational hazards, and aids to navigation.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 197,
+      "word": "sextant",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "육분의",
+        "천체 고도 측정기"
+      ],
+      "englishDefinition": "An optical instrument used to measure the angle between an astronomical object and the horizon for celestial navigation.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 198,
+      "word": "chronometer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "마린 크로노미터",
+        "정밀 항해시계"
+      ],
+      "englishDefinition": "A highly accurate clock onboard ship used in determining longitude at sea.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 199,
+      "word": "parallel indexing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "평행 색인법",
+        "평행선 레이더 항법"
+      ],
+      "englishDefinition": "A radar technique to monitor a ship lateral deviation from a planned track along coastlines.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 200,
+      "word": "ARPA",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자동레이더플로팅장치",
+        "아르파"
+      ],
+      "englishDefinition": "Automatic Radar Plotting Aid that tracks other targets and computes collision risk parameters (CPA/TCPA).",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 201,
+      "word": "AIS",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선박자동식별장치"
+      ],
+      "englishDefinition": "Automatic Identification System broadcasting ship identity, position, course, and speed to nearby vessels.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 202,
+      "word": "ECDIS",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전자해도표시장치"
+      ],
+      "englishDefinition": "Electronic Chart Display and Information System complying with IMO navigation standards.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 203,
+      "word": "sea clutter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해면 반사파",
+        "해면 잡음"
+      ],
+      "englishDefinition": "Radar echoes caused by reflections from surrounding sea waves that mask smaller targets.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 204,
+      "word": "rain clutter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "우설 반사파",
+        "강우 잡음"
+      ],
+      "englishDefinition": "Unwanted radar reflections returned from heavy rain, snow, or atmospheric precipitation.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 205,
+      "word": "range ring",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "거리 환",
+        "레이더 등거리원"
+      ],
+      "englishDefinition": "Concentric circular rings on a radar display used for estimating target distances.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 206,
+      "word": "electronic bearing line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전자방위선",
+        "EBL"
+      ],
+      "englishDefinition": "A controllable bearing cursor on a radar display used to measure the bearing of any target.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 207,
+      "word": "variable range marker",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "가변거리표",
+        "VRM"
+      ],
+      "englishDefinition": "An adjustable circular ring on a radar screen used to measure the precise range to a target.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 208,
+      "word": "squat",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선체 침하",
+        "침하 현상"
+      ],
+      "englishDefinition": "The hydrodynamic bodily sinkage and trim change of a vessel proceeding through shallow water.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 209,
+      "word": "bank effect",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "제방 효과",
+        "수로 제방 반발력"
+      ],
+      "englishDefinition": "The hydrodynamic suction and cushioning effect pushing bow away and drawing stern toward a canal bank.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 210,
+      "word": "shallow water effect",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "천수 영향",
+        "천수 효과"
+      ],
+      "englishDefinition": "Changes in a ship maneuvering characteristics, speed reduction, and vibration when navigating in shallow depth.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 211,
+      "word": "interaction",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선박 간 상호작용",
+        "간섭 현상"
+      ],
+      "englishDefinition": "Mutual hydrodynamic forces exerted between two vessels passing or overtaking close to each other.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 212,
+      "word": "turning circle",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선회권",
+        "선회 궤적"
+      ],
+      "englishDefinition": "The path described by the center of gravity of a vessel when executing a full 360-degree turn under rudder.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 213,
+      "word": "pivot point",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선회 중심점",
+        "피벗 포인트"
+      ],
+      "englishDefinition": "The point on a vessel centerline about which the ship turns during a course alteration.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 214,
+      "word": "advance",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "종거",
+        "선회 전진 거리"
+      ],
+      "englishDefinition": "The distance traveled by a ship original heading from the initial rudder order to completion of 90 degrees turn.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 215,
+      "word": "transfer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "횡거",
+        "선회 횡이동 거리"
+      ],
+      "englishDefinition": "The lateral distance moved by a ship from its original line of advance during a 90-degree alteration of course.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 216,
+      "word": "tactical diameter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전술 선회경",
+        "전술 직경"
+      ],
+      "englishDefinition": "The lateral distance from original heading to the point where the vessel has completed 180 degrees of turn.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 217,
+      "word": "stopping distance",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "정지 거리",
+        "제동 거리"
+      ],
+      "englishDefinition": "The total distance a vessel travels through the water from full ahead until completely brought to a standstill.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 218,
+      "word": "head reach",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "정지 타력 거리",
+        "전진 타력"
+      ],
+      "englishDefinition": "The distance a vessel continues to advance along its original course during a crash-stop maneuver.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 219,
+      "word": "sternway",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "후진 타력",
+        "후진력"
+      ],
+      "englishDefinition": "The backward motion or stern-first movement of a ship through the water.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 220,
+      "word": "yawing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선수 요동",
+        "요잉"
+      ],
+      "englishDefinition": "The rotation of a vessel about its vertical axis, causing its heading to swing from side to side.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 221,
+      "word": "pitching",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "종동",
+        "피칭"
+      ],
+      "englishDefinition": "The periodic up-and-down rotational motion of a vessel bow and stern about its transverse axis.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 222,
+      "word": "rolling",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "횡동",
+        "롤링"
+      ],
+      "englishDefinition": "The side-to-side tilting or rotational movement of a vessel from port to starboard about its longitudinal axis.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 223,
+      "word": "heaving",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "상하동",
+        "히빙"
+      ],
+      "englishDefinition": "The bodily linear up-and-down motion of the entire ship in sea waves.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 224,
+      "word": "surging",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전후동",
+        "서징"
+      ],
+      "englishDefinition": "The linear fore-and-aft bodily translation motion of a vessel along its longitudinal axis.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 225,
+      "word": "swaying",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "좌우동",
+        "스웨잉"
+      ],
+      "englishDefinition": "The lateral bodily translation motion of a vessel from side to side without turning.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 226,
+      "word": "hawse pipe",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "묘쇄관",
+        "닻줄 구멍"
+      ],
+      "englishDefinition": "A pipe through a vessel bow plating through which the anchor cable runs.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 227,
+      "word": "chain locker",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "묘쇄고",
+        "닻줄 보관고"
+      ],
+      "englishDefinition": "A dedicated compartment below deck forward used for stowing the anchor chain cable.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 228,
+      "word": "dragging anchor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "주묘",
+        "닻 끌림"
+      ],
+      "englishDefinition": "The dangerous unintentional sliding of an anchor along the seabed due to strong current or wind.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 229,
+      "word": "foul anchor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "얽힌 닻",
+        "파울 앵커"
+      ],
+      "englishDefinition": "An anchor whose fluke or shank has become entangled with its own cable or an underwater obstacle.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 230,
+      "word": "anchor flukes",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "닻가지",
+        "닻발"
+      ],
+      "englishDefinition": "The pointed triangular palms of an anchor that dig into the sea bottom.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 231,
+      "word": "anchor crown",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "닻머리",
+        "닻 크라운"
+      ],
+      "englishDefinition": "The lower bottom junction where the shank joins the anchor arms.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 232,
+      "word": "spring line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "스프링 라인",
+        "억제줄"
+      ],
+      "englishDefinition": "A mooring line led forward or aft from the ship to prevent fore-and-aft movement along the berth.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 233,
+      "word": "breast line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "브레스트 라인",
+        "직박줄"
+      ],
+      "englishDefinition": "A mooring rope led at right angles to the ship side to keep the vessel close against the quay.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 234,
+      "word": "head line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "헤드 라인",
+        "선수 계선줄"
+      ],
+      "englishDefinition": "A mooring line running forward from the bow to hold the ship bow in position.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 235,
+      "word": "stern line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "스턴 라인",
+        "선미 계선줄"
+      ],
+      "englishDefinition": "A mooring line running aft from the stern to secure the vessel stern to the jetty.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 236,
+      "word": "heaving line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "투삭줄",
+        "연락줄"
+      ],
+      "englishDefinition": "A light weighted rope thrown to shore or another vessel to pass heavy mooring hawsers.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 237,
+      "word": "messenger line",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "중간 예인줄",
+        "메신저 와이어"
+      ],
+      "englishDefinition": "An intermediate line used to haul a heavier cable across between two vessels or ship to shore.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 238,
+      "word": "bitter end",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "닻줄 고정단",
+        "비터 엔드"
+      ],
+      "englishDefinition": "The inboard extreme end of the anchor cable secured to the chain locker bulkhead.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 239,
+      "word": "devil's claw",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "체인 압착 제동기",
+        "데빌스 클로"
+      ],
+      "englishDefinition": "A steel turnbuckle device fitted with two claws used to secure the anchor cable firmly at sea.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 240,
+      "word": "keel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "용골",
+        "선체 바닥 중심재"
+      ],
+      "englishDefinition": "The central longitudinal structural member running along the lowest centerline of a ship bottom.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 241,
+      "word": "frame",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "늑골",
+        "선체 뼈대"
+      ],
+      "englishDefinition": "Transverse structural rib supporting the side and bottom shell plating of the hull.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 242,
+      "word": "transverse bulkhead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "횡격벽"
+      ],
+      "englishDefinition": "An athwartship vertical partition dividing the hull into watertight compartments.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 243,
+      "word": "longitudinal bulkhead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "종격벽"
+      ],
+      "englishDefinition": "A fore-and-aft vertical partition running lengthwise through the ship to provide structural strength.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 244,
+      "word": "double bottom",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "이중저"
+      ],
+      "englishDefinition": "The watertight space between the outer bottom shell and the inner bottom plating of a ship.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 245,
+      "word": "cofferdam",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "코퍼댐",
+        "격리실"
+      ],
+      "englishDefinition": "An empty protective void space between two bulkheads separating incompatible compartments (e.g. fuel and freshwater).",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 246,
+      "word": "collision bulkhead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선수 충돌격벽"
+      ],
+      "englishDefinition": "The foremost major watertight bulkhead designed to retain watertight integrity following bow impact.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 247,
+      "word": "forecastle",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선수루",
+        "포캐슬"
+      ],
+      "englishDefinition": "The raised superstructure or weather deck section situated at the extreme forward end of the ship.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 248,
+      "word": "poop deck",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선미루갑판",
+        "풉 데크"
+      ],
+      "englishDefinition": "A raised deck above the weather deck located at the extreme stern of a ship.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 249,
+      "word": "displacement",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배수량",
+        "배수 톤수"
+      ],
+      "englishDefinition": "The actual total weight of a ship and all its contents, equivalent to the mass of water it displaces.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 250,
+      "word": "deadweight",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "재화중량톤수",
+        "DWT"
+      ],
+      "englishDefinition": "The total carrying capacity of a ship including cargo, fuel, ballast, fresh water, stores, and crew.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 251,
+      "word": "light ship weight",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "경하중량",
+        "경하 선박 중량"
+      ],
+      "englishDefinition": "The weight of the ship completely empty without cargo, fuel, ballast, water, or passengers.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 252,
+      "word": "center of gravity",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "무게 중심",
+        "중심 (G)"
+      ],
+      "englishDefinition": "The single point at which the entire combined downward gravitational weight of a ship is considered to act.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 253,
+      "word": "center of buoyancy",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "부심",
+        "부력 중심 (B)"
+      ],
+      "englishDefinition": "The geometric center of the underwater submerged volume of a vessel where total upward buoyancy acts.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 254,
+      "word": "metacenter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "경심",
+        "메타센터 (M)"
+      ],
+      "englishDefinition": "The intersection point of the vertical line through the center of buoyancy with the initial center line when tilted.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 255,
+      "word": "metacentric height",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "경심고",
+        "GM"
+      ],
+      "englishDefinition": "The vertical distance between the center of gravity (G) and the metacenter (M), representing initial stability.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 256,
+      "word": "righting lever",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "복원 정",
+        "복원 레버 (GZ)"
+      ],
+      "englishDefinition": "The perpendicular distance between the vertical line of buoyant force and the center of gravity, generating righting moment.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 257,
+      "word": "stiff ship",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "강선",
+        "경심고가 과대하여 급격히 복원되는 선박"
+      ],
+      "englishDefinition": "A ship with an excessively large GM that rolls very quickly and violently, causing severe structural stresses.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 258,
+      "word": "tender ship",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유선",
+        "경심고가 작아 롤링 주기가 긴 선박"
+      ],
+      "englishDefinition": "A ship with a small GM having a sluggish rolling motion and lingering dangerously at large heel angles.",
+      "difficulty": "high",
+      "topic": "navigation"
+    },
+    {
+      "id": 259,
+      "word": "hogging",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "호깅",
+        "선체 중앙부가 위로 솟는 굽힘 현상"
+      ],
+      "englishDefinition": "A hull longitudinal bending condition where the midships area is pushed upward while ends drop down.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 260,
+      "word": "sagging",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "새깅",
+        "선체 중앙부가 아래로 처지는 굽힘 현상"
+      ],
+      "englishDefinition": "A longitudinal bending condition where the midship section is deflected downward below bow and stern.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 261,
+      "word": "free surface effect",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자유표면효과"
+      ],
+      "englishDefinition": "The virtual loss of metacentric height (GM) caused by the sloshing of liquid in slack or partially filled tanks.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 262,
+      "word": "draft marks",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "흘수 표척",
+        "흘수 눈금"
+      ],
+      "englishDefinition": "Numbers marked at the bow, midships, and stern indicating the vertical distance to the bottom of the keel.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 263,
+      "word": "Plimsoll mark",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "만재흘수선 표식",
+        "플림솔 마크"
+      ],
+      "englishDefinition": "The official reference mark painted amidships on both sides of a hull indicating the maximum legal submersion limit.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 264,
+      "word": "cylinder liner",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "실린더 라이너"
+      ],
+      "englishDefinition": "A replaceable cylindrical sleeve inside the engine block inside which the piston reciprocates.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 265,
+      "word": "cylinder head",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "실린더 헤드",
+        "실린더 커버"
+      ],
+      "englishDefinition": "The heavy top enclosure sealing the upper end of the combustion cylinder containing valves and injector.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 266,
+      "word": "piston crown",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "피스톤 크라운",
+        "피스톤 두부"
+      ],
+      "englishDefinition": "The heat-resistant upper top surface of a piston exposed directly to high combustion temperatures and pressures.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 267,
+      "word": "piston skirt",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "피스톤 스커트"
+      ],
+      "englishDefinition": "The cylindrical bottom section of a piston that guides it along the cylinder liner bore.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 268,
+      "word": "piston ring",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "피스톤 링"
+      ],
+      "englishDefinition": "Split metallic rings fitted into piston grooves to seal combustion pressure and wipe lubricating oil.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 269,
+      "word": "connecting rod",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "연접봉",
+        "커넥팅 로드"
+      ],
+      "englishDefinition": "A mechanical link that connects the crosshead or piston pin to the crankshaft to convert reciprocating motion into rotation.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 270,
+      "word": "crankshaft",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "크랭크축"
+      ],
+      "englishDefinition": "The main heavy shaft driven by pistons to deliver engine rotational propulsion torque to the propeller.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 271,
+      "word": "camshaft",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "캠축"
+      ],
+      "englishDefinition": "A rotating shaft equipped with profiled cams used to actuate intake, exhaust valves and fuel injection pumps.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 272,
+      "word": "flywheel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "플라이휠"
+      ],
+      "englishDefinition": "A massive heavy wheel attached to the crankshaft that smoothes out cyclical torque fluctuations.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 273,
+      "word": "crosshead",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "크로스헤드"
+      ],
+      "englishDefinition": "A sliding joint in large low-speed marine diesel engines that absorbs side thrust and guides the piston rod.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 274,
+      "word": "stuffing box",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "스터핑 박스",
+        "격벽 기밀장치"
+      ],
+      "englishDefinition": "A sealing assembly around the piston rod preventing scavenge air and dirty cylinder oil from entering the crankcase.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 275,
+      "word": "bedplate",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "베드플레이트",
+        "엔진 대판"
+      ],
+      "englishDefinition": "The rigid foundation structure at the base of a marine diesel engine supporting the main bearings and crankshaft.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 276,
+      "word": "thrust bearing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "추력 베어링",
+        "스러스트 베어링"
+      ],
+      "englishDefinition": "The primary heavy bearing that absorbs axial propeller thrust forces and transfers them directly to the ship hull.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 277,
+      "word": "propeller shaft",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "추진축",
+        "프로펠러 축"
+      ],
+      "englishDefinition": "The steel shaft transmitting rotational power from the main engine through the stern tube to the propeller.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 278,
+      "word": "stern tube",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선미관"
+      ],
+      "englishDefinition": "The watertight shaft casing through which the propeller shaft penetrates the aft hull structure.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 279,
+      "word": "controllable pitch propeller",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "가변피치 프로펠러",
+        "CPP"
+      ],
+      "englishDefinition": "A propeller whose blade angle can be adjusted during operation to change ship speed and reverse direction without altering engine rotation.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 280,
+      "word": "fixed pitch propeller",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "고정피치 프로펠러",
+        "FPP"
+      ],
+      "englishDefinition": "A propeller whose blades are permanently cast into a rigid fixed orientation.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 281,
+      "word": "turbocharger",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배기가스 터보과급기"
+      ],
+      "englishDefinition": "An exhaust-gas-driven turbine driving a compressor that forces dense pressurized combustion air into engine cylinders.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 282,
+      "word": "scavenge air",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "소기",
+        "스캐빈징 공기"
+      ],
+      "englishDefinition": "Pressurized fresh air admitted into a 2-stroke diesel cylinder to expel residual burnt exhaust gases and charge fresh oxygen.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 283,
+      "word": "exhaust manifold",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배기 다기관"
+      ],
+      "englishDefinition": "The insulated pipe assembly that gathers hot exhaust gas from multiple cylinders and directs it into the turbocharger.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 284,
+      "word": "fuel injection valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "연료분사밸브",
+        "인젝터"
+      ],
+      "englishDefinition": "An atomizing nozzle that injects fine high-pressure fuel spray into the combustion chamber.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 285,
+      "word": "fuel injection pump",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "연료분사펌프"
+      ],
+      "englishDefinition": "A reciprocating pump that meters and pressurizes fuel oil to several hundred bars for timed injection.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 286,
+      "word": "crankcase explosion",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "크랭크케이스 폭발"
+      ],
+      "englishDefinition": "A violent combustion accident caused when hot bearing spots ignite accumulated oil mist inside an engine crankcase.",
+      "difficulty": "high",
+      "topic": "emergency"
+    },
+    {
+      "id": 287,
+      "word": "relief valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "릴리프 밸브",
+        "압력 방출 밸브"
+      ],
+      "englishDefinition": "An automatic spring-loaded valve that discharges fluid to prevent dangerous overpressure in cylinders or pipes.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 288,
+      "word": "scavenging trunk",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "소기실",
+        "스캐빈징 트렁크"
+      ],
+      "englishDefinition": "The receiver plenum compartment containing pressurized scavenging air surrounding the cylinder liner ports.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 289,
+      "word": "air cooler",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "공기 냉각기",
+        "인터쿨러"
+      ],
+      "englishDefinition": "A heat exchanger that cools compressed scavenge air to increase its density before entering the cylinders.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 290,
+      "word": "auxiliary boiler",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "보조 보일러"
+      ],
+      "englishDefinition": "A steam generator fired onboard to heat bunker tanks, accommodation, and cargo heaters while in port or underway.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 291,
+      "word": "economizer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "절탄기",
+        "배기가스 보일러"
+      ],
+      "englishDefinition": "A heat exchanger utilizing waste heat from main engine exhaust gas to generate steam while at sea.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 292,
+      "word": "safety valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "안전 밸브"
+      ],
+      "englishDefinition": "An autonomous spring-loaded pressure relief device fitted to a boiler steam drum to prevent catastrophic bursting.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 293,
+      "word": "gauge glass",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "수면계 유리",
+        "보일러 수면계"
+      ],
+      "englishDefinition": "A thick transparent visual sight tube on a boiler displaying the current operating water level.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 294,
+      "word": "burner",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "보일러 버너",
+        "연소 버너"
+      ],
+      "englishDefinition": "The firing nozzle mechanism atomizing and igniting fuel inside a boiler furnace.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 295,
+      "word": "feed water pump",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "급수 펌프"
+      ],
+      "englishDefinition": "A high-pressure pump that forces treated water into a boiler against its internal steam pressure.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 296,
+      "word": "condenser",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "복수기",
+        "응축기"
+      ],
+      "englishDefinition": "A heat exchanger that cools spent exhaust steam back into water for boiler feed recycling.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 297,
+      "word": "centrifugal purifier",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "원심식 청정기",
+        "퓨리파이어"
+      ],
+      "englishDefinition": "A high-speed centrifugal centrifuge used to remove water and solid impurities from heavy fuel and lube oils.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 298,
+      "word": "clarifier",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "원심식 정유기",
+        "클라리파이어"
+      ],
+      "englishDefinition": "A centrifuge configured specifically to separate finely suspended solid particles from fuel oil without water seal.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 299,
+      "word": "oily water separator",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유수분리기",
+        "OWS"
+      ],
+      "englishDefinition": "An equipment that decontaminates engine room bilge water to less than 15 ppm oil content prior to overboard discharge.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 300,
+      "word": "15 ppm alarm",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "15ppm 유분 경보기",
+        "유분 감시기"
+      ],
+      "englishDefinition": "An electronic optical monitoring device that halts oily bilge discharge automatically if oil concentration exceeds 15 ppm.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 301,
+      "word": "incinerator",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선내 소각기"
+      ],
+      "englishDefinition": "A specialized shipboard furnace used to burn waste oil sludges and solid garbage under strict MARPOL standards.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 302,
+      "word": "freshwater generator",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조수기",
+        "해수 담수화 장치"
+      ],
+      "englishDefinition": "An evaporator using waste jacket cooling water heat to distill seawater into fresh drinking water under vacuum.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 303,
+      "word": "air compressor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "공기 압축기"
+      ],
+      "englishDefinition": "A high-pressure multi-stage pump that charges compressed air up to 30 bar for starting diesel engines.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 304,
+      "word": "starting air receiver",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "기동 공기 저장용기",
+        "에어 보틀"
+      ],
+      "englishDefinition": "A certified high-pressure steel vessel storing compressed air used for cranking marine engines.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 305,
+      "word": "expansion valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "팽창 밸브"
+      ],
+      "englishDefinition": "A refrigeration throttling valve that meters liquid refrigerant pressure drop into the evaporator coil.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 306,
+      "word": "refrigeration compressor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "냉동기 압축기"
+      ],
+      "englishDefinition": "A mechanical compressor circulating refrigerant vapor throughout the ship provision cold stores or reefer holds.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 307,
+      "word": "evaporator coil",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "증발기 코일"
+      ],
+      "englishDefinition": "The cold heat-exchange tubing wherein expanding refrigerant boils and absorbs ambient heat from refrigerated spaces.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 308,
+      "word": "bunker manifold",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "벙커 매니폴드",
+        "연료 수급관 연결구"
+      ],
+      "englishDefinition": "The main pipe connections on deck amidships where shore bunker hoses are connected for refueling.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 309,
+      "word": "sounding pipe",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "측심관"
+      ],
+      "englishDefinition": "A vertical steel sounding tube extending into a tank bottom through which a weighted sounding tape is lowered.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 310,
+      "word": "ullage pipe",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유면 계측관",
+        "얼리지 파이프"
+      ],
+      "englishDefinition": "An access opening on top of a cargo oil tank used to measure the depth of the empty vapor space above liquid.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 311,
+      "word": "air vent pipe",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "공기 배출관",
+        "통기관"
+      ],
+      "englishDefinition": "A pipe fitted with flame screen letting air escape from or enter a tank during filling or emptying operations.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 312,
+      "word": "settling tank",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "침전 탱크"
+      ],
+      "englishDefinition": "A heated deep fuel tank wherein water and heavy sediment settle by gravity prior to centrifugal purification.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 313,
+      "word": "service tank",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "상용 서비스 탱크",
+        "청정유 일일탱크"
+      ],
+      "englishDefinition": "A purified fuel oil tank supplying clean oil directly to main and auxiliary engine fuel injection systems.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 314,
+      "word": "double bottom tank",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "이중저 탱크"
+      ],
+      "englishDefinition": "Compartments in the lower hull used alternatively for sea water ballast or fuel oil storage.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 315,
+      "word": "ballast pump",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "밸러스트 펌프"
+      ],
+      "englishDefinition": "A high-capacity centrifugal pump used to fill or discharge seawater from ballast tanks to adjust stability and draft.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 316,
+      "word": "stripping pump",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "잔유 배출용 스트리핑 펌프"
+      ],
+      "englishDefinition": "A positive displacement pump used to suck out the final remaining liquid residues from tank bottoms.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 317,
+      "word": "sea chest",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해수 흡입구",
+        "씨 체스트"
+      ],
+      "englishDefinition": "A recessed compartment in the hull bottom fitted with strainer gratings through which cooling seawater is drawn.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 318,
+      "word": "sea suction valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해수 흡입 밸브"
+      ],
+      "englishDefinition": "A large valve attached to the sea chest controlling seawater supply to engine cooling and fire pumps.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 319,
+      "word": "overboard discharge valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선외 배출 밸브"
+      ],
+      "englishDefinition": "A hull valve through which circulated cooling water or treated effluent is discharged back into the sea.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 320,
+      "word": "bilge well",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "빌지 웰",
+        "오수 집수정"
+      ],
+      "englishDefinition": "A drainage sump located at the lowest forward and aft corners of an engine room or cargo hold.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 321,
+      "word": "oily bilge tank",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유성 빌지 탱크"
+      ],
+      "englishDefinition": "A holding tank used to store accumulated oily leakages from machinery before processing through the OWS.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 322,
+      "word": "main switchboard",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "주 배전반",
+        "MSB"
+      ],
+      "englishDefinition": "The primary distribution panel receiving electric power from diesel generators and distributing it throughout the ship.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 323,
+      "word": "emergency switchboard",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상 배전반",
+        "ESB"
+      ],
+      "englishDefinition": "An isolated electrical switchboard energized automatically by the emergency generator during total blackout.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 324,
+      "word": "emergency generator",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상 발전기"
+      ],
+      "englishDefinition": "An independent self-contained diesel generator located above the uppermost continuous deck for emergency power.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 325,
+      "word": "circuit breaker",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "차단기"
+      ],
+      "englishDefinition": "An automatic electromagnetic switch designed to interrupt electrical circuits in case of overload or short circuit.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 326,
+      "word": "preferential trip",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "우선 차단 장치"
+      ],
+      "englishDefinition": "A safety relay that automatically disconnects non-essential electrical loads during generator overload to preserve power to navigation and steering.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 327,
+      "word": "blackout",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선내 정전",
+        "블랙아웃"
+      ],
+      "englishDefinition": "The total sudden loss of electrical power generation and distribution throughout the vessel.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 328,
+      "word": "governor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조속기"
+      ],
+      "englishDefinition": "A speed control mechanism that regulates fuel rack injection to maintain constant engine RPM under varying load.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 329,
+      "word": "uninterruptible power supply",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "무정전 전원장치",
+        "UPS"
+      ],
+      "englishDefinition": "A battery backup system providing continuous instantaneous electric power to critical navigation equipment during blackout.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 330,
+      "word": "earth fault",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "지락 사고",
+        "접지 고장"
+      ],
+      "englishDefinition": "An unintended insulation breakdown connecting an active live conductor directly to the steel ship hull.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 331,
+      "word": "megger test",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "메거 시험",
+        "절연 저항 시험"
+      ],
+      "englishDefinition": "A high-voltage diagnostic test using a megohmmeter to measure insulation resistance of motors and cables.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 332,
+      "word": "insulation resistance",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "절연 저항"
+      ],
+      "englishDefinition": "The electrical resistance offered by cable insulation jackets to prevent current leakage to the hull.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 333,
+      "word": "unattended machinery space",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "무인 당직 기관실",
+        "UMS"
+      ],
+      "englishDefinition": "An automated engine room certified to operate safely without watchkeeping engineers present continuously on duty.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 334,
+      "word": "tachometer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "회전계"
+      ],
+      "englishDefinition": "An instrument indicating the instantaneous rotational speed of an engine shaft in revolutions per minute (RPM).",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 335,
+      "word": "pyrometer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배기가스 고온계"
+      ],
+      "englishDefinition": "A thermocouple device used to monitor individual cylinder exhaust gas temperatures.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 336,
+      "word": "viscosimeter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "점도계"
+      ],
+      "englishDefinition": "An inline sensor measuring fuel viscosity to regulate heating for optimal fuel atomization.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 337,
+      "word": "salinity indicator",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "염분 농도계"
+      ],
+      "englishDefinition": "An electrical conductivity meter that sounds an alarm and diverts distilled water if salinity exceeds limits.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 338,
+      "word": "watch handover",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "당직 교대"
+      ],
+      "englishDefinition": "The formal protocol of transferring navigation or engine room watch responsibilities between officers.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 339,
+      "word": "engine logbook",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "기관 일지"
+      ],
+      "englishDefinition": "The official legal record book in which engine operational readings, bunker quantities, and anomalies are entered.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 340,
+      "word": "malfunction",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "작동 불량",
+        "오작동"
+      ],
+      "englishDefinition": "A failure or abnormal operating state of any machinery or electronic component onboard.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 341,
+      "word": "alarm monitoring system",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "경보 감시장치"
+      ],
+      "englishDefinition": "A centralized automation console that displays visual and acoustic alarms for abnormal vessel pressures or temperatures.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 342,
+      "word": "automatic shutdown",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자동 비상 정지",
+        "트립"
+      ],
+      "englishDefinition": "An emergency safety trip that immediately cuts off engine fuel during severe hazards like overspeed or low oil pressure.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 343,
+      "word": "slow turning",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "저속 턴",
+        "시동 전 회전점검"
+      ],
+      "englishDefinition": "Turning the main engine slowly with starting air and open indicator cocks prior to startup to verify no liquid leakage in cylinders.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 344,
+      "word": "indicator card",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "지압도"
+      ],
+      "englishDefinition": "A pressure-volume diagram recorded from an engine cylinder to evaluate combustion quality and power distribution.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 345,
+      "word": "mean effective pressure",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "평균 유효 압력",
+        "MEP"
+      ],
+      "englishDefinition": "A calculated average theoretical constant pressure acting on the piston to produce the observed engine power output.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 346,
+      "word": "risk of collision",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "충돌의 위험"
+      ],
+      "englishDefinition": "A dangerous situation deemed to exist if the compass bearing of an approaching vessel does not appreciably change.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 347,
+      "word": "proper lookout",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "적절한 경계"
+      ],
+      "englishDefinition": "Maintaining continuous visual and auditory surveillance by all available means as required by COLREGs Rule 5.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 348,
+      "word": "vessel not under command",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조종불능선",
+        "NUC"
+      ],
+      "englishDefinition": "A vessel which through some exceptional circumstance is unable to maneuver as required by the rules.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 349,
+      "word": "vessel restricted in her ability to maneuver",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조종제한선",
+        "RAM"
+      ],
+      "englishDefinition": "A vessel which from the nature of her work is restricted in her ability to maneuver as required by the collision regulations.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 350,
+      "word": "overtaking vessel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "추월선"
+      ],
+      "englishDefinition": "A vessel coming up with another vessel from a direction more than 22.5 degrees abaft her beam.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 351,
+      "word": "head-on situation",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "마주치는 상태",
+        "정면 반대침로 마주침"
+      ],
+      "englishDefinition": "A situation where two power-driven vessels are meeting on reciprocal or nearly reciprocal courses so as to involve risk of collision.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 352,
+      "word": "crossing situation",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "횡단 상태"
+      ],
+      "englishDefinition": "A situation where two power-driven vessels are crossing so as to involve risk of collision, requiring the one having the other on starboard to keep clear.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 353,
+      "word": "action to avoid collision",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "충돌 회피 동작"
+      ],
+      "englishDefinition": "Any positive maneuver made in ample time and with due regard to the observance of good seamanship to avert collision.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 354,
+      "word": "traffic separation scheme",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "통항분리수역",
+        "TSS"
+      ],
+      "englishDefinition": "A designated maritime traffic routing system aimed at regulating the flow of converging traffic in congested waters.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 355,
+      "word": "inshore traffic zone",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "연안통항대"
+      ],
+      "englishDefinition": "A designated routing area between the landward boundary of a TSS and the adjacent coast designated for local coastal traffic.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 356,
+      "word": "separation zone",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "분리대",
+        "통항분리선"
+      ],
+      "englishDefinition": "A zone or line separating lanes in which vessels are proceeding in opposite or nearly opposite directions.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 357,
+      "word": "narrow channel",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "협수로"
+      ],
+      "englishDefinition": "A restricted waterway where vessels navigating must keep as near to the outer limit on their starboard side as is safe.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 358,
+      "word": "masthead light",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "마스트등",
+        "전조등"
+      ],
+      "englishDefinition": "A white navigation light placed over the fore-and-aft centerline showing an unbroken light over an arc of 225 degrees.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 359,
+      "word": "sidelights",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "현등",
+        "홍현등 및 녹현등"
+      ],
+      "englishDefinition": "A green light on the starboard side and a red light on the port side, each showing an unbroken light over an arc of 112.5 degrees.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 360,
+      "word": "sternlight",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선미등"
+      ],
+      "englishDefinition": "A white light placed nearly as practicable at the stern showing an unbroken arc of 135 degrees aft.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 361,
+      "word": "towing light",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "예인등"
+      ],
+      "englishDefinition": "A yellow light having the same characteristics as the sternlight, exhibited by a vessel engaged in towing.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 362,
+      "word": "all-round light",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전주등"
+      ],
+      "englishDefinition": "A navigation light showing an uninterrupted light over a complete horizontal horizon arc of 360 degrees.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 363,
+      "word": "flashing light",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "섬광등"
+      ],
+      "englishDefinition": "A light flashing at regular intervals at a frequency of 120 flashes or more per minute.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 364,
+      "word": "prolonged blast",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "장음",
+        "장음 기적 신호"
+      ],
+      "englishDefinition": "A blast of four to six seconds duration given on a ship whistle.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 365,
+      "word": "short blast",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "단음",
+        "단음 기적 신호"
+      ],
+      "englishDefinition": "A blast of about one second duration given on a ship whistle.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 366,
+      "word": "bell",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "호종",
+        "선박 종"
+      ],
+      "englishDefinition": "A mandatory acoustic signalling apparatus rung rapidly in restricted visibility while anchored.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 367,
+      "word": "gong",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "호공",
+        "징"
+      ],
+      "englishDefinition": "A percussion sound signaling device sounded in the after part of a vessel over 100 meters in length during fog.",
+      "difficulty": "medium",
+      "topic": "communication"
+    },
+    {
+      "id": 368,
+      "word": "sound signal",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "음향 신호"
+      ],
+      "englishDefinition": "Acoustic warnings sounded by whistle, bell, or gong to indicate vessel maneuvers or presence in fog.",
+      "difficulty": "low",
+      "topic": "communication"
+    },
+    {
+      "id": 369,
+      "word": "distress signal",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조난 신호"
+      ],
+      "englishDefinition": "Recognized international visual, acoustic, or radio signals indicating that a vessel is in grave and imminent danger.",
+      "difficulty": "low",
+      "topic": "emergency"
+    },
+    {
+      "id": 370,
+      "word": "life-saving appliances",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "구명 설비",
+        "LSA"
+      ],
+      "englishDefinition": "Equipment designed to safeguard crew and passengers in emergency evacuation and abandonment situations.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 371,
+      "word": "fire-fighting appliances",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "소방 설비",
+        "FFA"
+      ],
+      "englishDefinition": "Apparatus and systems installed onboard to detect, control, and extinguish shipboard fires.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 372,
+      "word": "totally enclosed lifeboat",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "전폐형 구명정"
+      ],
+      "englishDefinition": "A rigid watertight covered lifeboat that provides full protection against toxic fumes, heavy seas, and fire.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 373,
+      "word": "free-fall lifeboat",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "자유강하식 구명정"
+      ],
+      "englishDefinition": "A specialized lifeboat launched by sliding down an inclined ramp and free-falling directly into the sea.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 374,
+      "word": "hydrostatic release unit",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "수압해제장치",
+        "HRU"
+      ],
+      "englishDefinition": "An automatic pressure-activated release mechanism that frees a liferaft when submerged to 1.5 to 4 meters.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 375,
+      "word": "immersion suit",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "방수복",
+        "침수복"
+      ],
+      "englishDefinition": "A thermal protective watertight suit designed to prevent hypothermia when floating in freezing seawater.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 376,
+      "word": "thermal protective aid",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "보온구",
+        "TPA"
+      ],
+      "englishDefinition": "A waterproof metallic bag or suit worn over a lifejacket to reduce the conductive body heat loss of a survivor.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 377,
+      "word": "line-throwing appliance",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "구명줄 발사기"
+      ],
+      "englishDefinition": "A rocket-propelled device capable of throwing a line over 230 meters to establish connection between vessels.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 378,
+      "word": "rocket parachute flare",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "낙하산부 신호탄"
+      ],
+      "englishDefinition": "A pyrotechnic distress flare fired upward to at least 300 meters that drifts down slowly under a parachute burning bright red.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 379,
+      "word": "hand flare",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "신호홍염"
+      ],
+      "englishDefinition": "A handheld pyrotechnic distress signal burning with a bright red flame for at least one minute.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 380,
+      "word": "buoyant smoke signal",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "발연신호",
+        "부유식 연막신호"
+      ],
+      "englishDefinition": "A floating pyrotechnic canister emitting highly visible dense orange smoke for daytime rescue location.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 381,
+      "word": "international shore connection",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "국제육상시설연결구"
+      ],
+      "englishDefinition": "A standardized universal flange allowing a ship fire main to connect directly to shore fire-fighting water supplies.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 382,
+      "word": "emergency fire pump",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상소화펌프"
+      ],
+      "englishDefinition": "An independently powered auxiliary fire pump located outside the machinery space to supply water if the main engine room is lost.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 383,
+      "word": "fire damper",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "방화 댐퍼",
+        "화재 차단판"
+      ],
+      "englishDefinition": "A heat-activated or remotely operated steel closure flap inside ventilation ducts to isolate fire compartments.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 384,
+      "word": "self-contained breathing apparatus",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "공기호흡기",
+        "SCBA"
+      ],
+      "englishDefinition": "A compressed-air breathing set worn by firefighters entering smoke-filled compartments.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 385,
+      "word": "emergency escape breathing device",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상대피용 호흡구",
+        "EEBD"
+      ],
+      "englishDefinition": "A short-duration (10-15 min) air supply device used exclusively for escape from hazardous atmospheres.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 386,
+      "word": "inert gas system",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "불활성가스 장치",
+        "IGS"
+      ],
+      "englishDefinition": "A system supplying oxygen-depleted gas (less than 5% O2) into oil cargo tanks to prevent flammable explosions.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 387,
+      "word": "deck water seal",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "갑판 수봉기"
+      ],
+      "englishDefinition": "A water-filled barrier preventing hydrocarbon gases from flowing back from cargo tanks into the machinery space.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 388,
+      "word": "pressure vacuum relief valve",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "통기압력진공밸브",
+        "PV 밸브"
+      ],
+      "englishDefinition": "A dual-action breather valve preventing excessive pressure buildup or dangerous vacuum formation in cargo oil tanks.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 389,
+      "word": "voyage data recorder",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "항해자료기록기",
+        "VDR"
+      ],
+      "englishDefinition": "A black box recording bridge audio, radar images, heading, speed, and rudder angle for casualty investigation.",
+      "difficulty": "low",
+      "topic": "navigation"
+    },
+    {
+      "id": 390,
+      "word": "emergency towing arrangement",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "비상예인장치",
+        "ETA 설비"
+      ],
+      "englishDefinition": "Pre-rigged heavy towing gear fitted forward and aft on tankers for rapid emergency salvage hookup.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 391,
+      "word": "special area",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "특별수역"
+      ],
+      "englishDefinition": "A sea area designated under MARPOL where mandatory strict discharge prohibitions apply due to oceanographical sensitivity.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 392,
+      "word": "oil record book",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "유류기록부",
+        "ORB"
+      ],
+      "englishDefinition": "A mandatory official log documenting all internal oil transfers, bunkering, and oily bilge discharges under MARPOL Annex I.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 393,
+      "word": "shipboard oil pollution emergency plan",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해양오염비상계획서",
+        "SOPEP"
+      ],
+      "englishDefinition": "A formalized emergency response guide outlining operational procedures to mitigate accidental oil discharges.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 394,
+      "word": "garbage management plan",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선내 폐기물 관리계획"
+      ],
+      "englishDefinition": "A written onboard procedure for collecting, storing, processing, and disposing of shipboard garbage under MARPOL Annex V.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 395,
+      "word": "garbage record book",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "폐기물기록부"
+      ],
+      "englishDefinition": "An official logbook recording each discharge operation to sea, shore reception facilities, or incineration.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 396,
+      "word": "ballast water management",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선박평형수 관리",
+        "BWM"
+      ],
+      "englishDefinition": "Procedures and systems to prevent the transfer of harmful aquatic organisms and pathogens via ballast water discharge.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 397,
+      "word": "sewage treatment plant",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "분뇨처리장치"
+      ],
+      "englishDefinition": "A biological or chemical processing plant onboard that disinfects and aerates black water before lawful discharge.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 398,
+      "word": "holding tank",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "오수 저장탱크"
+      ],
+      "englishDefinition": "A dedicated containment tank holding untreated sewage or grey water until it can be discharged to shore facilities.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 399,
+      "word": "comminuter",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "분쇄기"
+      ],
+      "englishDefinition": "A motorized macerator that shreds solid food wastes or sewage into particles smaller than 25 mm before sea disposal.",
+      "difficulty": "high",
+      "topic": "engine"
+    },
+    {
+      "id": 400,
+      "word": "low sulfur fuel oil",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "저유황연료유",
+        "LSFO"
+      ],
+      "englishDefinition": "Marine fuel containing 0.50% or less sulfur content complying with the global IMO 2020 sulfur cap.",
+      "difficulty": "low",
+      "topic": "engine"
+    },
+    {
+      "id": 401,
+      "word": "exhaust gas cleaning system",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배기가스 세정장치",
+        "스크러버"
+      ],
+      "englishDefinition": "An exhaust scrubber that washes SOx emissions out of engine exhaust gases using seawater or alkaline chemicals.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 402,
+      "word": "emission control area",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "배출규제해역",
+        "ECA"
+      ],
+      "englishDefinition": "Sea areas where stringent fuel sulfur limits (0.10% sulfur) and NOx Tier III controls are enforced under MARPOL Annex VI.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 403,
+      "word": "bunker delivery note",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "벙커 인도증",
+        "BDN"
+      ],
+      "englishDefinition": "A legal document provided by the fuel supplier specifying the density, viscosity, and sulfur percentage of delivered bunkers.",
+      "difficulty": "medium",
+      "topic": "engine"
+    },
+    {
+      "id": 404,
+      "word": "energy efficiency design index",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "에너지효율설계지수",
+        "EEDI"
+      ],
+      "englishDefinition": "A regulatory metric measuring grams of CO2 emitted per transport work (ton-mile) for newly constructed ships.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 405,
+      "word": "carbon intensity indicator",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "탄소집약도지수",
+        "CII"
+      ],
+      "englishDefinition": "An operational energy efficiency rating (grades A to E) tracking the actual greenhouse gas emissions of in-service ships.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 406,
+      "word": "certificate of competency",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "해기사 면허증",
+        "자격증명서 (CoC)"
+      ],
+      "englishDefinition": "An official certificate issued by a maritime administration authorizing the holder to serve as a marine officer.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 407,
+      "word": "hours of rest",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "법정 최소 휴식시간"
+      ],
+      "englishDefinition": "Mandatory minimum rest periods (at least 10 hours in any 24-hour period) to prevent seafarer fatigue under STCW and MLC.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 408,
+      "word": "watchkeeping arrangement",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "당직 배치 기준"
+      ],
+      "englishDefinition": "The organizational schedule ensuring adequate rested officers and ratings are on navigational and engineering watch.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 409,
+      "word": "designated person ashore",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "육상 안전관리책임자",
+        "DPA"
+      ],
+      "englishDefinition": "A key shore-based coordinator providing direct access between the shipboard crew and highest shipping executive under the ISM Code.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 410,
+      "word": "safety management manual",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "안전관리매뉴얼",
+        "SMM"
+      ],
+      "englishDefinition": "The core documented procedural book detailing safety policies, operational checklists, and emergency guidelines onboard.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 411,
+      "word": "non-conformity",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "부적합 사항"
+      ],
+      "englishDefinition": "An observed situation where objective evidence indicates the non-fulfillment of a specified ISM Code requirement.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 412,
+      "word": "internal audit",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선내 자체 감사"
+      ],
+      "englishDefinition": "A systematic verification carried out by company auditors to verify that onboard operations comply with the safety management system.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 413,
+      "word": "corrective action",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "시정 조치"
+      ],
+      "englishDefinition": "Action taken to eliminate the root cause of a detected non-conformity or defect to prevent recurrence.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 414,
+      "word": "permit to work",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "작업 허가서",
+        "PTW"
+      ],
+      "englishDefinition": "A formal safety authorization required before undertaking hazardous work onboard like hot work or enclosed entry.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 415,
+      "word": "risk assessment",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "위험성 평가"
+      ],
+      "englishDefinition": "A careful systematic evaluation of potential job hazards and the implementation of protective control measures.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 416,
+      "word": "hot work permit",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "화기 작업 허가서"
+      ],
+      "englishDefinition": "A documented permit approving welding, torch cutting, or grinding in areas where flammable vapors might exist.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 417,
+      "word": "enclosed space entry permit",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "밀폐구역 진입 허가서"
+      ],
+      "englishDefinition": "A verified safety checklist required before any crew enters oxygen-deficient or toxic spaces like ballast tanks.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 418,
+      "word": "lock-out tag-out",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "위험설비 차단 및 표식 부착",
+        "LOTO"
+      ],
+      "englishDefinition": "A safety procedure locking electrical breakers and hanging tags to prevent accidental equipment energization during maintenance.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 419,
+      "word": "near-miss",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "아차사고",
+        "준사고"
+      ],
+      "englishDefinition": "An unplanned event that did not result in injury or damage, but had the potential to do so if circumstances differed.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 420,
+      "word": "toolbox meeting",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "작업 전 안전 미팅",
+        "TBM"
+      ],
+      "englishDefinition": "A short informal safety briefing held immediately prior to commencing a hazardous task to review hazards and PPE.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 421,
+      "word": "bill of lading",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선하증권",
+        "B/L"
+      ],
+      "englishDefinition": "A legal maritime document acting as a receipt of cargo, a contract of carriage, and a document of title.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 422,
+      "word": "mate's receipt",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "본선 수취증",
+        "M/R"
+      ],
+      "englishDefinition": "A document signed by the chief officer acknowledging receipt of cargo on board before the formal B/L is issued.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 423,
+      "word": "cargo manifest",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "적하목록"
+      ],
+      "englishDefinition": "A comprehensive customs shipping document giving complete particulars of all cargo items loaded on board.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 424,
+      "word": "stowage factor",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "적화계수",
+        "재화계수"
+      ],
+      "englishDefinition": "The cubic space in cubic meters or feet occupied by one metric ton of a specific commodity in a cargo hold.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 425,
+      "word": "ullage survey",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "얼리지 검량",
+        "유면 계측 검사"
+      ],
+      "englishDefinition": "Measuring liquid cargo volumes in tanker holds by calculating the unfilled space from the top reference point to liquid surface.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 426,
+      "word": "dunnage",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "깔판목",
+        "화물 깔개"
+      ],
+      "englishDefinition": "Loose timber, mats, or inflatables placed between cargo and hold surfaces to protect against moisture and friction.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 427,
+      "word": "lashing",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "화물 고박",
+        "고정"
+      ],
+      "englishDefinition": "Securing cargo using chains, steel wires, or fiber straps to withstand rolling and pitching movements at sea.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 428,
+      "word": "twistlock",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "트위스트록",
+        "컨테이너 결속구"
+      ],
+      "englishDefinition": "A mechanical rotating connector fitted into corner castings to lock stacked shipping containers together.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 429,
+      "word": "turnbuckle",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "턴버클",
+        "당김나사"
+      ],
+      "englishDefinition": "A threaded coupling sleeve used to tension lashing wires and anchor chains firmly.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 430,
+      "word": "cargo sweat",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "화물 한",
+        "화물 땀"
+      ],
+      "englishDefinition": "Moisture condensation occurring directly onto cargo surfaces when warm humid air enters a cold cargo hold.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 431,
+      "word": "ship sweat",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선체 한",
+        "선체 땀"
+      ],
+      "englishDefinition": "Condensation forming on cold hull steel framing when a vessel loaded with warm cargo sails into colder climates.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 432,
+      "word": "hygrometer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "건습구 습도계"
+      ],
+      "englishDefinition": "An instrument used to measure relative humidity and determine dew point temperatures in cargo holds.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 433,
+      "word": "dew point",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "이슬점",
+        "노점"
+      ],
+      "englishDefinition": "The atmospheric temperature below which water vapor in the air condenses into liquid droplets.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 434,
+      "word": "laytime",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "정박 기간",
+        "하역 허용일수"
+      ],
+      "englishDefinition": "The agreed period of time allowed to a charterer in a charterparty for loading or discharging cargo without penalty.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 435,
+      "word": "demurrage",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "체선료"
+      ],
+      "englishDefinition": "A liquidated financial penalty paid by the charterer to the shipowner for exceeding agreed laytime.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 436,
+      "word": "despatch money",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "조출료"
+      ],
+      "englishDefinition": "A bonus reward paid by the shipowner to the charterer for completing cargo operations ahead of stipulated laytime.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 437,
+      "word": "notice of readiness",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "하역준비완료통지서",
+        "NOR"
+      ],
+      "englishDefinition": "Formal written notice served by the master certifying that the ship has arrived and is ready in all respects to load or discharge.",
+      "difficulty": "low",
+      "topic": "cargo"
+    },
+    {
+      "id": 438,
+      "word": "statement of facts",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "사실증명서",
+        "SOF"
+      ],
+      "englishDefinition": "A chronological day-by-day record of cargo operations, weather delays, and shift stoppages logged by the port agent.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 439,
+      "word": "deadfreight",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "부선료",
+        "공적운임"
+      ],
+      "englishDefinition": "Compensation payable to the shipowner when a charterer fails to supply the full agreed quantity of cargo.",
+      "difficulty": "high",
+      "topic": "cargo"
+    },
+    {
+      "id": 440,
+      "word": "general average",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "공동해손"
+      ],
+      "englishDefinition": "A maritime principle where extraordinary sacrifices or expenses voluntarily incurred to preserve common maritime property are shared proportionally by all interests.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 441,
+      "word": "particular average",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "단독해손"
+      ],
+      "englishDefinition": "A partial accidental loss or damage suffered by a specific party cargo or hull borne exclusively by the owner or underwriter.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 442,
+      "word": "protection and indemnity club",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선주상호보험조합",
+        "P&I Club"
+      ],
+      "englishDefinition": "A mutual insurance association providing cover for open liabilities like oil pollution, crew injury, and third-party collision damages.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 443,
+      "word": "classification society",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선급 협회"
+      ],
+      "englishDefinition": "A non-governmental organization (e.g. KR, DNV, LR) establishing and verifying technical standards for ship construction and seaworthiness.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 444,
+      "word": "condition of class",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선급 지정 조건",
+        "선급 추천사항"
+      ],
+      "englishDefinition": "A mandatory requirement imposed by class surveyors requiring specified structural or mechanical repairs by a set deadline.",
+      "difficulty": "high",
+      "topic": "safety"
+    },
+    {
+      "id": 445,
+      "word": "port state control",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "항만국 통제",
+        "PSC"
+      ],
+      "englishDefinition": "The inspection of foreign ships in national ports to verify compliance with international safety and environmental conventions.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 446,
+      "word": "deficiency",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "지적 결함 사항",
+        "결함"
+      ],
+      "englishDefinition": "A non-fulfillment of international convention standards noted during a Port State Control (PSC) inspection.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 447,
+      "word": "detention",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "출항 정지",
+        "디텐션"
+      ],
+      "englishDefinition": "The formal prohibition of a ship from going to sea due to serious safety hazards until rectified.",
+      "difficulty": "low",
+      "topic": "safety"
+    },
+    {
+      "id": 448,
+      "word": "vetting inspection",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "화주 안전성 검사",
+        "베팅 인스펙션"
+      ],
+      "englishDefinition": "An exhaustive safety audit conducted by major oil or chartering corporations (e.g. SIRE) prior to chartering.",
+      "difficulty": "medium",
+      "topic": "safety"
+    },
+    {
+      "id": 449,
+      "word": "ship-to-ship transfer",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선박 간 해상 환적",
+        "STS"
+      ],
+      "englishDefinition": "The transfer of crude or chemical cargo between two vessels moored alongside each other at sea or at anchorage.",
+      "difficulty": "medium",
+      "topic": "cargo"
+    },
+    {
+      "id": 450,
+      "word": "monkey island",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "몽키 아일랜드",
+        "콤파스 갑판"
+      ],
+      "englishDefinition": "The highest accessible open deck area situated immediately above the navigation bridge wheelhouse.",
+      "difficulty": "medium",
+      "topic": "navigation"
+    },
+    {
+      "id": 451,
+      "word": "bridge navigational watch alarm system",
+      "partOfSpeech": "명사",
+      "meaning": [
+        "선교 당직 무반응 경보장치",
+        "BNWAS"
+      ],
+      "englishDefinition": "An electronic timer monitoring officer alertness on the bridge that sounds backup cabin alarms if no movement occurs within preset intervals.",
+      "difficulty": "medium",
+      "topic": "safety"
+    }
+  ]
+}
