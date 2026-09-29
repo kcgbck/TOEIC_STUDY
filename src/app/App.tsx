@@ -143,13 +143,13 @@ export const App: React.FC = () => {
             <div className="action-menu-grid">
               <button className="menu-card primary" onClick={() => handleOpenQuiz('builtin')}>
                 <span className="menu-icon">📝</span>
-                <span className="menu-title">기본 어휘 문제풀이 (1,800단어)</span>
+                <span className="menu-title">TOEIC(1800단어) 문제풀이</span>
                 <span className="menu-sub">검증된 빈출 어휘 4지선다 문제학습</span>
               </button>
 
               <button className="menu-card maritime" onClick={() => handleOpenQuiz('maritime')}>
                 <span className="menu-icon">⚓</span>
-                <span className="menu-title">해사영어 문제풀이 (451어)</span>
+                <span className="menu-title">해사영어(451단어) 문제풀이</span>
                 <span className="menu-sub">SMCP · 해기사 3·4급 · 국제협약(COLREGs/SOLAS/MARPOL)</span>
               </button>
 
@@ -170,6 +170,7 @@ export const App: React.FC = () => {
 
         {activeTab === 'quiz' && (
           <QuizPreviewView
+            key={customSourceType + (customTitle || '')}
             initialWords={customWords}
             bookTitle={customTitle}
             sourceType={customSourceType}

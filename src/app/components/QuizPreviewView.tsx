@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import type { WordEntry, QuizQuestion, BuiltinWordsDatabase } from '../../types/word';
-import { builtinWordToWordEntry } from '../../types/word';
+import type { WordEntry, QuizQuestion } from '../../types/word';
 import { db } from '../../storage/db';
 import { createQuizQuestion } from '../../quiz/quizEngine';
 
@@ -26,6 +25,35 @@ function shuffleArray(words: WordEntry[]): WordEntry[] {
   return arr;
 }
 
+// BuiltinWord 또는 MaritimeWordEntry를 WordEntry로 안전하게 변환
+function toWordEntry(w: any): WordEntry {
+  // 해사영어 또는 커스텀 형식 (meaning: string[] 보유)
+  if (Array.isArray(w.meaning)) {
+    return {
+      id: String(w.id || w.word),
+      word: w.word,
+      meaning: w.meaning,
+      partOfSpeech: w.partOfSpeech || '단어',
+      difficulty: w.difficulty === 'high' ? 'high' : w.difficulty === 'low' ? 'low' : 'medium',
+      topic: w.topic || 'maritime',
+    };
+  }
+
+  // 기본 TOEIC BuiltinWord 형식 (mainMeaning + subMeanings)
+  const sub = Array.isArray(w.subMeanings) ? w.subMeanings : [];
+  const meanings = w.mainMeaning ? [w.mainMeaning, ...sub] : sub;
+  return {
+    id: String(w.id || w.word),
+    word: w.word,
+    meaning: meanings.length > 0 ? meanings : [w.word],
+    partOfSpeech: w.partOfSpeech || '단어',
+    difficulty: w.difficulty === 'easy' ? 'low' : w.difficulty === 'hard' ? 'high' : 'medium',
+    topic: Array.isArray(w.topics) && w.topics.length > 0 ? w.topics[0] : (w.topic || 'general'),
+    confusables: w.confusableWords,
+    confidence: w.confidenceGrade === 'A' ? 'HIGH' : w.confidenceGrade === 'B' ? 'MEDIUM' : 'LOW',
+  };
+}
+
 export const QuizPreviewView: React.FC<Props> = ({
   initialWords,
   bookTitle,
@@ -46,8 +74,16 @@ export const QuizPreviewView: React.FC<Props> = ({
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
   const [activeBookTitle, setActiveBookTitle] = useState<string>(
-    bookTitle || (sourceType === 'maritime' ? 'IMO SMCP · 해기사 · 국제협약 해사영어' : '보카 스터디 기본 어휘')
+    bookTitle || (sourceType === 'maritime' ? '해사영어(451단어)' : 'TOEIC(1800단어)')
   );
+
+  const handleSwitchBook = (book: BookCategory) => {
+    if (book === currentBook) return;
+    setCurrentBook(book);
+    setAllLoadedWords([]);
+    setQuizWords([]);
+    setCurrentQuiz(null);
+  };
 
   // 외부 sourceType prop 변경 시 단어장 선택 동기화
   useEffect(() => {
@@ -130,15 +166,15 @@ export const QuizPreviewView: React.FC<Props> = ({
     }
 
     const targetUrl = currentBook === 'maritime' ? '/data/maritime_smcp_v1.json' : '/data/builtin_words_v1.json';
-    const defaultTitle = currentBook === 'maritime' ? 'IMO SMCP · 해기사 · 국제협약 해사영어' : '보카 스터디 기본 어휘';
+    const defaultTitle = currentBook === 'maritime' ? '해사영어(451단어)' : 'TOEIC(1800단어)';
 
     fetch(targetUrl)
       .then((r) => r.json())
-      .then((data: BuiltinWordsDatabase) => {
+      .then((data: any) => {
         if (data.words && data.words.length > 0) {
-          const entries = data.words.map(builtinWordToWordEntry);
+          const entries = data.words.map(toWordEntry);
           setAllLoadedWords(entries);
-          setActiveBookTitle(`${defaultTitle} (${entries.length}단어)`);
+          setActiveBookTitle(defaultTitle);
         }
       })
       .catch((err) => {
@@ -150,7 +186,7 @@ export const QuizPreviewView: React.FC<Props> = ({
           }
         });
       });
-  }, [initialWords, bookTitle, sourceType, currentBook]);
+  }, [initialWords, bookTitle, currentBook]);
 
   // 필터, 문항수, 셔플 설정 변경 시 새 퀴즈 세션 생성
   useEffect(() => {
@@ -227,16 +263,16 @@ export const QuizPreviewView: React.FC<Props> = ({
           <button
             type="button"
             className={`book-tab-btn ${currentBook === 'builtin' ? 'active' : ''}`}
-            onClick={() => setCurrentBook('builtin')}
+            onClick={() => handleSwitchBook('builtin')}
           >
-            📖 기본 어휘 (1,800어)
+            📖 TOEIC(1800단어)
           </button>
           <button
             type="button"
             className={`book-tab-btn ${currentBook === 'maritime' ? 'active' : ''}`}
-            onClick={() => setCurrentBook('maritime')}
+            onClick={() => handleSwitchBook('maritime')}
           >
-            ⚓ 해사영어 (451어)
+            ⚓ 해사영어(451단어)
           </button>
         </div>
       )}
