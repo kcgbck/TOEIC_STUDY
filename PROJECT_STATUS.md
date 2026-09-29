@@ -31,6 +31,12 @@
 3. **전체 단위/통합 테스트 및 클라우드플레어 배포**:
    - `npm test`: 18개 테스트 파일 / 77개 테스트 100% PASS
    - `npx wrangler deploy`: Cloudflare Workers 실서비스 배포 및 라이브 fetch 응답 검증 완료
+4. **해사영어 단어 로드 및 전환 오류 긴급 수정**:
+   - `QuizPreviewView.tsx`: `toWordEntry` 안전 변환기 도입으로 maritime 스키마(subMeanings 부재) 파싱 런타임 오류 원천 해결
+   - `handleSwitchBook` 및 `key={customSourceType}` 적용으로 홈 카드 및 퀴즈 탭 내 단어장 즉시 전환 및 퀴즈 출제 정상화
+5. **UI 명칭 정규화**:
+   - 홈 대시보드 및 퀴즈 뷰: `기본 어휘(1,800어)` → `TOEIC(1800단어)`, `해사영어(451어)` → `해사영어(451단어)`로 표기 통일
+
 
 ## QA-02 이전 핵심 이력 (보존)
 1. subMeanings 전수 감사 및 유의어 분리 (databaseVersion: 4, 실제 다의어 20개 단어 25개 뜻)

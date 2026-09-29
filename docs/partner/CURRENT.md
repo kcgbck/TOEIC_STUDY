@@ -39,3 +39,8 @@ PWA (Progressive Web App, 모바일 맞춤 설치형 오프라인 우선 웹앱)
 3. **전체 검증 및 Cloudflare 실서버 배포 완료**:
    - 18개 테스트 파일 / 77개 테스트 100% PASS
    - Cloudflare Workers 실서버(`voca-study.heyruler0011.workers.dev`) 배포 완료
+4. **해사영어 데이터 로드 및 전환 오류 수정**:
+   - `QuizPreviewView.tsx`: `toWordEntry` 안전 변환기 도입으로 maritime 스키마 파싱 에러(subMeanings 미참조) 해결
+   - `handleSwitchBook` 및 `key={customSourceType}` 적용으로 홈 및 퀴즈 탭 내 단어장 즉시 전환 지원
+5. **UI 명칭 정규화**:
+   - 홈 및 문제풀이: `기본 어휘(1,800어)` → `TOEIC(1800단어)`, `해사영어(451어)` → `해사영어(451단어)` 변경
