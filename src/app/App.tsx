@@ -69,6 +69,64 @@ export const App: React.FC = () => {
     }
   }, [themeMode]);
 
+  // 스마트폰 물리/제스처 뒤로가기 키(popstate) 및 히스토리 연동
+  useEffect(() => {
+    // 최초 진입 시 홈 상태를 history에 기록
+    if (!window.history.state) {
+      window.history.replaceState({ tab: 'home' }, '', window.location.pathname);
+    }
+
+    const handlePopState = (event: PopStateEvent) => {
+      const state = event.state as { tab?: ActiveTab; quizSource?: 'builtin' | 'maritime' } | null;
+      if (state && state.tab) {
+        if (state.quizSource) {
+          setCustomSourceType(state.quizSource);
+          setCustomWords(undefined);
+          setCustomTitle(undefined);
+        }
+        setActiveTab(state.tab);
+      } else {
+        // 히스토리의 시작점이거나 상태가 없으면 메인 홈 대시보드로 이동
+        setActiveTab('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // 화면 전환 및 히스토리 푸시 헬퍼
+  const navigateToTab = (
+    tab: ActiveTab,
+    pushHistory = true,
+    quizSource?: 'builtin' | 'maritime'
+  ) => {
+    if (quizSource) {
+      setCustomSourceType(quizSource);
+      setCustomWords(undefined);
+      setCustomTitle(undefined);
+    }
+    if (tab === activeTab && !quizSource) return;
+
+    setActiveTab(tab);
+    if (pushHistory) {
+      window.history.pushState(
+        { tab, quizSource: quizSource || (tab === 'quiz' ? customSourceType : undefined) },
+        '',
+        window.location.pathname
+      );
+    }
+  };
+
+  // 공통 뒤로가기 처리: 히스토리가 있으면 이전으로, 없으면 홈 대시보드로 복귀
+  const handleGoBack = () => {
+    if (window.history.state && window.history.state.tab !== 'home') {
+      window.history.back();
+    } else {
+      navigateToTab('home', false);
+    }
+  };
+
   const handleInstantGradingChange = (enabled: boolean) => {
     setInstantGrading(enabled);
     localStorage.setItem('voca_study_instant_grading', enabled ? 'true' : 'false');
@@ -127,14 +185,7 @@ export const App: React.FC = () => {
     setCustomWords(entries);
     setCustomTitle(title || `추출 단어장 (${entries.length}단어)`);
     setCustomSourceType(sourceType);
-    setActiveTab('quiz');
-  };
-
-  const handleOpenQuiz = (type: 'builtin' | 'maritime' = 'builtin') => {
-    setCustomWords(undefined);
-    setCustomTitle(undefined);
-    setCustomSourceType(type);
-    setActiveTab('quiz');
+    navigateToTab('quiz', true);
   };
 
   return (
@@ -142,14 +193,14 @@ export const App: React.FC = () => {
       {/* 헤더: 1행(브랜드 좌측 + 🏆 랭킹, 🔄 새로고침, ⚙️ 설정 우측 끝 나란히 정렬) */}
       <header className="app-header">
         <div className="header-top-row">
-          <div className="header-brand" onClick={() => setActiveTab('home')}>
+          <div className="header-brand" onClick={() => navigateToTab('home')}>
             <span className="brand-icon">📖</span>
             <h1 className="brand-title">보카 스터디</h1>
           </div>
           <div className="header-actions">
             <button
               className="header-btn header-btn-ranking"
-              onClick={() => setActiveTab('ranking')}
+              onClick={() => navigateToTab('ranking')}
               title="실시간 랭킹"
             >
               <span>🏆</span>
@@ -175,35 +226,29 @@ export const App: React.FC = () => {
           </div>
         </div>
 
-        {/* 5개 탭 1줄 그리드 네비게이션 */}
+        {/* 상단 4개 탭 1줄 그리드 네비게이션 (토익·해사영어 통합) */}
         <nav className="header-nav">
           <button
             className={`nav-btn ${activeTab === 'home' ? 'active' : ''}`}
-            onClick={() => setActiveTab('home')}
+            onClick={() => navigateToTab('home')}
           >
             홈
           </button>
           <button
-            className={`nav-btn ${activeTab === 'quiz' && customSourceType === 'builtin' ? 'active' : ''}`}
-            onClick={() => handleOpenQuiz('builtin')}
+            className={`nav-btn ${activeTab === 'quiz' ? 'active' : ''}`}
+            onClick={() => navigateToTab('quiz', true, 'builtin')}
           >
-            TOEIC
-          </button>
-          <button
-            className={`nav-btn ${activeTab === 'quiz' && customSourceType === 'maritime' ? 'active' : ''}`}
-            onClick={() => handleOpenQuiz('maritime')}
-          >
-            해사영어
+            기본 문제
           </button>
           <button
             className={`nav-btn ${activeTab === 'general_import' || activeTab === 'general_quiz' ? 'active' : ''}`}
-            onClick={() => setActiveTab('general_import')}
+            onClick={() => navigateToTab('general_import')}
           >
             문제집
           </button>
           <button
             className={`nav-btn ${activeTab === 'custom_vocab' ? 'active' : ''}`}
-            onClick={() => setActiveTab('custom_vocab')}
+            onClick={() => navigateToTab('custom_vocab')}
           >
             영단어
           </button>
@@ -216,7 +261,7 @@ export const App: React.FC = () => {
           <div className="home-dashboard">
             {/* 상단 모바일 핏 내 학습 랭킹 요약 배너 */}
             <div
-              onClick={() => setActiveTab('ranking')}
+              onClick={() => navigateToTab('ranking')}
               style={{
                 background: 'linear-gradient(135deg, #3730a3, #581c87)',
                 borderRadius: '14px',
@@ -255,19 +300,23 @@ export const App: React.FC = () => {
               </div>
             </div>
 
-            {/* 홈 4대 핵심 메뉴 그리드 (사용자 요청 순서 반영) */}
+            {/* 홈 4대 핵심 메뉴 그리드 (이모지와 제목을 동일 크기 한 줄로 배치) */}
             <div className="action-menu-grid">
               {/* 1번째: TOEIC 문제풀이 */}
-              <button className="menu-card primary" onClick={() => handleOpenQuiz('builtin')}>
-                <span className="menu-icon">📝</span>
-                <span className="menu-title">TOEIC(1800단어) 문제풀이</span>
+              <button className="menu-card primary" onClick={() => navigateToTab('quiz', true, 'builtin')}>
+                <div className="menu-header-line">
+                  <span className="menu-icon">📝</span>
+                  <span className="menu-title">TOEIC(1800단어) 문제풀이</span>
+                </div>
                 <span className="menu-sub">검증된 빈출 어휘 4지선다 실전 문제학습</span>
               </button>
 
               {/* 2번째: 해사영어 문제풀이 */}
-              <button className="menu-card maritime" onClick={() => handleOpenQuiz('maritime')}>
-                <span className="menu-icon">⚓</span>
-                <span className="menu-title">해사영어(451단어) 문제풀이</span>
+              <button className="menu-card maritime" onClick={() => navigateToTab('quiz', true, 'maritime')}>
+                <div className="menu-header-line">
+                  <span className="menu-icon">⚓</span>
+                  <span className="menu-title">해사영어(451단어) 문제풀이</span>
+                </div>
                 <span className="menu-sub">SMCP · 해기사 3·4급 · 국제협약(COLREGs/SOLAS/MARPOL)</span>
               </button>
 
@@ -275,22 +324,26 @@ export const App: React.FC = () => {
               <button
                 className="menu-card"
                 style={{ borderLeft: '4px solid #8b5cf6' }}
-                onClick={() => setActiveTab('general_import')}
+                onClick={() => navigateToTab('general_import')}
               >
-                <span className="menu-icon">📚</span>
-                <span className="menu-title">내가 만드는 문제집</span>
-                <span className="menu-sub">어떤 문제집이든 사진·스캔·PDF로 4/5지선다 제작 및 풀이</span>
+                <div className="menu-header-line">
+                  <span className="menu-icon">📚</span>
+                  <span className="menu-title">내가 만드는 문제집</span>
+                </div>
+                <span className="menu-sub">사진·스캔·PDF로 4/5지선다 제작 및 풀이</span>
               </button>
 
-              {/* 4번째: 내가 만드는 영단어 문제집 (사진 OCR + PDF 어휘 추출 통합) */}
+              {/* 4번째: 내가 만드는 영단어 문제집 */}
               <button
                 className="menu-card"
                 style={{ borderLeft: '4px solid #06b6d4' }}
-                onClick={() => setActiveTab('custom_vocab')}
+                onClick={() => navigateToTab('custom_vocab')}
               >
-                <span className="menu-icon">🔤</span>
-                <span className="menu-title">내가 만드는 영단어 문제집</span>
-                <span className="menu-sub">단어장 사진 촬영/OCR 및 PDF 어휘 통합 추출·맞춤 문제풀이</span>
+                <div className="menu-header-line">
+                  <span className="menu-icon">🔤</span>
+                  <span className="menu-title">내가 만드는 영단어 문제집</span>
+                </div>
+                <span className="menu-sub">사진·스캔·PDF로 영단어 제작 및 풀이</span>
               </button>
             </div>
           </div>
@@ -298,10 +351,7 @@ export const App: React.FC = () => {
 
         {activeTab === 'ranking' && (
           <RankingView
-            onBack={() => {
-              setActiveTab('home');
-              userService.initSession().then(setCurrentUser).catch(console.error);
-            }}
+            onBack={handleGoBack}
           />
         )}
 
@@ -313,7 +363,8 @@ export const App: React.FC = () => {
             sourceType={customSourceType}
             instantGrading={instantGrading}
             shuffleOrder={shuffleOrder}
-            onOpenRanking={() => setActiveTab('ranking')}
+            onOpenRanking={() => navigateToTab('ranking')}
+            onBack={handleGoBack}
           />
         )}
 
@@ -322,15 +373,16 @@ export const App: React.FC = () => {
             onStartQuizWithWords={(words, title, sourceType) =>
               handleStartQuizWithWords(words, title, sourceType)
             }
+            onBack={handleGoBack}
           />
         )}
 
         {activeTab === 'general_import' && (
           <GeneralQuizImportView
-            onBackToHome={() => setActiveTab('home')}
+            onBackToHome={handleGoBack}
             onStartQuiz={(bookId) => {
               setSelectedQuestionBookId(bookId);
-              setActiveTab('general_quiz');
+              navigateToTab('general_quiz');
             }}
           />
         )}
@@ -338,8 +390,8 @@ export const App: React.FC = () => {
         {activeTab === 'general_quiz' && selectedQuestionBookId && (
           <GeneralQuizPlayerView
             bookId={selectedQuestionBookId}
-            onBackToHome={() => setActiveTab('home')}
-            onOpenRanking={() => setActiveTab('ranking')}
+            onBackToHome={handleGoBack}
+            onOpenRanking={() => navigateToTab('ranking')}
           />
         )}
       </main>
@@ -356,7 +408,7 @@ export const App: React.FC = () => {
         onShuffleOrderChange={handleShuffleOrderChange}
         onOpenRanking={() => {
           setIsSettingsOpen(false);
-          setActiveTab('ranking');
+          navigateToTab('ranking');
         }}
       />
 

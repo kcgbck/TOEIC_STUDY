@@ -11,6 +11,7 @@ interface Props {
   instantGrading?: boolean;
   shuffleOrder?: boolean;
   onOpenRanking?: () => void;
+  onBack?: () => void;
 }
 
 type SelectedDifficulty = 'all' | 'easy' | 'medium' | 'hard';
@@ -63,6 +64,7 @@ export const QuizPreviewView: React.FC<Props> = ({
   instantGrading = false,
   shuffleOrder = true,
   onOpenRanking,
+  onBack,
 }) => {
   const [currentBook, setCurrentBook] = useState<BookCategory>(() => {
     return sourceType === 'maritime' ? 'maritime' : 'builtin';
@@ -274,24 +276,53 @@ export const QuizPreviewView: React.FC<Props> = ({
 
   return (
     <div className="card quiz-card">
-      {/* 기본 어휘 / 해사영어 단어장 선택 탭 (커스텀 추출 단어장이 아닐 때 표시) */}
-      {!initialWords && (
-        <div className="book-selector-tabs">
-          <button
-            type="button"
-            className={`book-tab-btn ${currentBook === 'builtin' ? 'active' : ''}`}
-            onClick={() => handleSwitchBook('builtin')}
-          >
-            📖 TOEIC(1800단어)
-          </button>
-          <button
-            type="button"
-            className={`book-tab-btn ${currentBook === 'maritime' ? 'active' : ''}`}
-            onClick={() => handleSwitchBook('maritime')}
-          >
-            ⚓ 해사영어(451단어)
-          </button>
+      {/* 기본 어휘 / 해사영어 단어장 선택 탭 및 뒤로가기 */}
+      {!initialWords ? (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+          {onBack && (
+            <button
+              type="button"
+              className="ranking-back-btn"
+              onClick={onBack}
+              title="홈으로 돌아가기"
+              style={{ width: '34px', height: '34px', fontSize: '18px', flexShrink: 0 }}
+            >
+              ←
+            </button>
+          )}
+          <div className="book-selector-tabs" style={{ flex: 1, margin: 0 }}>
+            <button
+              type="button"
+              className={`book-tab-btn ${currentBook === 'builtin' ? 'active' : ''}`}
+              onClick={() => handleSwitchBook('builtin')}
+            >
+              <span>📖</span>
+              <span>TOEIC(1800단어)</span>
+            </button>
+            <button
+              type="button"
+              className={`book-tab-btn ${currentBook === 'maritime' ? 'active' : ''}`}
+              onClick={() => handleSwitchBook('maritime')}
+            >
+              <span>⚓</span>
+              <span>해사영어(451단어)</span>
+            </button>
+          </div>
         </div>
+      ) : (
+        onBack && (
+          <div style={{ marginBottom: '12px' }}>
+            <button
+              type="button"
+              className="ranking-back-btn"
+              onClick={onBack}
+              title="홈으로 돌아가기"
+              style={{ width: '34px', height: '34px', fontSize: '18px' }}
+            >
+              ←
+            </button>
+          </div>
+        )
       )}
 
       {/* 난이도 및 문제 수 설정 툴바 (스마트폰 2줄 깨짐 완벽 방지 반응형) */}

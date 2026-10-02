@@ -200,15 +200,29 @@ export const GeneralQuizImportView: React.FC<Props> = ({ onBackToHome, onStartQu
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '16px' }}>
       {/* 상단 네비게이션 */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
         <button
           onClick={onBackToHome}
-          style={{ background: 'transparent', border: '1px solid #4b5563', color: '#e5e7eb', padding: '6px 12px', borderRadius: '6px', cursor: 'pointer' }}
+          className="ranking-back-btn"
+          style={{ width: '34px', height: '34px', fontSize: '18px', flexShrink: 0 }}
+          title="홈으로 돌아가기"
         >
-          ← 홈으로
+          ←
         </button>
-        <h2 style={{ fontSize: '18px', fontWeight: 'bold', color: '#60a5fa' }}>📚 일반 객관식 문제집 만들기</h2>
-        <div style={{ width: '60px' }} />
+        <h2 style={{
+          fontSize: 'clamp(14px, 3.8vw, 17px)',
+          fontWeight: 'bold',
+          color: '#60a5fa',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          margin: 0,
+          textAlign: 'center',
+          flex: 1
+        }}>
+          📚 일반 객관식 문제집 만들기
+        </h2>
+        <div style={{ width: '34px', flexShrink: 0 }} />
       </div>
 
       {/* 파일 업로드 카드 */}
