@@ -1,5 +1,5 @@
-// 보카 스터디 PWA Service Worker (v4.0.0 - DB-03 1800 Words)
-const CACHE_NAME = 'voca-study-cache-v4';
+// 보카 스터디 PWA Service Worker (v5.0.0 - Pages Migration & Cache Purge Support)
+const CACHE_NAME = 'voca-study-cache-v5';
 
 // 오프라인 실행을 위한 필수 앱 셸 에셋
 const PRECACHE_ASSETS = [
@@ -38,14 +38,33 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 네트워크 요청 수신: CacheFirst 전략 (오프라인 지원)
+// 외부 제어 메시지 (캐시 강제 정리 및 즉시 교체)
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+  if (event.data && event.data.type === 'CLEAR_CACHE') {
+    event.waitUntil(
+      caches.keys().then((keyList) => {
+        return Promise.all(keyList.map((key) => caches.delete(key)));
+      })
+    );
+  }
+});
+
+// 네트워크 요청 수신: API 요청은 캐싱하지 않고 직통, 정적 에셋은 Stale-While-Revalidate
 self.addEventListener('fetch', (event) => {
   // GET 요청만 캐싱
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
 
-  // 동일 출처 요청 처리
+  // API 요청은 항상 실시간 네트워크 통신 (캐싱 제외)
+  if (url.pathname.startsWith('/api/')) {
+    return;
+  }
+
+  // 동일 출처 정적 요청 처리
   if (url.origin === location.origin) {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {

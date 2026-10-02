@@ -87,40 +87,68 @@ body {
   letter-spacing: -0.3px;
 }
 
-.brand-badge {
-  background: var(--primary);
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 9999px;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
-.settings-icon-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  font-size: 16px;
-  width: 36px;
-  height: 36px;
+.header-btn {
+  height: 32px;
   border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
-  flex-shrink: 0;
+  padding: 0 8px;
 }
 
-.settings-icon-btn:hover {
+.header-btn:hover {
   background: var(--bg-card-hover);
   border-color: var(--primary);
 }
 
+.header-btn-ranking {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  gap: 4px;
+  padding: 0 10px;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);
+}
+
+.header-btn-ranking:hover {
+  background: linear-gradient(135deg, #4338ca, #6d28d9);
+}
+
+.header-btn-icon {
+  width: 32px;
+  padding: 0;
+  font-size: 15px;
+}
+
+.spin-animation {
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .header-nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
   width: 100%;
 }
 
@@ -128,9 +156,9 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
-  padding: 8px 2px;
+  padding: 7px 2px;
   border-radius: 8px;
-  font-size: clamp(11px, 3.2vw, 13px);
+  font-size: clamp(10px, 3.1vw, 12px);
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
@@ -1250,5 +1278,531 @@ body {
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
 }
 
+/* ========================================================
+   실시간 랭킹 보드 (RankingView) 전용 순수 CSS (모바일 최적화)
+   ======================================================== */
+.ranking-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+  animation: fadeIn 0.2s ease-in-out;
+}
 
+.ranking-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
 
+.ranking-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ranking-back-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.ranking-back-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary);
+}
+
+.ranking-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ranking-main-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ranking-sub-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.ranking-refresh-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ranking-refresh-btn:hover {
+  background: var(--bg-card-hover);
+}
+
+.ranking-refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 내 순위 카드 */
+.ranking-my-card {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 60%, #4f46e5 100%);
+  border-radius: 16px;
+  padding: 16px;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.my-profile-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.my-nick-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.my-nickname-text {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+}
+
+.btn-edit-nick {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-edit-nick:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.my-code-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #e0e7ff;
+}
+
+.code-pill {
+  font-family: monospace;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  font-size: 10px;
+}
+
+.btn-copy-code {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 1px 3px;
+  border-radius: 4px;
+}
+
+.my-rank-display {
+  text-align: right;
+}
+
+.my-rank-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #c7d2fe;
+  display: block;
+}
+
+.my-rank-num {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fde047;
+  line-height: 1.1;
+  display: block;
+}
+
+/* 4분할 지표 그리드 */
+.my-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+}
+
+.my-stat-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 6px 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-stat-label {
+  font-size: 10px;
+  color: #e0e7ff;
+}
+
+.my-stat-value {
+  font-size: 13px;
+  font-weight: 900;
+  margin-top: 2px;
+}
+
+.my-stat-value.score {
+  color: #fde047;
+}
+
+.my-stat-value.correct {
+  color: #6ee7b7;
+}
+
+.my-stat-value.incorrect {
+  color: #fda4af;
+}
+
+.my-stat-value.accuracy {
+  color: #7dd3fc;
+}
+
+.my-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #c7d2fe;
+  padding-top: 2px;
+}
+
+.btn-link-account {
+  background: none;
+  border: none;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0;
+}
+
+/* 랭킹 리스트 섹션 */
+.ranking-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ranking-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+
+.ranking-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ranking-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.15s ease;
+}
+
+.ranking-item-row.me {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1;
+}
+
+.rank-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.rank-item-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .rank-item-badge {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rank-item-badge.medal-1 {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  font-size: 16px;
+}
+
+.rank-item-badge.medal-2 {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  font-size: 16px;
+}
+
+.rank-item-badge.medal-3 {
+  background: #ffedd5;
+  color: #9a3412;
+  border: 1px solid #fdba74;
+  font-size: 16px;
+}
+
+.rank-item-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.rank-nick-line {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rank-nickname {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank-me-tag {
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.rank-meta-line {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rank-meta-accuracy {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.rank-item-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.rank-item-score {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--primary);
+  display: block;
+}
+
+[data-theme="dark"] .rank-item-score {
+  color: #818cf8;
+}
+
+.rank-item-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  display: block;
+}
+
+.ranking-empty-box {
+  padding: 32px 16px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* 랭킹 모달 팝업 */
+.ranking-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.15s ease;
+}
+
+.ranking-modal-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ranking-modal-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ranking-modal-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.ranking-modal-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-main);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.ranking-modal-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+.ranking-modal-error {
+  font-size: 11px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.ranking-modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ranking-modal-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ranking-modal-btn.cancel {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.ranking-modal-btn.cancel:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-main);
+}
+
+.ranking-modal-btn.confirm {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.ranking-modal-btn.confirm:hover {
+  background: var(--primary-hover);
+}
+
+.ranking-modal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

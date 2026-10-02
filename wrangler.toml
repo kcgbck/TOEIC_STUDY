@@ -1,0 +1,18 @@
+name = "voca-study"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-23"
+compatibility_flags = [ "nodejs_compat" ]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "voca-study-db"
+database_id = "44a2ee68-01f4-4960-865e-455ed0c958ba"
+
+[env.production]
+compatibility_date = "2024-09-23"
+compatibility_flags = [ "nodejs_compat" ]
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "voca-study-db"
+database_id = "44a2ee68-01f4-4960-865e-455ed0c958ba"

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { QuizPreviewView } from './components/QuizPreviewView';
-import { FileImportPocView } from './components/FileImportPocView';
-import { PdfImportPocView } from './components/PdfImportPocView';
+import { CustomVocabularyUnifiedView } from './components/CustomVocabularyUnifiedView';
 import { GeneralQuizImportView } from './components/GeneralQuizImportView';
 import { GeneralQuizPlayerView } from './components/GeneralQuizPlayerView';
 import { RankingView } from './components/RankingView';
@@ -11,7 +10,7 @@ import type { WordEntry } from '../types/word';
 import type { UserProfile } from '../types/user';
 import './App.css';
 
-type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf' | 'general_import' | 'general_quiz' | 'ranking';
+type ActiveTab = 'home' | 'quiz' | 'custom_vocab' | 'general_import' | 'general_quiz' | 'ranking';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
@@ -40,6 +39,10 @@ export const App: React.FC = () => {
 
   // 사용자 세션 프로필 상태
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+
+  // PWA 업데이트 및 캐시 삭제 상태
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [updateToast, setUpdateToast] = useState<string | null>(null);
 
   useEffect(() => {
     userService.initSession().then(setCurrentUser).catch(console.error);
@@ -76,6 +79,39 @@ export const App: React.FC = () => {
     localStorage.setItem('voca_study_shuffle_order', enabled ? 'true' : 'false');
   };
 
+  // PWA 캐시 삭제 및 서비스 워커 강제 업데이트 후 새로고침
+  const handleForceAppUpdate = async () => {
+    if (isUpdating) return;
+    setIsUpdating(true);
+    setUpdateToast('오프라인 캐시 정리 및 최신 버전 확인 중...');
+
+    try {
+      // 1. Service Worker 캐시 스토리지 전체 삭제
+      if ('caches' in window) {
+        const cacheKeys = await caches.keys();
+        await Promise.all(cacheKeys.map((key) => caches.delete(key)));
+      }
+
+      // 2. 등록된 Service Worker 업데이트 및 메시지 전송
+      if ('serviceWorker' in navigator) {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        for (const reg of registrations) {
+          reg.active?.postMessage({ type: 'CLEAR_CACHE' });
+          reg.active?.postMessage({ type: 'SKIP_WAITING' });
+          await reg.update().catch(() => {});
+        }
+      }
+
+      setUpdateToast('최신 버전 업데이트 완료! 화면을 새로고침합니다.');
+      setTimeout(() => {
+        window.location.reload();
+      }, 400);
+    } catch (err) {
+      console.error('캐시 새로고침 오류:', err);
+      window.location.reload();
+    }
+  };
+
   const handleStartQuizWithWords = (
     words: Array<{ word: string; meaning: string[] }>,
     title?: string,
@@ -103,30 +139,16 @@ export const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      {/* 헤더: 1행(브랜드 좌측 + 🏆 랭킹 & ⚙️ 우측 끝 같은 라인), 2행(네비게이션 탭) */}
+      {/* 헤더: 1행(브랜드 좌측 + 🏆 랭킹, 🔄 새로고침, ⚙️ 설정 우측 끝 나란히 정렬) */}
       <header className="app-header">
         <div className="header-top-row">
           <div className="header-brand" onClick={() => setActiveTab('home')}>
             <span className="brand-icon">📖</span>
             <h1 className="brand-title">보카 스터디</h1>
-            <span className="brand-badge">Voca Study</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="header-actions">
             <button
-              className="ranking-icon-btn"
-              style={{
-                background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '8px',
-                padding: '6px 10px',
-                fontSize: '12px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-              }}
+              className="header-btn header-btn-ranking"
               onClick={() => setActiveTab('ranking')}
               title="실시간 랭킹"
             >
@@ -134,7 +156,16 @@ export const App: React.FC = () => {
               <span>랭킹</span>
             </button>
             <button
-              className="settings-icon-btn"
+              className="header-btn header-btn-icon"
+              onClick={handleForceAppUpdate}
+              disabled={isUpdating}
+              title="캐시 삭제 후 최신 버전 새로고침"
+              aria-label="새로고침"
+            >
+              <span className={isUpdating ? 'spin-animation' : ''}>🔄</span>
+            </button>
+            <button
+              className="header-btn header-btn-icon"
               onClick={() => setIsSettingsOpen(true)}
               aria-label="설정"
               title="설정"
@@ -144,6 +175,7 @@ export const App: React.FC = () => {
           </div>
         </div>
 
+        {/* 5개 탭 1줄 그리드 네비게이션 */}
         <nav className="header-nav">
           <button
             className={`nav-btn ${activeTab === 'home' ? 'active' : ''}`}
@@ -152,34 +184,28 @@ export const App: React.FC = () => {
             홈
           </button>
           <button
-            className={`nav-btn ${activeTab === 'ranking' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ranking')}
-          >
-            🏆 랭킹
-          </button>
-          <button
-            className={`nav-btn ${activeTab === 'quiz' ? 'active' : ''}`}
+            className={`nav-btn ${activeTab === 'quiz' && customSourceType === 'builtin' ? 'active' : ''}`}
             onClick={() => handleOpenQuiz('builtin')}
           >
-            기본 문제
+            TOEIC
           </button>
           <button
-            className={`nav-btn ${activeTab === 'photo' ? 'active' : ''}`}
-            onClick={() => setActiveTab('photo')}
+            className={`nav-btn ${activeTab === 'quiz' && customSourceType === 'maritime' ? 'active' : ''}`}
+            onClick={() => handleOpenQuiz('maritime')}
           >
-            사진 문제
+            해사영어
           </button>
           <button
-            className={`nav-btn ${activeTab === 'pdf' ? 'active' : ''}`}
-            onClick={() => setActiveTab('pdf')}
-          >
-            PDF 문제
-          </button>
-          <button
-            className={`nav-btn ${activeTab === 'general_import' ? 'active' : ''}`}
+            className={`nav-btn ${activeTab === 'general_import' || activeTab === 'general_quiz' ? 'active' : ''}`}
             onClick={() => setActiveTab('general_import')}
           >
-            일반 문제집
+            문제집
+          </button>
+          <button
+            className={`nav-btn ${activeTab === 'custom_vocab' ? 'active' : ''}`}
+            onClick={() => setActiveTab('custom_vocab')}
+          >
+            영단어
           </button>
         </nav>
       </header>
@@ -229,39 +255,42 @@ export const App: React.FC = () => {
               </div>
             </div>
 
+            {/* 홈 4대 핵심 메뉴 그리드 (사용자 요청 순서 반영) */}
             <div className="action-menu-grid">
-              <button
-                className="menu-card primary"
-                style={{ borderLeft: '4px solid #8b5cf6' }}
-                onClick={() => setActiveTab('general_import')}
-              >
-                <span className="menu-icon">📚</span>
-                <span className="menu-title">일반 문제집 만들기 (스캔/PDF)</span>
-                <span className="menu-sub">어떤 문제집이든 사진·PDF로 4/5지선다 제작·풀이</span>
-              </button>
-
+              {/* 1번째: TOEIC 문제풀이 */}
               <button className="menu-card primary" onClick={() => handleOpenQuiz('builtin')}>
                 <span className="menu-icon">📝</span>
                 <span className="menu-title">TOEIC(1800단어) 문제풀이</span>
-                <span className="menu-sub">검증된 빈출 어휘 4지선다 문제학습</span>
+                <span className="menu-sub">검증된 빈출 어휘 4지선다 실전 문제학습</span>
               </button>
 
+              {/* 2번째: 해사영어 문제풀이 */}
               <button className="menu-card maritime" onClick={() => handleOpenQuiz('maritime')}>
                 <span className="menu-icon">⚓</span>
                 <span className="menu-title">해사영어(451단어) 문제풀이</span>
                 <span className="menu-sub">SMCP · 해기사 3·4급 · 국제협약(COLREGs/SOLAS/MARPOL)</span>
               </button>
 
-              <button className="menu-card" onClick={() => setActiveTab('photo')}>
-                <span className="menu-icon">📷</span>
-                <span className="menu-title">내 사진 영단어</span>
-                <span className="menu-sub">단어장 사진 촬영/업로드 + 온디바이스 OCR 분석</span>
+              {/* 3번째: 내가 만드는 문제집 */}
+              <button
+                className="menu-card"
+                style={{ borderLeft: '4px solid #8b5cf6' }}
+                onClick={() => setActiveTab('general_import')}
+              >
+                <span className="menu-icon">📚</span>
+                <span className="menu-title">내가 만드는 문제집</span>
+                <span className="menu-sub">어떤 문제집이든 사진·스캔·PDF로 4/5지선다 제작 및 풀이</span>
               </button>
 
-              <button className="menu-card" onClick={() => setActiveTab('pdf')}>
-                <span className="menu-icon">📄</span>
-                <span className="menu-title">내 PDF 영단어</span>
-                <span className="menu-sub">PDF.js 기반 텍스트 레이어 어휘 추출</span>
+              {/* 4번째: 내가 만드는 영단어 문제집 (사진 OCR + PDF 어휘 추출 통합) */}
+              <button
+                className="menu-card"
+                style={{ borderLeft: '4px solid #06b6d4' }}
+                onClick={() => setActiveTab('custom_vocab')}
+              >
+                <span className="menu-icon">🔤</span>
+                <span className="menu-title">내가 만드는 영단어 문제집</span>
+                <span className="menu-sub">단어장 사진 촬영/OCR 및 PDF 어휘 통합 추출·맞춤 문제풀이</span>
               </button>
             </div>
           </div>
@@ -288,18 +317,10 @@ export const App: React.FC = () => {
           />
         )}
 
-        {activeTab === 'photo' && (
-          <FileImportPocView
-            onStartQuizWithWords={(words) =>
-              handleStartQuizWithWords(words, '사진 OCR 추출 문제집', 'photo')
-            }
-          />
-        )}
-
-        {activeTab === 'pdf' && (
-          <PdfImportPocView
-            onStartQuizWithWords={(words) =>
-              handleStartQuizWithWords(words, 'PDF 추출 문제집', 'pdf')
+        {activeTab === 'custom_vocab' && (
+          <CustomVocabularyUnifiedView
+            onStartQuizWithWords={(words, title, sourceType) =>
+              handleStartQuizWithWords(words, title, sourceType)
             }
           />
         )}
@@ -338,7 +359,33 @@ export const App: React.FC = () => {
           setActiveTab('ranking');
         }}
       />
+
+      {/* 업데이트 토스트 알림 */}
+      {updateToast && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: '#1e1b4b',
+            color: '#ffffff',
+            border: '1px solid #6366f1',
+            borderRadius: '12px',
+            padding: '10px 18px',
+            fontSize: '13px',
+            fontWeight: 'bold',
+            zIndex: 9999,
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <span className="spin-animation">🔄</span>
+          <span>{updateToast}</span>
+        </div>
+      )}
     </div>
   );
 };
-

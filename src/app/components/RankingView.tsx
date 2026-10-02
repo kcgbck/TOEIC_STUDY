@@ -104,23 +104,23 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto px-3 py-4 space-y-4 pb-20 animate-fadeIn">
+    <div className="ranking-view">
       {/* 상단 네비게이션 헤더 */}
-      <div className="flex items-center justify-between border-b pb-3 border-gray-200 dark:border-gray-800">
-        <div className="flex items-center space-x-2">
+      <div className="ranking-nav-bar">
+        <div className="ranking-nav-left">
           <button
             onClick={onBack}
-            className="p-1.5 rounded-lg text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="ranking-back-btn"
             title="뒤로 가기"
           >
-            <span className="text-xl">←</span>
+            ←
           </button>
-          <div>
-            <h1 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-1.5">
+          <div className="ranking-title-group">
+            <h1 className="ranking-main-title">
               <span>🏆</span>
               <span>실시간 랭킹 보드</span>
             </h1>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="ranking-sub-desc">
               맞춘 문제 +10점 / 틀린 문제 -2점
             </p>
           </div>
@@ -129,22 +129,19 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
         <button
           onClick={() => loadData(true)}
           disabled={isRefreshing}
-          className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-xs font-medium flex items-center gap-1 transition-all disabled:opacity-50"
+          className="ranking-refresh-btn"
         >
-          <span className={isRefreshing ? 'animate-spin' : ''}>🔄</span>
+          <span className={isRefreshing ? 'spin-animation' : ''}>🔄</span>
           <span>새로고침</span>
         </button>
       </div>
 
       {/* 내 순위 & 프로필 카드 (모바일 최적화 고정 카드) */}
-      <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-4 text-white shadow-lg space-y-3 relative overflow-hidden">
-        {/* 장식용 원형 배경 */}
-        <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none" />
-
-        <div className="flex items-start justify-between">
-          <div>
-            <div className="flex items-center space-x-2">
-              <span className="text-xl font-black">
+      <div className="ranking-my-card">
+        <div className="my-card-header">
+          <div className="my-profile-group">
+            <div className="my-nick-row">
+              <span className="my-nickname-text">
                 {profile?.nickname || '로딩 중...'}
               </span>
               <button
@@ -153,21 +150,21 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
                   setNicknameError(null);
                   setShowEditModal(true);
                 }}
-                className="p-1 rounded bg-white/20 hover:bg-white/30 text-white text-xs transition-colors"
+                className="btn-edit-nick"
                 title="닉네임 변경"
               >
                 ✏️ 수정
               </button>
             </div>
             {/* 기기 코드 표시 및 복사 버튼 */}
-            <div className="flex items-center space-x-1.5 mt-1 text-xs text-indigo-100">
+            <div className="my-code-row">
               <span>기기코드:</span>
-              <span className="font-mono font-semibold tracking-wider bg-black/20 px-1.5 py-0.5 rounded text-[11px]">
+              <span className="code-pill">
                 {profile?.deviceCode || '생성 중...'}
               </span>
               <button
                 onClick={handleCopyDeviceCode}
-                className="p-1 hover:text-white transition-colors"
+                className="btn-copy-code"
                 title="기기 코드 복사"
               >
                 {copyFeedback ? '✅' : '📋'}
@@ -175,44 +172,44 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
             </div>
           </div>
 
-          <div className="text-right">
-            <span className="text-xs uppercase tracking-wider text-indigo-200 block font-semibold">내 순위</span>
-            <span className="text-2xl font-black">
+          <div className="my-rank-display">
+            <span className="my-rank-label">내 순위</span>
+            <span className="my-rank-num">
               {rankingData?.myRank ? `${rankingData.myRank.rank}위` : '순위 밖'}
             </span>
           </div>
         </div>
 
         {/* 4분할 지표 그리드 (모바일 1열 4분할) */}
-        <div className="grid grid-cols-4 gap-2 pt-2 border-t border-white/20 text-center">
-          <div className="bg-white/10 rounded-lg py-1.5">
-            <span className="text-[10px] text-indigo-100 block">총 점수</span>
-            <span className="text-sm font-black text-amber-300">
+        <div className="my-stats-grid">
+          <div className="my-stat-box">
+            <span className="my-stat-label">총 점수</span>
+            <span className="my-stat-value score">
               {profile?.totalScore || 0}점
             </span>
           </div>
-          <div className="bg-white/10 rounded-lg py-1.5">
-            <span className="text-[10px] text-indigo-100 block">맞춘 문제</span>
-            <span className="text-sm font-bold text-emerald-300">
+          <div className="my-stat-box">
+            <span className="my-stat-label">맞춘 문제</span>
+            <span className="my-stat-value correct">
               +{profile?.correctCount || 0}
             </span>
           </div>
-          <div className="bg-white/10 rounded-lg py-1.5">
-            <span className="text-[10px] text-indigo-100 block">틀린 문제</span>
-            <span className="text-sm font-bold text-rose-300">
+          <div className="my-stat-box">
+            <span className="my-stat-label">틀린 문제</span>
+            <span className="my-stat-value incorrect">
               -{profile?.incorrectCount || 0}
             </span>
           </div>
-          <div className="bg-white/10 rounded-lg py-1.5">
-            <span className="text-[10px] text-indigo-100 block">정답률</span>
-            <span className="text-sm font-bold text-sky-300">
+          <div className="my-stat-box">
+            <span className="my-stat-label">정답률</span>
+            <span className="my-stat-value accuracy">
               {profile?.accuracy || 0}%
             </span>
           </div>
         </div>
 
         {/* 다른 기기 연동 버튼 */}
-        <div className="pt-1 flex justify-between items-center text-[11px] text-indigo-100">
+        <div className="my-card-footer">
           <span>스마트폰 변경 시 코드로 계정을 이어받을 수 있습니다.</span>
           <button
             onClick={() => {
@@ -220,7 +217,7 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
               setLinkError(null);
               setShowLinkModal(true);
             }}
-            className="underline underline-offset-2 hover:text-white font-medium"
+            className="btn-link-account"
           >
             기기 코드 연동
           </button>
@@ -228,67 +225,61 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
       </div>
 
       {/* 랭킹 리스트 섹션 */}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 px-1">
-          <span className="font-semibold">🏆 전체 랭킹 TOP 50</span>
+      <div className="ranking-list-section">
+        <div className="ranking-list-header">
+          <span>🏆 전체 랭킹 TOP 50</span>
           <span>총 {rankingData?.totalUsers || 0}명 참여</span>
         </div>
 
         {isLoading ? (
-          <div className="py-12 text-center text-gray-400 text-sm">
-            <div className="animate-spin text-2xl mb-2">⏳</div>
-            랭킹 데이터를 불러오는 중...
+          <div className="ranking-empty-box">
+            <div className="spin-animation" style={{ fontSize: '24px', marginBottom: '8px' }}>⏳</div>
+            <div>랭킹 데이터를 불러오는 중...</div>
           </div>
         ) : rankingData?.topRankers && rankingData.topRankers.length > 0 ? (
-          <div className="space-y-1.5">
+          <div className="ranking-list-items">
             {rankingData.topRankers.map((item: RankingItem) => {
               const isMe = item.id === profile?.id;
-              let badgeColor = 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
-              let medalIcon = null;
+              let medalClass = '';
+              let medalIcon: string | null = null;
 
               if (item.rank === 1) {
-                badgeColor = 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-600';
+                medalClass = 'medal-1';
                 medalIcon = '🥇';
               } else if (item.rank === 2) {
-                badgeColor = 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-600';
+                medalClass = 'medal-2';
                 medalIcon = '🥈';
               } else if (item.rank === 3) {
-                badgeColor = 'bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-800';
+                medalClass = 'medal-3';
                 medalIcon = '🥉';
               }
 
               return (
                 <div
                   key={item.id}
-                  className={`flex items-center justify-between p-2.5 rounded-xl border transition-all ${
-                    isMe
-                      ? 'bg-indigo-50/80 dark:bg-indigo-950/40 border-indigo-300 dark:border-indigo-700 shadow-sm ring-1 ring-indigo-400'
-                      : 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800'
-                  }`}
+                  className={`ranking-item-row ${isMe ? 'me' : ''}`}
                 >
                   {/* 순위 및 닉네임 */}
-                  <div className="flex items-center space-x-2.5 min-w-0">
-                    <div
-                      className={`w-7 h-7 rounded-lg flex items-center justify-center font-black text-xs shrink-0 ${badgeColor}`}
-                    >
+                  <div className="rank-item-left">
+                    <div className={`rank-item-badge ${medalClass}`}>
                       {medalIcon ? medalIcon : item.rank}
                     </div>
 
-                    <div className="min-w-0">
-                      <div className="flex items-center space-x-1.5">
-                        <span className="font-bold text-sm text-gray-900 dark:text-white truncate">
+                    <div className="rank-item-info">
+                      <div className="rank-nick-line">
+                        <span className="rank-nickname">
                           {item.nickname}
                         </span>
                         {isMe && (
-                          <span className="bg-indigo-500 text-white text-[10px] px-1 rounded font-bold shrink-0">
+                          <span className="rank-me-tag">
                             나
                           </span>
                         )}
                       </div>
-                      <div className="text-[11px] text-gray-400 flex items-center space-x-2">
+                      <div className="rank-meta-line">
                         <span>#{item.shortDeviceCode}</span>
                         <span>•</span>
-                        <span className="text-emerald-600 dark:text-emerald-400 font-medium">
+                        <span className="rank-meta-accuracy">
                           {item.accuracy}% 정답
                         </span>
                       </div>
@@ -296,11 +287,11 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
                   </div>
 
                   {/* 점수 & 상세 내역 */}
-                  <div className="text-right shrink-0">
-                    <span className="font-black text-sm text-indigo-600 dark:text-indigo-400 block">
+                  <div className="rank-item-right">
+                    <span className="rank-item-score">
                       {item.totalScore.toLocaleString()}점
                     </span>
-                    <span className="text-[10px] text-gray-400">
+                    <span className="rank-item-sub">
                       맞춤 {item.correctCount} / 틀림 {item.incorrectCount}
                     </span>
                   </div>
@@ -309,7 +300,7 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
             })}
           </div>
         ) : (
-          <div className="py-10 text-center text-gray-400 text-sm bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-200 dark:border-gray-800">
+          <div className="ranking-empty-box">
             아직 등록된 랭커가 없습니다.<br />
             문제를 풀고 첫 번째 랭커가 되어보세요!
           </div>
@@ -318,20 +309,20 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
 
       {/* 닉네임 변경 팝업 모달 */}
       {showEditModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fadeIn">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-2xl border border-gray-200 dark:border-gray-800">
+        <div className="ranking-modal-backdrop">
+          <div className="ranking-modal-box">
             <div>
-              <h2 className="text-base font-bold text-gray-900 dark:text-white flex items-center gap-1.5">
+              <h2 className="ranking-modal-title">
                 <span>✏️</span>
                 <span>닉네임 변경</span>
               </h2>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              <p className="ranking-modal-desc" style={{ marginTop: '6px' }}>
                 2~12자의 한글, 영문, 숫자만 사용 가능합니다.<br />
-                <span className="text-rose-500 font-medium">* 비속어 및 욕설은 엄격히 제한됩니다.</span>
+                <span style={{ color: 'var(--danger)', fontWeight: 600 }}>* 비속어 및 욕설은 엄격히 제한됩니다.</span>
               </p>
             </div>
 
-            <form onSubmit={handleSaveNickname} className="space-y-3">
+            <form onSubmit={handleSaveNickname} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div>
                 <input
                   type="text"
@@ -342,28 +333,28 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
                   }}
                   maxLength={12}
                   placeholder="새 닉네임 입력 (2~12자)"
-                  className="w-full px-3 py-2 text-sm border rounded-xl dark:bg-gray-800 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="ranking-modal-input"
                   autoFocus
                 />
                 {nicknameError && (
-                  <p className="text-xs text-rose-500 mt-1.5 font-medium">
+                  <p className="ranking-modal-error" style={{ marginTop: '6px' }}>
                     ⚠️ {nicknameError}
                   </p>
                 )}
               </div>
 
-              <div className="flex space-x-2 pt-2">
+              <div className="ranking-modal-actions">
                 <button
                   type="button"
                   onClick={() => setShowEditModal(false)}
-                  className="flex-1 py-2 text-xs font-semibold rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  className="ranking-modal-btn cancel"
                 >
                   취소
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmittingNickname}
-                  className="flex-1 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-colors disabled:opacity-50"
+                  className="ranking-modal-btn confirm"
                 >
                   {isSubmittingNickname ? '확인 중...' : '저장하기'}
                 </button>
@@ -375,19 +366,19 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
 
       {/* 기기 코드 연동 모달 */}
       {showLinkModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fadeIn">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-2xl border border-gray-200 dark:border-gray-800">
+        <div className="ranking-modal-backdrop">
+          <div className="ranking-modal-box">
             <div>
-              <h2 className="text-base font-bold text-gray-900 dark:text-white flex items-center gap-1.5">
+              <h2 className="ranking-modal-title">
                 <span>🔗</span>
                 <span>기존 기기 코드로 계정 연동</span>
               </h2>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              <p className="ranking-modal-desc" style={{ marginTop: '6px' }}>
                 이전 스마트폰이나 PC에서 사용하던 기기 코드를 입력하면 기존 학습 기록과 랭킹 점수를 그대로 이어받습니다.
               </p>
             </div>
 
-            <form onSubmit={handleLinkDevice} className="space-y-3">
+            <form onSubmit={handleLinkDevice} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div>
                 <input
                   type="text"
@@ -397,28 +388,29 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
                     setLinkError(null);
                   }}
                   placeholder="예: VOCA-XXXX-XXXX"
-                  className="w-full px-3 py-2 text-sm font-mono tracking-wider border rounded-xl dark:bg-gray-800 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase"
+                  className="ranking-modal-input"
+                  style={{ fontFamily: 'monospace', letterSpacing: '1px', textTransform: 'uppercase' }}
                   autoFocus
                 />
                 {linkError && (
-                  <p className="text-xs text-rose-500 mt-1.5 font-medium">
+                  <p className="ranking-modal-error" style={{ marginTop: '6px' }}>
                     ⚠️ {linkError}
                   </p>
                 )}
               </div>
 
-              <div className="flex space-x-2 pt-2">
+              <div className="ranking-modal-actions">
                 <button
                   type="button"
                   onClick={() => setShowLinkModal(false)}
-                  className="flex-1 py-2 text-xs font-semibold rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  className="ranking-modal-btn cancel"
                 >
                   취소
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmittingLink}
-                  className="flex-1 py-2 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-colors disabled:opacity-50"
+                  className="ranking-modal-btn confirm"
                 >
                   {isSubmittingLink ? '연동 중...' : '계정 불러오기'}
                 </button>
