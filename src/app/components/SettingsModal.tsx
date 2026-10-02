@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { db } from '../../storage/db';
 import { downloadBackupFile, validateBackupFile, restoreBackupData, type BackupFileStructure } from '../../storage/backupService';
 import { clearPocWords } from '../../storage/storagePoc';
+import { userService } from '../../services/userService';
+import type { UserProfile } from '../../types/user';
 
 export type ThemeMode = 'dark' | 'light' | 'system';
 
@@ -19,6 +21,7 @@ interface SettingsModalProps {
   onInstantGradingChange: (enabled: boolean) => void;
   shuffleOrder: boolean;
   onShuffleOrderChange: (enabled: boolean) => void;
+  onOpenRanking?: () => void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -30,11 +33,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   onInstantGradingChange,
   shuffleOrder,
   onShuffleOrderChange,
+  onOpenRanking,
 }) => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isStandalone, setIsStandalone] = useState(false);
   const [isIosSafari, setIsIosSafari] = useState(false);
   const [showIosGuide, setShowIosGuide] = useState(false);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [codeCopied, setCodeCopied] = useState(false);
 
   // 저장소 통계 및 상태
   const [storageStats, setStorageStats] = useState<{ words: number; books: number; history: number }>({
@@ -85,6 +91,9 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     if (isOpen) {
       refreshStorageStats();
       setStorageMsg('');
+      const p = userService.getProfile();
+      setUserProfile(p);
+      setCodeCopied(false);
     }
   }, [isOpen]);
 
@@ -162,6 +171,63 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         </div>
 
         <div className="modal-body">
+          {/* 내 학습자 계정 및 랭킹 연계 섹션 */}
+          <div className="setting-section" style={{ background: 'rgba(99, 102, 241, 0.08)', borderRadius: '12px', padding: '12px', border: '1px solid rgba(99, 102, 241, 0.2)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <label className="setting-section-title" style={{ margin: 0, color: '#818cf8' }}>👤 내 학습자 계정</label>
+              {onOpenRanking && (
+                <button
+                  type="button"
+                  onClick={onOpenRanking}
+                  style={{
+                    background: '#4f46e5',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    padding: '4px 8px',
+                    fontSize: '11px',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                  }}
+                >
+                  🏆 랭킹 보드
+                </button>
+              )}
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '13px', marginBottom: '6px' }}>
+              <span style={{ color: '#94a3b8' }}>닉네임</span>
+              <span style={{ fontWeight: 'bold' }}>{userProfile?.nickname || '학습자'}</span>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', marginBottom: '6px' }}>
+              <span style={{ color: '#94a3b8' }}>기기 코드</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ fontFamily: 'monospace', fontWeight: 'bold', background: 'rgba(0,0,0,0.2)', padding: '2px 6px', borderRadius: '4px' }}>
+                  {userProfile?.deviceCode || '생성 중...'}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (userProfile?.deviceCode) {
+                      navigator.clipboard.writeText(userProfile.deviceCode);
+                      setCodeCopied(true);
+                      setTimeout(() => setCodeCopied(false), 2000);
+                    }
+                  }}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px' }}
+                  title="기기 코드 복사"
+                >
+                  {codeCopied ? '✅' : '📋'}
+                </button>
+              </div>
+            </div>
+
+            <p style={{ fontSize: '11px', color: '#64748b', margin: 0 }}>
+              * 스마트폰 변경 시 랭킹 보드의 [기기 코드 연동]으로 데이터를 이어받을 수 있습니다.
+            </p>
+          </div>
+
           {/* 테마 설정 */}
           <div className="setting-section">
             <label className="setting-section-title">🎨 화면 테마</label>

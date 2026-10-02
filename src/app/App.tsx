@@ -4,11 +4,14 @@ import { FileImportPocView } from './components/FileImportPocView';
 import { PdfImportPocView } from './components/PdfImportPocView';
 import { GeneralQuizImportView } from './components/GeneralQuizImportView';
 import { GeneralQuizPlayerView } from './components/GeneralQuizPlayerView';
+import { RankingView } from './components/RankingView';
 import { SettingsModal, ThemeMode } from './components/SettingsModal';
+import { userService } from '../services/userService';
 import type { WordEntry } from '../types/word';
+import type { UserProfile } from '../types/user';
 import './App.css';
 
-type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf' | 'general_import' | 'general_quiz';
+type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf' | 'general_import' | 'general_quiz' | 'ranking';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
@@ -34,6 +37,13 @@ export const App: React.FC = () => {
 
   // 설정 모달 열림 상태
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+  // 사용자 세션 프로필 상태
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+
+  useEffect(() => {
+    userService.initSession().then(setCurrentUser).catch(console.error);
+  }, []);
 
   // 테마 적용 이펙트
   useEffect(() => {
@@ -93,7 +103,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      {/* 헤더: 1행(브랜드 좌측 + ⚙️ 우측 끝 같은 라인), 2행(4개 탭) */}
+      {/* 헤더: 1행(브랜드 좌측 + 🏆 랭킹 & ⚙️ 우측 끝 같은 라인), 2행(네비게이션 탭) */}
       <header className="app-header">
         <div className="header-top-row">
           <div className="header-brand" onClick={() => setActiveTab('home')}>
@@ -101,14 +111,37 @@ export const App: React.FC = () => {
             <h1 className="brand-title">보카 스터디</h1>
             <span className="brand-badge">Voca Study</span>
           </div>
-          <button
-            className="settings-icon-btn"
-            onClick={() => setIsSettingsOpen(true)}
-            aria-label="설정"
-            title="설정"
-          >
-            ⚙️
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button
+              className="ranking-icon-btn"
+              style={{
+                background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '6px 10px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+              }}
+              onClick={() => setActiveTab('ranking')}
+              title="실시간 랭킹"
+            >
+              <span>🏆</span>
+              <span>랭킹</span>
+            </button>
+            <button
+              className="settings-icon-btn"
+              onClick={() => setIsSettingsOpen(true)}
+              aria-label="설정"
+              title="설정"
+            >
+              ⚙️
+            </button>
+          </div>
         </div>
 
         <nav className="header-nav">
@@ -117,6 +150,12 @@ export const App: React.FC = () => {
             onClick={() => setActiveTab('home')}
           >
             홈
+          </button>
+          <button
+            className={`nav-btn ${activeTab === 'ranking' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ranking')}
+          >
+            🏆 랭킹
           </button>
           <button
             className={`nav-btn ${activeTab === 'quiz' ? 'active' : ''}`}
@@ -149,6 +188,47 @@ export const App: React.FC = () => {
       <main className="app-main">
         {activeTab === 'home' && (
           <div className="home-dashboard">
+            {/* 상단 모바일 핏 내 학습 랭킹 요약 배너 */}
+            <div
+              onClick={() => setActiveTab('ranking')}
+              style={{
+                background: 'linear-gradient(135deg, #3730a3, #581c87)',
+                borderRadius: '14px',
+                padding: '12px 14px',
+                color: '#ffffff',
+                cursor: 'pointer',
+                marginBottom: '12px',
+                boxShadow: '0 4px 12px rgba(79, 70, 229, 0.25)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '2px' }}>
+                  <span style={{ fontSize: '14px' }}>🏆</span>
+                  <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#c7d2fe' }}>
+                    {currentUser?.nickname || '학습자'}
+                  </span>
+                  <span style={{ fontSize: '10px', background: 'rgba(255,255,255,0.2)', padding: '1px 5px', borderRadius: '4px' }}>
+                    #{currentUser?.deviceCode?.split('-').pop() || 'ID'}
+                  </span>
+                </div>
+                <div style={{ fontSize: '18px', fontWeight: '900', color: '#fde047' }}>
+                  {currentUser?.totalScore || 0}점
+                  <span style={{ fontSize: '11px', fontWeight: 'normal', color: '#e0e7ff', marginLeft: '6px' }}>
+                    (맞춤 {currentUser?.correctCount || 0} / 틀림 {currentUser?.incorrectCount || 0})
+                  </span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ fontSize: '10px', color: '#c7d2fe', display: 'block' }}>전체 랭킹</span>
+                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#ffffff' }}>
+                  확인하기 →
+                </span>
+              </div>
+            </div>
+
             <div className="action-menu-grid">
               <button
                 className="menu-card primary"
@@ -187,6 +267,15 @@ export const App: React.FC = () => {
           </div>
         )}
 
+        {activeTab === 'ranking' && (
+          <RankingView
+            onBack={() => {
+              setActiveTab('home');
+              userService.initSession().then(setCurrentUser).catch(console.error);
+            }}
+          />
+        )}
+
         {activeTab === 'quiz' && (
           <QuizPreviewView
             key={customSourceType + (customTitle || '')}
@@ -195,6 +284,7 @@ export const App: React.FC = () => {
             sourceType={customSourceType}
             instantGrading={instantGrading}
             shuffleOrder={shuffleOrder}
+            onOpenRanking={() => setActiveTab('ranking')}
           />
         )}
 
@@ -228,6 +318,7 @@ export const App: React.FC = () => {
           <GeneralQuizPlayerView
             bookId={selectedQuestionBookId}
             onBackToHome={() => setActiveTab('home')}
+            onOpenRanking={() => setActiveTab('ranking')}
           />
         )}
       </main>
@@ -242,6 +333,10 @@ export const App: React.FC = () => {
         onInstantGradingChange={handleInstantGradingChange}
         shuffleOrder={shuffleOrder}
         onShuffleOrderChange={handleShuffleOrderChange}
+        onOpenRanking={() => {
+          setIsSettingsOpen(false);
+          setActiveTab('ranking');
+        }}
       />
     </div>
   );

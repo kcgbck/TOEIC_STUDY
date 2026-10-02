@@ -6,6 +6,14 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
-  }
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "voca-study-db",
+      "database_id": "44a2ee68-01f4-4960-865e-455ed0c958ba"
+    }
+  ]
 }

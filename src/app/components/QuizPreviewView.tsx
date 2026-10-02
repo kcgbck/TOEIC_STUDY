@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import type { WordEntry, QuizQuestion } from '../../types/word';
 import { db } from '../../storage/db';
 import { createQuizQuestion } from '../../quiz/quizEngine';
+import { userService } from '../../services/userService';
 
 interface Props {
   initialWords?: WordEntry[];
@@ -9,6 +10,7 @@ interface Props {
   sourceType?: 'builtin' | 'maritime' | 'photo' | 'pdf';
   instantGrading?: boolean;
   shuffleOrder?: boolean;
+  onOpenRanking?: () => void;
 }
 
 type SelectedDifficulty = 'all' | 'easy' | 'medium' | 'hard';
@@ -60,6 +62,7 @@ export const QuizPreviewView: React.FC<Props> = ({
   sourceType = 'builtin',
   instantGrading = false,
   shuffleOrder = true,
+  onOpenRanking,
 }) => {
   const [currentBook, setCurrentBook] = useState<BookCategory>(() => {
     return sourceType === 'maritime' ? 'maritime' : 'builtin';
@@ -73,6 +76,8 @@ export const QuizPreviewView: React.FC<Props> = ({
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
+  const [syncedScore, setSyncedScore] = useState<number | null>(null);
+  const hasSyncedRef = useRef(false);
   const [activeBookTitle, setActiveBookTitle] = useState<string>(
     bookTitle || (sourceType === 'maritime' ? '해사영어(451단어)' : 'TOEIC(1800단어)')
   );
@@ -154,6 +159,8 @@ export const QuizPreviewView: React.FC<Props> = ({
     setQuizWords(finalWords);
     setCurrentIndex(0);
     setScore({ correct: 0, wrong: 0 });
+    setSyncedScore(null);
+    hasSyncedRef.current = false;
     generateNextQuestion(finalWords, 0);
   };
 
@@ -255,6 +262,16 @@ export const QuizPreviewView: React.FC<Props> = ({
 
   const isCompleted = totalQuestions > 0 && currentIndex >= totalQuestions;
 
+  // 퀴즈 완료 시 랭킹 점수 자동 동기화
+  useEffect(() => {
+    if (isCompleted && totalQuestions > 0 && !hasSyncedRef.current) {
+      hasSyncedRef.current = true;
+      const earned = Math.max(0, score.correct * 10 - score.wrong * 2);
+      setSyncedScore(earned);
+      userService.addQuizResult(score.correct, score.wrong).catch(console.error);
+    }
+  }, [isCompleted, totalQuestions, score.correct, score.wrong]);
+
   return (
     <div className="card quiz-card">
       {/* 기본 어휘 / 해사영어 단어장 선택 탭 (커스텀 추출 단어장이 아닐 때 표시) */}
@@ -324,17 +341,41 @@ export const QuizPreviewView: React.FC<Props> = ({
 
       {isCompleted ? (
         <div style={{ textAlign: 'center', padding: '30px 16px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '12px', color: '#38bdf8' }}>🎉 퀴즈 완료!</h2>
-          <p style={{ fontSize: '16px', marginBottom: '20px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '8px', color: '#38bdf8' }}>🎉 퀴즈 완료!</h2>
+          
+          {/* 점수 획득 배너 */}
+          <div style={{ background: 'rgba(99, 102, 241, 0.15)', border: '1px solid rgba(99, 102, 241, 0.3)', borderRadius: '14px', padding: '14px', maxWidth: '320px', margin: '0 auto 16px' }}>
+            <span style={{ fontSize: '12px', color: '#a5b4fc', display: 'block', fontWeight: 'bold' }}>🏆 랭킹 점수 반영</span>
+            <span style={{ fontSize: '26px', fontWeight: '900', color: '#fbbf24', display: 'block', margin: '4px 0' }}>
+              +{syncedScore !== null ? syncedScore : Math.max(0, score.correct * 10 - score.wrong * 2)}점
+            </span>
+            <span style={{ fontSize: '11px', color: '#94a3b8' }}>
+              (맞춤 +10점 / 틀림 -2점 적용)
+            </span>
+          </div>
+
+          <p style={{ fontSize: '15px', marginBottom: '20px', color: '#e2e8f0' }}>
             총 <strong>{totalQuestions}</strong>문제 중 <strong style={{ color: '#4ade80' }}>{score.correct}</strong>문제 정답 (<strong style={{ color: '#f87171' }}>{score.wrong}</strong>문제 오답)
           </p>
-          <button
-            className="btn btn-primary"
-            style={{ padding: '10px 24px', fontSize: '15px', fontWeight: 'bold' }}
-            onClick={() => initQuizSession()}
-          >
-            다시 풀기 (새 순서로 섞기) 🔄
-          </button>
+          <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button
+              className="btn btn-primary"
+              style={{ padding: '10px 20px', fontSize: '14px', fontWeight: 'bold' }}
+              onClick={() => initQuizSession()}
+            >
+              다시 풀기 🔄
+            </button>
+            {onOpenRanking && (
+              <button
+                type="button"
+                className="btn btn-secondary"
+                style={{ padding: '10px 20px', fontSize: '14px', fontWeight: 'bold', background: '#4f46e5', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer' }}
+                onClick={onOpenRanking}
+              >
+                🏆 랭킹 확인
+              </button>
+            )}
+          </div>
         </div>
       ) : !currentQuiz ? (
         <div style={{ textAlign: 'center', padding: '30px 16px' }}>

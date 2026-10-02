@@ -1,17 +1,19 @@
 // 일반 객관식 문제 퀴즈 풀이 뷰어 (GEN-01 지시서 7, 9, 43, 47항 준수)
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   createGeneralQuizSession,
   type GeneralQuizQuestion,
 } from '../../quiz/generalQuizEngine';
 import { db } from '../../storage/db';
+import { userService } from '../../services/userService';
 
 interface Props {
   bookId: string;
   onBackToHome: () => void;
+  onOpenRanking?: () => void;
 }
 
-export const GeneralQuizPlayerView: React.FC<Props> = ({ bookId, onBackToHome }) => {
+export const GeneralQuizPlayerView: React.FC<Props> = ({ bookId, onBackToHome, onOpenRanking }) => {
   const [questions, setQuestions] = useState<GeneralQuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedChoiceId, setSelectedChoiceId] = useState<string | null>(null);
@@ -20,6 +22,8 @@ export const GeneralQuizPlayerView: React.FC<Props> = ({ bookId, onBackToHome })
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [bookTitle, setBookTitle] = useState<string>('일반 문제집');
+  const [syncedScore, setSyncedScore] = useState<number | null>(null);
+  const hasSyncedRef = useRef(false);
 
   // 문제 데이터 로드 및 세션 생성
   useEffect(() => {
@@ -113,37 +117,73 @@ export const GeneralQuizPlayerView: React.FC<Props> = ({ bookId, onBackToHome })
   };
 
   // 완료 결과 화면
+  useEffect(() => {
+    if (isCompleted && questions.length > 0 && !hasSyncedRef.current) {
+      hasSyncedRef.current = true;
+      const wrongCount = questions.length - correctCount;
+      const earned = Math.max(0, correctCount * 10 - wrongCount * 2);
+      setSyncedScore(earned);
+      userService.addQuizResult(correctCount, wrongCount).catch(console.error);
+    }
+  }, [isCompleted, questions.length, correctCount]);
+
   if (isCompleted) {
     const accuracy = Math.round((correctCount / questions.length) * 100);
+    const wrongCount = questions.length - correctCount;
+    const earned = syncedScore !== null ? syncedScore : Math.max(0, correctCount * 10 - wrongCount * 2);
+
     return (
       <div style={{ maxWidth: '600px', margin: '0 auto', padding: '24px', textAlign: 'center' }}>
         <div style={{ background: '#1f2937', padding: '24px', borderRadius: '16px', border: '1px solid #374151' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#60a5fa', marginBottom: '12px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#60a5fa', marginBottom: '8px' }}>
             🎉 퀴즈 완료!
           </h2>
           <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '16px' }}>{bookTitle}</p>
-          <div style={{ fontSize: '36px', fontWeight: '800', color: accuracy >= 80 ? '#34d399' : accuracy >= 60 ? '#fbbf24' : '#f87171', marginBottom: '12px' }}>
-            {accuracy}점
+
+          {/* 랭킹 점수 반영 배너 */}
+          <div style={{ background: 'rgba(99, 102, 241, 0.15)', border: '1px solid rgba(99, 102, 241, 0.3)', borderRadius: '14px', padding: '14px', maxWidth: '320px', margin: '0 auto 16px' }}>
+            <span style={{ fontSize: '12px', color: '#a5b4fc', display: 'block', fontWeight: 'bold' }}>🏆 랭킹 점수 반영</span>
+            <span style={{ fontSize: '26px', fontWeight: '900', color: '#fbbf24', display: 'block', margin: '4px 0' }}>
+              +{earned}점
+            </span>
+            <span style={{ fontSize: '11px', color: '#94a3b8' }}>
+              (맞춤 +10점 / 틀림 -2점 적용)
+            </span>
+          </div>
+
+          <div style={{ fontSize: '32px', fontWeight: '800', color: accuracy >= 80 ? '#34d399' : accuracy >= 60 ? '#fbbf24' : '#f87171', marginBottom: '8px' }}>
+            정답률 {accuracy}%
           </div>
           <p style={{ fontSize: '15px', color: '#e5e7eb', marginBottom: '24px' }}>
-            총 {questions.length}문제 중 <strong style={{ color: '#34d399' }}>{correctCount}문제</strong> 정답
+            총 {questions.length}문제 중 <strong style={{ color: '#34d399' }}>{correctCount}문제</strong> 정답 (오답: {wrongCount}문제)
           </p>
-          <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               onClick={() => {
                 setCurrentIndex(0);
                 setSelectedChoiceId(null);
                 setIsAnswered(false);
                 setCorrectCount(0);
+                setSyncedScore(null);
+                hasSyncedRef.current = false;
                 setIsCompleted(false);
               }}
-              style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer' }}
+              style={{ background: '#2563eb', color: '#fff', border: 'none', padding: '10px 18px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer', fontSize: '14px' }}
             >
-              다시 풀기
+              다시 풀기 🔄
             </button>
+            {onOpenRanking && (
+              <button
+                type="button"
+                onClick={onOpenRanking}
+                style={{ background: '#4f46e5', color: '#fff', border: 'none', padding: '10px 18px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer', fontSize: '14px' }}
+              >
+                🏆 랭킹 확인
+              </button>
+            )}
             <button
               onClick={onBackToHome}
-              style={{ background: '#374151', color: '#e5e7eb', border: 'none', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer' }}
+              style={{ background: '#374151', color: '#e5e7eb', border: 'none', padding: '10px 18px', borderRadius: '8px', fontWeight: 'bold', cursor: 'pointer', fontSize: '14px' }}
             >
               홈으로
             </button>
