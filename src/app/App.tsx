@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { QuizPreviewView } from './components/QuizPreviewView';
 import { FileImportPocView } from './components/FileImportPocView';
 import { PdfImportPocView } from './components/PdfImportPocView';
+import { GeneralQuizImportView } from './components/GeneralQuizImportView';
+import { GeneralQuizPlayerView } from './components/GeneralQuizPlayerView';
 import { SettingsModal, ThemeMode } from './components/SettingsModal';
 import type { WordEntry } from '../types/word';
 import './App.css';
 
-type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf';
+type ActiveTab = 'home' | 'quiz' | 'photo' | 'pdf' | 'general_import' | 'general_quiz';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
+  const [selectedQuestionBookId, setSelectedQuestionBookId] = useState<string | null>(null);
   const [customWords, setCustomWords] = useState<WordEntry[] | undefined>(undefined);
   const [customTitle, setCustomTitle] = useState<string | undefined>(undefined);
   const [customSourceType, setCustomSourceType] = useState<'builtin' | 'maritime' | 'photo' | 'pdf'>('builtin');
@@ -133,6 +136,12 @@ export const App: React.FC = () => {
           >
             PDF 문제
           </button>
+          <button
+            className={`nav-btn ${activeTab === 'general_import' ? 'active' : ''}`}
+            onClick={() => setActiveTab('general_import')}
+          >
+            일반 문제집
+          </button>
         </nav>
       </header>
 
@@ -141,6 +150,16 @@ export const App: React.FC = () => {
         {activeTab === 'home' && (
           <div className="home-dashboard">
             <div className="action-menu-grid">
+              <button
+                className="menu-card primary"
+                style={{ borderLeft: '4px solid #8b5cf6' }}
+                onClick={() => setActiveTab('general_import')}
+              >
+                <span className="menu-icon">📚</span>
+                <span className="menu-title">일반 문제집 만들기 (스캔/PDF)</span>
+                <span className="menu-sub">어떤 문제집이든 사진·PDF로 4/5지선다 제작·풀이</span>
+              </button>
+
               <button className="menu-card primary" onClick={() => handleOpenQuiz('builtin')}>
                 <span className="menu-icon">📝</span>
                 <span className="menu-title">TOEIC(1800단어) 문제풀이</span>
@@ -155,13 +174,13 @@ export const App: React.FC = () => {
 
               <button className="menu-card" onClick={() => setActiveTab('photo')}>
                 <span className="menu-icon">📷</span>
-                <span className="menu-title">내 사진 문제집</span>
-                <span className="menu-sub">사진 촬영/업로드 + 온디바이스 OCR 분석</span>
+                <span className="menu-title">내 사진 영단어</span>
+                <span className="menu-sub">단어장 사진 촬영/업로드 + 온디바이스 OCR 분석</span>
               </button>
 
               <button className="menu-card" onClick={() => setActiveTab('pdf')}>
                 <span className="menu-icon">📄</span>
-                <span className="menu-title">내 PDF 문제집</span>
+                <span className="menu-title">내 PDF 영단어</span>
                 <span className="menu-sub">PDF.js 기반 텍스트 레이어 어휘 추출</span>
               </button>
             </div>
@@ -192,6 +211,23 @@ export const App: React.FC = () => {
             onStartQuizWithWords={(words) =>
               handleStartQuizWithWords(words, 'PDF 추출 문제집', 'pdf')
             }
+          />
+        )}
+
+        {activeTab === 'general_import' && (
+          <GeneralQuizImportView
+            onBackToHome={() => setActiveTab('home')}
+            onStartQuiz={(bookId) => {
+              setSelectedQuestionBookId(bookId);
+              setActiveTab('general_quiz');
+            }}
+          />
+        )}
+
+        {activeTab === 'general_quiz' && selectedQuestionBookId && (
+          <GeneralQuizPlayerView
+            bookId={selectedQuestionBookId}
+            onBackToHome={() => setActiveTab('home')}
           />
         )}
       </main>

@@ -44,15 +44,13 @@ export function parseLineItems(items: Array<{ str: string; x: number; y: number 
   const indexItem = items.find((it) => it.x <= 80 && /^\d{1,4}$/.test(it.str));
   const num = indexItem ? parseInt(indexItem.str, 10) : undefined;
 
-  // 2. 영어 표제어 (80 < x < 280)
-  const englishCandidates = items
+  // 2. 영어 표제어 (80 < x < 280 중 가장 왼쪽에 위치한 표제어 선택, 지시서 36항 준수)
+  const englishItems = items
     .filter((it) => it.x > 80 && it.x < 280 && /^[a-zA-Z\s\-']{2,40}$/.test(it.str))
-    .map((it) => it.str.trim());
-  const uniqueEnglish = Array.from(new Set(englishCandidates));
-  if (uniqueEnglish.length === 0) return null;
+    .sort((a, b) => a.x - b.x);
+  if (englishItems.length === 0) return null;
 
-  // substitute 등 핵심 표제어 선택 (마지막에 오버레이된 고유 단어 또는 첫 단어)
-  const word = uniqueEnglish.find((w) => w.toLowerCase() === 'substitute') || uniqueEnglish[0];
+  const word = englishItems[0].str.trim();
 
   // 3. 한국어 뜻 및 품사 (x >= 320)
   const meaningItems = items.filter((it) => it.x >= 320 && !/^\d{1,4}$/.test(it.str));

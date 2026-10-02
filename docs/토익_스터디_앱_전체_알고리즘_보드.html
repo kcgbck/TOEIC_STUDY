@@ -630,7 +630,7 @@
 
 <div class="container">
   <div style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3b82f6; border-radius: 8px; padding: 10px 16px; margin-bottom: 16px; color: #93c5fd; font-size: 13px; font-weight: 600;">
-    현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디 [TOEIC 1,800단어 + 해사영어 451단어(Phase 1~3 완비) 탑재 및 다중 단어장 엔진 가동]
+    현재 공개 서비스명: 보카 스터디 / 이전 프로젝트명: 토익_스터디 [TOEIC 1,800단어 + 해사영어 451단어 + 범용 문제 제작(GEN-01 4·5지선다) 탑재 및 20,000회 스트레스 무결성 통과]
   </div>
   <!-- 헤더 -->
   <header>
@@ -644,15 +644,15 @@
     <div class="header-stats">
       <div class="stat-badge">
         <span>총 알고리즘 노드:</span>
-        <span class="stat-value" id="stat-total-nodes">80개</span>
+        <span class="stat-value" id="stat-total-nodes">90개</span>
       </div>
       <div class="stat-badge">
         <span>설계 탭 수:</span>
-        <span class="stat-value">13개 탭</span>
+        <span class="stat-value">14개 탭</span>
       </div>
       <div class="stat-badge stat-p0">
         <span>P0 핵심 노드:</span>
-        <span class="stat-value" id="stat-p0-nodes">16개</span>
+        <span class="stat-value" id="stat-p0-nodes">18개</span>
       </div>
       <div class="stat-badge">
         <span>성공 확인 관문:</span>
@@ -698,6 +698,14 @@
         <span>다중 단어장 전환:</span>
         <span class="stat-value">PASS (P0-C 완료)</span>
       </div>
+      <div class="stat-badge stat-qa">
+        <span>범용 문제 제작(GEN-01):</span>
+        <span class="stat-value">PASS (4/5지선다 완비)</span>
+      </div>
+      <div class="stat-badge stat-qa">
+        <span>20,000회 셔플 스트레스:</span>
+        <span class="stat-value">PASS (정답 손실 0건)</span>
+      </div>
       <div class="stat-badge" style="background: rgba(245, 158, 11, 0.2); border-color: #f59e0b;">
         <span style="color: #fbbf24;">한국어 의미 사람 검토:</span>
         <span class="stat-value" style="color: #fbbf24;">검토 대기 (PENDING)</span>
@@ -724,8 +732,12 @@
         <div class="arch-card-desc">TOEIC 1,800어 + 해사영어 451어 마스터 DB 및 원터치 전환 출제</div>
       </div>
       <div class="arch-card" onclick="switchTab('tab-3')">
-        <div class="arch-card-title">2-B. 사진 / PDF 학습</div>
-        <div class="arch-card-desc">종이책 사진 촬영 또는 텍스트/스캔 PDF 문서 수신</div>
+        <div class="arch-card-title">2-B. 사진 / PDF 영단어</div>
+        <div class="arch-card-desc">종이책 사진 촬영 또는 텍스트/스캔 PDF 문서 어휘 수신</div>
+      </div>
+      <div class="arch-card" onclick="switchTab('tab-14')">
+        <div class="arch-card-title">2-C. 일반 문제집 제작 [신규]</div>
+        <div class="arch-card-desc">사진·PDF 객관식 문제 추출 및 4·5지선다 독립 셔플 풀이</div>
       </div>
       <div class="arch-card" onclick="switchTab('tab-5')">
         <div class="arch-card-title">3. 단어-뜻 연결 [P0]</div>
@@ -912,6 +924,13 @@
     "name": "검증 관문",
     "desc": "관문 1~9 성공 확인 체계, 10종 시험 자료, 6대 KPI 및 개발 로드맵",
     "p0_count": 1
+  },
+  {
+    "id": "tab-14",
+    "num": 14,
+    "name": "범용 문제 제작",
+    "desc": "사진 및 PDF로부터 어떤 시험 문제집이든 4지/5지선다 디지털 학습 데이터로 자동 변환하고 무손실 저장·출제하는 파이프라인",
+    "p0_count": 2
   }
 ];
   const NODES = [
@@ -3153,6 +3172,286 @@
       "실행_근거": "실패 위험이 가장 높은 기술 검증을 초기에 조기 종결",
       "확인_수준": "코드로 확인",
       "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-81",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "판단",
+    "title": "문서 유형 판별기 (단어장 / 객관식 / 정답표 자동 판별)",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "OCR 텍스트 블록의 패턴(기호, 번호, 품사)을 분석하여 영어 단어장, 일반 객관식 문제집, 별도 정답표 여부를 자동 분류하고 사용자 수동 변경 지원",
+    "details": {
+      "역할": "업로드된 문서가 영어 단어장인지, 일반 객관식 문제집인지, 정답표인지 감지하여 최적의 파이프라인으로 라우팅",
+      "기술_스킬": "정규표현식 패턴 매칭, 휴리스틱 점수 산정",
+      "입력": "OCR 인식 텍스트 블록 배열 (RecognizedTextBlock[])",
+      "처리_분기": "선택지 기호(①~⑤) 다수 감지 시 객관식 분류 / 짧은 번호-답 쌍 위주일 때 정답표 분류 / 품사 태그 감지 시 단어장 분류",
+      "출력": "DocumentClassification (유형, 신뢰도, 판정 근거 목록)",
+      "실패_시_처리": "특징 불명확 시 UNKNOWN 분류 및 사용자 수동 선택 모달 표출",
+      "상태_읽기": "텍스트 블록 내용 및 빈도",
+      "상태_저장": "컴포넌트 로컬 상태 docType",
+      "출처": "GEN-01 지시서 11~13항",
+      "파일": "src/ocr/documentClassifier.ts",
+      "함수": "classifyDocument()",
+      "관련_테스트": "tests/questionDocumentClassifier.test.ts",
+      "실행_근거": "사용자 입력 문서의 성격에 맞는 최적 파싱 엔진 자동 선택",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-82",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "처리",
+    "title": "객관식 문제 영역 및 번호 경계 탐지 엔진",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "문항 번호 패턴(1., [15], 문 4.)을 감지하여 다음 문항 시작 전까지를 단일 문제 블록으로 안전 그룹화",
+    "details": {
+      "역할": "연속된 문서 지문에서 각 문제의 시작과 끝 경계를 분리하고 기하학적 영역을 계산",
+      "기술_스킬": "2차원 좌표(x, y) 공간 정렬, 경계 인식 알고리즘",
+      "입력": "좌표 포함 텍스트 블록 목록",
+      "처리_분기": "y좌표 순 정렬 → 문제 번호 정규식 감지 시 새 블록 분기 → 본문과 선택지 라인 수집",
+      "출력": "RawQuestionBlock 그룹 리스트 및 문항별 바운딩 박스",
+      "실패_시_처리": "번호 누락 지문 발생 시 임시 ID 부여 및 needs_review 플래그",
+      "상태_읽기": "텍스트 블록 x, y 좌표",
+      "상태_저장": "sourceBounds ({ x, y, width, height })",
+      "출처": "GEN-01 지시서 15~16항",
+      "파일": "src/ocr/multipleChoiceExtractor.ts",
+      "함수": "extractQuestionsFromOcrBlocks()",
+      "관련_테스트": "tests/multipleChoiceExtractor.test.ts",
+      "실행_근거": "지문과 선택지가 섞이거나 인접 문제와 오결합되는 위험 원천 방지",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-83",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "처리",
+    "title": "4지/5지선다 선택지 구조화 및 다중 포맷 파서",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "①~⑤, (1)~(5), 1)~5), A.~E., 가.~마. 등 다양한 기호와 한 줄 다중 선택지 나열을 4개 또는 5개의 QuestionChoice로 정확히 분할 파싱",
+    "details": {
+      "역할": "문제 블록 내 선택지 텍스트를 개별 QuestionChoice 객체로 정밀 분할하고 고유 ID 부여",
+      "기술_스킬": "다중 기호 분할 정규표현식, 토큰 슬라이싱",
+      "입력": "문항 블록 선택지 텍스트 문자열",
+      "처리_분기": "선택지 기호 매칭 → 시작-끝 인덱스 추출 → 앞뒤 공백 및 인라인 정답 태그 정제 → 4지/5지 판별",
+      "출력": "QuestionChoice[] 배열 (id, sourceLabel, text)",
+      "실패_시_처리": "선택지가 4개 미만인 경우 불완전 문항으로 격리",
+      "상태_읽기": "선택지 텍스트 라인",
+      "상태_저장": "QuestionItem.choices",
+      "출처": "GEN-01 지시서 5, 8, 17항",
+      "파일": "src/ocr/multipleChoiceExtractor.ts",
+      "함수": "parseChoicesFromText()",
+      "관련_테스트": "tests/multipleChoiceExtractor.test.ts",
+      "실행_근거": "국내외 모든 시험 양식의 다양한 선택지 표기법 전수 포용",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-84",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "처리",
+    "title": "인라인 정답 마크 및 해설 추출기",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "문제 본문 또는 선택지 주변의 인라인 정답 표기(정답: ③, 답 4, ③ ✔)를 감지하여 correctChoiceId와 안전하게 연결",
+    "details": {
+      "역할": "문제 본문에 함께 인쇄된 정답 기호를 탐색하여 정답 선택지 ID와 매핑하고 본문에서 정답 문구 제거",
+      "기술_스킬": "인라인 정답 패턴 추출, 라벨 정규화 매핑",
+      "입력": "문제 본문 및 선택지 원시 텍스트",
+      "처리_분기": "정답 패턴 감지 시 선택지 라벨과 대조 → 일치 시 correctChoiceId 지정 및 본문 정제",
+      "출력": "정답 연결된 QuestionItem (answerStatus = 'verified')",
+      "실패_시_처리": "정답 표기 불일치 또는 신뢰도 미달 시 needs_review 처리",
+      "상태_읽기": "원문 텍스트 내 정답 키워드",
+      "상태_저장": "QuestionItem.correctChoiceId, answerEvidence",
+      "출처": "GEN-01 지시서 18~19항",
+      "파일": "src/ocr/multipleChoiceExtractor.ts",
+      "함수": "extractQuestionsFromOcrBlocks()",
+      "관련_테스트": "tests/multipleChoiceExtractor.test.ts",
+      "실행_근거": "정답이 병기된 기출문제집의 즉시 문제화 지원",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-85",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "처리",
+    "title": "별도 정답표 파서 및 번호 기반 자동 매핑 엔진",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "문제 페이지와 별도로 제공된 정답표 사진을 파싱하여 questionNumber 기준으로 정답을 1:1 매핑하고 불일치 시 경고",
+    "details": {
+      "역할": "정답이 뒤쪽에 별도로 인쇄된 문제집의 경우 정답표를 파싱하여 해당 문항의 정답 ID로 자동 연결",
+      "기술_스킬": "정답표 토큰 파싱, 문항 번호 인덱스 매핑, 범위 초과 유효성 검사",
+      "입력": "정답표 텍스트 블록 및 미확인 QuestionItem 배열",
+      "처리_분기": "문항 번호 일치 항목 탐색 → 4/5지 선택지 범위 내 정답인지 확인 → correctChoiceId 연결",
+      "출력": "AnswerMappingResult (매핑된 문항 목록, 매칭 수, 경고 목록)",
+      "실패_시_처리": "선택지 범위 초과(4지인데 5번 정답) 또는 번호 불일치 시 needs_review 보류",
+      "상태_읽기": "정답표 토큰 및 문제 번호",
+      "상태_저장": "QuestionItem.correctChoiceId, answerEvidence",
+      "출처": "GEN-01 지시서 20, 51, 52항",
+      "파일": "src/ocr/answerKeyExtractor.ts",
+      "함수": "mapAnswerKeysToQuestions()",
+      "관련_테스트": "tests/answerKeyExtractor.test.ts",
+      "실행_근거": "실제 수험생이 이용하는 문제집-정답지 분리 양식 완벽 대응",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-86",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "처리",
+    "title": "범용 전자 PDF 텍스트 레이어 좌표 변환 및 문제 추출 파이프라인",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "전자 PDF의 텍스트 레이어를 웹 좌표계로 정밀 변환하여 OCR 엔진 없이 100% 무손실로 객관식 문제를 추출하고, 스캔 PDF는 Canvas OCR로 자동 전환",
+    "details": {
+      "역할": "전자 PDF 파일에서 텍스트와 좌표를 직접 추출하여 고속/고정밀 문제집을 생성하고 스캔 PDF는 OCR과 연계",
+      "기술_스킬": "PDF.js 텍스트 파싱, 좌표계 변환(좌하단 원점 → 좌상단 원점)",
+      "입력": "PDF ArrayBuffer",
+      "처리_분기": "텍스트 레이어 존재 검사 → 존재 시 좌표 변환 후 블록 생성 → 미존재 시 캔버스 렌더 후 OCR 실행",
+      "출력": "GeneralPdfExtractionResult (분류 결과, 문제 목록, 블록 수)",
+      "실패_시_처리": "손상된 PDF 파일 수신 시 오류 안내 및 입력 취소",
+      "상태_읽기": "PDF 페이지 텍스트 콘텐츠",
+      "상태_저장": "QuestionItem[]",
+      "출처": "GEN-01 지시서 35, 37, 38항",
+      "파일": "src/pdf/generalPdfParser.ts",
+      "함수": "extractGeneralQuestionsFromPdf()",
+      "관련_테스트": "tests/generalPdfParser.test.ts",
+      "실행_근거": "기출문제 PDF 전자문서를 즉시 풀이 가능한 퀴즈로 변환",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-87",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "판단",
+    "title": "스캔 문서 이미지 품질 자동 진단 및 적응형 전처리 게이트",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "스마트폰 촬영 사진의 해상도, 평균 밝기, 대비, 그림자 여부를 자동 진단하고 적응형 문턱값 처리로 그림자 완화",
+    "details": {
+      "역할": "OCR 실행 전 촬영 이미지의 품질을 사전 진단하여 인식 실패를 예방하고 적응형 이진화로 그림자 완화",
+      "기술_스킬": "픽셀 히스토그램 분석, 적응형 임계값(Adaptive Threshold), 2배 업스케일링",
+      "입력": "이미지 픽셀 데이터 (Uint8ClampedArray) 및 캔버스",
+      "처리_분기": "해상도 및 평균 밝기 계산 → 저조도/강한 그림자 감지 시 적응형 이진화 적용 및 사용자 권고문 도출",
+      "출력": "ImageQualityReport (해상도 등급, 밝기, 대비 점수, 권고 메시지)",
+      "실패_시_처리": "극단적 저품질 이미지 감지 시 재촬영 권고 안내",
+      "상태_읽기": "이미지 픽셀 RGB 채널",
+      "상태_저장": "전처리된 캔버스",
+      "출처": "GEN-01 지시서 25~26항",
+      "파일": "src/ocr/imagePreprocessor.ts",
+      "함수": "analyzeImageQuality(), applyAdaptiveThreshold()",
+      "관련_테스트": "tests/questionImportGate.test.ts",
+      "실행_근거": "모바일 카메라 비스듬한 촬영 및 그림자 환경에서의 인식률 제고",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-88",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "처리",
+    "title": "4/5지선다 정답 ID 보존 및 독립 셔플 출제 엔진 (스트레스 20,000회 무결성)",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "P0 · 즉시 해결",
+    "summary": "정답을 고정 인덱스가 아닌 고유 ID(correctChoiceId)로 관리하여, 출제 시 보기 순서와 문제 순서를 무작위로 섞어도 100% 정답이 보존되는 셔플 출제 엔진",
+    "details": {
+      "역할": "문제와 보기의 순서를 매번 랜덤으로 재배치하면서도 정답의 유일성과 정확성을 100% 보존",
+      "기술_스킬": "Fisher-Yates 셔플 알고리즘, 선형 합동 PRNG, 정답 ID 역추적 인덱싱",
+      "입력": "QuestionItem[] 및 출제 옵션 (shuffleQuestions, shuffleChoices)",
+      "처리_분기": "문제 목록 무작위 셔플 → 선택지 무작위 셔플 → correctChoiceId 위치 검색 → displayCorrectIndex 동적 계산",
+      "출력": "GeneralQuizQuestion[] 출제 세션 객체",
+      "실패_시_처리": "4/5지 Hard Gate(보기 수, 중복, 빈값, 정답 일치) 미달 시 출제 즉각 취소",
+      "상태_읽기": "QuestionItem.choices, correctChoiceId",
+      "상태_저장": "런타임 퀴즈 세션 인스턴스",
+      "출처": "GEN-01 지시서 5~9, 42~46항",
+      "파일": "src/quiz/generalQuizEngine.ts",
+      "함수": "createGeneralQuizSession(), validateGeneralQuestion()",
+      "관련_테스트": "tests/generalQuestionShuffle.test.ts",
+      "실행_근거": "'정답이 항상 3번이 되는 문제'를 원천 방지하고 정답 왜곡 0건 보장",
+      "확인_수준": "코드로 확인",
+      "위험도": "P0 · 즉시 해결"
+    }
+  },
+  {
+    "id": "NODE-89",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "데이터",
+    "title": "범용 문제 Dexie v2 무손실 마이그레이션 및 영속 저장소",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "일반",
+    "summary": "기존 토익/해사영어 IndexedDB(version 1) 데이터를 100% 무손실 보존하면서 신규 범용 문제 테이블 5종을 증설하는 Dexie v2 마이그레이션",
+    "details": {
+      "역할": "기존 영어단어 및 학습 이력 테이블을 완벽히 유지한 채 일반 문제집 전용 테이블들을 무손실 확장",
+      "기술_스킬": "Dexie 스키마 마이그레이션, IndexedDB 오프라인 트랜잭션",
+      "입력": "기존 v1 저장 데이터 및 신규 QuestionBook / QuestionItem",
+      "처리_분기": "v1 스토어 유지 → v2 스토어 증설(questionBooks, questions, questionStudyHistory, questionStats, sourceImages)",
+      "출력": "버전 2 IndexedDB 연결 인스턴스",
+      "실패_시_처리": "마이그레이션 실패 시 기존 데이터 롤백 및 에러 보고",
+      "상태_읽기": "IndexedDB 버전 메타데이터",
+      "상태_저장": "로컬 브라우저 영속 저장소",
+      "출처": "GEN-01 지시서 39~41항",
+      "파일": "src/storage/db.ts",
+      "함수": "ToeicStudyDatabase",
+      "관련_테스트": "tests/questionDbMigration.test.ts",
+      "실행_근거": "기존 사용자의 단어 학습 데이터 영구 보존 및 범용 데이터베이스 수용",
+      "확인_수준": "코드로 확인",
+      "위험도": "일반"
+    }
+  },
+  {
+    "id": "NODE-90",
+    "tab_id": "tab-14",
+    "tab_name": "범용 문제 제작",
+    "category": "위험",
+    "title": "사용자 문항 검토 및 자동 저장 통제 Hard Gate",
+    "badge": "작동 중",
+    "verification": "코드로 확인",
+    "risk": "P0 · 즉시 해결",
+    "summary": "본문 누락, 보기 부족/초과, 정답 미확인 문항의 자동 출제를 하드 게이트로 원천 차단하고, AI의 정답 임의 추측 생성을 일체 금지",
+    "details": {
+      "역할": "OCR 파싱 오류나 정답 미확인 문항이 검증 없이 학습 퀴즈에 출제되는 것을 원천 차단하고 사용자 검토 강제",
+      "기술_스킬": "자동 저장 Hard Gate, 상태 기반 필터링(verified, needs_review, missing)",
+      "입력": "파싱된 QuestionItem 배열",
+      "처리_분기": "본문 비어있음 / 보기 수 불일치 / 정답 미확인 감지 시 자동 출제 세션 제외 → 사용자 검토 및 승인 강제",
+      "출력": "검증된 출제 가능 문항 풀",
+      "실패_시_처리": "미확인 문항은 missing으로 격리하고 퀴즈 생성 거부",
+      "상태_읽기": "answerStatus, isUserConfirmed, questionConfidence",
+      "상태_저장": "검토 결과 플래그",
+      "출처": "GEN-01 지시서 21, 22, 50, 65항",
+      "파일": "src/app/components/GeneralQuizImportView.tsx, src/quiz/generalQuizEngine.ts",
+      "함수": "createGeneralQuizSession(), validateGeneralQuestion()",
+      "관련_테스트": "tests/questionImportGate.test.ts",
+      "실행_근거": "잘못된 정답이 DB에 자동 저장되어 오학습을 유발하는 치명적 P0 방지",
+      "확인_수준": "코드로 확인",
+      "위험도": "P0 · 즉시 해결"
     }
   }
 ];

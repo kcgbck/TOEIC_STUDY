@@ -108,3 +108,6 @@ export class TesseractOcrEngine implements OcrEngine {
     this.isInitialized = false;
   }
 }
+
+export const tesseractEngine = new TesseractOcrEngine();
+

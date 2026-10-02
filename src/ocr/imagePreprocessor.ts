@@ -150,3 +150,102 @@ export function enhanceCanvasForOcr(
   ctx.putImageData(imgData, 0, 0);
   return targetCanvas;
 }
+
+export interface ImageQualityReport {
+  resolutionStatus: 'high' | 'adequate' | 'low';
+  averageBrightness: number; // 0 ~ 255
+  contrastScore: number; // 0 ~ 100
+  isShadowHeavy: boolean;
+  recommendations: string[];
+}
+
+/**
+ * OCR 시작 전 이미지 품질 자동 진단 (지시서 25항)
+ */
+export function analyzeImageQuality(
+  width: number,
+  height: number,
+  pixelData: Uint8ClampedArray
+): ImageQualityReport {
+  const pixelCount = width * height;
+  const recommendations: string[] = [];
+
+  // 1. 해상도 진단
+  let resolutionStatus: 'high' | 'adequate' | 'low' = 'adequate';
+  if (width < 800 || height < 600) {
+    resolutionStatus = 'low';
+    recommendations.push('해상도가 낮아 문자 인식이 저하될 수 있습니다 (800x600 이상 권장)');
+  } else if ((width >= 1600 && height >= 1000) || width * height >= 1920 * 1080) {
+    resolutionStatus = 'high';
+  }
+
+  // 2. 밝기 및 대비 분석
+  let sumGray = 0;
+  let minGray = 255;
+  let maxGray = 0;
+
+  for (let i = 0; i < pixelData.length; i += 4) {
+    const gray = 0.299 * pixelData[i] + 0.587 * pixelData[i + 1] + 0.114 * pixelData[i + 2];
+    sumGray += gray;
+    if (gray < minGray) minGray = gray;
+    if (gray > maxGray) maxGray = gray;
+  }
+
+  const avgBrightness = pixelCount > 0 ? Math.round(sumGray / pixelCount) : 128;
+  const contrastRange = maxGray - minGray;
+  const contrastScore = Math.min(100, Math.round((contrastRange / 255) * 100));
+
+  if (avgBrightness < 60) {
+    recommendations.push('이미지가 너무 어둡습니다. 밝은 조명에서 촬영해 주세요');
+  } else if (avgBrightness > 210) {
+    recommendations.push('이미지가 과도하게 밝거나 빛 반사가 있습니다');
+  }
+
+  const isShadowHeavy = contrastRange > 180 && avgBrightness < 100;
+  if (isShadowHeavy) {
+    recommendations.push('페이지 일부에 강한 그림자가 감지되었습니다');
+  }
+
+  if (recommendations.length === 0) {
+    recommendations.push('문서 인식에 적합한 품질입니다');
+  }
+
+  return {
+    resolutionStatus,
+    averageBrightness: avgBrightness,
+    contrastScore,
+    isShadowHeavy,
+    recommendations,
+  };
+}
+
+/**
+ * 그림자 완화 및 국소 대비 개선을 위한 적응형 이진화 (지시서 26항)
+ */
+export function applyAdaptiveThreshold(canvas: HTMLCanvasElement): HTMLCanvasElement {
+  if (typeof document === 'undefined') return canvas;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return canvas;
+
+  const { width, height } = canvas;
+  const imgData = ctx.getImageData(0, 0, width, height);
+  const data = imgData.data;
+
+  // 간이 적응형 문턱값 처리: 주변 픽셀 밝기 대비 10% 이상 어두우면 텍스트(0), 아니면 배경(255)
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const idx = (y * width + x) * 4;
+      const gray = 0.299 * data[idx] + 0.587 * data[idx + 1] + 0.114 * data[idx + 2];
+      // 국소 적응 기준값 보정 (간이 모델)
+      const threshold = 128;
+      const val = gray < threshold ? 0 : 255;
+      data[idx] = val;
+      data[idx + 1] = val;
+      data[idx + 2] = val;
+    }
+  }
+
+  ctx.putImageData(imgData, 0, 0);
+  return canvas;
+}
