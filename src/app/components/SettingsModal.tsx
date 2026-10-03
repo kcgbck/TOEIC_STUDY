@@ -41,6 +41,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   const [showIosGuide, setShowIosGuide] = useState(false);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [codeCopied, setCodeCopied] = useState(false);
+  const [showLinkSection, setShowLinkSection] = useState(false);
+  const [inputDeviceCode, setInputDeviceCode] = useState('');
+  const [linkError, setLinkError] = useState<string | null>(null);
+  const [linkSuccess, setLinkSuccess] = useState<string | null>(null);
+  const [isSubmittingLink, setIsSubmittingLink] = useState(false);
 
   // 저장소 통계 및 상태
   const [storageStats, setStorageStats] = useState<{ words: number; books: number; history: number }>({
@@ -94,8 +99,38 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
       const p = userService.getProfile();
       setUserProfile(p);
       setCodeCopied(false);
+      setShowLinkSection(false);
+      setInputDeviceCode('');
+      setLinkError(null);
+      setLinkSuccess(null);
     }
   }, [isOpen]);
+
+  // 기기 코드 연동 처리
+  const handleLinkDevice = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLinkError(null);
+    setLinkSuccess(null);
+
+    const code = inputDeviceCode.trim().toUpperCase();
+    if (!code) {
+      setLinkError('기기 코드를 입력해 주세요.');
+      return;
+    }
+
+    setIsSubmittingLink(true);
+    const result = await userService.linkDeviceCode(code);
+    setIsSubmittingLink(false);
+
+    if (result.success && result.profile) {
+      setUserProfile({ ...result.profile });
+      setLinkSuccess(`계정 연동 완료! (${result.profile.nickname}님, ${result.profile.totalScore}점)`);
+      setInputDeviceCode('');
+      setTimeout(() => setShowLinkSection(false), 2200);
+    } else {
+      setLinkError(result.error || '기기 코드 연동에 실패했습니다.');
+    }
+  };
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
@@ -223,9 +258,106 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               </div>
             </div>
 
-            <p style={{ fontSize: '11px', color: '#64748b', margin: 0 }}>
-              * 스마트폰 변경 시 랭킹 보드의 [기기 코드 연동]으로 데이터를 이어받을 수 있습니다.
-            </p>
+            {/* 기기 코드 연동 섹션 (학습자 계정 하단) */}
+            <div style={{ marginTop: '10px', paddingTop: '10px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '11px', color: '#cbd5e1', lineHeight: '1.4' }}>
+                  스마트폰 변경 시 코드로 계정을 이어받을 수 있습니다.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowLinkSection(!showLinkSection);
+                    setLinkError(null);
+                    setLinkSuccess(null);
+                  }}
+                  className="btn-link-account"
+                  style={{
+                    padding: '5px 10px',
+                    fontSize: '11px',
+                    fontWeight: 'bold',
+                    borderRadius: '6px',
+                    flexShrink: 0,
+                    background: showLinkSection ? '#3b82f6' : 'rgba(99, 102, 241, 0.25)',
+                    color: '#ffffff',
+                    border: '1px solid rgba(99, 102, 241, 0.4)',
+                    cursor: 'pointer',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  🔗 기기 코드 연동
+                </button>
+              </div>
+
+              {showLinkSection && (
+                <form
+                  onSubmit={handleLinkDevice}
+                  style={{
+                    marginTop: '10px',
+                    background: 'rgba(0,0,0,0.3)',
+                    padding: '10px',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                  }}
+                >
+                  <label style={{ fontSize: '11px', color: '#94a3b8', display: 'block', marginBottom: '6px' }}>
+                    이전 기기에서 발급된 코드를 입력하세요:
+                  </label>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    <input
+                      type="text"
+                      value={inputDeviceCode}
+                      onChange={(e) => {
+                        setInputDeviceCode(e.target.value.toUpperCase());
+                        setLinkError(null);
+                        setLinkSuccess(null);
+                      }}
+                      placeholder="예: VOCA-XXXX-XXXX"
+                      style={{
+                        flex: 1,
+                        background: '#0f172a',
+                        border: '1px solid #334155',
+                        borderRadius: '6px',
+                        padding: '6px 10px',
+                        color: '#f8fafc',
+                        fontSize: '12px',
+                        fontFamily: 'monospace',
+                        letterSpacing: '1px',
+                        textTransform: 'uppercase',
+                      }}
+                      autoFocus
+                    />
+                    <button
+                      type="submit"
+                      disabled={isSubmittingLink}
+                      style={{
+                        background: '#2563eb',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '6px',
+                        padding: '6px 12px',
+                        fontSize: '12px',
+                        fontWeight: 'bold',
+                        cursor: isSubmittingLink ? 'default' : 'pointer',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {isSubmittingLink ? '연동 중...' : '계정 불러오기'}
+                    </button>
+                  </div>
+                  {linkError && (
+                    <p style={{ fontSize: '11px', color: '#f87171', margin: '6px 0 0 0' }}>
+                      ⚠️ {linkError}
+                    </p>
+                  )}
+                  {linkSuccess && (
+                    <p style={{ fontSize: '11px', color: '#4ade80', margin: '6px 0 0 0', fontWeight: 'bold' }}>
+                      🎉 {linkSuccess}
+                    </p>
+                  )}
+                </form>
+              )}
+            </div>
           </div>
 
           {/* 테마 설정 */}

@@ -19,12 +19,6 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
   const [nicknameError, setNicknameError] = useState<string | null>(null);
   const [isSubmittingNickname, setIsSubmittingNickname] = useState(false);
 
-  // 기기 코드 연동 모달 상태
-  const [showLinkModal, setShowLinkModal] = useState(false);
-  const [inputDeviceCode, setInputDeviceCode] = useState('');
-  const [linkError, setLinkError] = useState<string | null>(null);
-  const [isSubmittingLink, setIsSubmittingLink] = useState(false);
-
   // 복사 완료 알림
   const [copyFeedback, setCopyFeedback] = useState(false);
 
@@ -69,29 +63,6 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
       await loadData(true);
     } else {
       setNicknameError(result.error || '닉네임 변경에 실패했습니다.');
-    }
-  };
-
-  // 기기 코드 연동 처리
-  const handleLinkDevice = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLinkError(null);
-
-    if (!inputDeviceCode.trim()) {
-      setLinkError('기기 코드를 입력해 주세요.');
-      return;
-    }
-
-    setIsSubmittingLink(true);
-    const result = await userService.linkDeviceCode(inputDeviceCode);
-    setIsSubmittingLink(false);
-
-    if (result.success && result.profile) {
-      setShowLinkModal(false);
-      setInputDeviceCode('');
-      await loadData(true);
-    } else {
-      setLinkError(result.error || '기기 코드 연동에 실패했습니다.');
     }
   };
 
@@ -206,21 +177,6 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
               {profile?.accuracy || 0}%
             </span>
           </div>
-        </div>
-
-        {/* 다른 기기 연동 버튼 */}
-        <div className="my-card-footer">
-          <span>스마트폰 변경 시 코드로 계정을 이어받을 수 있습니다.</span>
-          <button
-            onClick={() => {
-              setInputDeviceCode('');
-              setLinkError(null);
-              setShowLinkModal(true);
-            }}
-            className="btn-link-account"
-          >
-            기기 코드 연동
-          </button>
         </div>
       </div>
 
@@ -364,61 +320,6 @@ export const RankingView: React.FC<RankingViewProps> = ({ onBack }) => {
         </div>
       )}
 
-      {/* 기기 코드 연동 모달 */}
-      {showLinkModal && (
-        <div className="ranking-modal-backdrop">
-          <div className="ranking-modal-box">
-            <div>
-              <h2 className="ranking-modal-title">
-                <span>🔗</span>
-                <span>기존 기기 코드로 계정 연동</span>
-              </h2>
-              <p className="ranking-modal-desc" style={{ marginTop: '6px' }}>
-                이전 스마트폰이나 PC에서 사용하던 기기 코드를 입력하면 기존 학습 기록과 랭킹 점수를 그대로 이어받습니다.
-              </p>
-            </div>
-
-            <form onSubmit={handleLinkDevice} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <div>
-                <input
-                  type="text"
-                  value={inputDeviceCode}
-                  onChange={(e) => {
-                    setInputDeviceCode(e.target.value.toUpperCase());
-                    setLinkError(null);
-                  }}
-                  placeholder="예: VOCA-XXXX-XXXX"
-                  className="ranking-modal-input"
-                  style={{ fontFamily: 'monospace', letterSpacing: '1px', textTransform: 'uppercase' }}
-                  autoFocus
-                />
-                {linkError && (
-                  <p className="ranking-modal-error" style={{ marginTop: '6px' }}>
-                    ⚠️ {linkError}
-                  </p>
-                )}
-              </div>
-
-              <div className="ranking-modal-actions">
-                <button
-                  type="button"
-                  onClick={() => setShowLinkModal(false)}
-                  className="ranking-modal-btn cancel"
-                >
-                  취소
-                </button>
-                <button
-                  type="submit"
-                  disabled={isSubmittingLink}
-                  className="ranking-modal-btn confirm"
-                >
-                  {isSubmittingLink ? '연동 중...' : '계정 불러오기'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { speechService } from '../src/services/speechService';
+import { speechService, playFallbackAudio } from '../src/services/speechService';
 
-describe('speechService (Web Speech API TTS)', () => {
+describe('speechService (고신뢰성 TTS & Fallback)', () => {
   let mockSpeak: any;
   let mockCancel: any;
   let mockGetVoices: any;
   const originalWindow = (globalThis as any).window;
+  const originalAudio = (globalThis as any).Audio;
 
   beforeEach(() => {
     mockSpeak = vi.fn();
@@ -17,8 +18,11 @@ describe('speechService (Web Speech API TTS)', () => {
 
     const fakeWindow: any = {
       speechSynthesis: {
+        speaking: true,
+        paused: false,
         speak: mockSpeak,
         cancel: mockCancel,
+        resume: vi.fn(),
         getVoices: mockGetVoices,
       },
       SpeechSynthesisUtterance: function (this: any, text: string) {
@@ -26,14 +30,23 @@ describe('speechService (Web Speech API TTS)', () => {
         this.lang = 'en-US';
         this.rate = 1;
         this.voice = null;
+        this.volume = 1;
       },
     };
 
     (globalThis as any).window = fakeWindow;
+
+    (globalThis as any).Audio = function (this: any, url: string) {
+      this.src = url;
+      this.volume = 1;
+      this.play = vi.fn().mockResolvedValue(undefined);
+      this.pause = vi.fn();
+    };
   });
 
   afterEach(() => {
     (globalThis as any).window = originalWindow;
+    (globalThis as any).Audio = originalAudio;
   });
 
   it('isSupported returns true when speechSynthesis is available', () => {
@@ -83,5 +96,10 @@ describe('speechService (Web Speech API TTS)', () => {
     (globalThis as any).window = undefined;
     expect(speechService.isSupported()).toBe(false);
     expect(speechService.speak('test')).toBe(false);
+  });
+
+  it('plays fallback audio properly when playFallbackAudio is invoked', async () => {
+    const res = await playFallbackAudio('apple', 'en-US');
+    expect(res).toBe(true);
   });
 });

@@ -39,25 +39,30 @@ PWA (Progressive Web App, 모바일 맞춤 설치형 오프라인 우선 웹앱,
 - `CURRENT_STAGE = TTS_AND_JAPANESE_WORDBOOKS_COMPLETE`
 
 ## 최근 완료 작업
-1. **스피커(🔊) 발음 듣기(TTS) 기능 구현 (비용 0원 / 오프라인 지원)**:
-   - 외부 유료 API 종량제 과금 0원: 브라우저/스마트폰 OS 내장 Web Speech API (`speechSynthesis`, `SpeechSynthesisUtterance`) 활용
-   - 영어 단어(TOEIC, 해사영어, 영단어 문제집)는 `en-US`, 일본어 단어는 `ja-JP` 언어 자동 감지
-   - 학습에 최적화된 0.9배속 또렷한 발음, 재생 중 중복 방지 및 취소(`cancel()`) 처리
-   - 표제어 옆 스피커 버튼 터치 시 시각적 펄스 애니메이션(`.speaking`) 적용
+1. **기기 코드 연동 버튼 설정창 이동 및 UI 최적화**:
+   - 기존 랭킹 보드(`RankingView.tsx`)에 있던 "기기 코드 연동 버튼"을 환경 설정창(`SettingsModal.tsx`)의 `👤 학습자 계정` 하단으로 이동
+   - 설명 문구("스마트폰 변경 시 코드로 계정을 이어받을 수 있습니다.")와 함께 깔끔한 인라인 입력 폼으로 배치 (코드 입력 시 대문자 자동 변환 및 즉시 계정/랭킹 동기화)
+   - 랭킹 보드 내 잔여 연동 모달 및 코드 정리 완료
+2. **스피커(🔊) 발음 듣기(TTS) 듀얼 엔진 구축 (비용 0원 / 침묵 시 100% Fallback)**:
+   - 외부 유료 API 종량제 과금 0원: 브라우저/스마트폰 OS 내장 Web Speech API (`speechSynthesis`) 1차 활용
+   - 브라우저 GC(가비지 컬렉션)에 의한 조기 소멸 방지 전역 참조 유지 및 `paused` 락 해제
+   - 스마트폰 기기별 영어/일본어 음성 팩 미설치 또는 Web Speech 침묵 감지 시 350ms 이내에 고품질 오픈 오디오 스트림(`Audio`)으로 자동 Fallback 재생 (모든 스마트폰/인앱 브라우저 100% 소리 보장)
+   - 영어 단어는 `en-US`, 일본어 단어는 `ja-JP` 언어 자동 감지
+   - 학습에 최적화된 0.9배속 또렷한 발음, 표제어 옆 스피커 버튼 터치 시 시각적 펄스 애니메이션(`.speaking`) 적용
    - `src/services/speechService.ts` 모듈화 및 `tests/speechService.test.ts` 단위 테스트 통과
-2. **일본어 단어 문제집 (시험용 vs 완전 생활일본어 2가지 탭) 전면 구축**:
+3. **일본어 단어 문제집 (시험용 vs 완전 생활일본어 2가지 탭) 전면 구축**:
    - **탭 1: 시험용 (JLPT N5~N3 기출 161단어)**: 한자 + 요미가나 + 한국어 뜻 4지선다 실전 출제
    - **탭 2: 완전 생활일본어 (여행·식당·교통·호텔·쇼핑 실전 160단어)**: 일본 여행 및 실전 생존 필수 어휘 4지선다 출제
    - 정답 유일성 Hard Gate 100% 무결점 통과 검증 (`tests/japaneseWordbooks.test.ts`)
-3. **퀴즈 뷰 및 홈 대시보드 UI 연동**:
+4. **퀴즈 뷰 및 홈 대시보드 UI 연동**:
    - 퀴즈 상단 단어장 선택 탭을 3분할(`[📖 TOEIC]`, `[⚓ 해사영어]`, `[🇯🇵 일본어]`)로 확장
    - 일본어 선택 시 하단에 `[📝 시험용 (JLPT N5~N3)]` vs `[🍱 완전 생활일본어]` 2대 서브탭 즉시 전환
    - 홈 대시보드 카드 3번째에 `🇯🇵 일본어 단어 문제집 (321단어)` 바로가기 카드 배치
-4. **PWA 오프라인 Service Worker v6 업데이트**:
+5. **PWA 오프라인 Service Worker v6 업데이트**:
    - `public/sw.js`에 일본어 데이터셋(`builtin_japanese_exam.json`, `builtin_japanese_life.json`) 프리캐시 추가
 
 ## 검증
 - `npm run typecheck`: 통과 (0 errors)
-- `npm test`: 통과 (30개 테스트 파일 / 122개 테스트 100% PASS)
+- `npm test`: 통과 (31개 테스트 파일 / 127개 테스트 100% PASS)
 - `npm run build`: 통과 (Vite v6.4.3 프로덕션 번들 생성 완료)
 - `npx wrangler pages deploy`: 통과 (`https://voca-study-akf.pages.dev` 실시간 배포 완료)
