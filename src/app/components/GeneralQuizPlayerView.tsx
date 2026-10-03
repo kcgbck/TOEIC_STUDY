@@ -198,10 +198,13 @@ export const GeneralQuizPlayerView: React.FC<Props> = ({ bookId, onBackToHome, o
       {/* 상단 프로그레스 바 */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
         <button
+          type="button"
           onClick={onBackToHome}
-          style={{ background: 'transparent', border: 'none', color: '#9ca3af', cursor: 'pointer', fontSize: '13px' }}
+          className="ranking-back-btn"
+          style={{ width: '34px', height: '34px', fontSize: '18px', flexShrink: 0 }}
+          title="홈으로 돌아가기"
         >
-          ✕ 나가기
+          ←
         </button>
         <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#93c5fd' }}>
           {currentIndex + 1} / {questions.length}

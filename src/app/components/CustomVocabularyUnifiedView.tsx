@@ -34,7 +34,7 @@ export const CustomVocabularyUnifiedView: React.FC<Props> = ({
             ←
           </button>
         )}
-        <div className="book-selector-tabs" style={{ flex: 1, margin: 0 }}>
+        <div className="book-selector-tabs" style={{ flex: 1, margin: 0, gridTemplateColumns: '1fr 1fr' }}>
           <button
             type="button"
             className={`book-tab-btn ${mode === 'photo' ? 'active' : ''}`}

@@ -1258,11 +1258,11 @@ body {
   text-align: center;
 }
 
-/* 단어장 선택 탭 (TOEIC 1,800단어 vs 해사영어 451단어 - 50:50 정중앙 균형) */
+/* 단어장 선택 탭 (TOEIC / 해사영어 / 일본어 3분할 대칭 균형) */
 .book-selector-tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
   margin: 0 0 12px 0;
   width: 100%;
   box-sizing: border-box;
@@ -1273,8 +1273,8 @@ body {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  padding: 8px 6px;
-  font-size: clamp(11px, 3.2vw, 13px);
+  padding: 8px 4px;
+  font-size: clamp(11px, 3.1vw, 13px);
   font-weight: 700;
   border-radius: 9px;
   background: rgba(0, 0, 0, 0.2);
@@ -1286,7 +1286,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1302,6 +1302,107 @@ body {
   border-color: var(--primary);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+}
+
+/* 일본어 2대 서브 탭 (시험용 vs 완전 생활일본어) */
+.japanese-sub-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 0 0 12px 0;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.japanese-sub-tab-btn {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 6px;
+  font-size: clamp(11px, 3.1vw, 13px);
+  font-weight: 700;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.japanese-sub-tab-btn:hover {
+  background: rgba(239, 68, 68, 0.16);
+  color: #ffffff;
+}
+
+.japanese-sub-tab-btn.active {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.35) 0%, rgba(244, 63, 94, 0.35) 100%);
+  border-color: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* 퀴즈 표제어 + 스피커 발음 버튼 인라인 배치 */
+.quiz-headword-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.quiz-headword-row .quiz-headword {
+  margin-bottom: 0;
+}
+
+.quiz-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1.5px solid rgba(99, 102, 241, 0.35);
+  color: #a5b4fc;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quiz-speak-btn:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: #818cf8;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.quiz-speak-btn:active {
+  transform: scale(0.95);
+  background: rgba(99, 102, 241, 0.45);
+}
+
+.quiz-speak-btn.speaking {
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: scale(1.12);
+  box-shadow: 0 0 14px rgba(99, 102, 241, 0.6);
+  animation: pulseSpeaking 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseSpeaking {
+  0% { transform: scale(1.05); box-shadow: 0 0 6px rgba(99, 102, 241, 0.4); }
+  100% { transform: scale(1.15); box-shadow: 0 0 16px rgba(99, 102, 241, 0.8); }
 }
 
 /* ========================================================

@@ -17,7 +17,9 @@ export const App: React.FC = () => {
   const [selectedQuestionBookId, setSelectedQuestionBookId] = useState<string | null>(null);
   const [customWords, setCustomWords] = useState<WordEntry[] | undefined>(undefined);
   const [customTitle, setCustomTitle] = useState<string | undefined>(undefined);
-  const [customSourceType, setCustomSourceType] = useState<'builtin' | 'maritime' | 'photo' | 'pdf'>('builtin');
+  const [customSourceType, setCustomSourceType] = useState<
+    'builtin' | 'maritime' | 'japanese_exam' | 'japanese_life' | 'photo' | 'pdf'
+  >('builtin');
 
   // 테마 상태 ('dark' | 'light' | 'system')
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
@@ -77,7 +79,10 @@ export const App: React.FC = () => {
     }
 
     const handlePopState = (event: PopStateEvent) => {
-      const state = event.state as { tab?: ActiveTab; quizSource?: 'builtin' | 'maritime' } | null;
+      const state = event.state as {
+        tab?: ActiveTab;
+        quizSource?: 'builtin' | 'maritime' | 'japanese_exam' | 'japanese_life';
+      } | null;
       if (state && state.tab) {
         if (state.quizSource) {
           setCustomSourceType(state.quizSource);
@@ -99,14 +104,14 @@ export const App: React.FC = () => {
   const navigateToTab = (
     tab: ActiveTab,
     pushHistory = true,
-    quizSource?: 'builtin' | 'maritime'
+    quizSource?: 'builtin' | 'maritime' | 'japanese_exam' | 'japanese_life'
   ) => {
     if (quizSource) {
       setCustomSourceType(quizSource);
       setCustomWords(undefined);
       setCustomTitle(undefined);
     }
-    if (tab === activeTab && !quizSource) return;
+    if (tab === activeTab && (!quizSource || quizSource === customSourceType)) return;
 
     setActiveTab(tab);
     if (pushHistory) {
@@ -300,7 +305,7 @@ export const App: React.FC = () => {
               </div>
             </div>
 
-            {/* 홈 4대 핵심 메뉴 그리드 (이모지와 제목을 동일 크기 한 줄로 배치) */}
+            {/* 홈 핵심 메뉴 그리드 (이모지와 제목을 동일 크기 한 줄로 배치) */}
             <div className="action-menu-grid">
               {/* 1번째: TOEIC 문제풀이 */}
               <button className="menu-card primary" onClick={() => navigateToTab('quiz', true, 'builtin')}>
@@ -320,7 +325,20 @@ export const App: React.FC = () => {
                 <span className="menu-sub">SMCP · 해기사 3·4급 · 국제협약(COLREGs/SOLAS/MARPOL)</span>
               </button>
 
-              {/* 3번째: 내가 만드는 문제집 */}
+              {/* 3번째: 일본어 단어 문제집 (시험용 vs 생활일본어) */}
+              <button
+                className="menu-card"
+                style={{ borderLeft: '4px solid #ef4444' }}
+                onClick={() => navigateToTab('quiz', true, 'japanese_exam')}
+              >
+                <div className="menu-header-line">
+                  <span className="menu-icon">🇯🇵</span>
+                  <span className="menu-title">일본어 단어 문제집 (321단어)</span>
+                </div>
+                <span className="menu-sub">시험용(JLPT N5~N3) · 완전 생활일본어(여행·실전) 2탭</span>
+              </button>
+
+              {/* 4번째: 내가 만드는 문제집 */}
               <button
                 className="menu-card"
                 style={{ borderLeft: '4px solid #8b5cf6' }}
@@ -333,7 +351,7 @@ export const App: React.FC = () => {
                 <span className="menu-sub">사진·스캔·PDF로 4/5지선다 제작 및 풀이</span>
               </button>
 
-              {/* 4번째: 내가 만드는 영단어 문제집 */}
+              {/* 5번째: 내가 만드는 영단어 문제집 */}
               <button
                 className="menu-card"
                 style={{ borderLeft: '4px solid #06b6d4' }}

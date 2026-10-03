@@ -1,5 +1,5 @@
-// 보카 스터디 PWA Service Worker (v5.0.0 - Pages Migration & Cache Purge Support)
-const CACHE_NAME = 'voca-study-cache-v5';
+// 보카 스터디 PWA Service Worker (v6.0.0 - Japanese Wordbooks & TTS Support)
+const CACHE_NAME = 'voca-study-cache-v6';
 
 // 오프라인 실행을 위한 필수 앱 셸 에셋
 const PRECACHE_ASSETS = [
@@ -9,7 +9,10 @@ const PRECACHE_ASSETS = [
   '/icons/icon-192.png',
   '/icons/icon-512.png',
   '/icons/icon.svg',
-  '/data/builtin_words_v1.json'
+  '/data/builtin_words_v1.json',
+  '/data/maritime_smcp_v1.json',
+  '/data/builtin_japanese_exam.json',
+  '/data/builtin_japanese_life.json'
 ];
 
 // 설치 단계: 필수 에셋 프리캐시

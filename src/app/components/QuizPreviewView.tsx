@@ -3,11 +3,12 @@ import type { WordEntry, QuizQuestion } from '../../types/word';
 import { db } from '../../storage/db';
 import { createQuizQuestion } from '../../quiz/quizEngine';
 import { userService } from '../../services/userService';
+import { speechService } from '../../services/speechService';
 
 interface Props {
   initialWords?: WordEntry[];
   bookTitle?: string;
-  sourceType?: 'builtin' | 'maritime' | 'photo' | 'pdf';
+  sourceType?: 'builtin' | 'maritime' | 'japanese_exam' | 'japanese_life' | 'photo' | 'pdf';
   instantGrading?: boolean;
   shuffleOrder?: boolean;
   onOpenRanking?: () => void;
@@ -16,7 +17,7 @@ interface Props {
 
 type SelectedDifficulty = 'all' | 'easy' | 'medium' | 'hard';
 type QuestionCountOption = 10 | 20 | 30 | 50 | 'all';
-type BookCategory = 'builtin' | 'maritime';
+export type BookCategory = 'builtin' | 'maritime' | 'japanese_exam' | 'japanese_life';
 
 // Fisher-Yates 배열 셔플 함수
 function shuffleArray(words: WordEntry[]): WordEntry[] {
@@ -67,7 +68,10 @@ export const QuizPreviewView: React.FC<Props> = ({
   onBack,
 }) => {
   const [currentBook, setCurrentBook] = useState<BookCategory>(() => {
-    return sourceType === 'maritime' ? 'maritime' : 'builtin';
+    if (sourceType === 'maritime') return 'maritime';
+    if (sourceType === 'japanese_exam') return 'japanese_exam';
+    if (sourceType === 'japanese_life') return 'japanese_life';
+    return 'builtin';
   });
   const [allLoadedWords, setAllLoadedWords] = useState<WordEntry[]>(initialWords || []);
   const [selectedDifficulty, setSelectedDifficulty] = useState<SelectedDifficulty>('all');
@@ -77,15 +81,25 @@ export const QuizPreviewView: React.FC<Props> = ({
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState<boolean>(false);
+  const [isSpeaking, setIsSpeaking] = useState<boolean>(false);
   const [score, setScore] = useState<{ correct: number; wrong: number }>({ correct: 0, wrong: 0 });
   const [syncedScore, setSyncedScore] = useState<number | null>(null);
   const hasSyncedRef = useRef(false);
   const [activeBookTitle, setActiveBookTitle] = useState<string>(
-    bookTitle || (sourceType === 'maritime' ? '해사영어(451단어)' : 'TOEIC(1800단어)')
+    bookTitle || (
+      sourceType === 'maritime'
+        ? '해사영어(451단어)'
+        : sourceType === 'japanese_exam'
+        ? '일본어 시험용(JLPT 161단어)'
+        : sourceType === 'japanese_life'
+        ? '완전 생활일본어(160단어)'
+        : 'TOEIC(1800단어)'
+    )
   );
 
   const handleSwitchBook = (book: BookCategory) => {
     if (book === currentBook) return;
+    speechService.stop();
     setCurrentBook(book);
     setAllLoadedWords([]);
     setQuizWords([]);
@@ -96,10 +110,34 @@ export const QuizPreviewView: React.FC<Props> = ({
   useEffect(() => {
     if (sourceType === 'maritime') {
       setCurrentBook('maritime');
+    } else if (sourceType === 'japanese_exam') {
+      setCurrentBook('japanese_exam');
+    } else if (sourceType === 'japanese_life') {
+      setCurrentBook('japanese_life');
     } else if (sourceType === 'builtin') {
       setCurrentBook('builtin');
     }
   }, [sourceType]);
+
+  // 현재 퀴즈 단어 발음 언어 감지 (일본어 단어장은 ja-JP, 영단어는 en-US)
+  const currentLang = useMemo(() => {
+    if (currentBook === 'japanese_exam' || currentBook === 'japanese_life') {
+      return 'ja-JP';
+    }
+    if (currentQuiz?.word && /[\u3040-\u309F\u30A0-\u30FF]/.test(currentQuiz.word)) {
+      return 'ja-JP';
+    }
+    return 'en-US';
+  }, [currentBook, currentQuiz]);
+
+  // 발음 듣기 버튼 핸들러
+  const handleSpeakCurrentWord = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (!currentQuiz?.word) return;
+    setIsSpeaking(true);
+    speechService.speak(currentQuiz.word, currentLang);
+    setTimeout(() => setIsSpeaking(false), 800);
+  };
 
   // 난이도 필터링된 단어 목록
   const filteredWords = useMemo(() => {
@@ -174,8 +212,19 @@ export const QuizPreviewView: React.FC<Props> = ({
       return;
     }
 
-    const targetUrl = currentBook === 'maritime' ? '/data/maritime_smcp_v1.json' : '/data/builtin_words_v1.json';
-    const defaultTitle = currentBook === 'maritime' ? '해사영어(451단어)' : 'TOEIC(1800단어)';
+    let targetUrl = '/data/builtin_words_v1.json';
+    let defaultTitle = 'TOEIC(1800단어)';
+
+    if (currentBook === 'maritime') {
+      targetUrl = '/data/maritime_smcp_v1.json';
+      defaultTitle = '해사영어(451단어)';
+    } else if (currentBook === 'japanese_exam') {
+      targetUrl = '/data/builtin_japanese_exam.json';
+      defaultTitle = '일본어 시험용(JLPT 161단어)';
+    } else if (currentBook === 'japanese_life') {
+      targetUrl = '/data/builtin_japanese_life.json';
+      defaultTitle = '완전 생활일본어(160단어)';
+    }
 
     fetch(targetUrl)
       .then((r) => r.json())
@@ -290,14 +339,14 @@ export const QuizPreviewView: React.FC<Props> = ({
               ←
             </button>
           )}
-          <div className="book-selector-tabs" style={{ flex: 1, margin: 0 }}>
+          <div className="book-selector-tabs" style={{ flex: 1, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
             <button
               type="button"
               className={`book-tab-btn ${currentBook === 'builtin' ? 'active' : ''}`}
               onClick={() => handleSwitchBook('builtin')}
             >
               <span>📖</span>
-              <span>TOEIC(1800단어)</span>
+              <span>TOEIC</span>
             </button>
             <button
               type="button"
@@ -305,7 +354,15 @@ export const QuizPreviewView: React.FC<Props> = ({
               onClick={() => handleSwitchBook('maritime')}
             >
               <span>⚓</span>
-              <span>해사영어(451단어)</span>
+              <span>해사영어</span>
+            </button>
+            <button
+              type="button"
+              className={`book-tab-btn ${(currentBook === 'japanese_exam' || currentBook === 'japanese_life') ? 'active' : ''}`}
+              onClick={() => handleSwitchBook(currentBook === 'japanese_life' ? 'japanese_life' : 'japanese_exam')}
+            >
+              <span>🇯🇵</span>
+              <span>일본어</span>
             </button>
           </div>
         </div>
@@ -323,6 +380,26 @@ export const QuizPreviewView: React.FC<Props> = ({
             </button>
           </div>
         )
+      )}
+
+      {/* 일본어 선택 시 노출되는 2대 서브 탭 (시험용 vs 완전 생활일본어) */}
+      {!initialWords && (currentBook === 'japanese_exam' || currentBook === 'japanese_life') && (
+        <div className="japanese-sub-tabs" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginBottom: '12px' }}>
+          <button
+            type="button"
+            className={`japanese-sub-tab-btn ${currentBook === 'japanese_exam' ? 'active' : ''}`}
+            onClick={() => handleSwitchBook('japanese_exam')}
+          >
+            <span>📝 시험용 (JLPT N5~N3)</span>
+          </button>
+          <button
+            type="button"
+            className={`japanese-sub-tab-btn ${currentBook === 'japanese_life' ? 'active' : ''}`}
+            onClick={() => handleSwitchBook('japanese_life')}
+          >
+            <span>🍱 완전 생활일본어</span>
+          </button>
+        </div>
       )}
 
       {/* 난이도 및 문제 수 설정 툴바 (스마트폰 2줄 깨짐 완벽 방지 반응형) */}
@@ -426,7 +503,18 @@ export const QuizPreviewView: React.FC<Props> = ({
           </div>
 
           <div className="quiz-word-box">
-            <h2 className="quiz-headword">{currentQuiz.word}</h2>
+            <div className="quiz-headword-row">
+              <h2 className="quiz-headword">{currentQuiz.word}</h2>
+              <button
+                type="button"
+                className={`quiz-speak-btn ${isSpeaking ? 'speaking' : ''}`}
+                onClick={handleSpeakCurrentWord}
+                title={`발음 듣기 (${currentLang === 'ja-JP' ? '일본어' : '영어'} TTS)`}
+                aria-label="발음 듣기"
+              >
+                🔊
+              </button>
+            </div>
             <span className="difficulty-badge">{(currentQuiz.difficulty || 'MEDIUM').toUpperCase()}</span>
           </div>
 
