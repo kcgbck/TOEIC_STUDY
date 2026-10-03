@@ -259,4 +259,12 @@ describe('Cloudflare Worker API 엔드포인트 검증 (workerApi.test.ts)', () 
     expect(rankData.myRank.rank).toBe(2);
     expect(rankData.myRank.totalScore).toBe(100);
   });
+
+  it('/api/tts 요청 시 text 파라미터가 없으면 400 Bad Request를 반환해야 한다', async () => {
+    const ttsReq = new Request('https://voca-study.workers.dev/api/tts', { method: 'GET' });
+    const res = await worker.fetch(ttsReq, mockEnv);
+    expect(res.status).toBe(400);
+    const data = await res.json();
+    expect(data.error).toBe('Text parameter is required');
+  });
 });

@@ -135,8 +135,11 @@ export const QuizPreviewView: React.FC<Props> = ({
     if (e) e.stopPropagation();
     if (!currentQuiz?.word) return;
     setIsSpeaking(true);
-    speechService.speak(currentQuiz.word, currentLang);
-    setTimeout(() => setIsSpeaking(false), 800);
+    speechService.speak(currentQuiz.word, currentLang, 0.9, {
+      onEnd: () => setIsSpeaking(false),
+    });
+    // 최대 2초 후 자동 해제 (안전 타이머)
+    setTimeout(() => setIsSpeaking(false), 2000);
   };
 
   // 난이도 필터링된 단어 목록

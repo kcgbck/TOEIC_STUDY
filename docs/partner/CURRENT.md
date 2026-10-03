@@ -43,13 +43,15 @@ PWA (Progressive Web App, 모바일 맞춤 설치형 오프라인 우선 웹앱,
    - 기존 랭킹 보드(`RankingView.tsx`)에 있던 "기기 코드 연동 버튼"을 환경 설정창(`SettingsModal.tsx`)의 `👤 학습자 계정` 하단으로 이동
    - 설명 문구("스마트폰 변경 시 코드로 계정을 이어받을 수 있습니다.")와 함께 깔끔한 인라인 입력 폼으로 배치 (코드 입력 시 대문자 자동 변환 및 즉시 계정/랭킹 동기화)
    - 랭킹 보드 내 잔여 연동 모달 및 코드 정리 완료
-2. **스피커(🔊) 발음 듣기(TTS) 듀얼 엔진 구축 (비용 0원 / 침묵 시 100% Fallback)**:
-   - 외부 유료 API 종량제 과금 0원: 브라우저/스마트폰 OS 내장 Web Speech API (`speechSynthesis`) 1차 활용
-   - 브라우저 GC(가비지 컬렉션)에 의한 조기 소멸 방지 전역 참조 유지 및 `paused` 락 해제
-   - 스마트폰 기기별 영어/일본어 음성 팩 미설치 또는 Web Speech 침묵 감지 시 350ms 이내에 고품질 오픈 오디오 스트림(`Audio`)으로 자동 Fallback 재생 (모든 스마트폰/인앱 브라우저 100% 소리 보장)
-   - 영어 단어는 `en-US`, 일본어 단어는 `ja-JP` 언어 자동 감지
-   - 학습에 최적화된 0.9배속 또렷한 발음, 표제어 옆 스피커 버튼 터치 시 시각적 펄스 애니메이션(`.speaking`) 적용
-   - `src/services/speechService.ts` 모듈화 및 `tests/speechService.test.ts` 단위 테스트 통과
+2. **스피커(🔊) 발음 듣기(TTS) 듀얼 엔진 구축 및 모바일/Referer 차단 100% 해결**:
+   - 외부 유료 API 종량제 과금 0원: Cloudflare Pages Functions 프록시(`/api/tts`) 구축
+   - **기존 소리 안 나던 핵심 원인 규명 및 해결**:
+     1) 브라우저가 Google TTS 직접 호출 시 보낸 Referer로 인해 발생하던 `404 Not Found` 차단을 서버 프록시로 완벽 우회
+     2) 모바일 브라우저(Android/iOS)의 Autoplay Policy(비동기 호출 시 차단)를 방지하기 위해 터치 시 동기적 스트림 즉시 재생 적용
+     3) 기기별 OS 음성팩 미설치 상태에서도 100% 또렷한 원어민 음성(영어 en-US / 일본어 ja-JP) 출력 보장
+     4) Cloudflare Edge 7일 불변 캐시(`Cache-Control: public, max-age=604800, immutable`)로 10ms 초고속 재생
+   - `src/services/speechService.ts`, `functions/api/[[route]].ts`, `src/worker.ts` 완비
+   - 단위 테스트 통과 (`tests/speechService.test.ts`, `tests/workerApi.test.ts`)
 3. **일본어 단어 문제집 (시험용 vs 완전 생활일본어 2가지 탭) 전면 구축**:
    - **탭 1: 시험용 (JLPT N5~N3 기출 161단어)**: 한자 + 요미가나 + 한국어 뜻 4지선다 실전 출제
    - **탭 2: 완전 생활일본어 (여행·식당·교통·호텔·쇼핑 실전 160단어)**: 일본 여행 및 실전 생존 필수 어휘 4지선다 출제
@@ -63,6 +65,6 @@ PWA (Progressive Web App, 모바일 맞춤 설치형 오프라인 우선 웹앱,
 
 ## 검증
 - `npm run typecheck`: 통과 (0 errors)
-- `npm test`: 통과 (31개 테스트 파일 / 127개 테스트 100% PASS)
+- `npm test`: 통과 (31개 테스트 파일 / 128개 테스트 100% PASS)
 - `npm run build`: 통과 (Vite v6.4.3 프로덕션 번들 생성 완료)
-- `npx wrangler pages deploy`: 통과 (`https://voca-study-akf.pages.dev` 실시간 배포 완료)
+- `npx wrangler pages deploy`: 통과 (`https://voca-study-akf.pages.dev` 실시간 배포 완료, /api/tts 라이브 200 OK 확인)

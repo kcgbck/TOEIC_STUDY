@@ -61,6 +61,42 @@ export default {
 
     // API 라우팅 처리
     if (url.pathname.startsWith('/api/')) {
+      // 0. 고음질 무료 TTS 오디오 프록시 (/api/tts?text=...&lang=...)
+      if (url.pathname === '/api/tts' && request.method === 'GET') {
+        const text = url.searchParams.get('text')?.trim();
+        const lang = url.searchParams.get('lang')?.trim() || 'en';
+        if (!text) {
+          return jsonResponse({ error: 'Text parameter is required' }, 400);
+        }
+
+        const shortLang = lang.startsWith('ja') ? 'ja' : 'en';
+        const targetUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${shortLang}&q=${encodeURIComponent(text)}`;
+
+        try {
+          const audioResponse = await fetch(targetUrl, {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              'Referer': 'https://translate.google.com/',
+            },
+          });
+
+          if (!audioResponse.ok) {
+            return jsonResponse({ error: `TTS upstream returned ${audioResponse.status}` }, 502);
+          }
+
+          return new Response(audioResponse.body, {
+            status: 200,
+            headers: {
+              'Content-Type': 'audio/mpeg',
+              'Cache-Control': 'public, max-age=604800, immutable',
+              'Access-Control-Allow-Origin': '*',
+            },
+          });
+        } catch (err) {
+          return jsonResponse({ error: `TTS fetch exception: ${String(err)}` }, 500);
+        }
+      }
+
       if (!env.DB) {
         return jsonResponse({
           error: 'D1 database binding is not configured in this environment.',
